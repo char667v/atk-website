@@ -4,8 +4,9 @@ import "../styles/pc_style.css";
 
 ---
 
-<header>
+<header class="navigationGrid">
     <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
+    <a href="index.astro" id="atkText"> <img></a>
     <nav>
         <a>TRÆNING</a>
         <a>AKTIVITETER</a>
@@ -15,9 +16,10 @@ import "../styles/pc_style.css";
     <div class="navBtns">
         <a href=".." id="baneBook">BOOK BANE</a>
         <a href="..." id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="baneTilstand"></a>
+        <div id="menu-toggle">&#9776;</div> 
+        <div id="close-menu">&#10006;</div>     
     </div>
-    <div id="menu-toggle">&#9776;</div> 
-    <div id="close-menu">&#10006;</div> 
+    
 </header>
 
 <div class="heroVideo">
@@ -28,32 +30,11 @@ import "../styles/pc_style.css";
 
 
 <style>
-  .heroVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90vh; 
-    overflow: hidden; 
-}
-
-.heroVideo video {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-#menu-toggle {
-    display: none;
-  }
-
-  #close-menu {
-    display: none;
-}
-
 header {
             background-color: var(--text-white);
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr) 2fr repeat(1, 1fr);
+            grid-template-rows: 1fr;
             align-items: center;
             justify-content: space-between; 
             clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%, 0 70%);
@@ -70,8 +51,8 @@ header {
 
         nav {
             display: flex;
-            justify-content: flex-end; 
             padding: 10px;
+
         }
 
         nav a {
@@ -94,10 +75,11 @@ header {
             margin-right: var(--spacing-large);
              display: flex;
              align-items: center;
+
         }
 
         #baneTilstand {
-            width: 50px;
+            width: 48px;
             height: auto;
             margin-top: 5%;
             margin-left: var(--spacing-medium);
@@ -109,14 +91,39 @@ header {
             background-color: var(--secondaryColor);
             color: var(--text-white);
             text-align: center;
-            padding: 5%
-            
+            padding: 10px 20px;
+            border-radius: 10px; 
+        }
+
+        .heroVideo {
+            position: absolute;
+             top: 0;
+            left: 0;
+            width: 100%;
+            height: 90vh; 
+            overflow: hidden; 
+        }
+
+        .heroVideo video {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+        #menu-toggle {
+            display: none;
+        }
+
+        #close-menu {
+            display: none;
         }
 
 
      @media only screen and (max-width: 600px) {
-
         header {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr;
             position: relative;
             z-index: 1;
             clip-path: none;
@@ -125,9 +132,9 @@ header {
         nav {
             display: none; 
             flex-direction: column; 
-            top: 200px;
+            top: 150px;
             width: 100%;
-            height: calc(70vh - 200px);
+            height: 400px;
             position: absolute;
             background-color: var(--primaryColor);
     }
@@ -140,7 +147,9 @@ header {
       width: 100%;
     }
 
-    
+   #atkText {
+    display: none;
+   }
 
     #menu-toggle, #close-menu {
         display: block;
@@ -148,17 +157,17 @@ header {
         color: var(--text-black);
     }
     #menu-toggle {
-        font-size: 2.74em;
+        font-size: 3.3em;
     }
 
     #close-menu {
         display: none;
-        font-size: 3em;
+        font-size: 3.8em;
     }
 
-
-
 }
+
+
 
 </style>
 
