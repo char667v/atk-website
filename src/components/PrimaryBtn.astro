@@ -23,15 +23,25 @@ const buttonText = Astro.props.buttonText;
 
 
 <style>
-article {
-    
-  }
+button {
+background-color: var(--primaryColor);
+color: var(--text-white);
+border-radius: 10px;
+padding: 5px;
+}
+
+button a:hover {
+background-color: var(--primaryColor_dark);
+color: var(--primaryColor);
+border-radius: 10px;
+padding: 5px;
+}
 
 </style>
 
 
 <script>
-// TILFØJ TIL JAVASCRIPT FOR ADSKILLELSE AF PRIMARYBTN x2:
+// TILFØJ EVT. TIL JAVASCRIPT FOR ADSKILLELSE AF PRIMARYBTN x2?:
     
     // const PrimaryBtn = ({ button }) => (
     // <button className="primary-btn">{button}</button>); 
