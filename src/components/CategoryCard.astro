@@ -1,0 +1,18 @@
+---
+const { title, imgPath } = Astro.props;
+---
+
+<article>
+    <h2>
+        <a href="#0">{title}</a> 
+    </h2>
+    <img src={imgPath} alt="Tennisracket" height="300" width="190" />
+</article>
+
+<style>
+ img { /* taget fra Jonass video husk at rette det */
+    border-radius: var(--border-radius-round);
+    box-shadow: var(--shadow-default);
+  }
+</style>
+
