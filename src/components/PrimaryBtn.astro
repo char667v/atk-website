@@ -1,19 +1,27 @@
 ---
+const button = Astro.props.button;
+// const text = Astro.props.text;
+const buttonText = Astro.props.buttonText;
 
+// const {button, text} = Astro.props;
 ---
 
 
 <!-- rød banner-knap på junior -->
 <article>
-    <button>LÆS MERE OM TRÆNINGEN</button>
+    <button>{button}</button>
 </article>
 
 
 <!-- rød makkerbørs-knap på forside og træning -->
 <article>
-    <h4>SAVNER DU EN NY TRÆNINGSMAKKER?</h4>
-    <button>TJEK MAKKERBØRS</button>
+    <h4>{buttonText}</h4>
+    <button>{button}</button>
 </article>
 
 
-<style></style>
+<style>
+
+
+
+</style>

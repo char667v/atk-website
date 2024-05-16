@@ -19,9 +19,18 @@ import "../styles/pc_style.css";
     
     <body>
      <Navigation />
+     <main>   
      <article>
         <slot />
      </article>
-    <Footer />
+
+      
+    <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/>
+    <PrimaryBtn button="TJEK MAKKERBØRS" buttonText="SAVNER DU EN NY TRÆNINGSMAKKER?"/>
+
+
+    <AccentBtn />
+    </main>
     </body>
+    <Footer />
 </html>
