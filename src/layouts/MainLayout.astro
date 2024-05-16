@@ -17,16 +17,22 @@ import "../styles/pc_style.css";
         <HeadTitle title={title}/>
     </head>
     
-    <body>
+    <>
      <Navigation />
-     <main>   
+     <PrimaryBtn>   
      <article>
         <slot />
      </article>
 
       
-    <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/>
+    <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/> 
+    <button>LÆS MERE OM TRÆNINGEN</button>
+    </PrimaryBtn>
+
+
     <PrimaryBtn button="TJEK MAKKERBØRS" buttonText="SAVNER DU EN NY TRÆNINGSMAKKER?"/>
+    <button>SAVNER DU EN NY TRÆNINGSMAKKER?</button>
+    </PrimaryBtn>
 
 
     <AccentBtn />
