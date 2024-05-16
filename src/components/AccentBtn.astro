@@ -1,21 +1,45 @@
 ---
+// const button = Astro.props.button;
+// const buttonText = Astro.props.buttonText;
 
+// const {button, buttonText} = Astro.props;
+
+const {variant, size} = Astro.props;
 ---
 
+<button class={variant}>
+    <slot />
+</button>
+
+
 <!-- grøn banebooking-knap i header -->
-<article class="banebooking">
+<!-- <article class="banebooking">
     <button>BOOK BANE</button>
-</article>
+</article> -->
 
 <!-- grøn nyhedsbrev-knap i footer -->
-<article class="nyhedsbrev">
+<!-- <article class="nyhedsbrev">
     <h4>Din e-mail</h4>
     <button>TILMELD NYHEDSBREV</button>
-</article>
+</article> -->
 
 
 <style>
-.banebooking, .nyhedsbrev {
+.accent {
+background-color: var(--secondaryColor);
+color: var(--text-white);
+border-radius: 10px;
+padding: 10px;
+}
+
+.accent a:hover {
+background-color: var(--primaryColor_dark);
+color: var(--primaryColor);
+}
+
+
+
+/* .banebooking, .nyhedsbrev {
 background-color: var(--secondaryColor);
 color: var(--text-white);
 border-radius: 10px;
@@ -30,7 +54,7 @@ color: var(--primaryColor);
 .nyhedsbrev a:hover {
 background-color: var(--secondaryColor_dark);
 color: var(--primaryColor);
-}
+} */
 
 
 </style>

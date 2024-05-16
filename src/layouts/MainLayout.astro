@@ -7,7 +7,9 @@ import AccentBtn from "../components/AccentBtn.astro";
 const {title} = Astro.props;
 import "../styles/main.css";
 import "../styles/pc_style.css";
+import SecondaryBtn from "../components/SecondaryBtn.astro";
 ---
+
 <html lang="da">
     <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -24,7 +26,16 @@ import "../styles/pc_style.css";
             <slot />
         </article>
 
-        <article class="bannerknap">
+        <PrimaryBtn variant="primary1" size="small">TJEK MAKKERBØRS</PrimaryBtn>
+        <PrimaryBtn variant="primary2" size="small">LÆS MERE OM TRÆNINGEN</PrimaryBtn>
+
+        <SecondaryBtn variant="secondary" size="small">LÆS MERE</SecondaryBtn>
+
+        <AccentBtn variant="accent" size="small">TEXT</AccentBtn>
+
+        
+
+        <!-- <article class="bannerknap">
             <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/>
         </article>
 
@@ -38,7 +49,7 @@ import "../styles/pc_style.css";
 
         <article class="nyhedsbrev">
             <AccentBtn />
-            </article>
+        </article> -->
 
         <Footer />
     </body>
