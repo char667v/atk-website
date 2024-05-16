@@ -17,31 +17,26 @@ import "../styles/pc_style.css";
         <HeadTitle title={title}/>
     </head>
     
-    <>
-     <Navigation />
-     <PrimaryBtn>   
-     <article>
-        <slot />
-     </article>
+    <body>
+        <Navigation />
 
-      
-    <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/> 
-    <button>LÆS MERE OM TRÆNINGEN</button>
-    </PrimaryBtn>
+        <article>
+            <slot />
+        </article>
 
+        <article>
+            <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/>
+        </article>
 
-    <PrimaryBtn button="TJEK MAKKERBØRS" buttonText="SAVNER DU EN NY TRÆNINGSMAKKER?"/>
-    <button>SAVNER DU EN NY TRÆNINGSMAKKER?</button>
-    </PrimaryBtn>
+        <article>
+            <PrimaryBtn button="TJEK MAKKERBØRS" buttonText="SAVNER DU EN NY TRÆNINGSMAKKER?"/>
+        </article>
 
+        <AccentBtn />
 
-    <AccentBtn />
-
-
-
-    </main>
+        <Footer />
     </body>
-    <Footer />
+
 </html>
 
 
