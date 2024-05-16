@@ -15,15 +15,25 @@ const buttonText = Astro.props.buttonText;
 
 <!-- rød makkerbørs-knap på forside og træning -->
 <article>
-    <!-- <h4>{buttonText}</h4>
-    <button>{button}</button> -->
+    <h4>{buttonText}</h4>
+    <button>{button}</button>
 
     <slot />
 </article>
 
 
 <style>
-
-
+article {
+    
+  }
 
 </style>
+
+
+<script>
+// TILFØJ TIL JAVASCRIPT FOR ADSKILLELSE AF PRIMARYBTN x2:
+    
+    // const PrimaryBtn = ({ button }) => (
+    // <button className="primary-btn">{button}</button>); 
+
+</script>
