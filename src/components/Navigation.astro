@@ -43,11 +43,7 @@ header {
             z-index: 10;
         }
 
-        #atkLogo {
-            width: 80px;
-            height: auto;
-            margin-left: var(--spacing-large);
-        }
+    
 
         nav {
             display: flex;
@@ -118,6 +114,41 @@ header {
             display: none;
         }
 
+        @keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutToTop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideInFrom150 {
+  0% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutTo150 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(150px);
+  }
+}
 
      @media only screen and (max-width: 600px) {
         header {
@@ -134,15 +165,23 @@ header {
             flex-direction: column; 
             top: 150px;
             width: 100%;
-            height: 400px;
+            height: 800px;
             position: absolute;
             background-color: var(--primaryColor);
+            transition: height 0.5s ease;
     }
-  
+    nav.active {
+  animation: slideInFromTop 0.5s forwards; /* Apply slide in animation */
+}
+
+nav.reverse {
+  animation: slideOutToTop 0.5s forwards; /* Apply slide out animation */
+}
+    
     nav a {
       color: var(--text-white);
       border-right: none;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
       width: 100%;
     }
@@ -165,29 +204,34 @@ header {
         font-size: 3.8em;
     }
 
+    
 }
-
-
 
 </style>
 
 <script>
-   document.addEventListener('DOMContentLoaded', function () {
-    var menuToggle = document.getElementById('menu-toggle');
-    var closeMenu = document.getElementById('close-menu');
-    var nav = document.querySelector('nav');
-  
-    menuToggle.addEventListener('click', function () {
-        nav.style.display = 'flex';
-        menuToggle.style.display = 'none';
-        closeMenu.style.display = 'block';
-    });
+document.addEventListener('DOMContentLoaded', function () {
+  var menuToggle = document.getElementById('menu-toggle');
+  var closeMenu = document.getElementById('close-menu');
+  var nav = document.querySelector('nav');
 
-    closeMenu.addEventListener('click', function () {
-        nav.style.display = 'none';
-        menuToggle.style.display = 'block';
-        closeMenu.style.display = 'none';
-    });
+  menuToggle.addEventListener('click', function () {
+    nav.style.display = 'flex';
+    nav.classList.remove('reverse'); 
+    nav.classList.add('active'); 
+    menuToggle.style.display = 'none';
+    closeMenu.style.display = 'block';
+  });
+
+  closeMenu.addEventListener('click', function () {
+    nav.classList.remove('active'); // Remove active animation class
+    nav.classList.add('reverse'); // Add reverse animation class
+    setTimeout(function () {
+      nav.style.display = 'none'; // Hide navigation menu after animation
+    }, 500); // Adjust the delay to match the animation duration
+    menuToggle.style.display = 'block';
+    closeMenu.style.display = 'none';
+  });
 });
 </script>
  

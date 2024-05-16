@@ -1,4 +1,89 @@
 ---
-
+import "../styles/main.css";
+import "../styles/pc_style.css";
 ---
 
+<footer>
+<div class="footerContent">
+    <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
+    <div>
+        <h5>ATK Arbejdernes tennis klub</h5>
+        <p>Genforeningspladsen 54</p>
+        <p>2400 København NV</p>
+        <br>
+        <h5>ATK HALLEN</h5>
+        <p>Borups allé 273</p>
+        <p>2700 Brønshøj</p>
+    </div>
+
+    <div>
+        <h5>KONTORTIDER</h5>
+        <p>Tirsdag 17:00-18:00 (sommer)</p>
+        <p>Mandag 17:00-18:00 (vinter)</p>
+        <br>
+        <h5 >TELEFON: <span id="tlf"> 38 34 64 38</span></h5>
+        <h5>E-MAIL: <span id="email">ATK@ATK-TENNIS.DK</span></h5>
+    </div>
+
+    <div>
+        <div><a>TRÆNING</a></div>
+        <div><a>AKTIVITETER</a></div>
+        <div><a>MEDLEMSSKAB</a></div>
+        <div><a>OM ATK</a></div>
+        <div><a>FACEBOOK</a></div>
+    </div>
+
+    <div>
+        <p></p>
+        <a></a>
+    </div>
+</div>
+
+<div class="footerSponsors">
+    <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
+    <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
+    <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
+    <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
+</div>
+</footer>
+
+<style>
+.footerContent h5, .footerContent p {
+  margin: 0; 
+}
+
+#tlf, #email {
+    color: var(--primaryColor);
+}
+footer {
+background-color: var(--text-white);
+  color: var(--text-black);
+  padding-top: 10%;
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  clip-path: polygon(100% 100%, 0 100%, 0 30%, 100% 0, 100% 30%);
+}
+
+footer a:hover {
+color: var(--primaryColor);
+}
+.footerContent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: 1fr;
+padding-bottom: 2%;
+}
+
+.footerSponsors {
+background-color: rgb(255, 255, 255);
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: 1fr;
+}
+
+.footerSponsors img {
+    padding-top: 40%;
+}
+
+</style>
