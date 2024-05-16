@@ -4,10 +4,10 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import PrimaryBtn from "../components/PrimaryBtn.astro";
 import AccentBtn from "../components/AccentBtn.astro";
+import SecondaryBtn from "../components/SecondaryBtn.astro";
 const {title} = Astro.props;
 import "../styles/main.css";
 import "../styles/pc_style.css";
-import SecondaryBtn from "../components/SecondaryBtn.astro";
 ---
 
 <html lang="da">
@@ -31,7 +31,8 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
 
         <SecondaryBtn variant="secondary" size="small">LÆS MERE</SecondaryBtn>
 
-        <AccentBtn variant="accent" size="small">TEXT</AccentBtn>
+        <AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
+        <AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
 
         
 

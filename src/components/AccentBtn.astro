@@ -7,9 +7,13 @@
 const {variant, size} = Astro.props;
 ---
 
-<button class={variant}>
-    <slot />
-</button>
+<!-- grøn banebooking-knap i header -->
+<button class={variant}><slot /></button>
+
+<!-- grøn nyhedsbrev-knap i footer -->
+<button class={variant}><slot /></button>
+
+
 
 
 <!-- grøn banebooking-knap i header -->
@@ -25,18 +29,20 @@ const {variant, size} = Astro.props;
 
 
 <style>
-.accent {
+.accent1, .accent2 {
 background-color: var(--secondaryColor);
 color: var(--text-white);
 border-radius: 10px;
 padding: 10px;
 }
-
-.accent a:hover {
+.accent1 a:hover {
 background-color: var(--primaryColor_dark);
 color: var(--primaryColor);
 }
-
+.accent2 {
+background-color: var(--secondaryColor_dark);
+color: var(--primaryColor);
+}
 
 
 /* .banebooking, .nyhedsbrev {
