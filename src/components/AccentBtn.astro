@@ -3,24 +3,39 @@
 ---
 
 <!-- grøn banebooking-knap i header -->
-<article>
+<article class="banebooking">
     <button>BOOK BANE</button>
 </article>
 
 <!-- grøn nyhedsbrev-knap i footer -->
-<article>
+<article class="nyhedsbrev">
     <h4>Din e-mail</h4>
     <button>TILMELD NYHEDSBREV</button>
 </article>
 
 
 <style>
+.banebooking, .nyhedsbrev {
+background-color: var(--secondaryColor);
+color: var(--text-white);
+border-radius: 10px;
+padding: 5px;
+}
 
+.banebooking a:hover {
+background-color: var(--primaryColor_dark);
+color: var(--primaryColor);
+}
+
+.nyhedsbrev a:hover {
+background-color: var(--secondaryColor_dark);
+color: var(--primaryColor);
+}
 
 
 </style>
 
 <script>
 
-    
+
 </script>
