@@ -1,4 +1,39 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import HeadTitle from "../components/HeadTitle.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import PrimaryBtn from "../components/PrimaryBtn.astro";
+import AccentBtn from "../components/AccentBtn.astro";
 ---
 <MainLayout title="Arbejdernes Tennisklub"/>
+
+<section class="content"> 
+
+<PrimaryBtn variant="primary1" size="small">TJEK MAKKERBØRS</PrimaryBtn>
+<PrimaryBtn variant="primary2" size="small">LÆS MERE OM TRÆNINGEN</PrimaryBtn>
+
+
+<AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
+<AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
+
+
+
+<!-- <article class="bannerknap">
+    <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/>
+</article>
+
+<article class="makkerbors">
+    <PrimaryBtn button="TJEK MAKKERBØRS" buttonText="SAVNER DU EN NY TRÆNINGSMAKKER?"/>
+</article>
+
+<article class="banebooking">
+<AccentBtn />
+</article>
+
+<article class="nyhedsbrev">
+    <AccentBtn />
+</article> -->
+
+</section>
+
