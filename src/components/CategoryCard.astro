@@ -2,17 +2,64 @@
 const { title, imgPath } = Astro.props;
 ---
 
-<article>
-    <h2>
-        <a href="#0">{title}</a> 
-    </h2>
-    <img src={imgPath} alt="Tennisracket" height="300" width="190" />
+<article class="category-card">
+  <div class="content">
+    <img class="background-img" src={imgPath} alt="Tennisracket" />
+    <div class="gradient"></div> <!-- Gradient overlay -->
+    <h3>
+       <a href="#0">{title}</a> 
+    </h3>
+  </div>
 </article>
-
-<style>
- img { /* taget fra Jonass video husk at rette det */
-    border-radius: var(--border-radius-round);
-    box-shadow: var(--shadow-default);
+<style> 
+  .category-card {/* parent */
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid rgb(232, 232, 232);
+    overflow: hidden;
+    width: 328px;
+    height: 208px;
+    margin: 100px; 
+  }
+  .content {
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+  }
+   .background-img {
+    position: absolute;
+    top: 0;
+    left :0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1px;
+    z-index: 3;
+  } 
+  .gradient {
+    position: absolute;
+    margin-top: 85px;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    /*background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); Gradient colors */
+    background: linear-gradient(to top, rgba(255, 111, 0, 0.741), transparent); /* Orange to transparent gradient */
+    z-index: 5;
+  }
+ h3 {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+    margin-top: 160px;
+    z-index: 6;
+  }
+  a{
+    text-decoration: none;
   }
 </style>
 
