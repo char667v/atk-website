@@ -40,10 +40,11 @@ import "../styles/pc_style.css";
 </div>
 
 <div class="footerSponsors">
-    <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
-    <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
-    <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
-    <a href="index.astro" id="atkLogo"> <img src="/img/atklogo.webp" alt="logo"></a>
+    <a href="index.astro" id="sportsCafe"> <img src="/img/footer/sportsCafe.webp" alt="Sports Cafe"></a>
+    <a href="index.astro" id="olsenSport"> <img src="/img/footer/olsenSport.svg" alt="Olsen Sport"></a>
+    <a href="index.astro" id="proAlign"> <img src="/img/footer/proAlign.webp" alt="Pro Align"></a>
+    <a href="index.astro" id="headLogo"> <img src="/img/footer/head.svg" alt="Head Tennis"></a>
+
 </div>
 </footer>
 
@@ -56,11 +57,10 @@ import "../styles/pc_style.css";
     color: var(--primaryColor);
 }
 footer {
-background-color: var(--text-white);
+ background-color: var(--text-white);
   color: var(--text-black);
   padding-top: 10%;
-  position: absolute;
-  bottom: -100%;
+  position: relative;
   width: 100%;
   clip-path: polygon(100% 100%, 0 100%, 0 30%, 100% 0, 100% 30%);
 }
@@ -73,17 +73,55 @@ display: grid;
 grid-template-columns: repeat(5, 1fr);
 grid-template-rows: 1fr;
 padding-bottom: 2%;
+
 }
 
 .footerSponsors {
-background-color: rgb(255, 255, 255);
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-grid-template-rows: 1fr;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    padding: 0% 5%;
 }
 
 .footerSponsors img {
-    padding-top: 40%;
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    height: auto;
 }
 
+#headLogo {
+  
+}
+
+@media only screen and (max-width: 768px) {
+
+    footer {
+        clip-path: none;
+    }
+    .footerContent {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        justify-items: center;
+    }
+
+   .footerContent > div {
+    width: 100%;
+    margin-left: 30%;
+  }
+
+  .footerSponsors {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    place-items: center;
+    
+  }
+
+  .footerSponsors img {
+  }
+}
+    
+    
 </style>

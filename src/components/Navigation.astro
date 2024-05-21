@@ -32,11 +32,11 @@ import "../styles/pc_style.css";
 <style>
 header {
             background-color: var(--text-white);
-            display: grid;
+            display: flex;
             grid-template-columns: repeat(2, 1fr) 2fr repeat(1, 1fr);
             grid-template-rows: 1fr;
             align-items: center;
-            justify-content: space-between; 
+            justify-content: space-between;
             clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%, 0 70%);
             height: 150px;
             position: relative; 
@@ -150,11 +150,8 @@ header {
   }
 }
 
-     @media only screen and (max-width: 600px) {
+     @media only screen and (max-width: 768px) {
         header {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: 1fr;
             position: relative;
             z-index: 1;
             clip-path: none;

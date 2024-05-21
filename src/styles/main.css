@@ -3,6 +3,10 @@
     src: local('Avenir Regular'), url('/Avenir Regualar.woff2') format('woff');
 }
 
+body  {
+    cursor: url('/img/racketCursor.png'), auto;
+}
+
 /* Variables */
 :root {
     --primaryColor: #892911;
@@ -63,7 +67,7 @@ h3 {
     font-size: 0.8rem;
 }
 
-h4, summary {
+h4 {
     font-size: 0.6rem;
 }
 
@@ -71,7 +75,8 @@ h5, h6 {
     font-size: 0.6rem;
 }
 p {
-    font-size: 1.6rem;
+    font-size: 0.6rem;
+    color: var(--text-black);
 }
 
 a {
