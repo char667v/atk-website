@@ -4,9 +4,20 @@ import HeadTitle from "../components/HeadTitle.astro";
 import Navigation from "../components/Navigation.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Footer from "../components/Footer.astro";
+import ContactCard from "../components/ContactCard.astro";
+const coachId = "24"; // Replace with the actual ID of the coach you want
 
+const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+}).then((response) => response.json());
+
+console.log("contactInfo", contactInfo);
 ---
-<MainLayout title="Arbejdernes Tennisklub"/>
+
+<MainLayout title="Arbejdernes Tennisklub" />
 
 <section>
   <nav aria-label="breadcrumb">
@@ -18,20 +29,10 @@ import Footer from "../components/Footer.astro";
 </section>
 
 <section class="categoryCard_grid2">
-    <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="JUNIOR"
-    />
-    <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="SENIOR"
-    />
-     <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="MOTIONIST"
-    />
-    <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="ELITE"
-    />
-    </section>
+  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="JUNIOR" />
+  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="SENIOR" />
+  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="MOTIONIST" />
+  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="ELITE" />
+
+  {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+</section>
