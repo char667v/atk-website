@@ -1,91 +1,115 @@
 @font-face {
-    font-family: 'Avenir';
-    src: local('Avenir Regular'), url('/Avenir Regualar.woff2') format('woff');
+  font-family: "Avenir";
+  src: local("Avenir Regular"), url("/Avenir Regualar.woff2") format("woff");
 }
 
 /* Variables */
 :root {
-    --primaryColor: #892911;
-    --primaryColor_dark: #6E150F; 
-    --secondaryColor: #015538;
-    --secondaryColor_dark: #003a23;
-    --text-white: #F9F9F9;
-    --text-black: #0e0e0e;
+  --primaryColor: #892911;
+  --primaryColor_dark: #6e150f;
+  --secondaryColor: #015538;
+  --secondaryColor_dark: #003a23;
+  --text-white: #f9f9f9;
+  --text-black: #0e0e0e;
 
-  
-    --spacing-small: 16px;
-    --spacing-medium: 32px;
-    --spacing-large: 48px;
+  --spacing-small: 16px;
+  --spacing-medium: 32px;
+  --spacing-large: 48px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 62,5%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62, 5%;
 }
 
 body {
-    background-color: var(--primaryColor);
-    color: var(--text-white);
-    font-family: "Avenir";  
+  background-color: var(--primaryColor);
+  color: var(--text-white);
+  font-family: "Avenir";
 }
 
-img, image {
-    width: 100%;
-    height: auto;
+img,
+image {
+  width: 100%;
+  height: auto;
 }
 
 /* Styling for fonts */
-h2, h3, h4, summary, p, a {
-    margin-bottom: var(--spacing-small);
+h2,
+h3,
+h4,
+summary,
+p,
+a {
+  margin-bottom: var(--spacing-small);
 }
 
-h1, h2, h3, h4, h5, h6, summary {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: 'Avenir';
-    color: var(--text-black);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+summary {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Avenir";
+  color: var(--text-black);
 }
 
 h1 {
-    font-size: 2.2rem;
-    margin-bottom: var(--spacing-medium);
-    margin-top: var(--spacing-large);
-    text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-medium);
+  margin-top: var(--spacing-large);
+  text-align: center;
 }
 
 h2 {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 h3 {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
-h4, summary {
-    font-size: 0.6rem;
+h4,
+summary {
+  font-size: 0.6rem;
 }
 
-h5, h6 {
-    font-size: 0.6rem;
+h5,
+h6 {
+  font-size: 0.6rem;
 }
 p {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 a {
-    font-weight: 200;
-    color: var(--secondary-color);
+  font-weight: 200;
+  color: var(--secondary-color);
 }
 
 #atkLogo {
-    width: 80px;
-    height: auto;
-    margin-left: var(--spacing-large);
+  width: 80px;
+  height: auto;
+  margin-left: var(--spacing-large);
 }
 
 .content {
-    position: relative;
-    top: 700px;    
+  position: relative;
+  top: 500px;
+  background-color: #f9f9f9;
+}
+
+.categroyCard_grid1,
+categoryCard_grid2,
+categoryCard_grid3,
+categoryCard_grid4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 2px;
 }

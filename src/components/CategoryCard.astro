@@ -2,7 +2,7 @@
 const { title, imgPath } = Astro.props;
 ---
 
-<article class="grid-container">
+
 <section class="grid-card">
   <div class="category-card">
    <div class="content-card">
@@ -15,28 +15,8 @@ const { title, imgPath } = Astro.props;
   </div>
 </section>
 
-  <section class="grid-card">
-    <div class="category-card">
-      <div class="content-card">
-        <img class="background-img" src={imgPath} alt="Tennisracket" />
-        <div class="gradient-card"></div>
-        <h3>
-          <a href="#0">{title}</a> 
-        </h3>
-      </div>
-    </div>
-  </section>
-  <!-- Repeat the above section 6 more times to have a total of 8 grid cards -->
-</article>
-
 
 <style> 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 2px;
-}
 .grid-card {
   display: flex;
   justify-content: center;
@@ -98,14 +78,6 @@ const { title, imgPath } = Astro.props;
   a{
     text-decoration: none;
   }
-  @media (min-width: 768px) {
-  .grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 0;
-  margin: 0;
-}
-}
-
+ 
 </style>
 

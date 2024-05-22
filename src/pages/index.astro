@@ -11,15 +11,11 @@ import breadcrumb_trial from "../components/BreadCrumb.astro";
 <MainLayout title="Arbejdernes Tennisklub"/>
 
 <section class="content"> 
-
 <PrimaryBtn variant="primary1" size="small">TJEK MAKKERBØRS</PrimaryBtn>
 <PrimaryBtn variant="primary2" size="small">LÆS MERE OM TRÆNINGEN</PrimaryBtn>
 
-
 <AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
 <AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
-
-
 
 <!-- <article class="bannerknap">
     <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/>
@@ -36,10 +32,10 @@ import breadcrumb_trial from "../components/BreadCrumb.astro";
 <article class="nyhedsbrev">
     <AccentBtn />
 </article> -->
-
 </section>
 
-
+<!-- ------------------------------------------ -->
+<section class="categoryCard_grid1">
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
 title="JUNIOR"
@@ -48,15 +44,37 @@ title="JUNIOR"
 imgPath="../img/Tennisballsracket.webp"
 title="SENIOR"
 />
-<!-- <CategoryCard 
+ <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
 title="MOTIONIST"
 />
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
 title="ELITE"
-/> -->
-<!-- <CategoryCard 
+/>
+</section>
+<!--  -->
+<section class="categoryCard_grid2"> <!-- Insert in training page -->
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="JUNIOR"
+/>
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="SENIOR"
+/>
+ <CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="MOTIONIST"
+/>
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="ELITE"
+/>
+</section>
+<!--  -->
+<section class="categoryCard_grid3">
+<CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
 title="KLUBMESTERSKABER"
 />
@@ -72,6 +90,9 @@ title="INDSPILSTURNERING"
 imgPath="../img/Tennisballsracket.webp"
 title="ATK-LIGA"
 />
+</section>
+<!--  -->
+<section class="categoryCard_grid4">
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
 title="RESERVATIONSREGLER"
@@ -87,4 +108,6 @@ title="NYT MEDLEM"
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
 title="ÆNDRE MEDLEMSKAB"
-/> -->
+/>
+</section>
+<!-- ------------------------------------------ -->

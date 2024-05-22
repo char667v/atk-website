@@ -1,30 +1,42 @@
 @media (min-width: 768px) {
-    /* Font sizes on pc */
-    h1 {
-        font-size: 5.4rem;
-    }
-    
-    h2 {
-        font-size: 3.8rem;
-    }
-    
-    h3, summary {
-        font-size: 2.6rem;
-    }
-    
-    h4 {
-        font-size: 1.4rem;
-    }
+  /* Font sizes on pc */
+  h1 {
+    font-size: 5.4rem;
+  }
 
-    h5 {
-        font-size: 0.8rem;
-    }
+  h2 {
+    font-size: 3.8rem;
+  }
 
-    h6 {
-        font-size: 0.6rem;
-    }
+  h3,
+  summary {
+    font-size: 2.6rem;
+  }
 
-    p {
-        font-size: 0.8rem;
-    }
+  h4 {
+    font-size: 1.4rem;
+  }
+
+  h5 {
+    font-size: 0.8rem;
+  }
+
+  h6 {
+    font-size: 0.6rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  .categoryCard_grid1,
+  categoryCard_grid2,
+  categoryCard_grid3,
+  categoryCard_grid4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1 fr 1fr;
+    padding: 0;
+    margin: 0;
+  }
 }
