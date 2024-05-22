@@ -25,7 +25,7 @@ import "../styles/pc_style.css";
         <h5>E-MAIL: <span id="email">ATK@ATK-TENNIS.DK</span></h5>
     </div>
 
-    <div>
+    <div class="footerNav">
         <div><a>TRÆNING</a></div>
         <div><a>AKTIVITETER</a></div>
         <div><a>MEDLEMSSKAB</a></div>
@@ -33,10 +33,14 @@ import "../styles/pc_style.css";
         <div><a>FACEBOOK</a></div>
     </div>
 
-    <div>
-        <p></p>
-        <a></a>
-    </div>
+    <div class="newsletterForm">
+        <h4>Nyhedsbrev</h4>
+        <form action="/submit-email" method="POST">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <button type="submit">TILMELD NYHEDSBREV</button>
+        </form>
+      </div>
+  
 </div>
 
 <div class="footerSponsors">
@@ -57,7 +61,7 @@ import "../styles/pc_style.css";
     color: var(--primaryColor);
 }
 footer {
- background-color: var(--text-white);
+  background-color: var(--text-white);
   color: var(--text-black);
   padding-top: 10%;
   position: relative;
@@ -69,11 +73,55 @@ footer a:hover {
 color: var(--primaryColor);
 }
 .footerContent {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: 1fr;
-padding-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2%;
+    margin: 0 var(--spacing-large);
+}
 
+.footerNav a {
+    color: var(--text-black);
+}
+
+.newsletterForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;   
+}
+
+.newsletterForm form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.newsletterForm input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 3%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.newsletterForm button {
+    background-color: var(--secondaryColor);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.newsletterForm button:hover {
+    background-color: var(--secondaryColor_dark);
+}
+
+.newsletterForm button:focus {
+    outline: 2px solid var(--secondaryColor_dark);
+    outline-offset: 2px;
 }
 
 .footerSponsors {
@@ -82,36 +130,34 @@ padding-bottom: 2%;
     justify-content: space-between;
     background-color: rgb(255, 255, 255);
     padding: 0% 5%;
+    flex: 1;
 }
 
 .footerSponsors img {
-    display: flex;
-    align-items: center;
     max-width: 150px;
     height: auto;
 }
 
 #headLogo {
-  
+    /* Placeholder for #headLogo styles if needed */
 }
 
 @media only screen and (max-width: 768px) {
-
     footer {
         clip-path: none;
     }
+
     .footerContent {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 1fr);
-        justify-items: center;
+        flex-direction: column;
+        align-items: center;
     }
 
-   .footerContent > div {
-    width: 100%;
-    margin-left: 30%;
-  }
+    .footerContent > div {
+        width: 100%;
+        margin-bottom: var(--spacing-large);
+    }
 
-  .footerSponsors {
+    .footerSponsors {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -119,9 +165,19 @@ padding-bottom: 2%;
     
   }
 
-  .footerSponsors img {
-  }
+    .footerSponsors img {
+        max-width: 100px;   
+    }
+
+    .newsletterForm button, .newsletterForm input {
+    font-size: 0.6rem;
+    }
+
+    .newsletterForm { 
 }
+
+.newsletterForm form {
+    width: 300px;
     
-    
-</style>
+}
+}

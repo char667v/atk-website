@@ -1,0 +1,45 @@
+---
+const src = Astro.props.src;
+const btnTitle = Astro.props.btnTitle
+---
+<div class="bannerWrapper">
+<a class="bannerBtn" href="">{btnTitle}</a>
+<div class="bannerContainer">
+    <img src=`/img/træning/${src}`>
+</div>
+</div>
+
+<style>
+
+.bannerWrapper {
+  position: relative; /* Ensure the wrapper is the positioning context for the button */
+}
+
+.bannerBtn {
+    position: absolute;
+    background-color: var(--primaryColor);
+    padding: 15px 30px;
+    border-radius: 4px;
+    top: 50%;
+    left: 10%;
+    transform: translate(0, -50%);
+}
+.bannerContainer {
+    width: 100%;
+    height: 200px;
+}
+.bannerContainer img {
+      width: 100%;
+      height: 100%; 
+      object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .bannerContainer {
+    width: 100%;
+    height: 100px;
+}
+
+}
+
+</style>
