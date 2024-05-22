@@ -1,0 +1,43 @@
+---
+// https://cgymdqjrjdkshxuerdil.supabase.co
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw
+export interface ContactProps {
+  role: string;
+  name: string;
+  email: string;
+  phone: string;
+  profile_picture: string;
+}
+const { role, name, email, phone, profile_picture } = Astro.props as ContactProps;
+---
+
+<article class="contactcard">
+  <h6>{role}</h6>
+  <p>{name}</p>
+  <p>{email}</p>
+  <p>{phone}</p>
+  <img src="" alt="" />
+</article>
+
+<style>
+  .contactcard {
+    background-color: aliceblue;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid var(--primaryColor);
+    overflow: hidden;
+    width: 328px;
+    height: 208px;
+    margin: 20px;
+    transition: transform 0.3s; /* smoother transition combined with the hovering */
+    padding: 20px; /* Add padding to the contact card */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+  }
+  .contactcard:hover {
+    transform: scale(1.1);
+  }
+  .contactcard h6,
+  .contactcard p {
+    color: black; /* Set the text color to black for h6 and p elements */
+  }
+</style>
