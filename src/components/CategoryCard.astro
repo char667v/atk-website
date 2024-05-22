@@ -14,8 +14,20 @@ const { title, imgPath } = Astro.props;
    </div>
   </div>
 </section>
-</article>
 
+  <section class="grid-card">
+    <div class="category-card">
+      <div class="content-card">
+        <img class="background-img" src={imgPath} alt="Tennisracket" />
+        <div class="gradient-card"></div>
+        <h3>
+          <a href="#0">{title}</a> 
+        </h3>
+      </div>
+    </div>
+  </section>
+  <!-- Repeat the above section 6 more times to have a total of 8 grid cards -->
+</article>
 
 
 <style> 
@@ -26,7 +38,6 @@ const { title, imgPath } = Astro.props;
   padding: 2px;
 }
 .grid-card {
-  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,19 +45,19 @@ const { title, imgPath } = Astro.props;
   .category-card {
     position: relative;
     border-radius: 10px;
-    border: 2px solid rgb(232, 232, 232);
+    border: 1px solid var(--primaryColor);
     overflow: hidden;
     width: 328px;
     height: 208px;
     margin: 20px;
-    transition: transform 0.3s;/* smoother transition do to the hovering */
+    transition: transform 0.3s;/* smoother transition combined with the hovering */
   } 
   .category-card:hover{
     transform: scale(1.1);
   }
- /*  .content:hover{
+ /*.content:hover{  Should we prefer a "close-up" og img
     transform: scale(1.2);
-  } */ 
+  }*/ 
   .content-card {
     position: absolute;
     z-index: 4;
@@ -91,14 +102,8 @@ const { title, imgPath } = Astro.props;
   .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 2px;
-}
-.grid-card {
-  /* width: 100%; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 }
 
