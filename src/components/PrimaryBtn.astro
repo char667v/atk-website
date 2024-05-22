@@ -1,0 +1,70 @@
+---
+// const button = Astro.props.button;
+// const buttonText = Astro.props.buttonText;
+
+// const {button, buttonText} = Astro.props;
+
+const {variant, size} = Astro.props;
+---
+
+<!-- rød banner-knap på junior -->
+<button class={variant}><slot /></button>
+    
+<!-- rød makkerbørs-knap på forside og træning -->
+<button class={variant}><slot /></button>
+
+
+
+<!-- rød banner-knap på junior -->
+<!-- <article class="bannerknap">
+    <button>{button}</button>
+</article> -->
+
+
+<!-- rød makkerbørs-knap på forside og træning -->
+<!-- <article class="makkerbors">
+    <h4>{buttonText}</h4>
+    <button>{button}</button>
+    <slot />
+</article> -->
+
+
+<style>
+.primary1, .primary2 {
+background-color: var(--primaryColor);
+color: var(--text-white);
+border-radius: 10px;
+padding: 10px;
+font-family: 'Avenir';
+outline: none;
+}
+.primary1, .primary2 a:hover {
+background-color: var(--primaryColor_dark);
+color: var(--text-white);
+}
+
+
+
+
+/* .bannerknap, .makkerbors {
+background-color: var(--primaryColor);
+color: var(--text-white);
+border-radius: 10px;
+padding: 5px;
+}
+
+.bannerknap, .makkerbors a:hover {
+background-color: var(--primaryColor_dark);
+color: var(--primaryColor);
+} */
+
+</style>
+
+
+<script>
+// TILFØJ EVT. TIL JAVASCRIPT FOR ADSKILLELSE AF PRIMARYBTN x2?:
+    
+    // const PrimaryBtn = ({ button }) => (
+    // <button className="primary-btn">{button}</button>); 
+
+</script>

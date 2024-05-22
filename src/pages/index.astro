@@ -1,7 +1,13 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import HeadTitle from "../components/HeadTitle.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import PrimaryBtn from "../components/PrimaryBtn.astro";
+import AccentBtn from "../components/AccentBtn.astro";
+import CategoryCard from "../components/CategoryCard.astro";
+import breadcrumb_trial from "../components/BreadCrumb.astro";
 import TrainingCard from "../components/TrainingCard.astro";
-import img from "../img/atklogo.webp"
 import Banner from "../components/Banner.astro";
 ---
 
@@ -37,3 +43,47 @@ src="bannerBg.png"
 btnTitle="LÆS MERE OM TRÆNING F.EKS"
 />
 
+
+<section class="content"> 
+<PrimaryBtn variant="primary1" size="small">TJEK MAKKERBØRS</PrimaryBtn>
+<PrimaryBtn variant="primary2" size="small">LÆS MERE OM TRÆNINGEN</PrimaryBtn>
+
+<AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
+<AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
+
+<!-- <article class="bannerknap">
+    <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/>
+</article>
+
+<article class="makkerbors">
+    <PrimaryBtn button="TJEK MAKKERBØRS" buttonText="SAVNER DU EN NY TRÆNINGSMAKKER?"/>
+</article>
+
+<article class="banebooking">
+<AccentBtn />
+</article>
+
+<article class="nyhedsbrev">
+    <AccentBtn />
+</article> -->
+</section>
+
+<!-- ------------------------------------------ -->
+<section class="categoryCard_grid1">
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="JUNIOR"
+/>
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="SENIOR"
+/>
+ <CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="MOTIONIST"
+/>
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="ELITE"
+/>
+</section>
