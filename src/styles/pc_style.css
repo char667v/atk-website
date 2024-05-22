@@ -30,9 +30,9 @@
   }
 
   .categoryCard_grid1,
-  categoryCard_grid2,
-  categoryCard_grid3,
-  categoryCard_grid4 {
+  .categoryCard_grid2,
+  .categoryCard_grid3,
+  .categoryCard_grid4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1 fr 1fr;
