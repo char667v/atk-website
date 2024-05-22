@@ -2,71 +2,23 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import HeadTitle from "../components/HeadTitle.astro";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
 import PrimaryBtn from "../components/PrimaryBtn.astro";
 import AccentBtn from "../components/AccentBtn.astro";
-import CategoryCard from "../components/CategoryCard.astro";
 import breadcrumb_trial from "../components/BreadCrumb.astro";
-import TrainingCard from "../components/TrainingCard.astro";
+import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <MainLayout title="Arbejdernes Tennisklub"/>
-<TrainingCard
-teamTitle="Elitetennis"
-teamDescription="Begyndere og letøvede mellem 6-10 år. Træningen ligger lidt sent så mor og far bedre kan følge med."
-src="elitespillerHold.jpg"
-mondayW = "15:00-17:00" 
-mondayS = "N/A"
-tuesdayW = "N/A"
-tuesdayS
-wednesdayW
-wednesdayS
-thursdayW
-thursdayS
-fridayW
-fridayS
-saturdayW
-saturdayS
-sundayW
-sundayS
-team1
-trainingTeam1
-team2
-trainingTeam2
-team3
-trainingTeam3
-/>
 
-<Banner 
-src="bannerBg.png"
-btnTitle="LÆS MERE OM TRÆNING F.EKS"
-/>
+<h1>HYHEDER</h1>
 
+<!-- Indsæt nyhedBIG_verticalScroll -->
 
-<section class="content"> 
-<PrimaryBtn variant="primary1" size="small">TJEK MAKKERBØRS</PrimaryBtn>
-<PrimaryBtn variant="primary2" size="small">LÆS MERE OM TRÆNINGEN</PrimaryBtn>
+<h2>AKTIVITETER</h2>
 
-<AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
-<AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
-
-<!-- <article class="bannerknap">
-    <PrimaryBtn button="LÆS MERE OM TRÆNINGEN"/>
-</article>
-
-<article class="makkerbors">
-    <PrimaryBtn button="TJEK MAKKERBØRS" buttonText="SAVNER DU EN NY TRÆNINGSMAKKER?"/>
-</article>
-
-<article class="banebooking">
-<AccentBtn />
-</article>
-
-<article class="nyhedsbrev">
-    <AccentBtn />
-</article> -->
-</section>
+<!-- Indsæt nyhederSmall -->
 
 <section class="categoryCard_grid1">
 <CategoryCard 
@@ -86,3 +38,19 @@ imgPath="../img/Tennisballsracket.webp"
 title="ELITE"
 />
 </section>
+
+<Banner 
+src="bannerBg.png"
+btnTitle="LÆS MERE OM TRÆNING F.EKS"
+/>
+
+
+<!-- --------------------------------------------------------------------------------- -->
+
+<!-- <section class="content"> 
+<PrimaryBtn variant="primary1" size="small">TJEK MAKKERBØRS</PrimaryBtn>
+<PrimaryBtn variant="primary2" size="small">LÆS MERE OM TRÆNINGEN</PrimaryBtn>
+
+<AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
+<AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
+</section> -->
