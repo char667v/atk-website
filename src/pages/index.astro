@@ -9,8 +9,9 @@ import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 ---
-
 <MainLayout title="Arbejdernes Tennisklub"/>
+<Navigation />
+
 
 <h1>HYHEDER</h1>
 
@@ -41,9 +42,7 @@ title="ELITE"
 
 <Banner 
 src="bannerBg.png"
-btnTitle="LÆS MERE OM TRÆNING F.EKS"
-/>
-
+btnTitle="LÆS MERE OM TRÆNING F.EKS" />
 
 <!-- --------------------------------------------------------------------------------- -->
 
@@ -54,3 +53,5 @@ btnTitle="LÆS MERE OM TRÆNING F.EKS"
 <AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
 <AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
 </section> -->
+
+<Footer />
