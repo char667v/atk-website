@@ -1,6 +1,4 @@
 ---
-// https://cgymdqjrjdkshxuerdil.supabase.co
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw
 export interface ContactProps {
   role: string;
   name: string;
@@ -8,6 +6,7 @@ export interface ContactProps {
   phone: string;
   profile_picture: string;
 }
+
 const { role, name, email, phone, profile_picture } = Astro.props as ContactProps;
 ---
 
@@ -16,7 +15,7 @@ const { role, name, email, phone, profile_picture } = Astro.props as ContactProp
   <p>{name}</p>
   <p>{email}</p>
   <p>{phone}</p>
-  <img src="" alt="" />
+  <img src={profile_picture} alt={`${name}'s Profile Picture`} />
 </article>
 
 <style>
@@ -39,5 +38,10 @@ const { role, name, email, phone, profile_picture } = Astro.props as ContactProp
   .contactcard h6,
   .contactcard p {
     color: black; /* Set the text color to black for h6 and p elements */
+  }
+  .contactcard img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-top: 10px;
   }
 </style>
