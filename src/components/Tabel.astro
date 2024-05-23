@@ -1,46 +1,88 @@
+---
+const title = Astro.props.title;
+
+const hold1 = Astro.props.hold1;
+const hold2 = Astro.props.hold2;
+const hold3 = Astro.props.hold3;
+const hold4 = Astro.props.hold4;
+const hold5 = Astro.props.hold5;
+const hold6 = Astro.props.hold6;
+const hold7 = Astro.props.hold7;
+
+const pris1 = Astro.props.pris1;
+const pris2 = Astro.props.pris2;
+const pris3 = Astro.props.pris3;
+const pris4 = Astro.props.pris4;
+const pris5 = Astro.props.pris5;
+const pris6 = Astro.props.pris6;
+const pris7 = Astro.props.pris7;
+---
+
+
 <table class="trainingTable">
     <thead>
       <tr>
-        <th>Dag</th>
-        <th>Vinter</th>
-        <th>Sommer</th>
+        <th>{title}</th>
+        <th>Pris</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Mandag</td>
-        <td>{mondayW}</td>
-        <td>{mondayS}</td>
+        <td>{hold1}</td>
+        
+        <td>{pris1}</td>
       </tr>
       <tr>
-        <td>Tirsdag</td>
-        <td>{tuesdayW}</td>
-        <td>{tuesdayS}</td>
+        <td>{hold2}</td>
+       
+        <td>{pris2}</td>
       </tr>
       <tr>
-        <td>Onsdag</td>
-        <td>{wednesdayW}</td>
-        <td>{wednesdayS}</td>
+        <td>{hold3}</td>
+       
+        <td>{pris3}</td>
       </tr>
       <tr>
-        <td>Torsdag</td>
-        <td>{thursdayW}</td>
-        <td>{thursdayS}</td>
+        <td>{hold4}</td>
+        
+        <td>{pris4}</td>
       </tr>
       <tr>
-        <td>Fredag</td>
-        <td>{fridayW}</td>
-        <td>{fridayS}</td>
+        <td>{hold5}</td>
+       
+        <td>{pris5}</td>
       </tr>
       <tr>
-        <td>Lørdag</td>
-        <td>{saturdayW}</td>
-        <td>{saturdayS}</td>
+        <td>{hold6}</td>
+     
+        <td>{pris6}</td>
       </tr>
-      <tr>
-        <td>Søndag</td>
-        <td>{sundayW}</td>
-        <td>{sundayS}</td>
-      </tr>
+
     </tbody>
   </table>
+
+  <style>
+    table {
+    border-collapse: collapse;
+    font-size: 0.64rem;
+    text-align: left;
+    color: black;
+  }
+
+  th, td {
+    padding: 10px
+  }
+
+  th {
+    background-color: var(--primaryColor);
+    color: rgb(255, 255, 255);
+  }
+
+  tr:nth-child(even) {
+    background-color: #f3f3f3;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  </style>

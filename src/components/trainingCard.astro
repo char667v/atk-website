@@ -80,13 +80,16 @@ const trainingTeam3 = Astro.props.trainingTeam3;
     </table>
     <div class="signUp">
       <div class="dropdown">
-        <h5 class="dropbtn">TILMELD ET HOLD</h5>
-        <img>
-        <div class="dropdown-content">
-          <a href={team1}>{trainingTeam1}</a>
-          <a href={team2}>{trainingTeam2}</a>
-          <a href={team3}>{trainingTeam3}</a>
+        <div class="dropbtn">
+          <h5 >TILMELD ET HOLD</h5>
+          <img src="/img/svg/redarrowDown 1.svg" data-clicked-src="/img/svg/redarrowUp 1.svg" class="arrowIcon">
         </div>
+        <div class="dropdown-content" id="dropdown-content">
+          <a href="{team1}">{trainingTeam1}</a>
+          <a href="{team2}">{trainingTeam2}</a>
+          <a href="{team3}">{trainingTeam3}</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -110,11 +113,6 @@ const trainingTeam3 = Astro.props.trainingTeam3;
     margin: 1rem;
   } 
 
-  .signUp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   .trainingImg_container {
       grid-row: span 3;
@@ -153,24 +151,52 @@ const trainingTeam3 = Astro.props.trainingTeam3;
     background-color: #ffffff;
   }
 
+/* signUp */
+
+  
+  .dropdown-content a:hover {
+    background-color: var(--primaryColor);
+    color: white;
+  }
+
+
+  .signUp {
+    display: flex;
+    justify-content: center;
+  }
+
   .dropdown {
     position: relative;
     display: inline-block;
     margin-top: 2.5rem;
   }
 
-
-  /* Dropdown Content (Hidden by Default) */
-
   .dropbtn {
-    color: var(--primaryColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 0.8rem;
     text-align: center;
     padding: 2% 5rem;
     border: 2px solid var(--primaryColor);
     border-radius: 4px;
+    white-space: nowrap; 
   }
 
+  .arrowIcon:hover {
+   cursor: pointer;
+  }
+
+  .dropbtn h5 {
+    color: var(--primaryColor);
+  }
+  
+  .dropbtn img {
+    height: 10px;
+    margin-left: 50%;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
 
   .dropdown-content {
     display: none;
@@ -179,7 +205,7 @@ const trainingTeam3 = Astro.props.trainingTeam3;
     width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    
+
   }
 
   /* Links inside the dropdown */
@@ -189,22 +215,6 @@ const trainingTeam3 = Astro.props.trainingTeam3;
     text-decoration: none;
     display: block;
   }
-
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {
-    background-color: var(--primaryColor);
-    color: white;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-    .dropdown:hover .dropbtn {
-
-  color: white;
-  background-color: var(--primaryColor);
-}
-    
 
     @media only screen and (max-width: 768px) {
       .trainingCard {
@@ -226,4 +236,21 @@ const trainingTeam3 = Astro.props.trainingTeam3;
     }
 
   </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var dropBtn = document.querySelector('.arrowIcon');
+  var dropDownContent = document.querySelector('.dropdown-content');
+
+  dropBtn.addEventListener('click', function () {
+    if (dropDownContent.style.display === 'none' || dropDownContent.style.display === '') {
+      dropDownContent.style.display = 'block';
+    } else {
+      dropDownContent.style.display = 'none';
+    }
+  });
+});
+</script>
+  
+
 

@@ -3,8 +3,8 @@
   src: local("Avenir Regular"), url("/Avenir Regualar.woff2") format("woff");
 }
 
-body  {
-    cursor: url('/img/racketCursor.png'), auto;
+/*mbody  {
+    cursor: url('/img/racketCursor.png'), auto; 
 }
 
 /* Variables */
@@ -90,11 +90,13 @@ h6 {
 }
 p {
   font-size: 0.6rem;
+  color: var(--text-black);
 }
 
 a {
   font-size: 0.8rem;
   color: var(--secondary-color);
+  text-decoration: none;
 }
 
 #atkLogo {
