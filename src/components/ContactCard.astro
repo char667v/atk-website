@@ -12,7 +12,7 @@ const { role, name, email, phone, profile_picture } = Astro.props as ContactProp
 
 <article class="contactcard">
   <div class="contact-info">
-    <h6>{role}</h6>
+    <h4>{role}</h4>
     <p>{name}</p>
     <p>{email}</p>
     <p>{phone}</p>
@@ -30,8 +30,7 @@ const { role, name, email, phone, profile_picture } = Astro.props as ContactProp
     border: 1px solid var(--primaryColor);
     overflow: hidden;
     width: 328px;
-    height: 208px;
-    margin: 20px;
+    /* Adjust height to fit content */
     padding: 20px; /* Add padding to the contact card */
     box-sizing: border-box; /* Include padding in the element's total width and height */
     display: flex;
@@ -46,12 +45,13 @@ const { role, name, email, phone, profile_picture } = Astro.props as ContactProp
   .contactcard p {
     color: black; /* Set the text color to black for h6 and p elements */
     margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
   }
   .contact-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: flex-start; /* Align items at the start of the container */
+    gap: 4px; /* Add gap between elements for spacing */
   }
   .profile-picture img {
     width: 100px; /* Set the desired width */
