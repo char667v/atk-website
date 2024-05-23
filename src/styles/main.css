@@ -17,7 +17,7 @@ body  {
   --text-black: #0e0e0e;
 
   --spacing-small: 16px;
-  --spacing-medium: 32px;
+  --spacing-medium: 40px;
   --spacing-large: 48px;
 }
 
@@ -98,11 +98,22 @@ a {
   text-decoration: none;
 }
 
+
+/* Logo og text i navigation */
+
 #atkLogo {
   width: 80px;
   height: auto;
-  margin-left: var(--spacing-large);
 }
+
+#atkHome {
+  width: 25%;
+  height: auto;
+}
+
+
+
+/* Content og grids på pages */
 
 .content {
   position: relative;
