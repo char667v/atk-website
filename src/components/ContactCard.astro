@@ -11,11 +11,15 @@ const { role, name, email, phone, profile_picture } = Astro.props as ContactProp
 ---
 
 <article class="contactcard">
-  <h6>{role}</h6>
-  <p>{name}</p>
-  <p>{email}</p>
-  <p>{phone}</p>
-  <img src={profile_picture} alt={`${name}'s Profile Picture`} />
+  <div class="contact-info">
+    <h6>{role}</h6>
+    <p>{name}</p>
+    <p>{email}</p>
+    <p>{phone}</p>
+  </div>
+  <div class="profile-picture">
+    <img src={profile_picture} alt={`${name}'s Profile Picture`} />
+  </div>
 </article>
 
 <style>
@@ -28,9 +32,12 @@ const { role, name, email, phone, profile_picture } = Astro.props as ContactProp
     width: 328px;
     height: 208px;
     margin: 20px;
-    transition: transform 0.3s; /* smoother transition combined with the hovering */
     padding: 20px; /* Add padding to the contact card */
     box-sizing: border-box; /* Include padding in the element's total width and height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s; /* smoother transition combined with the hovering */
   }
   .contactcard:hover {
     transform: scale(1.1);
@@ -38,10 +45,18 @@ const { role, name, email, phone, profile_picture } = Astro.props as ContactProp
   .contactcard h6,
   .contactcard p {
     color: black; /* Set the text color to black for h6 and p elements */
+    margin: 0; /* Remove default margin */
   }
-  .contactcard img {
-    max-width: 100%;
-    border-radius: 50%;
-    margin-top: 10px;
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .profile-picture img {
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    object-fit: cover; /* Ensure the image covers the area, maintaining aspect ratio */
+    border-radius: 50%; /* Make the image circular */
   }
 </style>
