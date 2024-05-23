@@ -2,7 +2,9 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import HeadTitle from "../components/HeadTitle.astro";
 import Navigation from "../components/Navigation.astro";
+import breadcrumb_trial from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
+import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import ContactCard from "../components/ContactCard.astro";
 const coachId = "24"; // Replace with the actual ID of the coach you want
@@ -16,6 +18,7 @@ const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v
 
 console.log("contactInfo", contactInfo);
 ---
+
 
 <MainLayout title="Arbejdernes Tennisklub" />
 
@@ -36,3 +39,55 @@ console.log("contactInfo", contactInfo);
 
   {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
 </section>
+<h1>TRÆNING</h1>
+
+<p>I ATK tilbyder vi et bredt træningstilbud til alle medlemstyper. Træningen 
+   tilrettelægges hver sæson af cheftræneren og forvaltes af vores erfarne trænerteam.
+   Læs herunder mere om de forskellige træningskategorier eller kontakt cheftræneren 
+   for at blive klogere på træningen i ATK
+</p>
+
+<!-- Indsæt contactCard -->
+
+<section class="categoryCard_grid1">
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="JUNIOR"
+/> 
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="MOTIONIST"
+/>
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="SENIOR"
+/>
+<CategoryCard 
+imgPath="../img/Tennisballsracket.webp"
+title="ELITE"
+/>
+</section>
+
+<Banner 
+src="bannerBg.png"
+btnTitle="LÆS MERE OM TRÆNING F.EKS"
+/>
+
+<!-- --------------------------------------------------------------------------------- -->
+
+<style>
+
+  
+</style>
+
+<Banner 
+src="bannerBg.png"
+btnTitle="LÆS MERE OM TRÆNING F.EKS"
+/>
+
+<!-- --------------------------------------------------------------------------------- -->
+
+<style>
+
+  
+</style>
