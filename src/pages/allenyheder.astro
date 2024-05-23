@@ -1,6 +1,12 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
+import Navigation from "../components/Navigation.astro";
+import breadcrumb_trial from "../components/BreadCrumb.astro";
+import CategoryCard from "../components/CategoryCard.astro";
+import Footer from "../components/Footer.astro";
 ---
+<MainLayout title="Nyheder"/>
+<Navigation />
 <section>
     <nav aria-label="breadcrumb">
       <ul class="breadcrumb_list">
@@ -17,6 +23,7 @@
 <!-- Indsæt nyhederSmall -->
 <!-- Indsæt nyhederSmall -->
 
+<Footer />
  <!-- --------------------------------------------------------------------------------- -->
  
  <style>
