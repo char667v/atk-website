@@ -17,7 +17,7 @@
   --text-black: #0e0e0e;
 
   --spacing-small: 16px;
-  --spacing-medium: 32px;
+  --spacing-medium: 40px;
   --spacing-large: 48px;
 }
 
@@ -94,16 +94,27 @@ p {
 }
 
 a {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--secondary-color);
   text-decoration: none;
 }
 
+
+/* Logo og text i navigation */
+
 #atkLogo {
   width: 80px;
   height: auto;
-  margin-left: var(--spacing-large);
 }
+
+#atkHome {
+  width: 25%;
+  height: auto;
+}
+
+
+
+/* Content og grids på pages */
 
 .content {
   position: relative;
@@ -112,9 +123,9 @@ a {
 }
 
 .categroyCard_grid1,
-categoryCard_grid2,
-categoryCard_grid3,
-categoryCard_grid4 {
+.categoryCard_grid2,
+.categoryCard_grid3,
+.categoryCard_grid4 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;

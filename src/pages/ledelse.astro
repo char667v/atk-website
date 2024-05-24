@@ -1,0 +1,44 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Navigation from "../components/Navigation.astro";
+import breadcrumb_trial from "../components/BreadCrumb.astro";
+import CategoryCard from "../components/CategoryCard.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<MainLayout title="Ledelse" />
+<Navigation />
+<section>
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb_list">
+          <li><a href="">Hjem</a></li><!-- huks at tilføje links -->
+          <li><a href="">Ledelse</a></li><!-- huks at tilføje links -->
+      </ul>
+  </nav>
+ </section>
+
+ <h1>LEDELSE</h1>
+
+ <h3>BESTYRELSE</h3>
+ <h4>ATKs bestyrelse valgt på generalforsamlingen D 8. februar 2024</h4>
+
+  <!-- contactCard-->
+
+ <h3>SEKRETARIAT</h3>
+ <h4>Sekretariatet tager sig af alle praktiske ting omkring indmeldelse, udmeldelse, 
+    opkrævning af gebyrer og henvendelse til klubben.
+ </h4>
+  <p>
+    Mail: atk@atk-tennis.dk <br>
+    Tlf: 38 34 64 38
+  </p>
+
+  <!-- contactCard-->
+  
+  <Footer />
+  <!-- --------------------------------------------------------------------------------- -->
+  
+   <style>
+  
+      
+   </style>

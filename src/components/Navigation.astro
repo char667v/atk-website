@@ -48,10 +48,8 @@ header {
         }
     
         nav {
-            margin: var(--spacing-large);
             display: flex;
-            padding: 10px;
-
+          margin: var(--spacing-medium) 0;
         }
 
         nav a {
@@ -70,6 +68,7 @@ header {
             border-right: none;
         }
 
+
         .navBtns {
              display: flex;
              align-items: center;
@@ -85,7 +84,6 @@ header {
         
         #baneBook {
             text-decoration: none;
-            width: 150px;
             background-color: var(--secondaryColor);
             color: var(--text-white);
             text-align: center;
@@ -155,29 +153,62 @@ header {
   }
 }
 
+
+
+@media only screen and (max-width: 1170px) {
+  a {
+    font-size: 0.8rem;
+}
+}
+
+
+@media only screen and (max-width: 924px) {
+  a {
+    font-size: 0.7rem;
+}
+#baneTilstand {
+  width: 36px;
+}
+
+nav a {
+  padding: 0px 6px;
+          
+        }
+}
+
      @media only screen and (max-width: 768px) {
         header {
             position: relative;
             z-index: 1;
             clip-path: none;
-            height: 150px;
+            height: 60px;
+        }
+
+        #baneTilstand {
+            width: 36px;
+         
         }
         .headerContent {
           margin: 0;
         }
 
-        #atkLogo {
+        #atkHome {
           margin-left: var(--spacing-small)
         }
 
         .navBtns {
           margin-right: var(--spacing-small)
         }
+
+        #baneTilstand {
+            margin-left: var(--spacing-small);
+        }
+
         nav {
             display: none; 
             flex-direction: column; 
-            top: 150px;
-            margin: 0;
+            margin:0;
+            top: 60px;
             width: 100%;
             height: 800px;
             position: absolute;
@@ -193,9 +224,10 @@ nav.reverse {
 }
     
     nav a {
+      font-size: 1.2rem;
       color: var(--text-white);
       border-right: none;
-      padding: 20px;
+      padding: 10px;
       text-align: center;
       width: 100%;
     }
@@ -206,16 +238,16 @@ nav.reverse {
 
     #menu-toggle, #close-menu {
         display: block;
-        padding: 10px;
+        margin-right: var(--spacing-small);
         color: var(--text-black);
     }
     #menu-toggle {
-        font-size: 3.3em;
+        font-size: 2.2em;
     }
 
     #close-menu {
         display: none;
-        font-size: 3.8em;
+        font-size: 2.6em;
     }
 
     
