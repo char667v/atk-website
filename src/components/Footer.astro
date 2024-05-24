@@ -53,41 +53,41 @@ import "../styles/pc_style.css";
 </footer>
 
 <style>
-.footerContent h5, .footerContent p {
-  margin: 0; 
-}
 
-#tlf, #email {
-    color: var(--primaryColor);
-}
 footer {
   background-color: var(--text-white);
-  color: var(--text-black);
-  padding-top: 10%;
-  position: relative;
-  width: 100%;
   clip-path: polygon(100% 100%, 0 100%, 0 30%, 100% 0, 100% 30%);
 }
 
-footer a:hover {
-color: var(--primaryColor);
-}
 .footerContent {
     display: flex;
     justify-content: space-between;
     padding-bottom: 2%;
     margin: 0 var(--spacing-large);
+    padding-top: 15%;
 }
 
-.footerNav a {
+footer a {
     color: var(--text-black);
+}
+
+footer a:hover {
+    color: var(--primaryColor);
+}
+
+.footerContent h5, .footerContent p {
+  margin: 0%;
+}
+
+#tlf, #email {
+    color: var(--primaryColor);
 }
 
 .newsletterForm {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;   
+    width: 20%; 
 }
 
 .newsletterForm form {
@@ -99,6 +99,7 @@ color: var(--primaryColor);
 
 .newsletterForm input[type="email"] {
     width: 100%;
+    font-size: 0.8rem;
     padding: 10px;
     margin-bottom: 3%;
     border: 1px solid #ccc;
@@ -108,11 +109,13 @@ color: var(--primaryColor);
 
 .newsletterForm button {
     background-color: var(--secondaryColor);
+    font-size: 0.8rem;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+   
 }
 
 .newsletterForm button:hover {
@@ -142,12 +145,15 @@ color: var(--primaryColor);
     /* Placeholder for #headLogo styles if needed */
 }
 
-@media only screen and (max-width: 768px) {
+
+
+@media only screen and (max-width: 948px) {
     footer {
         clip-path: none;
     }
 
     .footerContent {
+        padding-top: 5%;
         flex-direction: column;
         align-items: center;
     }
@@ -180,4 +186,18 @@ color: var(--primaryColor);
     width: 300px;
     
 }
+}
+
+@media only screen and (max-width: 768px) {
+    h4 {
+    font-size: 1.4rem;
+  }
+
+  h5 {
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
 }
