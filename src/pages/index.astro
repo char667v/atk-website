@@ -44,16 +44,165 @@ title="ELITE"
 />
 </section>
 
-<CarrouselScroll />
-
-<!-- --------------------------------------------------------------------------------- -->
-
-<!-- <section class="content"> 
-<PrimaryBtn variant="primary1" size="small">TJEK MAKKERBØRS</PrimaryBtn>
-<PrimaryBtn variant="primary2" size="small">LÆS MERE OM TRÆNINGEN</PrimaryBtn>
-
-<AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
-<AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
-</section> -->
-
+<div class="carousel-container">
+    <div class="carousel-track">
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="11/11"
+          headline="wow"
+          subheadline="EPIC BATTLE BETWEEN THE "
+        />
+      </div>
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="11/11"
+          headline="wow"
+          subheadline="EPIC BATTLE BETWEEN THE "
+        />
+      </div>
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="11/11"
+          headline="wow"
+          subheadline="EPIC BATTLE BETWEEN THE "
+        />
+      </div>
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="12/12"
+          headline="amazing"
+          subheadline="INCREDIBLE SHOWDOWN"
+        />
+      </div>
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="01/01"
+          headline="unbelievable"
+          subheadline="UNREAL CLASH"
+        />
+      </div>
+    </div>
+    <div class="carousel-navigation">
+      <img src="/img/svg/redarrowLeft 1.svg" id="prevButton"></img>
+      <img src="/img/svg/redarrowRight 1.svg" id="nextButton"></img>
+    </div>
+    <div class="carousel-indicators">
+      <div class="carousel-indicator active" data-slide-to="0"></div>
+      <div class="carousel-indicator" data-slide-to="1"></div>
+      <div class="carousel-indicator" data-slide-to="2"></div>
+      <div class="carousel-indicator" data-slide-to="3"></div>
+      <div class="carousel-indicator" data-slide-to="4"></div>
+    </div>
+  </div>
+  
 <Footer />
+
+
+<style>
+
+.carousel-container {
+      width: 50%;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      margin: auto;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-item {
+      flex: 0 0 100%;
+    }
+    .carousel-navigation {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 96%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+    .carousel-navigation img {
+      background: rgba(255, 255, 255, 0.5);
+      width: 50px;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .carousel-indicators {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      z-index: 2;
+    }
+    .carousel-indicator {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .carousel-indicator.active {
+      background-color: #555;
+    }
+  </style>
+
+<script>
+    const track = document.querySelector('.carousel-track') as HTMLElement;
+    const items = document.querySelectorAll('.carousel-item') as NodeListOf<HTMLElement>;
+    const totalItems = items.length;
+    const itemWidth = items[0].offsetWidth;
+    const indicators = document.querySelectorAll('.carousel-indicator');
+  
+    let index = 0;
+  
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * itemWidth}px)`;
+      updateIndicators();
+    }
+  
+    function nextSlide() {
+      index = (index < totalItems - 1) ? index + 1 : 0;
+      updateCarousel();
+    }
+  
+    function prevSlide() {
+      index = (index > 0) ? index - 1 : totalItems - 1;
+      updateCarousel();
+    }
+  
+    function goToSlide(idx: number) {
+      index = idx;
+      updateCarousel();
+    }
+  
+    function updateIndicators() {
+      indicators.forEach((indicator, idx) => {
+        if (idx === index) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+  
+    document.getElementById('nextButton')!.addEventListener('click', nextSlide);
+    document.getElementById('prevButton')!.addEventListener('click', prevSlide);
+  
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+        const slideTo = target.getAttribute('data-slide-to');
+        if (slideTo !== null) {
+          goToSlide(parseInt(slideTo));
+        }
+      });
+    });
+  
+    setInterval(nextSlide, 5000); // Auto slide every 5 seconds
+  </script>
