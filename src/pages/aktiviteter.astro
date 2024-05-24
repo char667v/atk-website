@@ -4,46 +4,45 @@ import Navigation from "../components/Navigation.astro";
 import breadcrumb_trial from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Footer from "../components/Footer.astro";
+import Newscard from "../components/Newscard.astro";
+
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+}).then((response) => response.json());
+
+console.log("newsData", newsData);
 ---
-<MainLayout title="Aktiviteter"/>
+
+<MainLayout title="Aktiviteter" />
 <Navigation />
 
 <section>
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb_list">
-        <li><a href="">Hjem</a></li> <!-- husk at tilføje links -->
-        <li><a href="">Aktiviteter</a></li> <!-- husk at tilføje links -->
+      <li><a href="">Hjem</a></li>
+      <!-- husk at tilføje links -->
+      <li><a href="">Aktiviteter</a></li>
+      <!-- husk at tilføje links -->
     </ul>
-</nav>
+  </nav>
 </section>
 
 <h1>AKTIVITETER</h1>
+<section class="news-grid">
+  {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+</section>
 
 <!-- Indsæt nyhedBIG_verticalScroll -->
 
-<section class="categoryCard_grid3"> 
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="KLUBMESTERSKABER"
-/>
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="DOUBLETURNERING"
-/>
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="INDSPILSTURNERING"
-/>
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="ATK-LIGA"
-/>
+<section class="categoryCard_grid3">
+  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="KLUBMESTERSKABER" />
+  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="DOUBLETURNERING" />
+  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
+  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="ATK-LIGA" />
 </section>
 
 <Footer />
 <!-- --------------------------------------------------------------------------------- -->
-
-<style>
-
-  
-</style>
