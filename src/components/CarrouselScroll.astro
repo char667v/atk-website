@@ -1,88 +1,133 @@
----
-export interface NewsProps {
-  news_image: string;
-  date: string;
-  headline: string;
-  subheadline: string;
-}
 
-const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
----
 
-<section class="carrousel">
-<div class="slide-container">
-  <div class="slide-content">
-    <div class="news_wrapper">
-      <div class="news_card">
-      <div class="image-content">
-              
+<!-- 
 
-              <div class="card-image">
-                <img src="/img/boldnet.webp" alt="" class="news-img">
+<section class="carousel-component">
+<div class="carousel-container">
+  <img id="scrollLeft"  src="/img/svg/redarrowLeft 1.svg">
+    <div class="carousel">
+        <div class="news_card">
+          <div class="card-image">
+             <img src="/img/boldnet.webp" alt="" class="news-img">
+          </div>
+          <div class="card-content">
+              <p class="news-date">{date}</p>
+              <h4 class="news-headline">{headline}</h4>
+              <p class="news-subheadline">{subheadline}</p>
+              <div class="read-more">
+                <a>LÆS MERE</a>
+                <img src="/img/svg/redarrowRight 1.svg" class="arrowIcon">
               </div>
+          </div>
         </div>
 
-        <div class="card-content">
-          <p class="news-date">{date}</p>
-        <h4 class="news-headline">{headline}</h4>
-        <p class="news-subheadline">{subheadline}</p>
+        <div class="news_card">
+          <div class="card-image">
+             <img src="/img/boldnet.webp" alt="" class="news-img">
+          </div>
+          <div class="card-content">
+              <p class="news-date">{date}</p>
+              <h4 class="news-headline">{headline}</h4>
+              <p class="news-subheadline">{subheadline}</p>
+              <div class="read-more">
+                <a>LÆS MERE</a>
+                <img src="/img/svg/redarrowRight 1.svg" class="arrowIcon">
+              </div>
+          </div>
+        </div>
 
-        <div class="read-more">
-          <a>LÆS MERE</a>
-          <img src="/img/svg/redarrowRight 1.svg" class="arrowIcon">
+        <div class="news_card">
+          <div class="card-image">
+             <img src="/img/boldnet.webp" alt="" class="news-img">
+          </div>
+          <div class="card-content">
+              <p class="news-date">{date}</p>
+              <h4 class="news-headline">{headline}</h4>
+              <p class="news-subheadline">{subheadline}</p>
+              <div class="read-more">
+                <a>LÆS MERE</a>
+                <img src="/img/svg/redarrowRight 1.svg" class="arrowIcon">
+              </div>
+          </div>
         </div>
-        
+
+        <div class="news_card">
+          <div class="card-image">
+             <img src="/img/boldnet.webp" alt="" class="news-img">
+          </div>
+          <div class="card-content">
+              <p class="news-date">{date}</p>
+              <h4 class="news-headline">{headline}</h4>
+              <p class="news-subheadline">{subheadline}</p>
+              <div class="read-more">
+                <a>LÆS MERE</a>
+                <img src="/img/svg/redarrowRight 1.svg" class="arrowIcon">
+              </div>
+          </div>
         </div>
+       
     </div>
-  </div>
+    <img  id="scrollRight" src="/img/svg/redarrowRight 1.svg">
 </div>
 </section>
-<style >
+ 
+  
+<style>
 
-.carrousel {
+ 
+.carousel-component {
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.slide-container {
+}
+.carousel-container {
   max-width: 1120px;
   width: 100%;
-  background-color: grey;
-  padding: 40px 0;
-}
-.slide-content {
-  margin: 0 40px;
-}
-.news_card {
-  width: 500px;
-  border-radius: 25px;
   background-color: white;
-}
-
-.image-content,
-.card-content {
-  display: flex;
-  flex-direction: column;
-  padding: 10 14px;
-  
-}
-
-.image-content {
-  border-radius: 25px;
+  padding: 20px;
   position: relative;
-  row-gap: 5px; 
+}
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 2%;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.card-image,
+#scrollLeft, #scrollRight {
+    width: 50px;
+    height: auto;
+    padding: 0 5px;
+    border-radius: 200%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+  }
+
+  #scrollRight {
+    right: 2%;
+  }
+  #scrollLeft {
+    left: 2%;
+  }
+
+.news_card {
+  width: 340px;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+
 .news-img {
   border-radius: 25px 25px 0 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 
 }
-  
+
+ .card-content {
+  display: flex;
+  flex-direction: column;
+}
 
 .read-more {
   display: flex;
@@ -91,9 +136,9 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
   color: var(--primaryColor);
   cursor: pointer;
   white-space: nowrap;
+  margin-right: 3%;
   
 }
-
   .read-more img {
     height: 12px;
     margin-left: 5px;
@@ -103,21 +148,64 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
   .news-date {
     font-size: 0.8em; 
     color: gray; 
-    margin: 0;
+   
   }
 
   .news-headline {
     font-size: 1.2em;
-    margin: 0;
-  }
 
+  }
   .news-subheadline {
     font-size: 1em; 
-    margin: 0;
+   
   }
 
+  .news-date, .news-headline, .news-subheadline {
+  margin-left: 2%;
+}
+
+@media only screen and (max-width: 930px) {
+  .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+}
+}
+@media only screen and (max-width: 600px) {
+  .carousel {
+    grid-auto-columns: 100%;
+}
+}
 </style>
-<!-- 
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    const carrousel = document.querySelector(".carousel");
+
+    let isDragging = false; // Flag to track if dragging is in progress
+
+    const dragStart = (e) => {
+      isDragging = true;
+    }
+
+    const dragging = (e) => {
+      if (isDragging) {
+        console.log(e.pageX);
+      }
+    }
+
+    const stopDragging = (e) => {
+      isDragging = false;
+    }
+
+    carrousel.addEventListener("mousedown", dragStart);
+    carrousel.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", stopDragging);
+  });
+</script>
+
+
+
+
+
 <div class="carousel-container">
   <div class="carousel">
 
