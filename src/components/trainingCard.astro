@@ -240,7 +240,7 @@ const trainingTeam3 = Astro.props.trainingTeam3;
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var dropBtn = document.querySelector('.arrowIcon');
-  var dropDownContent = document.querySelector('.dropdown-content');
+  var dropDownContent = document.querySelector('.dropdown-content') as HTMLElement;
 
   dropBtn.addEventListener('click', function () {
     if (dropDownContent.style.display === 'none' || dropDownContent.style.display === '') {
