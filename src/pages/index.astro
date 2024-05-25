@@ -6,18 +6,23 @@ import Banner from "../components/Banner.astro";
 
 <MainLayout title="Arbejdernes Tennisklub"/>
 
+<div class="main">
+
 <h1>NYHEDER</h1>
-
+<section class="newsBig_grid">
 <!-- Indsæt nyhedBIG_verticalScroll -->
+</section>
 
+<section class="newsSmall_grid">
 <h2>AKTIVITETER</h2>
-
 <!-- Indsæt nyhederSmall -->
+</section>
 
 <section class="categoryCard_grid1">
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
 title="JUNIOR"
+
 />
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
@@ -33,11 +38,13 @@ title="ELITE"
 />
 </section>
 
+<section class="makkerBors_grid">
 <Banner 
 src="bannerBg.png"
-btnTitle="LÆS MERE OM TRÆNING F.EKS"
+btnTitle="TJEK MAKKERBØRS"
 />
-
+</section>
+</div>
 
 <!-- --------------------------------------------------------------------------------- -->
 
@@ -48,3 +55,9 @@ btnTitle="LÆS MERE OM TRÆNING F.EKS"
 <AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
 <AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
 </section> -->
+
+<style>
+.main {
+   
+}
+</style>

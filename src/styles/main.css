@@ -3,8 +3,8 @@
   src: local("Avenir Regular"), url("/Avenir Regualar.woff2") format("woff");
 }
 
-body  {
-    cursor: url('/img/racketCursor.png'), auto;
+body {
+  cursor: url("/img/racketCursor.png"), auto;
 }
 
 /* Variables */
@@ -32,6 +32,11 @@ body {
   background-color: var(--primaryColor);
   color: var(--text-white);
   font-family: "Avenir";
+}
+.main {
+  background-color: #f9f9f9;
+  margin: 0% 10%;
+  padding: 5%;
 }
 
 img,
@@ -78,7 +83,6 @@ h3 {
   font-size: 0.8rem;
 }
 
-
 h4,
 summary {
   font-size: 0.6rem;
@@ -108,7 +112,7 @@ a {
   top: 500px;
   background-color: #f9f9f9;
 }
-
+/* styleing for categories */
 .categroyCard_grid1,
 .categoryCard_grid2,
 .categoryCard_grid3,

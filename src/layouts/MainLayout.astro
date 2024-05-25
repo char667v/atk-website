@@ -20,15 +20,20 @@ import "../styles/pc_style.css";
     </head>
     
     <body>
+      <header>
         <Navigation />
+      </header>
 
+      <main class="white-background">
         <article>
             <slot />
         </article>
-       
-        <Footer />
-    </body>
+      </main>
 
+      <footer>
+        <!-- <Footer /> -->
+      </footer>   
+    </body>
 </html>
 
 

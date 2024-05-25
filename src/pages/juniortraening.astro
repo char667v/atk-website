@@ -1,11 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import HeadTitle from "../components/HeadTitle.astro";
+/* import HeadTitle from "../components/HeadTitle.astro";
 import Navigation from "../components/Navigation.astro";
-import breadcrumb_trial from "../components/BreadCrumb.astro";
+import breadcrumb_trial from "../components/BreadCrumb.astro"; */
 import Banner from "../components/Banner.astro";
-import Footer from "../components/Footer.astro";
+/* import Footer from "../components/Footer.astro"; */
 ---
+<MainLayout title="Arbejdernes Tennisklub"/>
+
+<main class="traening_grid">
 <section>
     <nav aria-label="breadcrumb">
       <ul class="breadcrumb_list">
@@ -37,10 +40,26 @@ btnTitle="LÆS MERE OM TRÆNING F.EKS"
   <!-- teamplayerCard-->
 
   <!-- eliteplayerCard -->
-
+</main>
   <!-- --------------------------------------------------------------------------------- -->
 
   <style>
+.traening_grid {
+display: flex;
+flex-direction: column;
+padding: 20px;
+}
 
+@media (min-width: 768px) {
+    .# {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  height: auto;
+}
+
+}
     
   </style>
