@@ -96,6 +96,7 @@ const trainingTeam3 = Astro.props.trainingTeam3;
 
     <style>
 
+
   .trainingCard {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -240,17 +241,17 @@ const trainingTeam3 = Astro.props.trainingTeam3;
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var dropBtn = document.querySelector('.arrowIcon');
-  var dropDownContent = document.querySelector('.dropdown-content') as HTMLElement;
+  var dropDownContent = document.querySelector('.dropdown-content');
 
   dropBtn.addEventListener('click', function () {
     if (dropDownContent.style.display === 'none' || dropDownContent.style.display === '') {
       dropDownContent.style.display = 'block';
+      dropBtn.src = dropBtn.dataset.clickedSrc; // Change image to clicked state
     } else {
       dropDownContent.style.display = 'none';
+      dropBtn.src = dropBtn.dataset.originalSrc; // Change image back to original state
     }
   });
 });
 </script>
-  
-
 
