@@ -1,25 +1,60 @@
 ---
-import "../styles/main.css";
-import "../styles/pc_style.css";
----
 
-<ul class="breadcrumb_trial">
-<li><a href="#"><h2>Hjem</h2></a></li>
-<li><a href="#"><h2>Træning</h2></a></li>
-<li><a href="#"><h2>Aktiviteter</h2></a></li>
-<li><a href="#"><h2>Medlemskab</h2></a></li>
-<li><a href="#"><h2>Om ATK</h2></a></li>
-<li><a href="#"><h2>Juniortræning</h2></a></li>
-<li><a href="#"><h2>Motionisttræning</h2></a></li>
-<li><a href="#"><h2>Seniortræning</h2></a></li>
-<li><a href="#"><h2>Elitetræning</h2></a></li>
-<li><a href="#"><h2>Ledelse</h2></a></li>
-<li><a href="#"><h2>Udvalg</h2></a></li>
-<li><a href="#"><h2>Alle Nyheder</h2></a></li>
-<li><a href="#"><h2>Rutinerede veteraner vinder..</h2></a></li>
-<li><a href="#"><h2>Doubleturnering udendørs..</h2></a></li>
-</ul>
+const { breadtitle} = Astro.props;
+---
+<section class="breadcrumb_trail">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb_list">
+         <li>{breadtitle}</li>
+      </ol>
+    </nav>
+ </section>
+
+<!-- --------------------------------------------------------------------------------- -->
 
 <style> 
+   @media (min-width: 768px) {
 
-   </style>
+    .breadcrumb_trail {
+         display: inline-block;
+      }
+      .breadcrumb_list {
+         list-style: none;
+         display: flex;
+         padding: 0;
+      }
+      .breadcrumb_list li {
+         /* position: relative; */
+         padding-right: 10px; /* Space for separator */
+      }
+      .breadcrumb_list li::before {
+         content: "<";
+         margin-right: 5px;
+         color: #e18802;  
+      }
+      .breadcrumb_list li + li::before {
+        content: "/";
+        margin-right: 5px;
+      }
+      .breadcrumb_list li a {
+         text-decoration: none;
+         color: var(--text-black);
+         position: relative;
+         padding-right: 4px;
+      }
+      .breadcrumb_list li a::after {
+         content: "";
+         position: absolute;
+         left: 0;
+         bottom: -2px;
+         width: 0;
+         height: 2px;
+         background-color: #ff9900;
+         transition: width 0.3s ease;
+      }
+      .breadcrumb_list li a:hover::after {
+         width: 100%;
+      }
+}
+
+</style>

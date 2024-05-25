@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 ---
@@ -7,6 +8,12 @@ import Banner from "../components/Banner.astro";
 <MainLayout title="Arbejdernes Tennisklub"/>
 
 <div class="main">
+     <section class="breadcrumb_trail">
+        <BreadCrumb breadtitle="Hjem"/> 
+        <BreadCrumb breadtitle="Træning"/>
+        <BreadCrumb breadtitle="Aktiviteter"/>
+        <BreadCrumb breadtitle="Junior"/>
+    </section>
 
 <h1>NYHEDER</h1>
 <section class="newsBig_grid">
@@ -19,23 +26,29 @@ import Banner from "../components/Banner.astro";
 </section>
 
 <section class="categoryCard_grid1">
-<CategoryCard 
+<a href="/juniortraening">
+<CategoryCard
 imgPath="../img/Tennisballsracket.webp"
-title="JUNIOR"
+title="JUNIOR"/>
+</a>
 
-/>
+<a href="/motionisttraening">
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
-title="SENIOR"
-/>
+title="SENIOR"/>
+</a>
+
+<a href="/seniortraening">
  <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
-title="MOTIONIST"
-/>
+title="MOTIONIST"/>
+</a>
+
+<a href="/elitetraening">
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
-title="ELITE"
-/>
+title="ELITE"/>
+</a>
 </section>
 
 <section class="makkerBors_grid">
@@ -57,7 +70,5 @@ btnTitle="TJEK MAKKERBØRS"
 </section> -->
 
 <style>
-.main {
-   
-}
+
 </style>

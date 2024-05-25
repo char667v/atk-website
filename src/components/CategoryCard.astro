@@ -2,19 +2,17 @@
 const { title, imgPath } = Astro.props;
 ---
 
-
 <section class="grid-card">
   <div class="category-card">
    <div class="content-card">
      <img class="background-img" src={imgPath} alt="Tennisracket" />
      <div class="gradient-card"></div> <!-- Gradient overlay -->
      <h3>
-        <a href="/juniortraening">{title}</a> 
+        {title}
      </h3>
    </div>
   </div>
 </section>
-
 
 <style> 
 .grid-card {
