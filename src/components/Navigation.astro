@@ -5,122 +5,181 @@ import "../styles/pc_style.css";
 ---
 
 <header>
-  <div class="headerContent">
-  
-    <a href="/index" id="atkHome"> <img src="/img/atkHome.webp" alt="logo"></a>
-    
-  
-    <nav>
-        <a href="/traening">TRÆNING</a>
+    <a href="/index" id="atkHome"><img src="/img/atkHome.webp" alt="logo"></a>
+    <nav class="navContainer">
+      <div class="dropdown">
+        <a  href="/traening">TRÆNING</a>
+        <img src="/img/svg/arrowDown 1.svg">
+        <div class="dropdown-content">
+          <a href="/traening1">Juniortræning</a>
+          <a href="/traening2">Motionisttræning</a>
+          <a href="/traening3">Seniortræning</a>
+          <a href="/traening4">Elitetræning</a>
+        </div>
+      </div>
+      <div class="dropdown">
         <a href="/aktiviteter">AKTIVITETER</a>
+        <img src="/img/svg/arrowDown 1.svg">
+        <div class="dropdown-content">
+          <a href="/aktivitet1">Klubmesterskaber</a>
+          <a href="/aktivitet2">Indspilningsturnering</a>
+          <a href="/aktivitet3">Doubleturnering</a>
+          <a href="/aktivitet3">ATK Liga</a>
+        </div>
+      </div>
+      <div class="dropdown">
         <a href="/medlemskab">MEDLEMSSKAB</a>
+        <img src="/img/svg/arrowDown 1.svg">
+        <div class="dropdown-content">
+          <a href="/medlemskab1">Reservationsregler</a>
+          <a href="/medlemskab1">Nyt medlem</a>
+          <a href="/medlemskab1">Ansøg medlemsskab</a>
+          <a href="/medlemskab1">Ændre medlemsskab</a>
+        </div>
+      </div>
+      <div class="dropdown">
         <a href="/omatk" id="noBorder">OM ATK</a>
+        <img src="/img/svg/arrowDown 1.svg">
+        <div class="dropdown-content">
+          <a href="/omatk2">Nyheder</a>
+          <a href="/omatk1">Ledelse</a>
+          <a href="/omatk2">Udvalg</a>
+        </div>
+      </div>
     </nav>
     <div class="navBtns">
-        <a href=".." id="baneBook">BOOK BANE</a>
-        <a href="..." id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="baneTilstand"></a>
+      <a href=".." id="baneBook">BOOK BANE</a>
+      <a href="..." id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="baneTilstand"></a>
     </div>
-    <div id="menu-toggle">&#9776;</div> 
-    <div id="close-menu">&#10006;</div>     
+    <div>
+    <div id="menu-toggle">&#9776;</div>
+    <div id="close-menu">&#10006;</div>
   </div>
 </header>
 
-
 <div class="heroVideo">
-    <video autoplay muted loop>
-      <source src="https://saaa.dk/kea/09_indhold/hero_itmv.webm" type="video/webm">
-    </video>
+  <video autoplay muted loop>
+    <source src="https://saaa.dk/kea/09_indhold/hero_itmv.webm" type="video/webm">
+  </video>
 </div>
 
-
 <style>
-header {
-            background-color: var(--text-white);
-            clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%, 0 70%);
-            height: 150px;
-            width: 100%;
-            position: relative; 
-            z-index: 10;
-        }
 
-        .headerContent {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin: 0 var(--spacing-large);
-        }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--text-white);
+    padding-left: var(--spacing-large);
+    /* clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%, 0 70%); */
+    height: 175px;
+    width: 100%;
+    position: relative; 
+    z-index: 10;
+  }
 
-        nav {
-          display: flex;
-          margin: var(--spacing-medium) 0;
-        }
+  
+  nav a {
+    font-size: 1rem;
+    color: var(--text-black);
+    margin-bottom: 20px;
+  }
 
-        nav a {
-            color: var(--text-black);
-            text-decoration: none;
-            padding: 0px 15px;
-            border-right: 1px solid var(--text-black);
-        }
+  nav a:hover {
+    color: var(--primaryColor);
+  }
+  .dropdown {
+    display: flex;
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .dropdown img {
+    width: 12px;
+    height: auto;
+  }
 
-        nav a:hover {
-            color: var(--primaryColor);
-            scale: 1.05;
-        }
+  .dropdown-content {
+    display: none;
+    border-radius: 4px;
+    position: absolute;
+    background-color: var(--text-white);
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    animation: fadeIn 0.4s ease forwards; /* Apply fade-in animation */
+  }
 
-        #noBorder {
-            border-right: none;
-        }
+ 
+.dropdown-content a {
+  font-size: 0.8rem;
+  padding: 10px 10px 10px 10px;
+  color: var(--text-black);
+  text-decoration: none;
+  display: block;
+  border: none;
+}
 
+.dropdown-content a:hover {
+  background-color: var(--primaryColor);
+  color: var(--text-white);
+  
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navBtns {
+  display: flex;
+  align-items: center;
+}
 
-        .navBtns {
-             display: flex;
-             align-items: center;
+#baneTilstand {
+  width: 42px;
+  height: auto;
+  margin-top: 5%;
+  margin-left: var(--spacing-small);
+}
 
-        }
+#baneBook {
+  background-color: var(--secondaryColor);
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
 
-        #baneTilstand {
-            width: 42px;
-            height: auto;
-            margin-top: 5%;
-            margin-left: var(--spacing-medium);
-        }
-        
-        #baneBook {
-            text-decoration: none;
-            background-color: var(--secondaryColor);
-            color: var(--text-white);
-            text-align: center;
-            padding: 10px 20px;
-            border-radius: 4px;
-        }
-        #baneBook:hover {
-          background-color: var(--secondaryColor_dark);
-        }
+#baneBook:hover {
+  background-color: var(--secondaryColor_dark);
+}
 
-        .heroVideo {
-            position: absolute;
-             top: 0;
-            left: 0;
-            width: 100%;
-            height: 90vh; 
-            overflow: hidden; 
-        }
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
 
-        .heroVideo video {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-        }
-        #menu-toggle {
-            display: none;
-        }
+.heroVideo video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        #close-menu {
-            display: none;
-        }
+#menu-toggle #close-menu {
+  display: none;
+}
 
-        @keyframes slideInFromTop {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideInFromTop {
   0% {
     transform: translateY(-100%);
   }
@@ -156,104 +215,111 @@ header {
   }
 }
 
-
-
 @media only screen and (max-width: 1170px) {
   a {
     font-size: 0.8rem;
+  }
 }
-}
-
 
 @media only screen and (max-width: 924px) {
   a {
     font-size: 0.7rem;
-}
-#baneTilstand {
-  width: 36px;
-}
-
-nav a {
-  padding: 0px 6px;
-          
-        }
+  }
+  #baneTilstand {
+    width: 36px;
+  }
+  nav a {
+    padding: 0px 6px;
+  }
 }
 
-     @media only screen and (max-width: 768px) {
-        header {
-            position: relative;
-            z-index: 1;
-            clip-path: none;
-            height: 60px;
-        }
-
-        #baneTilstand {
-            width: 36px;
-         
-        }
-        .headerContent {
-          margin: 0;
-        }
-
-        #atkHome {
-          margin-left: var(--spacing-small)
-        }
-
-        .navBtns {
-          margin-right: var(--spacing-small)
-        }
-
-        #baneTilstand {
-            margin-left: var(--spacing-small);
-        }
-
-        nav {
-            display: none; 
-            flex-direction: column; 
-            margin:0;
-            top: 60px;
-            width: 100%;
-            height: 800px;
-            position: absolute;
-            background-color: var(--primaryColor);
-            transition: height 0.5s ease;
-    }
-    nav.active {
-  animation: slideInFromTop 0.5s forwards; /* Apply slide in animation */
-}
-
-nav.reverse {
-  animation: slideOutToTop 0.5s forwards; /* Apply slide out animation */
-}
-    
-    nav a {
-      font-size: 1.2rem;
-      color: var(--text-white);
-      border-right: none;
-      padding: 10px;
-      text-align: center;
-      width: 100%;
-    }
-
-   #atkText {
+@media only screen and (max-width: 768px) {
+  header {
+    height: 75px;
+    padding-left: 0;
+  }
+  nav {
     display: none;
-   }
+    flex-direction: column;
+    top: 75px;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: var(--primaryColor);
+  }
 
-    #menu-toggle, #close-menu {
-        display: block;
-        margin-right: var(--spacing-small);
-        color: var(--text-black);
-    }
-    #menu-toggle {
-        font-size: 2.2em;
-    }
+  .navContainer {
+  display: flex;
+  flex-direction: column;
+  transition: margin-top 0.5s ease; /* Apply transition effect */
+}
 
-    #close-menu {
-        display: none;
-        font-size: 2.6em;
-    }
+.navContainer.opened {
+  margin-top: 200px; /* Adjust as needed */
+}
 
-    
+  nav a {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    border-right: none;
+    margin-left: 5%;
+    padding: 10px;
+    width: 100%;
+    animation: fadeIn 2.5s ease forwards; 
+  }
+
+.dropdown {
+ margin-top: 10%;
+
+}
+
+.dropdown-content {
+  position: relative;
+  background-color: var(--primaryColor);
+  margin-left: 5%;
+  box-shadow: none;
+
+}
+
+.dropdown-content a {
+  animation: none;
+  color: white;
+ 
+}
+
+
+  #atkHome {
+    padding-left: var(--spacing-small);
+    width: 200px;
+  }
+
+  #baneTilstand {
+    width: 36px;
+  }
+ 
+  nav.active {
+    animation: slideInFromTop 0.7s forwards;
+  }
+
+  nav.reverse {
+    animation: slideOutToTop 0.7s forwards;
+  }
+
+  #menu-toggle, #close-menu {
+    display: block;
+    margin-right: var(--spacing-small);
+    color: var(--text-black);
+  }
+
+  #menu-toggle {
+    font-size: 36px;
+  }
+
+  #close-menu {
+    display: none;
+    font-size: 36px;
+  }
 }
 
 </style>
@@ -266,21 +332,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   menuToggle.addEventListener('click', function () {
     nav.style.display = 'flex';
-    nav.classList.remove('reverse'); 
-    nav.classList.add('active'); 
+    nav.classList.remove('reverse');
+    nav.classList.add('active');
     menuToggle.style.display = 'none';
     closeMenu.style.display = 'block';
   });
 
   closeMenu.addEventListener('click', function () {
-    nav.classList.remove('active'); // Remove active animation class
-    nav.classList.add('reverse'); // Add reverse animation class
+    nav.classList.remove('active');
+    nav.classList.add('reverse');
     setTimeout(function () {
-      nav.style.display = 'none'; // Hide navigation menu after animation
-    }, 500); // Adjust the delay to match the animation duration
+      nav.style.display = 'none';
+    }, 500);
     menuToggle.style.display = 'block';
     closeMenu.style.display = 'none';
   });
 });
-</script>
- 
+</script> 
