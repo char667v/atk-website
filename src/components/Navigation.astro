@@ -11,6 +11,7 @@ import "../styles/pc_style.css";
     
   
     <nav>
+      
         <a href="/traening">TRÆNING</a>
         <a href="/aktiviteter">AKTIVITETER</a>
         <a href="/medlemskab">MEDLEMSSKAB</a>
@@ -18,12 +19,15 @@ import "../styles/pc_style.css";
     </nav>
     <div class="navBtns">
         <a href=".." id="baneBook">BOOK BANE</a>
-        <a href="..." id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="baneTilstand"></a>
+        <div id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="baneTilstand"></div>
+      
     </div>
     <div id="menu-toggle">&#9776;</div> 
     <div id="close-menu">&#10006;</div>     
   </div>
 </header>
+
+
 
 
 <div class="heroVideo">
@@ -32,8 +36,27 @@ import "../styles/pc_style.css";
     </video>
 </div>
 
-
 <style>
+
+.weather-widget {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.current-weather, .rainfall {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 16px;
+    margin: 5px 0;
+}
 header {
             background-color: var(--text-white);
             clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%, 0 70%);
@@ -71,32 +94,6 @@ header {
             border-right: none;
         }
 
-
-        .navBtns {
-             display: flex;
-             align-items: center;
-
-        }
-
-        #baneTilstand {
-            width: 42px;
-            height: auto;
-            margin-top: 5%;
-            margin-left: var(--spacing-medium);
-        }
-        
-        #baneBook {
-            text-decoration: none;
-            background-color: var(--secondaryColor);
-            color: var(--text-white);
-            text-align: center;
-            padding: 10px 20px;
-            border-radius: 4px;
-        }
-        #baneBook:hover {
-          background-color: var(--secondaryColor_dark);
-        }
-
         .heroVideo {
             position: absolute;
              top: 0;
@@ -111,7 +108,51 @@ header {
             width: 100%;
             height: 100%;
             object-fit: cover; 
+        } 
+
+        .navBtns {
+          position: relative;
+             display: flex;
+             align-items: center;
+
         }
+
+        #baneTilstand {
+            width: 42px;
+            height: auto;
+            margin-left: var(--spacing-medium);
+        }
+        
+    #weatherWidget {
+    display: none; /* Initially hide the widget */
+    position: absolute;
+    top: 100px;
+    right: var(--spacing-large);
+    width: 215px;
+    border-radius: 4px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease; /* Add top transition */
+}
+
+#baneTilstand:hover + #weatherWidget {
+    display: block; /* Show the widget */
+    animation: slideInFromTop 0.5s forwards; /* Slide in animation */
+    opacity: 1;
+}
+        #baneBook {
+            text-decoration: none;
+            background-color: var(--secondaryColor);
+            color: var(--text-white);
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+        #baneBook:hover {
+          background-color: var(--secondaryColor_dark);
+        }
+
+    
         #menu-toggle {
             display: none;
         }
@@ -146,7 +187,6 @@ header {
     transform: translateY(0);
   }
 }
-
 @keyframes slideOutTo150 {
   0% {
     transform: translateY(0);
@@ -163,8 +203,6 @@ header {
     font-size: 0.8rem;
 }
 }
-
-
 @media only screen and (max-width: 924px) {
   a {
     font-size: 0.7rem;
@@ -263,6 +301,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var menuToggle = document.getElementById('menu-toggle');
   var closeMenu = document.getElementById('close-menu');
   var nav = document.querySelector('nav');
+  var weatherWidget = document.getElementById('weatherWidget');
+  var baneTilstand = document.getElementById('baneTilstand');
 
   menuToggle.addEventListener('click', function () {
     nav.style.display = 'flex';
@@ -281,6 +321,18 @@ document.addEventListener('DOMContentLoaded', function () {
     menuToggle.style.display = 'block';
     closeMenu.style.display = 'none';
   });
+
+  baneTilstand.addEventListener('click', function () {
+    if (weatherWidget.style.display === 'block') {
+      weatherWidget.style.display = 'none';
+      weatherWidget.style.opacity = '0';
+    } else {
+      weatherWidget.style.display = 'block';
+      weatherWidget.style.opacity = '1';
+    }
+  });
+  
 });
+
 </script>
  

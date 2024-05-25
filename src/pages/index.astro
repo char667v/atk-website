@@ -9,9 +9,7 @@ import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import CarrouselScroll from "../components/CarrouselScroll.astro";
-
-
-
+import TrainingCard from "..compontents/TrainingCard";
 ---
 <MainLayout title="Arbejdernes Tennisklub"/>
 <Navigation />
@@ -94,6 +92,8 @@ title="ELITE"
       <div class="carousel-indicator" data-slide-to="4"></div>
     </div>
   </div>
+
+  <TrainingCard />
   
 <Footer />
 
@@ -101,7 +101,7 @@ title="ELITE"
 <style>
 
 .carousel-container {
-      width: 50%;
+      width: 760px;
       display: flex;
       overflow: hidden;
       position: relative;
@@ -118,7 +118,7 @@ title="ELITE"
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 96%;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
