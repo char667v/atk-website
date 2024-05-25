@@ -82,12 +82,12 @@ const trainingTeam3 = Astro.props.trainingTeam3;
       <div class="dropdown">
         <div class="dropbtn">
           <h5 >TILMELD ET HOLD</h5>
-          <img src="/img/svg/redarrowDown 1.svg" data-clicked-src="/img/svg/redarrowUp 1.svg" class="arrowIcon">
+          <img src="/img/svg/redarrowDown 1.svg" data-clicked-src="/img/svg/redarrowUp 1.svg" data-original-src="/img/svg/redarrowDown 1.svg" class="arrowIcon">
         </div>
         <div class="dropdown-content" id="dropdown-content">
-          <a href="{team1}">{trainingTeam1}</a>
-          <a href="{team2}">{trainingTeam2}</a>
-          <a href="{team3}">{trainingTeam3}</a>
+          <a href={team1}>{trainingTeam1}</a>
+          <a href={team2}>{trainingTeam2}</a>
+          <a href={team3}>{trainingTeam3}</a>
         </div>
       </div>
     </div>
@@ -239,19 +239,18 @@ const trainingTeam3 = Astro.props.trainingTeam3;
   </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  var dropBtn = document.querySelector('.arrowIcon');
-  var dropDownContent = document.querySelector('.dropdown-content');
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropBtn = document.querySelector('.arrowIcon') as HTMLImageElement;
+    const dropDownContent = document.querySelector('.dropdown-content') as HTMLElement;
 
-  dropBtn.addEventListener('click', function () {
-    if (dropDownContent.style.display === 'none' || dropDownContent.style.display === '') {
-      dropDownContent.style.display = 'block';
-      dropBtn.src = dropBtn.dataset.clickedSrc; // Change image to clicked state
-    } else {
-      dropDownContent.style.display = 'none';
-      dropBtn.src = dropBtn.dataset.originalSrc; // Change image back to original state
-    }
+    dropBtn.addEventListener('click', function () {
+      if (dropDownContent.style.display === 'none' || dropDownContent.style.display === '') {
+        dropDownContent.style.display = 'block';
+        dropBtn.src = dropBtn.dataset.clickedSrc!; // Change image to clicked state
+      } else {
+        dropDownContent.style.display = 'none';
+        dropBtn.src = dropBtn.dataset.originalSrc!; // Change image back to original state
+      }
+    });
   });
-});
 </script>
-
