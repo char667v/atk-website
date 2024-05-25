@@ -9,7 +9,7 @@ import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import CarrouselScroll from "../components/CarrouselScroll.astro";
-import TrainingCard from "../components/TrainingCard.astro";
+
 
 
 
@@ -46,10 +46,8 @@ title="ELITE"
 </section>
 
 <CarrouselScroll />
-<TrainingCard 
-trainingTeam1="GG"
-trainingTeam2="FF"
-trainingTeam3="20"/>
+
+
 
 <!-- --------------------------------------------------------------------------------- -->
 
@@ -62,3 +60,113 @@ trainingTeam3="20"/>
 </section> -->
 
 <Footer />
+
+
+<style>
+
+  .carousel-container {
+        width: 760px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        margin: auto;
+      }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .carousel-item {
+        flex: 0 0 100%;
+      }
+      .carousel-navigation {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+      }
+      .carousel-navigation img {
+        background: rgba(255, 255, 255, 0.5);
+        width: 50px;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .carousel-indicators {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        z-index: 2;
+      }
+      .carousel-indicator {
+        width: 10px;
+        height: 10px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      .carousel-indicator.active {
+        background-color: #555;
+      }
+    </style>
+  
+  <script>
+      const track = document.querySelector('.carousel-track') as HTMLElement;
+      const items = document.querySelectorAll('.carousel-item') as NodeListOf<HTMLElement>;
+      const totalItems = items.length;
+      const itemWidth = items[0].offsetWidth;
+      const indicators = document.querySelectorAll('.carousel-indicator');
+    
+      let index = 0;
+    
+      function updateCarousel() {
+        track.style.transform = `translateX(-${index * itemWidth}px)`;
+        updateIndicators();
+      }
+    
+      function nextSlide() {
+        index = (index < totalItems - 1) ? index + 1 : 0;
+        updateCarousel();
+      }
+    
+      function prevSlide() {
+        index = (index > 0) ? index - 1 : totalItems - 1;
+        updateCarousel();
+      }
+    
+      function goToSlide(idx: number) {
+        index = idx;
+        updateCarousel();
+      }
+    
+      function updateIndicators() {
+        indicators.forEach((indicator, idx) => {
+          if (idx === index) {
+            indicator.classList.add('active');
+          } else {
+            indicator.classList.remove('active');
+          }
+        });
+      }
+    
+      document.getElementById('nextButton')!.addEventListener('click', nextSlide);
+      document.getElementById('prevButton')!.addEventListener('click', prevSlide);
+    
+      indicators.forEach(indicator => {
+        indicator.addEventListener('click', (event) => {
+          const target = event.target as HTMLElement;
+          const slideTo = target.getAttribute('data-slide-to');
+          if (slideTo !== null) {
+            goToSlide(parseInt(slideTo));
+          }
+        });
+      });
+    
+      setInterval(nextSlide, 5000); // Auto slide every 5 seconds
+    </script>
