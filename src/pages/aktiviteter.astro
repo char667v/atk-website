@@ -4,9 +4,7 @@ import Navigation from "../components/Navigation.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Footer from "../components/Footer.astro";
-import Newscard from "../components/newsCard.astro";
-
-
+import Newscard from "../components/Newscard.astro";
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter", {
   method: "GET",
@@ -20,58 +18,46 @@ console.log("newsData", newsData);
 
 <MainLayout title="Aktiviteter" />
 
-
 <div class="main">
+  <section class="breadcrumb_trail">
+    <img src="../img/svg/arrowLeft_1.svg" alt="Pil" />
+    <img src="../img/svg/arrowLeft_1.svg" alt="Pil" />
+    <a href="/juniortraening"><BreadCrumb breadtitle="Junior" /></a>
+    <a href="/seniortraening"><BreadCrumb breadtitle="Senior" /></a>
+    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist" /></a>
+    <a href="/elitetraening"><BreadCrumb breadtitle="Elite" /></a>
+  </section>
 
-<section class="breadcrumb_trail">
-    <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-    <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-</section>
+  <h1>AKTIVITETER</h1>
+  <section class="news-grid">
+    {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+  </section>
 
-<h1>AKTIVITETER</h1>
-<section class="news-grid">
-  {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
-</section>
+  <!-- Indsæt nyhedBIG_verticalScroll -->
 
-<!-- Indsæt nyhedBIG_verticalScroll -->
-
-<section class="categoryCard_grid3"><!-- Hvor skal disse linke hen til?? -->
+  <section class="categoryCard_grid3">
+    <!-- Hvor skal disse linke hen til?? -->
     <a href="">
-    <CategoryCard
-    imgPath="../img/Tennisballsracket.webp"
-    title="DOUBLETURNERING">
-    </a>
-    
-    <a href="">
-    <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="INDSPILSTURNERING">
-    </a>
-    
-    <a href="">
-     <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="INDSPILSTURNERING">
-    </a>
-    
-    <a href="">
-    <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="ATK-LIGA">
-    </a>
-    </section>
+      <CategoryCard imgPath="../img/Tennisballsracket.webp" title="DOUBLETURNERING" />
 
-</section>
+      <a href="">
+        <CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
 
+        <a href="">
+          <CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
+
+          <a href="">
+            <CategoryCard imgPath="../img/Tennisballsracket.webp" title="ATK-LIGA" />
+          </a>
+        </a>
+      </a>
+      <!-- --------------------------------------------------------------------------------- -->
+
+      <style>
+        .breadcrumb_trail img {
+          /* pile i brødkrummesti */
+          width: 0.7%;
+        }
+      </style></a>
+  </section>
 </div>
-<!-- --------------------------------------------------------------------------------- -->
-
-<style>
-    .breadcrumb_trail img{ /* pile i brødkrummesti */
-        width:0.7%;
-    }
-     </style>
