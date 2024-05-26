@@ -33,15 +33,8 @@ body {
   color: var(--text-white);
   font-family: "Avenir";
 }
-.main {
-  background-color: #f9f9f9;
-  margin: 0% 10%;
-  padding: 5%;
-}
 
-.mainContent {
- margin: 0 10%;
-}
+
 
 img,
 image {
@@ -108,6 +101,37 @@ a {
   text-decoration: none;
 }
 
+/* Content og grids på pages */
+
+.main {
+  background-color: #f9f9f9;
+  margin: 0% 10%;
+  padding: 0% 10%;
+
+}
+
+.grid-2_3 {
+  grid-template-columns: 1fr;
+  grid-column-gap: 5%;
+grid-row-gap: 5%;
+}
+
+
+.categroyCard_grid1 {
+  grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2%;
+grid-row-gap: 2%;
+}
+
+.categoryCard_grid2,
+.categoryCard_grid3,
+.categoryCard_grid4 {
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 2px;
+}
+
 
 /* Logo og text i navigation */
 
@@ -119,25 +143,4 @@ a {
 #atkHome {
   width: 300px;
   height: auto;
-}
-
-
-
-/* Content og grids på pages */
-
-.content {
-  position: relative;
-  top: 500px;
-  background-color: #f9f9f9;
-}
-/* styleing for categories */
-.categroyCard_grid1,
-.grid-2_3,
-.categoryCard_grid2,
-.categoryCard_grid3,
-.categoryCard_grid4 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 2px;
 }

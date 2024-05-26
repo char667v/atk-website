@@ -33,10 +33,15 @@
   .grid-2_3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(3, 1fr);
-grid-column-gap: 2%;
-grid-row-gap: 2%;
+  grid-template-rows: repeat(3, 1fr);
   }
+
+
+
+/* Content og grids på pages */
+
+
+
   /* styling for categories */
   .categoryCard_grid1,
   .categoryCard_grid2,
