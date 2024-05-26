@@ -19,15 +19,15 @@ console.log("newsData", newsData);
 <MainLayout title="Aktiviteter" />
 <Navigation />
 
-<section>
-  <nav aria-label="breadcrumb">
-    <ul class="breadcrumb_list">
-      <li><a href="">Hjem</a></li>
-      <!-- husk at tilføje links -->
-      <li><a href="">Aktiviteter</a></li>
-      <!-- husk at tilføje links -->
-    </ul>
-  </nav>
+<div class="main">
+
+<section class="breadcrumb_trail">
+    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
 </section>
 
 <h1>AKTIVITETER</h1>
@@ -37,12 +37,39 @@ console.log("newsData", newsData);
 
 <!-- Indsæt nyhedBIG_verticalScroll -->
 
-<section class="categoryCard_grid3">
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="KLUBMESTERSKABER" />
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="DOUBLETURNERING" />
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="ATK-LIGA" />
+<section class="categoryCard_grid3"><!-- Hvor skal disse linke hen til?? -->
+    <a href="">
+    <CategoryCard
+    imgPath="../img/Tennisballsracket.webp"
+    title="DOUBLETURNERING">
+    </a>
+    
+    <a href="">
+    <CategoryCard 
+    imgPath="../img/Tennisballsracket.webp"
+    title="INDSPILSTURNERING">
+    </a>
+    
+    <a href="">
+     <CategoryCard 
+    imgPath="../img/Tennisballsracket.webp"
+    title="INDSPILSTURNERING">
+    </a>
+    
+    <a href="">
+    <CategoryCard 
+    imgPath="../img/Tennisballsracket.webp"
+    title="ATK-LIGA">
+    </a>
+    </section>
+
 </section>
 
-<Footer />
+</div>
 <!-- --------------------------------------------------------------------------------- -->
+
+<style>
+    .breadcrumb_trail img{ /* pile i brødkrummesti */
+        width:0.7%;
+    }
+     </style>
