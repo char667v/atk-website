@@ -8,7 +8,7 @@ import "../styles/pc_style.css";
     <nav class="navContainer">
       <div class="dropdown">
         <a  href="/traening">TRÆNING</a>
-        <img src="/img/svg/arrowDown 1.svg">
+        <img src="/img/svg/arrowDown_1.svg">
         <div class="dropdown-content">
           <a href="/juniortraening">Juniortræning</a>
           <a href="/motionisttraening">Motionisttræning</a>
@@ -18,27 +18,27 @@ import "../styles/pc_style.css";
       </div>
       <div class="dropdown">
         <a href="/aktiviteter">AKTIVITETER</a>
-        <img src="/img/svg/arrowDown 1.svg">
+        <img src="/img/svg/arrowDown_1.svg">
         <div class="dropdown-content">
-          <a href="/aktivitet1">Klubmesterskaber</a>
-          <a href="/aktivitet2">Indspilningsturnering</a>
-          <a href="/aktivitet3">Doubleturnering</a>
-          <a href="/aktivitet3">ATK Liga</a>
+          <a href="https://www.atk-tennis.dk/content/fakta-om-atk">Klubmesterskaber</a>
+          <a href="https://www.atk-tennis.dk/content/indspilningsturnering-2024">Indspilningsturnering</a>
+          <a href="https://www.atk-tennis.dk/content/doubleturnering-2023">Doubleturnering</a>
+          <a href="https://www.atk-tennis.dk/content/atk-liga-2024">ATK Liga</a>
         </div>
       </div>
       <div class="dropdown">
         <a href="/medlemskab">MEDLEMSSKAB</a>
-        <img src="/img/svg/arrowDown 1.svg">
+        <img src="/img/svg/arrowDown_1.svg">
         <div class="dropdown-content">
-          <a href="/medlemskab1">Reservationsregler</a>
-          <a href="/medlemskab1">Nyt medlem</a>
-          <a href="/medlemskab1">Ansøg medlemsskab</a>
-          <a href="/medlemskab1">Ændre medlemsskab</a>
+          <a href="https://www.atk-tennis.dk/content/fakta-om-atk">Reservationsregler</a>
+          <a href="https://www.atk-tennis.dk/sites/default/files/ATK-Indmeldelsesfolder-2022.pdf">Nyt medlem</a>
+          <a href="https://www.atk-tennis.dk/content/medlemskab">Ansøg medlemsskab</a>
+          <a href="https://www.atk-tennis.dk/content/%C3%A6ndring-af-medlemskab">Ændre medlemsskab</a>
         </div>
       </div>
       <div class="dropdown">
         <a href="/omatk" id="noBorder">OM ATK</a>
-        <img src="/img/svg/arrowDown 1.svg">
+        <img src="/img/svg/arrowDown_1.svg">
         <div class="dropdown-content">
           <a href="/allenyheder">Nyheder</a>
           <a href="/ledelse">Ledelse</a>
@@ -58,7 +58,7 @@ import "../styles/pc_style.css";
 
 <div class="heroWrapper">
   <div class="heroVideo">
-    <video autoplay muted loop class="clipPathVideo">
+    <video autoplay muted loop>
       <source src="https://saaa.dk/kea/09_indhold/hero_itmv.webm" type="video/webm">
     </video>
   </div>
@@ -175,7 +175,7 @@ import "../styles/pc_style.css";
  .heroWrapper {
     position: relative  ;
     width: 100%;
-    height: 90vh;
+    height: 60vh;
     overflow: hidden;
   }
 .heroVideo {
@@ -185,7 +185,6 @@ import "../styles/pc_style.css";
   overflow: hidden;
   
 }
-
 .heroVideo video {
   position: relative;
   width: 100%;
@@ -261,8 +260,9 @@ import "../styles/pc_style.css";
 
 @media only screen and (max-width: 768px) {
   header {
+    position: fixed;
     height: 75px;
-    padding-left: 0;
+    padding: 15px 0px 0px 0px;
   }
   nav {
     display: none;

@@ -8,22 +8,24 @@ import Footer from "../components/Footer.astro";
 <MainLayout title="Aktiviteter" />
 
 <div class="main">
+  <section class="breadcrumb_trail">
+    <img src="../img/svg/arrowLeft_1.svg" alt="Pil" />
+    <img src="../img/svg/arrowLeft_1.svg" alt="Pil" />
+    <a href="/juniortraening"><BreadCrumb breadtitle="Junior" /></a>
+    <a href="/seniortraening"><BreadCrumb breadtitle="Senior" /></a>
+    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist" /></a>
+    <a href="/elitetraening"><BreadCrumb breadtitle="Elite" /></a>
+  </section>
 
-<section class="breadcrumb_trail">
-    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
-    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
-    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-</section>
+  <h1>AKTIVITETER</h1>
+  <section class="news-grid">
+    {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+  </section>
 
-<h1>AKTIVITETER</h1>
+  <!-- Indsæt nyhedBIG_verticalScroll -->
 
-
-<!-- Indsæt nyhedBIG_verticalScroll -->
-
-<section class="categoryCard_grid3"><!-- Hvor skal disse linke hen til?? -->
+  <section class="categoryCard_grid3">
+    <!-- Hvor skal disse linke hen til?? -->
     <a href="">
     <CategoryCard
     imgPath="../img/Tennisballsracket.webp"
