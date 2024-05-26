@@ -8,16 +8,18 @@ import Footer from "../components/Footer.astro";
 
 ---
 <MainLayout title="Arbejdernes Tennisklub"/> 
+<div class="main">
 
 <section class="breadcrumb_trail">
-<img src="../img/svg/arrowLeft 1.svg" alt="Pil">
-<img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+<img src="../img/svg/arrowLeft_1.svg" alt="Pil">
+<img src="../img/svg/arrowLeft_1.svg" alt="Pil">
 <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
 <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
 <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
 <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
 </section>
 
+<h1> nyheder</h1>
 
 <section class="newsBig_grid">
   <div class="carousel-container">
@@ -59,8 +61,8 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
     <div class="carousel-navigation">
-      <img src="/img/svg/redarrowLeft 1.svg" id="prevButton"></img>
-      <img src="/img/svg/redarrowRight 1.svg" id="nextButton"></img>
+      <img src="/img/svg/redarrowLeft_1.svg" id="prevButton"></img>
+      <img src="/img/svg/redarrowRight_1.svg" id="nextButton"></img>
     </div>
     <div class="carousel-indicators">
       <div class="carousel-indicator active" data-slide-to="0"></div>
@@ -185,46 +187,75 @@ title="ELITE"/>
       display: flex;
       transition: transform 0.5s ease-in-out;
     }
-    .carousel-item {
-      flex: 0 0 100%;
-    }
-    .carousel-navigation {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 2;
-    }
-    .carousel-navigation img {
-      background: rgba(255, 255, 255, 0.5);
-      width: 50px;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-    }
-    .carousel-indicators {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      z-index: 2;
-    }
-    .carousel-indicator {
-      width: 10px;
-      height: 10px;
-      background-color: #ccc;
-      border-radius: 50%;
-      margin: 0 5px;
-      cursor: pointer;
-    }
-    .carousel-indicator.active {
-      background-color: #555;
-    }
-  </style>
+    .main{
+    margin-top: 540px;
+  }
+  .newsBig_grid{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; 
+   }
+  }
+  .newsSmall_grid{
+    display:flex;
+    margin:10%;
+    gap: 20px;
+  }
+
+  .carousel-container {
+    width: 760px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+  .carousel-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+  .carousel-navigation img {
+    background: rgba(255, 255, 255, 0.5);
+    width: 50px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 2;
+  }
+  .carousel-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .carousel-indicator.active {
+    background-color: #555;
+  }
+</style>
+
 
 <script>
     const track = document.querySelector('.carousel-track') as HTMLElement;
