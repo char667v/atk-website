@@ -1,44 +1,120 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import HeadTitle from "../components/HeadTitle.astro";
-import Navigation from "../components/Navigation.astro";
-import PrimaryBtn from "../components/PrimaryBtn.astro";
-import AccentBtn from "../components/AccentBtn.astro";
-import breadcrumb_trial from "../components/BreadCrumb.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
+import CarrouselScroll from "../components/CarrouselScroll.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
-import CarrouselScroll from "../components/CarrouselScroll.astro";
+
 ---
-<MainLayout title="Arbejdernes Tennisklub"/>
-<Navigation />
+<MainLayout title="Arbejdernes Tennisklub"/> 
+
+<section class="breadcrumb_trail">
+<img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+<img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+<a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+<a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+<a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+<a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
+</section>
 
 
-<h1>HYHEDER</h1>
-
-<!-- Indsæt nyhedBIG_verticalScroll -->
+<section class="newsBig_grid">
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="11/11"
+          headline="wow"
+          subheadline="EPIC BATTLE BETWEEN THE "
+        />
+      </div>
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="11/11"
+          headline="wow"
+          subheadline="EPIC BATTLE BETWEEN THE "
+        />
+      </div>
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="11/11"
+          headline="wow"
+          subheadline="EPIC BATTLE BETWEEN THE "
+        />
+      </div>
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="12/12"
+          headline="amazing"
+          subheadline="INCREDIBLE SHOWDOWN"
+        />
+      </div>
+      <div class="carousel-item">
+        <CarrouselScroll 
+          date="01/01"
+          headline="unbelievable"
+          subheadline="UNREAL CLASH"
+        />
+      </div>
+    </div>
+    <div class="carousel-navigation">
+      <img src="/img/svg/redarrowLeft 1.svg" id="prevButton"></img>
+      <img src="/img/svg/redarrowRight 1.svg" id="nextButton"></img>
+    </div>
+    <div class="carousel-indicators">
+      <div class="carousel-indicator active" data-slide-to="0"></div>
+      <div class="carousel-indicator" data-slide-to="1"></div>
+      <div class="carousel-indicator" data-slide-to="2"></div>
+      <div class="carousel-indicator" data-slide-to="3"></div>
+      <div class="carousel-indicator" data-slide-to="4"></div>
+    </div>
+  </div> 
+</section>
 
 <h2>AKTIVITETER</h2>
-
-<!-- Indsæt nyhederSmall -->
+<section class="newsSmall_grid">
+<CarrouselScroll class="carrousel1"
+date="11/11"
+headline="wow"
+subheadline="EPIC BATTLE BETWEEN THE "
+/>
+<CarrouselScroll class="carrousel1"
+date="22/22"
+headline="wow"
+subheadline="EPIC BATTLE BETWEEN THE "
+/>
+<CarrouselScroll class="carrousel1"
+date="33/33"
+headline="wow"
+subheadline="EPIC BATTLE BETWEEN THE "
+/>
+</section>
 
 <section class="categoryCard_grid1">
+<a href="/juniortraening">
+<CategoryCard
+imgPath="../img/Tennisballsracket.webp"
+title="JUNIOR"/>
+</a>
+
+<a href="/motionisttraening">
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
-title="JUNIOR"
-/>
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="SENIOR"
-/>
+title="SENIOR"/>
+</a>
+
+<a href="/seniortraening">
  <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
-title="MOTIONIST"
-/>
+title="MOTIONIST"/>
+</a>
+
+<a href="/elitetraening">
 <CategoryCard 
 imgPath="../img/Tennisballsracket.webp"
-title="ELITE"
-/>
+title="ELITE"/>
+</a>
 </section>
 
 <div class="carousel-container">

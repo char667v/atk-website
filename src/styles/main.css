@@ -33,6 +33,11 @@ body {
   color: var(--text-white);
   font-family: "Avenir";
 }
+.main {
+  background-color: #f9f9f9;
+  margin: 0% 10%;
+  padding: 5%;
+}
 
 img,
 image {
@@ -78,7 +83,6 @@ h3 {
   font-size: 0.8rem;
 }
 
-
 h4,
 summary {
   font-size: 0.6rem;
@@ -108,7 +112,7 @@ a {
 }
 
 #atkHome {
-  width: 25%;
+  width: 300px;
   height: auto;
 }
 
@@ -121,7 +125,7 @@ a {
   top: 500px;
   background-color: #f9f9f9;
 }
-
+/* styleing for categories */
 .categroyCard_grid1,
 .categoryCard_grid2,
 .categoryCard_grid3,

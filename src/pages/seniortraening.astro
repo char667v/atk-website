@@ -1,33 +1,46 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Navigation from "../components/Navigation.astro";
-import breadcrumb_trial from "../components/BreadCrumb.astro";
-import CategoryCard from "../components/CategoryCard.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
+import ContactCard from "../components/ContactCard.astro";
 import Footer from "../components/Footer.astro";
----
 
-<MainLayout title="Seniortræning" />
-<Navigation />
-<section>
-  <nav aria-label="breadcrumb">
-    <ul class="breadcrumb_list">
-        <li><a href="">Hjem</a></li><!-- huks at tilføje links -->
-        <li><a href="">Træning</a></li><!-- huks at tilføje links -->
-        <li><a href="">Seniortræning</a></li><!-- huks at tilføje links -->
-    </ul>
-</nav>
+const coachId = "24"; // Replace with the actual ID of the coach you want
+const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+}).then((response) => response.json());
+
+console.log("contactInfo", contactInfo);
+---
+<MainLayout title="Seniortræning"/>
+
+<div class="main">
+
+<section class="breadcrumb_trail">
+    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
 </section>
 
-<h1>SEIORTRÆNING 2024</h1>
+<h1>SENIORTRÆNING 2024</h1>
 
  <!-- Indsæt træningsInfo-->
 
  <!-- Indsæt contactCard -->
+ <section class="infocard">
+  {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+</section>
 
  <h3>HOLD- OG TRÆNINGSTIDSPUNKTER</h3>
 
 <!-- holdCard-->
 
+<h3>PRISER</h3>
 
 <p>Seniortræning er for klubbens 4-8. hold- og veteranspillere. Aktuelle spillere 
   bliver inviteret via mail.</p>
@@ -35,10 +48,20 @@ import Footer from "../components/Footer.astro";
 
 <!-- Indsæt tabel-->
 
+
+
+</div>
+
+
 <Footer />
 <!-- --------------------------------------------------------------------------------- -->
 
- <style>
-
+<style>
+    .breadcrumb_trail img{ /* pile i brødkrummesti */
+        width:0.7%;
+    }
     
- </style>
+    p{
+      color: blueviolet;/* OBS: skriften er pr default hvid */
+    }
+    </style>

@@ -2,19 +2,17 @@
 const { title, imgPath } = Astro.props;
 ---
 
-
 <section class="grid-card">
   <div class="category-card">
    <div class="content-card">
      <img class="background-img" src={imgPath} alt="Tennisracket" />
      <div class="gradient-card"></div> <!-- Gradient overlay -->
      <h3>
-        <a href="#0">{title}</a> 
+        {title}
      </h3>
    </div>
   </div>
 </section>
-
 
 <style> 
 .grid-card {
@@ -30,14 +28,7 @@ const { title, imgPath } = Astro.props;
     width: 328px;
     height: 208px;
     margin: 20px;
-    transition: transform 0.3s;/* smoother transition combined with the hovering */
-  } 
-  .category-card:hover{
-    transform: scale(1.1);
   }
- /*.content:hover{  Should we prefer a "close-up" og img
-    transform: scale(1.2);
-  }*/ 
   .content-card {
     position: absolute;
     z-index: 4;
@@ -79,5 +70,21 @@ const { title, imgPath } = Astro.props;
     text-decoration: none;
   }
  
+  @media (min-width: 768px)
+ {
+  .category-card {
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid var(--primaryColor);
+    overflow: hidden;
+    width: 328px;
+    height: 208px;
+    margin: 20px;
+    transition: transform 0.3s;/* smoother transition combined with the hovering */
+  } 
+  .category-card:hover{
+    transform: scale(1.1);
+  }
+ }
 </style>
 
