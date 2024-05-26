@@ -6,6 +6,7 @@ import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import TrainingCard from "../components/trainingCard.astro";
 import Tabel from "../components/Tabel.astro";
+import Traening from "./traening.astro";
 
 const coachId = "23"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -60,7 +61,26 @@ console.log("contactInfo", contactInfo);
 
                 <section>
                 <h4>HOLD- OG TRÆNINGSTIDSPUNKTER</h4>
-                  <TrainingCard />
+                 
+                <div>
+                  <span class="toggle-link" data-target="minitennis">Minitennis</span>
+                  <span class="toggle-link" data-target="klubspiller">Klubspiller</span>
+                  <span class="toggle-link" data-target="turneringsspiller">Turneringsspiller</span>
+                  <span class="toggle-link" data-target="elitespiller">Elitespiller</span>
+                </div>
+
+               <TrainingCard id="minitennis" class="trainingCard"> <!-- Add class="trainingCard" -->
+  <!-- Content for Minitennis -->
+</TrainingCard>
+
+<TrainingCard />
+
+</TrainingCard>
+
+<TrainingCard />
+
+<TrainingCard />
+                  
                
                 </section>
 
@@ -97,14 +117,31 @@ console.log("contactInfo", contactInfo);
     .breadcrumb_trail img{ /* pile i brødkrummesti */
     width:0.7%;
 }
-@media (min-width: 768px) {
-    .# {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
-  width: 100%;
-  height: auto;
-}
-}
+
   </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleLinks = document.querySelectorAll('.toggle-link');
+    const trainingCards = document.querySelectorAll('.trainingCard');
+
+    toggleLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        const targetId = link.getAttribute('data-target');
+        const targetCard = document.getElementById(targetId);
+
+        if (targetCard) {
+          // Toggle the display of the target card
+          targetCard.classList.toggle('active');
+
+          // Hide other cards
+          trainingCards.forEach(card => {
+            if (card.id !== targetId) {
+              card.classList.remove('active');
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
