@@ -74,6 +74,7 @@ h1 {
 
 h2 {
   font-size: 1.1rem;
+  text-align: center;
 }
 
 h3 {
@@ -106,16 +107,26 @@ a {
 .main {
   background-color: #f9f9f9;
   margin: 0% 10%;
-  padding: 0% 10%;
+  padding: 5% 10%;
 
 }
 
-.grid-2_3 {
+.grid-2_3,
+.grid-1_2,
+.grid1 {
+  display: grid;
   grid-template-columns: 1fr;
   grid-column-gap: 5%;
-grid-row-gap: 5%;
+  grid-row-gap: 5%;
 }
 
+.autolayout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  justify-content: center; /* Centers the grid items horizontally */
+  align-items: center;
+}
 
 .categroyCard_grid1 {
   grid-template-columns: 1fr;

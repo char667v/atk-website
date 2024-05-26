@@ -33,9 +33,14 @@
   .grid-2_3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 
+  .grid-1_2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
 
 
 /* Content og grids på pages */

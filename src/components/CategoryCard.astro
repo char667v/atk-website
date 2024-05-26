@@ -2,43 +2,39 @@
 const { title, imgPath } = Astro.props;
 ---
 
-
-  <div class="category-card">
+ 
+  <div class="categoryContainer">
    <div class="content-card">
      <img class="background-img" src={imgPath} alt="Tennisracket" />
-     <div class="gradient-card"></div> <!-- Gradient overlay -->
-     <h3>
-        {title}
-     </h3>
+     <div class="gradient-card"></div> 
+     <h3>{title}</h3>
    </div>
-  </div>
-</section>
+
 
 <style> 
 
-.category-card {
+
+
+.categoryContainer {
     position: relative;
     border-radius: 10px;
-    border: 1px solid var(--primaryColor);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     overflow: hidden;
     width: 100%;
     height: 300px;
     transition: transform 0.3s;/* smoother transition combined with the hovering */
   } 
   .content-card {
-    position: absolute;
-    z-index: 4;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;  
     align-items: center; 
+    
   }
    .background-img {
     position: absolute;
-    top: 0;
-    left: 0;
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -51,7 +47,7 @@ const { title, imgPath } = Astro.props;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(255, 111, 0, 0.741), transparent); /* Orange to transparent gradient */
+    background: linear-gradient(to top, rgba(255, 111, 0, 0.741), transparent); 
     z-index: 5;
   }
  h3 {
@@ -61,19 +57,10 @@ const { title, imgPath } = Astro.props;
     margin-top: 60%;
     z-index: 6;
   }
-  a{
-    text-decoration: none;
-  }
  
   @media (min-width: 768px)
  {
-  .category-card {
-    position: relative;
-    border-radius: 10px;
-    border: 1px solid var(--primaryColor);
-    overflow: hidden;
-    transition: transform 0.3s;/* smoother transition combined with the hovering */
-  } 
+  
   .category-card:hover{
     transform: scale(1.1);
   }

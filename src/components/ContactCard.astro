@@ -24,15 +24,13 @@ const { role, name, email, phone, profile_picture, } = Astro.props as ContactPro
 
 <style>
   .contactcard {
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     position: relative;
     border-radius: 10px;
-    border: 1px solid var(--primaryColor);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     overflow: hidden;
-    width: 328px;
-    /* Adjust height to fit content */
-    padding: 20px; /* Add padding to the contact card */
-    box-sizing: border-box; /* Include padding in the element's total width and height */
+    width: 100%;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;

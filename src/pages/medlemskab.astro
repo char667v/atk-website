@@ -1,82 +1,86 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Footer from "../components/Footer.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Navigation from "../components/Navigation.astro";
 import Tabel from "../components/Tabel.astro";
+import Footer from "../components/Footer.astro";
+import Banner from "../components/Banner.astro";
 ---
+
+
 
 <MainLayout title="Medlemsskab"/>
 
 <div class="main">
-            <section class="breadcrumb_trail">
-                <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
-                <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
-                <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-                <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-                <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-                <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-            </section>
-
-            <h1>MEDLEMSKAB</h1>
-            <h4>LUKKET FOR OPTAGELSE AF NYE MEDLEMMER</h4> 
+    <section class="breadcrumb_trail">
+      <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+      <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+      <a href="/juniortraening"><BreadCrumb breadtitle="Hjem" /></a>
+    </section>
+  
+    <h1>MEDLEMSKAB</h1>
+    <h4>LUKKET FOR OPTAGELSE AF NYE MEDLEMMER</h4>
+  
+    <div class="grid-2_3">
+      <p>
+        Idet vi begrænser os til kun at have ca. 700 fuldtidsmedlemmer, kan man normalt kun blive direkte optaget som dagmedlem.
+        Juniorer kan som sædvanlig blive medlemmer nårsom helst. Man kan kun være juniormedlem indtil man fylder 18 år.
+        Vær opmærksom på, at der gør sig forskellige reservationsregler gældende afhængigt af, hvilken type medlemskab du har.
+        Vi tager regelmæssigt nye ansøgere ind omkring februar efter årsskifte.
+      </p>
+  
+      <Tabel
+        title="MEDLEMSSKAB" 
+        hold1="Fuldtidsmedlem"
+        pris1="1.100 kr."
+        hold2="Dagmedlem"
+        pris2="900 kr."
+        hold3="Juniormedlem"
+        pris3="500 kr."
+        hold4="Senioridræt"
+        pris4="200 kr."
+        hold5="Vintermedlem"
+        pris5="200 kr."
+        hold6="Passiv"
+        pris6="100 kr."
+      />
+  
+        <a href="">
+          <CategoryCard 
+            imgPath="../img/Tennisballsracket.webp"
+            title="RESERVATIONSREGLER"
+          />
+        </a>
+     
+        <a href="">
+          <CategoryCard 
+            imgPath="../img/Tennisballsracket.webp"
+            title="ANSØG OM MEDLEMSKAB"
+          />
+        </a>
     
-            <div class="grid-2_3">
-                    <p>Idet vi begrænser os til kun at have ca. 700 fuldtidsmedlemmer, kan man normalt kun blive direkte optaget som dagmedlem.
-                        Juniorer kan som sædvanlig blive medlemmer nårsom helst. Man kan kun være juniormedlem indtil man fylder 18 år.
-                        Vær opmærksom på, at der gør sig forskellige reservationsregler gældende afhængigt af, hvilken type medlemskab du har.
-                        Vi tager regelmæssigt nye ansøgere ind omkring februar efter årsskifte. </p>
+        <a href="">
+          <CategoryCard 
+            imgPath="../img/Tennisballsracket.webp"
+            title="NYT MEDLEM"
+          />
+        </a>
 
-                    <Tabel
-                    title="MEDLEMSSKAB" 
-                    hold1="Fuldtidsmedlem"
-                    pris1="1.100 kr."
-                    hold2="Dagmedlem"
-                    pris2="900 kr."
-                    hold3="Juniormedlem"
-                    pris3="500 kr."
-                    hold4="Senioridræt"
-                    pris4="200 kr."
-                    hold5="Vintermedlem"
-                    pris5="200 kr."
-                    hold6="Passiv"
-                    pris6="100 kr."
-                    />
+      <div>
+        <a href="">
+          <CategoryCard 
+            imgPath="../img/Tennisballsracket.webp"
+            title="ÆNDRE MEDLEMSKAB"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <Footer />
 
-                   <div>
-                        <a href="">
-                        <CategoryCard 
-                        imgPath="../img/Tennisballsracket.webp"
-                        title="RESERVATIONSREGLER"/>
-                        </a>
-                    </div>
-                    <div>
-                        <a href=""></a>
-                        <CategoryCard 
-                        imgPath="../img/Tennisballsracket.webp"
-                        title="ANSØG OM MEDLEMSKAB"/>
-                        </a>
-                    </div>
-                    <div>
-                        <a href=""></a>
-                        <CategoryCard 
-                        imgPath="../img/Tennisballsracket.webp"
-                        title="NYT MEDLEM"/>
-                        </a>
-                    </div>
-                    <div>
-                        <a href=""></a>
-                        <CategoryCard 
-                        imgPath="../img/Tennisballsracket.webp"
-                        title="ÆNDRE MEDLEMSKAB"/>
-                        </a>
-                    </div>
-                    </section>
-</div>
-</div>
 
-</Footer >
+
 
  <style>
 
