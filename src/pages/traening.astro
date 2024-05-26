@@ -5,6 +5,7 @@ import ContactCard from "../components/ContactCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -22,16 +23,15 @@ console.log("contactInfo", contactInfo);
 <div class="main">
 
 <section class="breadcrumb_trail">
-  <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-  <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
   <a href="/juniortraening"><BreadCrumb breadtitle="Hjem"/></a>
+  <a href="/traening"><BreadCrumb breadtitle="Træning"/></a>
  
 
 </section>
 
 <h1>TRÆNING</h1>
 
-<section>
+<section class="grid-1_2">
 <p>I ATK tilbyder vi et bredt træningstilbud til alle medlemstyper. Træningen 
    tilrettelægges hver sæson af cheftræneren og forvaltes af vores erfarne trænerteam.
    Læs herunder mere om de forskellige træningskategorier eller kontakt cheftræneren 
@@ -75,7 +75,8 @@ btnTitle="TJEK MAKKERBØRS"
 
 </div>
 
-<!-- --------------------------------------------------------------------------------- -->
+<Footer />
+
 
 <style>
   .breadcrumb_trail img{ /* pile i brødkrummesti */

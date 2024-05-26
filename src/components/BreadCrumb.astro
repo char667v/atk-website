@@ -6,16 +6,14 @@ const { breadtitle } = Astro.props;
    
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb_list">
-            <li><span>{breadtitle}</span></li>
-            <!-- Andre <li> elementer her -->
+            <li><img src="../img/svg/arrowLeft_1.svg" alt="Pil"><span>{breadtitle} </span></li>
         </ol>
     </nav>
 </section>
 
-<!-- --------------------------------------------------------------------------------- -->
 
 <style> 
-@media (min-width: 768px) {
+ 
     .breadcrumb_trail {
         display: inline-block;
     }
@@ -24,38 +22,35 @@ const { breadtitle } = Astro.props;
         display: flex;
         padding: 0;
     }
+    
+    .breadcrumb_list img {
+        width: 8px;
+        margin-right: 5px;
+    }
     .breadcrumb_list li {
         text-decoration: none;
         color: var(--text-black);
         position: relative;
-        padding-right: 14px;
-        padding-left: 3px;
-        height: 14px;
-        border-right: 1.50px solid var(--text-black);
-        transform: skewX(-15deg); /* Skew the border */
+        padding-right: 10px;
+        transition: transform 0.3s ease;
     }
+
+    .breadcrumb_list li:hover {
+    transform: translateX(-7px);
     
-    .breadcrumb_list li span {
-        display: inline-block; /* Ændret til inline-block */
-        position: relative;
-    }
+}
     .breadcrumb_list li span::after {
         content: "";
         position: absolute;
         left: 0;
         bottom: -2px;
-        width: 100%; /* Ændret til 100% for at dække hele bredden af span */
+        width: 100%; 
         height: 2px;
-        background-color: #ff9900;
-        transition: width 0.3s ease;
-        visibility: hidden; /* Gør underlinjen usynlig som standard */
-    }
-    .breadcrumb_list li:hover span::after {
-        visibility: visible; /* Gør underlinjen synlig ved hover */
-    }
-    /* Undgå at vise underlinjen ved pseudo-elementet for de første bogstaver */
-    .breadcrumb_list li::first-letter::after {
+        background-color: var(--primaryColor);
         visibility: hidden;
     }
-}
+    .breadcrumb_list li:hover span::after {
+        visibility: visible;
+    }
+    
 </style>
