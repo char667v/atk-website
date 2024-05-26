@@ -10,15 +10,6 @@ import Footer from "../components/Footer.astro";
 
 <div class="main">
 
-<section class="breadcrumb_trail">
-<img src="../img/svg/arrowLeft 1.svg" alt="Pil">
-<img src="../img/svg/arrowLeft 1.svg" alt="Pil">
-<a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-<a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-<a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-<a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-</section>
-
 <h1>NYHEDER</h1>
 <section class="newsBig_grid">
   <div class="carousel-container">
@@ -139,6 +130,9 @@ btnTitle="TJEK MAKKERBØRS"
     flex-direction: column;
     gap: 20px;
   }
+    .breadcrumb_trail {
+        display: none;
+    }
 }
 /***** DESK *****/
 @media (min-width: 768px) {
