@@ -53,10 +53,28 @@ import "../styles/pc_style.css";
 </footer>
 
 <style>
+footer {
+    background-color: var(--text-white);
+    color: var(--text-black);
+    padding-top: 10%;
+    width: 100%;
+    clip-path: polygon(100% 100%, 0 100%, 0 12%, 100% 0, 100% 30%);
+}
 
+.footerContent h5, .footerContent p {
+    margin: 0;
+}
+
+#tlf, #email {
+    color: var(--primaryColor);
+}
 footer {
   background-color: var(--text-white);
   clip-path: polygon(100% 100%, 0 100%, 0 30%, 100% 0, 100% 30%);
+}
+
+footer a:hover {
+    color: var(--primaryColor);
 }
 
 .footerContent {
@@ -88,13 +106,13 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
     width: 20%; 
+    width: 300px;
 }
 
 .newsletterForm form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    
 }
 
 .newsletterForm input[type="email"] {
@@ -128,8 +146,8 @@ footer a:hover {
 }
 
 .footerSponsors {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     background-color: rgb(255, 255, 255);
     padding: 0% 5%;
@@ -139,10 +157,6 @@ footer a:hover {
 .footerSponsors img {
     max-width: 150px;
     height: auto;
-}
-
-#headLogo {
-    /* Placeholder for #headLogo styles if needed */
 }
 
 
@@ -164,15 +178,14 @@ footer a:hover {
     }
 
     .footerSponsors {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    place-items: center;
-    
-  }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        place-items: center;
+    }
 
     .footerSponsors img {
-        max-width: 100px;   
+        max-width: 100px;
     }
 
     .newsletterForm button, .newsletterForm input {
@@ -182,10 +195,9 @@ footer a:hover {
     .newsletterForm { 
 }
 
-.newsletterForm form {
-    width: 300px;
-    
-}
+    .newsletterForm form {
+        width: 300px;
+    }
 }
 
 @media only screen and (max-width: 768px) {

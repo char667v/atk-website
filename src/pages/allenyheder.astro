@@ -1,20 +1,20 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Navigation from "../components/Navigation.astro";
-import breadcrumb_trial from "../components/BreadCrumb.astro";
-import CategoryCard from "../components/CategoryCard.astro";
-import Footer from "../components/Footer.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
 ---
-<MainLayout title="Nyheder"/>
-<Navigation />
-<section>
-    <nav aria-label="breadcrumb">
-      <ul class="breadcrumb_list">
-          <li><a href="">Hjem</a></li><!-- husk at tilføje links -->
-          <li><a href="">Alle nyheder</a></li><!-- husk at tilføje links -->
-      </ul>
-  </nav>
+<MainLayout title="Arbejdernes Tennisklub"/>
+
+<div class="main">
+
+<section class="breadcrumb_trail">
+    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
 </section>
+
 
 <h1>ALLE NYHEDER</h1>
 
@@ -23,10 +23,17 @@ import Footer from "../components/Footer.astro";
 <!-- Indsæt nyhederSmall -->
 <!-- Indsæt nyhederSmall -->
 
+</div>
+
 <Footer />
  <!-- --------------------------------------------------------------------------------- -->
  
  <style>
- 
-     
- </style>
+    .breadcrumb_trail img{ /* pile i brødkrummesti */
+        width:0.7%;
+    }
+    
+    p{
+      color: blueviolet;/* OBS: skriften er pr default hvid */
+    }
+     </style>

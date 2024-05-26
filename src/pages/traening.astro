@@ -1,15 +1,11 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Navigation from "../components/Navigation.astro";
-import breadcrumb_trial from "../components/BreadCrumb.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
+import ContactCard from "../components/ContactCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
-import Footer from "../components/Footer.astro";
-import Tabel from "../components/Tabel.astro";
-import ContactCard from "../components/ContactCard.astro";
+
 const coachId = "24"; // Replace with the actual ID of the coach you want
-
-
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
   method: "GET",
   headers: {
@@ -23,39 +19,75 @@ console.log("contactInfo", contactInfo);
 <MainLayout title="Træning" />
 <Navigation />
 
-<section>
-  <nav aria-label="breadcrumb">
-    <ul class="breadcrumb_list">
-      <li><a href="">Hjem</a></li><!-- husk at tilføje links -->
-      <li><a href="">Træning</a></li><!-- husk at tilføje links -->
-    </ul>
-  </nav>
-</section>
+<div class="main">
 
-<section>
+<section class="breadcrumb_trail">
+  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+  <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+  <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+  <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+  <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
+  <a href="/ledelse"><BreadCrumb breadtitle="ledelse"/></a> <!-- husk at slette -->
+  <a href="/udvalg"><BreadCrumb breadtitle="udvalg"/></a> <!-- husk at slette -->
+  <a href="/allenyheder"><BreadCrumb breadtitle="alle nyheder"/></a> <!-- husk at slette -->
+  <a href="/singleview_nyhed"><BreadCrumb breadtitle="single nyheder"/></a> <!-- husk at slette -->
+  <a href="/singleview_aktiviteter"><BreadCrumb breadtitle="single aktivitet"/></a> <!-- husk at slette -->
+</section>
 
 <h1>TRÆNING</h1>
 
+<p>I ATK tilbyder vi et bredt træningstilbud til alle medlemstyper. Træningen 
+   tilrettelægges hver sæson af cheftræneren og forvaltes af vores erfarne trænerteam.
+   Læs herunder mere om de forskellige træningskategorier eller kontakt cheftræneren 
+   for at blive klogere på træningen i ATK.
+</p>
 
-<p>I ATK tilbyder vi et bredt træningstilbud til alle medlemstyper. Træningen tilrettelægges hver sæson af cheftræneren og forvaltes af vores erfarne trænerteam. Læs herunder mere om de forskellige træningskategorier eller kontakt cheftræneren for at blive klogere på træningen i ATK</p>
+<section class="infocard">
+  {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+</section>
 
-{contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].image} />}
-
-<article class="categoryCard_grid1">
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="JUNIOR" />
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="MOTIONIST" />
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="SENIOR" />
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="ELITE" />
-</article>
+<section class="categoryCard_grid2">
+  <a href="/juniortraening">
+  <CategoryCard
+  imgPath="../img/Tennisballsracket.webp"
+  title="JUNIOR"/>
+  </a>
+  
+  <a href="/motionisttraening">
+  <CategoryCard 
+  imgPath="../img/Tennisballsracket.webp"
+  title="SENIOR"/>
+  </a>
+  
+  <a href="/seniortraening">
+   <CategoryCard 
+  imgPath="../img/Tennisballsracket.webp"
+  title="MOTIONIST"/>
+  </a>
+  
+  <a href="/elitetraening">
+  <CategoryCard 
+  imgPath="../img/Tennisballsracket.webp"
+  title="ELITE"/>
+  </a>
+  </section>
 
 <Banner 
 src="bannerBg.png"
-btnTitle="LÆS MERE OM TRÆNING F.EKS"
+btnTitle="TJEK MAKKERBØRS"
 />
 
-<Footer>
-</section>
+</div>
 
-  <style></style>
+<!-- --------------------------------------------------------------------------------- -->
 
-
+<style>
+  .breadcrumb_trail img{ /* pile i brødkrummesti */
+      width:0.7%;
+  }
+  
+  p{
+    color: blueviolet;/* OBS: skriften er pr default hvid */
+  }
+   </style>
