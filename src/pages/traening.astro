@@ -27,6 +27,11 @@ console.log("contactInfo", contactInfo);
   <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
   <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
   <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
+  <a href="/ledelse"><BreadCrumb breadtitle="ledelse"/></a> <!-- husk at slette -->
+  <a href="/udvalg"><BreadCrumb breadtitle="udvalg"/></a> <!-- husk at slette -->
+  <a href="/allenyheder"><BreadCrumb breadtitle="alle nyheder"/></a> <!-- husk at slette -->
+  <a href="/singleview_nyhed"><BreadCrumb breadtitle="single nyheder"/></a> <!-- husk at slette -->
+  <a href="/singleview_aktiviteter"><BreadCrumb breadtitle="single aktivitet"/></a> <!-- husk at slette -->
 </section>
 
 <h1>TRÆNING</h1>
@@ -37,7 +42,7 @@ console.log("contactInfo", contactInfo);
    for at blive klogere på træningen i ATK.
 </p>
 
-<section class="categoryCard_grid2">
+<section class="infocard">
   {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
 </section>
 
@@ -69,7 +74,7 @@ console.log("contactInfo", contactInfo);
 
 <Banner 
 src="bannerBg.png"
-btnTitle="LÆS MERE OM TRÆNING F.EKS"
+btnTitle="TJEK MAKKERBØRS"
 />
 
 </div>

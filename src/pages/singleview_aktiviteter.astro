@@ -44,51 +44,11 @@ import BreadCrumb from "../components/BreadCrumb.astro";
  <!-- --------------------------------------------------------------------------------- -->
  
  <style>
- img{
-    width:0.8%;
-}
- .breadcrumb_list {
-    list-style: none;
-    display: flex;
-    padding: 0;
-}
-
-.breadcrumb_list li {
-    margin-right: 5px;
-    position: relative;
-}
-
-.breadcrumb_list li+li:before {
-    content: "/";
-    color: var(--text-black);
-    margin-left: 9px;
-    margin-right: 14px;
-}
-
-.breadcrumb_list li a {
-    text-decoration: none;
-    color: var(--text-black); 
-}
-
- /* .breadcrumb_list a {
-    text-decoration: none;
-    color: var(--text-black);
-}  */
-
-.breadcrumb_list li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0%;
-    height: 2px;
-    background-color: #e18802; /* Adjust color as needed */
-    transition: width 0.3s ease;
-}
-
-.breadcrumb_list a:hover::after {
-    width: 100%;
-    position: absolute;
-}
- 
- </style>
+    .breadcrumb_trail img{ /* pile i brødkrummesti */
+        width:0.7%;
+    }
+    
+    p{
+      color: blueviolet;/* OBS: skriften er pr default hvid */
+    }
+     </style>

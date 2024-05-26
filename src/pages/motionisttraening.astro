@@ -1,6 +1,17 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
+import ContactCard from "../components/ContactCard.astro";
+
+const coachId = "24"; // Replace with the actual ID of the coach you want
+const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+}).then((response) => response.json());
+
+console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Arbejdernes Tennisklub"/>
 
@@ -20,6 +31,9 @@ import BreadCrumb from "../components/BreadCrumb.astro";
  <!-- Indsæt træningsInfo-->
 
  <!-- Indsæt contactCard -->
+ <section class="infocard">
+  {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+</section>
 
 <h3>HOLD- OG TRÆNINGSTIDSPUNKTER</h3>
 
