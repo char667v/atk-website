@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
+import Footer from "../components/Footer.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -13,7 +14,7 @@ const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v
 
 console.log("contactInfo", contactInfo);
 ---
-<MainLayout title="Arbejdernes Tennisklub"/>
+<MainLayout title="Elite Træning"/>
 
 <div class="main">
 
@@ -45,10 +46,12 @@ console.log("contactInfo", contactInfo);
   
   <!-- Indsæt tabel-->
 
-  </div>
-  <!-- --------------------------------------------------------------------------------- -->
-  
-  <style>
+</div>
+
+<Footer />
+
+<!-- --------------------------------------------------------------------------------- -->
+<style>
     .breadcrumb_trail img{ /* pile i brødkrummesti */
         width:0.7%;
     }

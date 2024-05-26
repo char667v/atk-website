@@ -1,13 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Navigation from "../components/Navigation.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import CarrouselScroll from "../components/CarrouselScroll.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 ---
-<MainLayout title="Arbejdernes Tennisklub"/> 
+<MainLayout title="Arbejdernes Tennisklub"/>
+
+<div class="main">
 
 <section class="breadcrumb_trail">
 <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
@@ -117,8 +118,6 @@ title="ELITE"/>
 </a>
 </section>
 
- 
-
 <Banner 
 src="bannerBg.png"
 btnTitle="TJEK MAKKERBØRS"
@@ -135,9 +134,6 @@ btnTitle="TJEK MAKKERBØRS"
     img {
         display: none;
     }
-    .main{
-    margin-top: 550px;
-  }
   .newsSmall_grid{
     display:flex;
     flex-direction: column;

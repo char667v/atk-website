@@ -4,7 +4,7 @@ import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
-import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -73,15 +73,15 @@ console.log("contactInfo", contactInfo);
   </a>
   </section>
 
-<Banner 
-src="bannerBg.png"
+  <Banner 
+  src="bannerBg.png"
 btnTitle="TJEK MAKKERBØRS"
-/>
-
+  />
 </div>
 
-<!-- --------------------------------------------------------------------------------- -->
+<Footer />
 
+<!-- --------------------------------------------------------------------------------- -->
 <style>
   .breadcrumb_trail img{ /* pile i brødkrummesti */
       width:0.7%;

@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
+import Footer from "../components/Footer.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -102,12 +103,12 @@ console.log("contactInfo", contactInfo);
   <section class="infocard">
     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
   </section>
- 
+</div>
 
- </div>
- <!-- --------------------------------------------------------------------------------- -->
- 
- <style>
+<Footer />
+
+<!-- --------------------------------------------------------------------------------- -->
+<style>
     .breadcrumb_trail img{ /* pile i brødkrummesti */
         width:0.7%;
     }

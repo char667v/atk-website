@@ -1,22 +1,11 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Navigation from "../components/Navigation.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
-import Newscard from "../components/Newscard.astro";
-
-const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter", {
-  method: "GET",
-  headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
-  },
-}).then((response) => response.json());
-
-console.log("newsData", newsData);
+import Footer from "../components/Footer.astro";
 ---
 
 <MainLayout title="Aktiviteter" />
-<Navigation />
 
 <div class="main">
 
@@ -30,9 +19,7 @@ console.log("newsData", newsData);
 </section>
 
 <h1>AKTIVITETER</h1>
-<section class="news-grid">
-  {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
-</section>
+
 
 <!-- Indsæt nyhedBIG_verticalScroll -->
 
@@ -65,8 +52,10 @@ console.log("newsData", newsData);
 </section>
 
 </div>
-<!-- --------------------------------------------------------------------------------- -->
 
+<Footer />
+
+<!-- --------------------------------------------------------------------------------- -->
 <style>
     .breadcrumb_trail img{ /* pile i brødkrummesti */
         width:0.7%;
