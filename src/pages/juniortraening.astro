@@ -54,34 +54,36 @@ console.log("contactInfo", contactInfo);
                     </article>
               </section>
 
-                <Banner 
-                src="bannerBg.png"
-                btnTitle="PRISER OG INFO"
-                />
+
 
                 <section>
                 <h4>HOLD- OG TRÆNINGSTIDSPUNKTER</h4>
                  
-                <div>
-                  <span class="toggle-link" data-target="minitennis">Minitennis</span>
-                  <span class="toggle-link" data-target="klubspiller">Klubspiller</span>
-                  <span class="toggle-link" data-target="turneringsspiller">Turneringsspiller</span>
-                  <span class="toggle-link" data-target="elitespiller">Elitespiller</span>
+                <a href="#" class="card-link" data-target="container1">MINITENNIS<img src="/img/svg/redarrowDown_1.svg"></a>
+                <div class="container" id="container1">
+                  <div class="card">
+                    <TrainingCard />
+                  </div>
+                </div>
+                <a href="#" class="card-link" data-target="container2">KLUBSPILLER<img src="/img/svg/redarrowDown_1.svg"></a>
+                <div class="container" id="container2">
+                  <div class="card">
+                    <TrainingCard />
+                  </div>
+                </div>
+                <a href="#" class="card-link" data-target="container3">TURNERINGSSPILLER<img src="/img/svg/redarrowDown_1.svg"></a>
+                <div class="container" id="container3">
+                  <div class="card">
+                    <TrainingCard />
+                  </div>
+                </div>
+                <a href="#" class="card-link" data-target="container4">ELITESPILLER<img src="/img/svg/redarrowDown_1.svg"></a>
+                <div class="container" id="container4">
+                  <div class="card">
+                    <TrainingCard />
+                  </div>
                 </div>
 
-               <TrainingCard id="minitennis" class="trainingCard"> <!-- Add class="trainingCard" -->
-  <!-- Content for Minitennis -->
-</TrainingCard>
-
-<TrainingCard />
-
-</TrainingCard>
-
-<TrainingCard />
-
-<TrainingCard />
-                  
-               
                 </section>
 
 
@@ -112,36 +114,41 @@ console.log("contactInfo", contactInfo);
 </div>  
 <Footer />
 
+<style>
+   .card-link {
+    display: block; /* Set links to display as block elements */
+    margin-bottom: 10px; /* Add margin between links */
+  }
+  .card-link img {
+    position: absolute;
+    right: 20%;
+    width: 16px;
 
-  <style>
-    .breadcrumb_trail img{ /* pile i brødkrummesti */
-    width:0.7%;
-}
+  }
 
-  </style>
+  a {
+     color: var(--primaryColor);  
+     font-size: 2rem;
+    }
+  .container {
+    display: none;
+  }
+  .container.active {
+    display: block;
+  }
+</style>
+
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggleLinks = document.querySelectorAll('.toggle-link');
-    const trainingCards = document.querySelectorAll('.trainingCard');
+  const cardLinks = document.querySelectorAll('.card-link');
 
-    toggleLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        const targetId = link.getAttribute('data-target');
-        const targetCard = document.getElementById(targetId);
+  cardLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      const targetContainer = document.getElementById(targetId);
 
-        if (targetCard) {
-          // Toggle the display of the target card
-          targetCard.classList.toggle('active');
-
-          // Hide other cards
-          trainingCards.forEach(card => {
-            if (card.id !== targetId) {
-              card.classList.remove('active');
-            }
-          });
-        }
-      });
+      targetContainer.classList.toggle('active'); // Toggle the active class for the clicked container
     });
   });
 </script>
