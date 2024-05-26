@@ -1,14 +1,11 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-/* import HeadTitle from "../components/HeadTitle.astro";
-import Navigation from "../components/Navigation.astro";
-import breadcrumb_trial from "../components/BreadCrumb.astro"; */
+import BreadCrumb from "../components/BreadCrumb.astro";
+import ContactCard from "../components/ContactCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
-/* import Footer from "../components/Footer.astro"; */
-import ContactCard from "../components/ContactCard.astro";
-const coachId = "24"; // Replace with the actual ID of the coach you want
 
+const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
   method: "GET",
   headers: {
@@ -21,64 +18,70 @@ console.log("contactInfo", contactInfo);
 
 <MainLayout title="Arbejdernes Tennisklub" />
 
+<div class="main">
 
-
-<section class="categoryCard_grid2">
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="JUNIOR" />
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="SENIOR" />
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="MOTIONIST" />
-  <CategoryCard imgPath="../img/Tennisballsracket.webp" title="ELITE" />
-
-  {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+<section class="breadcrumb_trail">
+  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+  <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+  <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+  <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+  <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
 </section>
+
 <h1>TRÆNING</h1>
 
 <p>I ATK tilbyder vi et bredt træningstilbud til alle medlemstyper. Træningen 
    tilrettelægges hver sæson af cheftræneren og forvaltes af vores erfarne trænerteam.
    Læs herunder mere om de forskellige træningskategorier eller kontakt cheftræneren 
-   for at blive klogere på træningen i ATK
+   for at blive klogere på træningen i ATK.
 </p>
 
-<!-- Indsæt contactCard -->
-
-<section class="categoryCard_grid1">
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="JUNIOR"
-/> 
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="MOTIONIST"
-/>
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="SENIOR"
-/>
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="ELITE"
-/>
+<section class="categoryCard_grid2">
+  {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
 </section>
 
-<Banner 
-src="bannerBg.png"
-btnTitle="LÆS MERE OM TRÆNING F.EKS"
-/>
-
-<!-- --------------------------------------------------------------------------------- -->
-
-<style>
-
+<section class="categoryCard_grid2">
+  <a href="/juniortraening">
+  <CategoryCard
+  imgPath="../img/Tennisballsracket.webp"
+  title="JUNIOR"/>
+  </a>
   
-</style>
+  <a href="/motionisttraening">
+  <CategoryCard 
+  imgPath="../img/Tennisballsracket.webp"
+  title="SENIOR"/>
+  </a>
+  
+  <a href="/seniortraening">
+   <CategoryCard 
+  imgPath="../img/Tennisballsracket.webp"
+  title="MOTIONIST"/>
+  </a>
+  
+  <a href="/elitetraening">
+  <CategoryCard 
+  imgPath="../img/Tennisballsracket.webp"
+  title="ELITE"/>
+  </a>
+  </section>
 
 <Banner 
 src="bannerBg.png"
 btnTitle="LÆS MERE OM TRÆNING F.EKS"
 />
 
+</div>
+
 <!-- --------------------------------------------------------------------------------- -->
 
 <style>
-
-</style>
+  .breadcrumb_trail img{ /* pile i brødkrummesti */
+      width:0.7%;
+  }
+  
+  p{
+    color: blueviolet;/* OBS: skriften er pr default hvid */
+  }
+   </style>

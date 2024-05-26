@@ -1,39 +1,45 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-/* import HeadTitle from "../components/HeadTitle.astro";
-import Navigation from "../components/Navigation.astro";
-import breadcrumb_trial from "../components/BreadCrumb.astro";
-import Footer from "../components/Footer.astro"; */
+import BreadCrumb from "../components/BreadCrumb.astro";
 ---
 
 <MainLayout title="Arbejdernes Tennisklub"/>
 
+<div class="main">
 
+<section class="breadcrumb_trail">
+  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+  <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+  <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+  <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+  <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
+</section>
 
 <h1>OM ATK</h1>
 
 <div class="membersIcon">
-  <img src="..../svg/icon.svg" alt="Gruppemedlemsikon">
+  <img src="../img/svg/icon.svg" alt="Gruppemedlemsikon">
 </div>
 
 <section class="tennisbaner">
 <div>
-  <img src="..../svg/tennisCourt_red.svg" alt="Rød tennisbane">
+  <img src="../img/svg/tennisCourt_red.svg" alt="Rød tennisbane">
   <p>2 RedPlus baner</p>
 </div>
 
 <div>
-  <img src="..../svg/tennisCourt_orange.svg" alt="Orange tennisbane">
+  <img src="../img/svg/tennisCourt_orange.svg" alt="Orange tennisbane">
   <p>8 Grusbaner</p>
 </div>
 
 <div>
-  <img src="..../svg/padelCourt.svg" alt="Grøn tennisbane">
+  <img src="../img/svg/padelCourt.svg" alt="Grøn tennisbane">
   <p>2 Padelbaner</p>
 </div>
 
 <div>
-  <img src="..../svg/tennisCourt_blue.svg" alt="Blå tennisbane">
+  <img src="../img/svg/tennisCourt_blue 1.svg" alt="Blå tennisbane">
   <p>2 Hardcourtbaner (Indendørs)</p>
 </div>
 </section>
@@ -72,54 +78,28 @@ Arbejdernes Tennisklub er mere end bare en sportsklub; det er et fællesskab, de
 gennem deres kærlighed til sporten og deres ønske om at støtte hinanden i at opnå deres bedste.
 </p>
 
- <!-- --------------------------------------------------------------------------------- -->
+</div>
 
-<style>
+<!-- --------------------------------------------------------------------------------- -->
 
-/* husk styleing på banerne og billeder */
-.breadcrumb_list {
-    list-style: none;
-    display: flex;
+<style>/* husk styleing på banerne og billeder */
+.breadcrumb_trail img{ /* pile i brødkrummesti */
+    width:0.7%;
+}
+.membersIcon{
+    width:20.8%;
+}
+.tennisbaner{
+    width:8.8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     padding: 0;
+    margin: 0;
+  }
+
+p{
+  color: blueviolet;/* OBS: skriften er pr default hvid */
 }
-
-.breadcrumb_list li {
-    margin-right: 5px;
-    position: relative;
-}
-
-.breadcrumb_list li+li:before {
-    content: "/";
-    color: var(--text-black);
-    margin-left: 9px;
-    margin-right: 14px;
-}
-
-.breadcrumb_list li a {
-    text-decoration: none;
-    color: var(--text-black); 
-}
-
- /* .breadcrumb_list a {
-    text-decoration: none;
-    color: var(--text-black);
-}  */
-
-.breadcrumb_list li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0%;
-    height: 2px;
-    background-color: #e18802; /* Adjust color as needed */
-    transition: width 0.3s ease;
-}
-
-.breadcrumb_list a:hover::after {
-    width: 100%;
-    position: absolute;
-}
-
 
 </style>

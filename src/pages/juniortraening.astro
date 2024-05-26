@@ -1,15 +1,20 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-/* import HeadTitle from "../components/HeadTitle.astro";
-import Navigation from "../components/Navigation.astro";*/
 import Banner from "../components/Banner.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
-/* import Footer from "../components/Footer.astro"; */
 ---
 <MainLayout title="Arbejdernes Tennisklub"/>
 
-<main class="traening_grid">
-    
+<div class="main">
+
+<section class="breadcrumb_trail">
+  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+  <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+  <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+  <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+  <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
+</section>
 
  <h1>JUNIORTRÆNING 2024</h1>
 
@@ -19,7 +24,7 @@ import BreadCrumb from "../components/BreadCrumb.astro";
 
  <Banner 
 src="bannerBg.png"
-btnTitle="LÆS MERE OM TRÆNING F.EKS"
+btnTitle="PRISER OG INFO"
 />
 
  <h3>HOLD- OG TRÆNINGSTIDSPUNKTER</h3>
@@ -31,17 +36,20 @@ btnTitle="LÆS MERE OM TRÆNING F.EKS"
   <!-- teamplayerCard-->
 
   <!-- eliteplayerCard -->
-</main>
+
+ <h3>PRISER</h3>
+  
+</div>
+
   <!-- --------------------------------------------------------------------------------- -->
 
   <style>
-.traening_grid {
-display: flex;
-flex-direction: column;
-padding: 20px;
+    .breadcrumb_trail img{ /* pile i brødkrummesti */
+    width:0.7%;
 }
-
-
+p{
+  color: blueviolet;/* OBS: skriften er pr default hvid */
+}
 @media (min-width: 768px) {
     .# {
   display: grid;
@@ -52,5 +60,4 @@ padding: 20px;
   height: auto;
 }
 }
-    
   </style>

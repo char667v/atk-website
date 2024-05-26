@@ -1,9 +1,19 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
 ---
 <MainLayout title="Arbejdernes Tennisklub"/>
 
+<div class="main">
 
+<section class="breadcrumb_trail">
+    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+    <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
+</section>
 
 <h1>DOUBLETURNERING UDENDØRS 2024</h1>
 
@@ -29,10 +39,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <!-- Indsæt billed -->
 
+</div>
+
  <!-- --------------------------------------------------------------------------------- -->
  
  <style>
- 
+ img{
+    width:0.8%;
+}
  .breadcrumb_list {
     list-style: none;
     display: flex;

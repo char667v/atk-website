@@ -1,60 +1,61 @@
 ---
+const { breadtitle } = Astro.props;
+--- 
 
-const { breadtitle} = Astro.props;
----
 <section class="breadcrumb_trail">
+   
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb_list">
-         <li>{breadtitle}</li>
-      </ol>
+        <ol class="breadcrumb_list">
+            <li><span>{breadtitle}</span></li>
+            <!-- Andre <li> elementer her -->
+        </ol>
     </nav>
- </section>
+</section>
 
 <!-- --------------------------------------------------------------------------------- -->
 
 <style> 
-   @media (min-width: 768px) {
-
+@media (min-width: 768px) {
     .breadcrumb_trail {
-         display: inline-block;
-      }
-      .breadcrumb_list {
-         list-style: none;
-         display: flex;
-         padding: 0;
-      }
-      .breadcrumb_list li {
-         /* position: relative; */
-         padding-right: 10px; /* Space for separator */
-      }
-      .breadcrumb_list li::before {
-         content: "<";
-         margin-right: 5px;
-         color: #e18802;  
-      }
-      .breadcrumb_list li + li::before {
-        content: "/";
-        margin-right: 5px;
-      }
-      .breadcrumb_list li a {
-         text-decoration: none;
-         color: var(--text-black);
-         position: relative;
-         padding-right: 4px;
-      }
-      .breadcrumb_list li a::after {
-         content: "";
-         position: absolute;
-         left: 0;
-         bottom: -2px;
-         width: 0;
-         height: 2px;
-         background-color: #ff9900;
-         transition: width 0.3s ease;
-      }
-      .breadcrumb_list li a:hover::after {
-         width: 100%;
-      }
+        display: inline-block;
+    }
+    .breadcrumb_list {
+        list-style: none;
+        display: flex;
+        padding: 0;
+    }
+    .breadcrumb_list li {
+        text-decoration: none;
+        color: var(--text-black);
+        position: relative;
+        padding-right: 14px;
+        padding-left: 3px;
+        height: 14px;
+        border-right: 1.50px solid var(--text-black);
+        transform: skewX(-15deg); /* Skew the border */
+    }
+    
+    .breadcrumb_list li span {
+        display: inline-block; /* Ændret til inline-block */
+        position: relative;
+    }
+    .breadcrumb_list li span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%; /* Ændret til 100% for at dække hele bredden af span */
+        height: 2px;
+        background-color: #ff9900;
+        transition: width 0.3s ease;
+        visibility: hidden; /* Gør underlinjen usynlig som standard */
+    }
+    .breadcrumb_list li:hover span::after {
+        visibility: visible; /* Gør underlinjen synlig ved hover */
+    }
+    /* Undgå at vise underlinjen ved pseudo-elementet for de første bogstaver */
+    .breadcrumb_list li::first-letter::after {
+        visibility: hidden;
+    }
 }
-
 </style>

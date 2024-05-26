@@ -8,12 +8,15 @@ import Banner from "../components/Banner.astro";
 <MainLayout title="Arbejdernes Tennisklub"/>
 
 <div class="main">
-     <section class="breadcrumb_trail">
-        <BreadCrumb breadtitle="Hjem"/> 
-        <BreadCrumb breadtitle="Træning"/>
-        <BreadCrumb breadtitle="Aktiviteter"/>
-        <BreadCrumb breadtitle="Junior"/>
-    </section>
+
+<section class="breadcrumb_trail">
+<img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+<img src="../img/svg/arrowLeft 1.svg" alt="Pil">
+<a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+<a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
+<a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
+<a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
+</section>
 
 <h1>NYHEDER</h1>
 <section class="newsBig_grid">
@@ -57,18 +60,21 @@ src="bannerBg.png"
 btnTitle="TJEK MAKKERBØRS"
 />
 </section>
+
 </div>
 
 <!-- --------------------------------------------------------------------------------- -->
-
-<!-- <section class="content"> 
-<PrimaryBtn variant="primary1" size="small">TJEK MAKKERBØRS</PrimaryBtn>
-<PrimaryBtn variant="primary2" size="small">LÆS MERE OM TRÆNINGEN</PrimaryBtn>
-
-<AccentBtn variant="accent1" size="small">BOOK BANE</AccentBtn>
-<AccentBtn variant="accent2" size="small">TILMELD NYHEDSBREV</AccentBtn>
-</section> -->
-
 <style>
+@media (max-width: 768px) {
+    img {
+        display: none;
+    }
+    
+}
 
+@media (min-width: 768px) {
+img{
+    width:0.8%;
+}
+}
 </style>
