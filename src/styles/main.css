@@ -23,7 +23,7 @@
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 0  ;
   box-sizing: border-box;
   font-size: 62, 5%;
 }
@@ -37,6 +37,10 @@ body {
   background-color: #f9f9f9;
   margin: 0% 10%;
   padding: 5%;
+}
+
+.mainContent {
+ margin: 0 10%;
 }
 
 img,
@@ -128,6 +132,7 @@ a {
 }
 /* styleing for categories */
 .categroyCard_grid1,
+.grid-2_3,
 .categoryCard_grid2,
 .categoryCard_grid3,
 .categoryCard_grid4 {
