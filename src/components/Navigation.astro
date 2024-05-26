@@ -49,7 +49,7 @@ import "../styles/pc_style.css";
     </nav>
     <div class="navBtns">
       <a href=".." id="baneBook">BOOK BANE</a>
-      <a href="..." id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="baneTilstand"></a>
+      <a id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="baneTilstand"></a>
     </div>
     <div>
     <div id="menu-toggle">&#9776;</div>
@@ -57,14 +57,36 @@ import "../styles/pc_style.css";
   </div>
 </header>
 
-<div class="heroVideo">
-  <video autoplay muted loop>
-    <source src="https://saaa.dk/kea/09_indhold/hero_itmv.webm" type="video/webm">
-  </video>
+<div class="heroWrapper">
+  <div class="heroVideo">
+    <video autoplay muted loop class="clipPathVideo">
+      <source src="https://saaa.dk/kea/09_indhold/hero_itmv.webm" type="video/webm">
+    </video>
+  </div>
 </div>
 
-<style>
+  <!--
+<div class="weatherWidget">
+<div id="ww_4840c547744da"  v='1.3' loc='id' a='{"t":"horizontal","lang":"da","sl_lpl":1,"ids":["wl1596"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"#892911","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#FFFFFF","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FFFFFF"}'><a href="https://weatherwidget.org/" id="ww_4840c547744da_u" target="_blank">Html weather widget</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_4840c547744da"></script>
+</div>  -->
 
+
+<style>
+.weatherWidget {
+    display: none;
+    position: absolute;
+    top: 15%;
+    right: var(--spacing-medium);
+    width: 225px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+        #baneTilstand:hover + .weatherWidget {
+    display: block; /* Show the widget */
+    animation: slideInFromTop 0.5s forwards; 
+    opacity: 1;
+}
   
   header {
     display: flex;
@@ -72,11 +94,10 @@ import "../styles/pc_style.css";
     justify-content: space-between;
     background-color: var(--text-white);
     padding-left: var(--spacing-large);
-    /* clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%, 0 70%); */
     height: 175px;
     width: 100%;
     position: relative; 
-    z-index: 10;
+    z-index: 20;
   }
 
   
@@ -107,7 +128,8 @@ import "../styles/pc_style.css";
     background-color: var(--text-white);
     width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    animation: fadeIn 0.4s ease forwards; /* Apply fade-in animation */
+    animation: fadeIn 0.4s ease forwards; 
+     z-index: 30;
   }
 
  
@@ -151,13 +173,18 @@ import "../styles/pc_style.css";
   background-color: var(--secondaryColor_dark);
 }
 
+ .heroWrapper {
+    position: relative  ;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+  }
 .heroVideo {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: absolute; 
   width: 100%;
   height: 90vh;
   overflow: hidden;
+  
 }
 
 .heroVideo video {
@@ -329,6 +356,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var menuToggle = document.getElementById('menu-toggle');
   var closeMenu = document.getElementById('close-menu');
   var nav = document.querySelector('nav');
+  var weatherWidget = document.querySelector('.weatherWidget') as HTMLDivElement;;
+  var baneTilstand = document.getElementById('baneTilstand');
 
   menuToggle.addEventListener('click', function () {
     nav.style.display = 'flex';
@@ -347,5 +376,16 @@ document.addEventListener('DOMContentLoaded', function () {
     menuToggle.style.display = 'block';
     closeMenu.style.display = 'none';
   });
+
+  baneTilstand.addEventListener('click', function () {
+    if (weatherWidget.style.display === 'block') {
+      weatherWidget.style.display = 'none';
+      weatherWidget.style.opacity = '0';
+    } else {
+      weatherWidget.style.display = 'block';
+      weatherWidget.style.opacity = '1';
+    }
+  });
 });
 </script> 
+
