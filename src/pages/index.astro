@@ -1,10 +1,12 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
+import CarrouselScroll from "../components/CarrouselScroll.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
+import Footer from "../components/Footer.astro";
 ---
-<MainLayout title="Arbejdernes Tennisklub"/>
+<MainLayout title="Arbejdernes Tennisklub"/> <!-- skal denne hedde noget forskelligt fra side til side?? -->
 
 
 <div class="main">
@@ -20,12 +22,30 @@ import Banner from "../components/Banner.astro";
 
 <h1>NYHEDER</h1>
 <section class="newsBig_grid">
-<!-- Indsæt nyhedBIG_verticalScroll -->
+<CarrouselScroll
+date="11/11"
+headline="wow"
+subheadline="EPIC BATTLE BETWEEN THE "
+/>
 </section>
 
-<section class="newsSmall_grid">
 <h2>AKTIVITETER</h2>
-<!-- Indsæt nyhederSmall -->
+<section class="newsSmall_grid">
+<CarrouselScroll class="carrousel1"
+date="11/11"
+headline="wow"
+subheadline="EPIC BATTLE BETWEEN THE "
+/>
+<CarrouselScroll class="carrousel1"
+date="22/22"
+headline="wow"
+subheadline="EPIC BATTLE BETWEEN THE "
+/>
+<CarrouselScroll class="carrousel1"
+date="33/33"
+headline="wow"
+subheadline="EPIC BATTLE BETWEEN THE "
+/>
 </section>
 
 <section class="categoryCard_grid1">
@@ -54,7 +74,7 @@ title="ELITE"/>
 </a>
 </section>
 
-<div class="carousel-container">
+<!-- <div class="carousel-container">
   <div class="carousel-track">
     <div class="carousel-item">
       <CarrouselScroll 
@@ -103,24 +123,57 @@ title="ELITE"/>
     <div class="carousel-indicator" data-slide-to="3"></div>
     <div class="carousel-indicator" data-slide-to="4"></div>
   </div>
+</div> -->
+
+<Banner 
+src="bannerBg.png"
+btnTitle="TJEK MAKKERBØRS"
+/>
 </div>
 
-
-
-</div>
+<Footer />
 
 <!-- --------------------------------------------------------------------------------- -->
 <style>
+  
+/***** MOBIL *****/
 @media (max-width: 768px) {
     img {
         display: none;
     }
-    
+    .main{
+    margin-top: 550px;
+  }
+  .newsSmall_grid{
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
-
+/***** DESK *****/
 @media (min-width: 768px) {
 img{
     width:0.8%;
 }
+
+.breadcrumb_trail img{ /* pile i brødkrummesti */
+        width:0.7%;
+    }
+    .main{
+    margin-top: 540px;
+  }
+  .newsBig_grid{
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height to ensure vertical centering */
+    margin: 0; /* Reset margin to ensure full viewport height usage */
+   }
+  }
+  .newsSmall_grid{
+    display:flex;
+    margin:10%;
+    gap: 20px;
+  }
 }
 </style>
