@@ -4,6 +4,7 @@ import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
+import Navigation from "../components/Navigation.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
