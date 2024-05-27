@@ -7,6 +7,7 @@ import Footer from "../components/Footer.astro";
 import TrainingCard from "../components/trainingCard.astro";
 import Tabel from "../components/Tabel.astro";
 import Traening from "./traening.astro";
+import NavigationP from "../components/NavigationP.astro";
 
 const coachId = "23"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -19,6 +20,9 @@ const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v
 console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Juniortræning"/>
+<NavigationP 
+HeroImg="../img/juniorHero.webp"
+/>
 
 <div class="main">
 
@@ -62,7 +66,8 @@ console.log("contactInfo", contactInfo);
                 <a href="#" class="card-link" data-target="container1">MINITENNIS 6-10 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
                 <div class="container" id="container1">
                   <div class="card">
-                    <TrainingCard />
+                    <TrainingCard 
+                     imgPath="../img/Tennisballsracket.webp"/>
                   </div>
                 </div>
                 <a href="#" class="card-link" data-target="container2">KLUBSPILLER 10-18 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>

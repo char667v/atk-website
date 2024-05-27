@@ -1,10 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Navigation from "../components/Navigation.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Footer from "../components/Footer.astro";
 import Newscard from "../components/Newscard.astro";
+import NavigationP from "../components/NavigationP.astro";
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter", {
   method: "GET",
@@ -17,6 +17,8 @@ console.log("newsData", newsData);
 ---
 
 <MainLayout title="Aktiviteter" />
+<NavigationP />
+
 
 <div class="main">
   <section class="breadcrumb_trail">

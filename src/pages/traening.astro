@@ -4,7 +4,7 @@ import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
-import Navigation from "../components/Navigation.astro";
+import NavigationP from "../components/NavigationP.astro";
 import Footer from "../components/Footer.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
@@ -19,6 +19,9 @@ console.log("contactInfo", contactInfo);
 ---
 
 <MainLayout title="Træning" />
+<NavigationP
+HeroImg="../img/træningHero.webp"
+ />
 
 <div class="main">
 
@@ -45,13 +48,13 @@ console.log("contactInfo", contactInfo);
 <section class="grid-2_3">
   <a href="/juniortraening">
   <CategoryCard
-  imgPath="../img/Tennisballsracket.webp"
+  imgPath="../img/juniorCategory.webp"
   title="JUNIOR"/>
   </a>
   
   <a href="/motionisttraening">
   <CategoryCard 
-  imgPath="../img/Tennisballsracket.webp"
+  imgPath="../img/seniorCategory.webp"
   title="SENIOR"/>
   </a>
   

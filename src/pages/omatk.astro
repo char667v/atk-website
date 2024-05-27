@@ -1,21 +1,19 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
-import Navigation from "../components/Navigation.astro";
+import NavigationP from "../components/NavigationP.astro";
 ---
 
 <MainLayout title="Om ATK"/>
+<NavigationP 
+HeroImg="../img/omatkHero.webp"/>
 
 
 <div class="main">
 
 <section class="breadcrumb_trail">
-  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
-  <img src="../img/svg/arrowLeft 1.svg" alt="Pil">
-  <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-  <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-  <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-  <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
+  <a href="/motionisttraening"><BreadCrumb breadtitle="Hjem"/></a>
+  <a href="/elitetraening"><BreadCrumb breadtitle="Om ATK"/></a>
 </section>
 
 <h1>OM ATK</h1>

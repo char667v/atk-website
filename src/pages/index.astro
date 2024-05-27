@@ -1,13 +1,18 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Navigation from "../components/Navigation.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import CarrouselScroll from "../components/CarrouselScroll.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 
+
 ---
+
 <MainLayout title="Arbejdernes Tennisklub"/> 
+
+<Navigation />
 
 <div class="main">
 
@@ -89,13 +94,13 @@ import Footer from "../components/Footer.astro";
         <section class="categoryCard_grid1">
         <a href="/juniortraening">
         <CategoryCard
-        imgPath="../img/Tennisballsracket.webp"
+        imgPath="../img/juniorCategory.webp"
         title="JUNIOR"/>
         </a>
 
         <a href="/motionisttraening">
         <CategoryCard 
-        imgPath="../img/Tennisballsracket.webp"
+        imgPath="../img/seniorCategory.webp"
         title="SENIOR"/>
         </a>
 

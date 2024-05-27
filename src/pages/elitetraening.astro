@@ -4,6 +4,7 @@ import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
 import Tabel from "../components/Tabel.astro";
 import TrainingCard from "../components/trainingCard.astro";
+import NavigationP from "../components/NavigationP.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -16,6 +17,8 @@ const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v
 console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Arbejdernes Tennisklub"/>
+<NavigationP />
+
 
 <div class="main">
 
