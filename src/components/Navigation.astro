@@ -57,21 +57,56 @@ import "../styles/pc_style.css";
   </div>
 </header>
 
+<div class=fpHeadline>
+  <h3>Samlet om Tennis – Fra begynder til mester!</h3>
+  <div>
+  <a>BOOK BANE</a> 
+  <a>KONTAKT</a>
+  </div>
+</div>
+
 <div class="heroWrapper">
   <div class="heroVideo">
     <video autoplay muted loop>
-      <source src="https://saaa.dk/kea/09_indhold/hero_itmv.webm" type="video/webm">
+      <source src="/img/heroVideo.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 
-  <!--
+  
 <div class="weatherWidget">
 <div id="ww_4840c547744da"  v='1.3' loc='id' a='{"t":"horizontal","lang":"da","sl_lpl":1,"ids":["wl1596"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"#892911","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#FFFFFF","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FFFFFF"}'><a href="https://weatherwidget.org/" id="ww_4840c547744da_u" target="_blank">Html weather widget</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_4840c547744da"></script>
-</div>  -->
+</div>  
 
 
 <style>
+
+.fpHeadline {
+  position: absolute;
+  top: 50%;
+    transform: translateY(-40%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+}
+
+.fpHeadline h3 {
+  color: white;
+}
+
+.fpHeadline a {
+  background-color: var(--primaryColor);
+  padding: 10px 30px;
+  border-radius:4px;
+  margin: 0px 20px;
+}
+
+
+
+
 .weatherWidget {
     display: none;
     position: absolute;
@@ -176,7 +211,7 @@ import "../styles/pc_style.css";
  .heroWrapper {
     position: relative  ;
     width: 100%;
-    height: 67vh;
+    height: 75vh;
     overflow: hidden;
   }
 .heroVideo {
