@@ -17,22 +17,24 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
     <p class="news-date">{date}</p>
     <h4 class="news-headline">{headline}</h4>
     <p class="news-subheadline">{subheadline}</p>
-    <button class="read-more">Læs mere</button>
+    <div class="read-more">
+      <a>LÆS MERE</a>
+      <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon">
+    </div>
   </div>
 </article>
 
 <style>
   .newscard {
     background-color: #f9f9f9;
-    border-radius: 10px;
-    border: 1px solid var(--primaryColor);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 328px;
+    width: 250px;
     margin: 20px;
-    box-sizing: border-box; /* Include padding in the element's total width and height */
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s; /* smoother transition combined with the hovering */
+    transition: transform 0.3s; 
   }
   .newscard:hover {
     transform: scale(1.1);
@@ -49,8 +51,8 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
     gap: 10px; /* Add gap between elements for spacing */
   }
   .news-date {
-    font-size: 0.8em; /* Small font size for date */
-    color: gray; /* Color for the date */
+    font-size: 0.8em; 
+    color: gray; 
     margin: 0;
   }
   .news-headline {
@@ -61,17 +63,6 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
     font-size: 1em; /* Standard font size for subheadline */
     margin: 0;
   }
-  .read-more {
-    align-self: flex-start;
-    padding: 10px 15px;
-    background-color: var(--primaryColor);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: auto; /* Push the button to the bottom of the container */
-  }
-  .read-more:hover {
-    background-color: darken(var(--primaryColor), 10%);
-  }
+
+  
 </style>
