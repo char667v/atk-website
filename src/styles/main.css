@@ -97,7 +97,7 @@ p {
 
 a {
   font-size: 1rem;
-  color: var(--secondary-color);
+  color: var(--text-black);
   text-decoration: none;
 }
 
@@ -111,6 +111,17 @@ a {
 .paragraphLink:hover {
   color: var(--primaryColor);
 }
+
+/* Btn */
+.fpHeadline a {
+  color: white;
+  background-color: var(--primaryColor);
+  padding: 10px 30px;
+  border-radius:4px;
+  margin: 0px 20px;
+}
+
+/* Læs mere */ 
 
 .read-more {
   display: flex;
