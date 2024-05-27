@@ -34,6 +34,8 @@
     font-size: 1.4rem;
   }
 
+  /* Content og grids på pages */
+  
   .grid-2_3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -46,22 +48,15 @@
     grid-template-rows: repeat(1, 1fr);
   }
 
-
-/* Content og grids på pages */
-
-
-
-  /* styling for categories */
-  .categoryCard_grid1,
-  .categoryCard_grid2,
-  .categoryCard_grid3,
-  .categoryCard_grid4 {
+  .grid-2_4 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1 fr 1fr;
-    padding: 0;
-    margin: 0;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(1, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
   }
+
+
 
 
 }

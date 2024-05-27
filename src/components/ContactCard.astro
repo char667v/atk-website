@@ -4,25 +4,28 @@ export interface ContactProps {
   name: string;
   email: string;
   phone: string;
-  profile_picture: string;
+  pb: string;
+  description: string;
 }
 
-const { role, name, email, phone, profile_picture, } = Astro.props as ContactProps;
+const { role, name, description, email, phone, pb, } = Astro.props as ContactProps;
 ---
 
 <article class="contactcard">
   <div class="contact-info">
     <h4>{role}</h4>
+    <p>{description}
     <p>{name}</p>
     <p>{email}</p>
     <p>{phone}</p>
   </div>
   <div class="profile-picture">
-    <img src={profile_picture} alt={`${name}'s Profile Picture`} />
+    <img src={pb} alt={`${name}'s Profile Picture`} />
   </div>
 </article>
 
 <style>
+
   .contactcard {
     background-color: rgb(255, 255, 255);
     position: relative;
@@ -30,31 +33,33 @@ const { role, name, email, phone, profile_picture, } = Astro.props as ContactPro
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     overflow: hidden;
     width: 100%;
+    height: 100%;
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s; /* smoother transition combined with the hovering */
+    transition: transform 0.3s; 
   }
   .contactcard:hover {
     transform: scale(1.1);
   }
-  .contactcard h6,
-  .contactcard p {
-    color: black; /* Set the text color to black for h6 and p elements */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-  }
+  
   .contact-info {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items at the start of the container */
-    gap: 4px; /* Add gap between elements for spacing */
   }
   .profile-picture img {
-    width: 100px; /* Set the desired width */
-    height: 100px; /* Set the desired height */
-    object-fit: cover; /* Ensure the image covers the area, maintaining aspect ratio */
-    border-radius: 50%; /* Make the image circular */
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+  }
+  .contactcard h6,
+  .contactcard p {
+    margin: 0; 
+    padding: 1% 0%; 
+  }
+
+  .contactcard p {
+    font-size: 0.8rem;
   }
 </style>

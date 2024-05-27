@@ -11,11 +11,14 @@ const btnText = Astro.props.btnText;
     background-color: var(--primaryColor);
     padding: 10px 30px;
     border-radius:4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.7s ease, color 0.7s ease, transform 0.5s ease;
   }
+  
 
-  .primaryBtn a:hover {
-    color: white;
-    background-color: var(--primaryColor);
+  .primaryBtn:hover {
+    color: var(--primaryColor);
+    background-color: white;
     padding: 10px 30px;
     border-radius:4px;
   }

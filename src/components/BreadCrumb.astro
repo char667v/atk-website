@@ -16,19 +16,18 @@ const { breadtitle } = Astro.props;
  
     .breadcrumb_trail {
         display: inline-block;
+        margin-top: 2%;
     }
     .breadcrumb_list {
         list-style: none;
-        display: flex;
-        padding: 0;
     }
     
     .breadcrumb_list img {
         width: 8px;
         margin-right: 5px;
     }
+
     .breadcrumb_list li {
-        text-decoration: none;
         color: var(--text-black);
         position: relative;
         padding-right: 10px;
@@ -55,13 +54,7 @@ const { breadtitle } = Astro.props;
 
     @media only screen and (max-width: 768px) {
         .breadcrumb_list {
-        font-size: 0.6rem;
+        display: none;
     }
-    
-    .breadcrumb_list img {
-        width: 6px;
-        margin-right: 5px;
-    }
-    }
-    
+}
 </style>

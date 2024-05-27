@@ -72,12 +72,12 @@ h1 {
 }
 
 h2 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   
 }
 
 h3 {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
 }
 
 h4,
@@ -138,13 +138,19 @@ a {
 }
 
 .content {
-  padding: 5% 0%;
+  padding: 2% 0%;
 }
 
 .flexboxCenter {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.flexboxcenterColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .grid-2_3,
 .grid-1_2,
@@ -156,11 +162,17 @@ a {
   padding-bottom: 5%;
 }
 
+.grid-2_4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+
 .autolayout {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  justify-content: center; /* Centers the grid items horizontally */
+  justify-content: center; 
   align-items: center;
 }
 

@@ -31,17 +31,20 @@ console.log("contactInfo", contactInfo);
 
             <h2>JUNIORTRÆNING</h2>
 
-            <section class="grid-1_2">
+            
+            <article class="grid-1_2">
                <TrainingInfo datoS="1/5 - 13/9 2024" datoW="1/10 - 24/4 2024" lokationS="Genforeningspladsen 52, 2400 København NV" lokationW="Borups Allé 273, 2400 København NV" pause="Skoleferier samt helligdage"/>
 
-                    <article class="infocard">
-                      {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-                    </article>
-              </section>
+               <article class="infocard">
+                {contactInfo.length > 0 && 
+                  <ContactCard pb="../img/profilepictures/NikolajGulstorff.jpg" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}  // Add this line to pass description
+                  />
+                }
+              </article>
+              </article>
+            </section>
 
-              <section>
-                  
-                 
+            <section class="content"> 
                 <a href="#" class="card-link" data-target="container1">MINITENNIS 6-10 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
                 <div class="container" id="container1">
                   <div class="card">
@@ -90,11 +93,10 @@ console.log("contactInfo", contactInfo);
                 </section>
 
 
-                <h3>OM TRÆNINGEN</h3>
-                  <section class="grid-1_2">
+               <section class="content"> <h3>OM TRÆNINGEN</h3>
+                  <article class="grid-1_2">
                     <p>I ATK tilbyder vi træning for alle juniorer mellem 5 og 18 år. Vi tager løbende juniorer ind på træningen, så længe vi har den fornødne trænerkapacitet og der er plads på banerne. Du skal være medlem og betale kontingent for at kunne tilmelde dig og deltage på træningen. Vi forventer at man som spiller er undervisningsparat og kan følge trænerens instrukser.<br><br>
                       For at fastholde kvalitet og kontinuitet i træningen inddeles spillerne i grupper efter spillernes umiddelbare niveau, sociale interesse og motivationsmæssige udgangspunkt. Vi vægter at spillerne indgår i en positiv social atmosfære, samtidig med at alle spillere med stort engagement har gode træningsmuligheder for at udvikle sin tennis, uanset deres niveau. <br><br>
-
                       Det er muligt at komme til én eller to gratis prøvetræninger, inden du afgøre om du skal være fast spiller på træningen. </p>
                     
                     <Tabel
@@ -112,7 +114,8 @@ console.log("contactInfo", contactInfo);
                     hold6="Elitespiller"
                     pris6="1.600kr / 2.000 kr." 
                     />
-                  </section>
+                  </article>
+                </section>
   
 </div>  
 <Footer />
@@ -141,7 +144,16 @@ console.log("contactInfo", contactInfo);
   .container.active {
     display: block;
   }
+
+  @media (max-width: 768px) {
+   .card-link {
+    font-size: 1rem;
+    margin-top: 10%;
+   }
+  }
+ 
 </style>
+¨
 
 
 <script>
