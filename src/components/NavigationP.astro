@@ -3,53 +3,53 @@ const HeroImg = Astro.props.HeroImg;
 ---
 
 <header>
-    <a href="/index" id="atkHome"><img src="/img/atkHome.webp" alt="logo"></a>
-    <nav class="navContainer">
-      <div class="dropdown">
-        <a  href="/traening">TRÆNING</a>
-        <img src="/img/svg/arrowDown_1.svg">
-        <div class="dropdown-content">
-          <a href="/juniortraening">Juniortræning</a>
-          <a href="/motionisttraening">Motionisttræning</a>
-          <a href="/seniortraening">Seniortræning</a>
-          <a href="/elitetraening">Elitetræning</a>
-        </div>
+  <a href="/index" id="atkHome"><img src="/img/atkHome.webp" alt="logo"></a>
+  <nav class="navContainer">
+    <div class="dropdown">
+      <a href="/traening">TRÆNING</a>
+      <div class="arrow"></div>
+      <div class="dropdown-content">
+        <a href="/juniortraening">Juniortræning</a>
+        <a href="/motionisttraening">Motionisttræning</a>
+        <a href="/seniortraening">Seniortræning</a>
+        <a href="/elitetraening">Elitetræning</a>
       </div>
-      <div class="dropdown">
-        <a href="/aktiviteter">AKTIVITETER</a>
-        <img src="/img/svg/arrowDown_1.svg">
-        <div class="dropdown-content">
-          <a href="https://www.atk-tennis.dk/content/fakta-om-atk">Klubmesterskaber</a>
-          <a href="https://www.atk-tennis.dk/content/indspilningsturnering-2024">Indspilningsturnering</a>
-          <a href="https://www.atk-tennis.dk/content/doubleturnering-2023">Doubleturnering</a>
-          <a href="https://www.atk-tennis.dk/content/atk-liga-2024">ATK Liga</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="/medlemskab">MEDLEMSSKAB</a>
-        <img src="/img/svg/arrowDown_1.svg">
-        <div class="dropdown-content">
-          <a href="https://www.atk-tennis.dk/content/fakta-om-atk">Reservationsregler</a>
-          <a href="https://www.atk-tennis.dk/sites/default/files/ATK-Indmeldelsesfolder-2022.pdf">Nyt medlem</a>
-          <a href="https://www.atk-tennis.dk/content/medlemskab">Ansøg medlemsskab</a>
-          <a href="https://www.atk-tennis.dk/content/%C3%A6ndring-af-medlemskab">Ændre medlemsskab</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="/omatk" id="noBorder">OM ATK</a>
-        <img src="/img/svg/arrowDown_1.svg">
-        <div class="dropdown-content">
-          <a href="allenyheder">Nyheder</a>
-          <a href="ledelse">Ledelse</a>
-          <a href="udvalg">Udvalg</a>
-        </div>
-      </div>
-    </nav>
-    <div class="navBtns">
-      <a href=".." id="baneBook">BOOK BANE</a>
-      <a id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="baneTilstand"></a>
     </div>
-    <div>
+    <div class="dropdown">
+      <a href="/aktiviteter">AKTIVITETER</a>
+      <div class="arrow"></div>
+      <div class="dropdown-content">
+        <a href="https://www.atk-tennis.dk/content/fakta-om-atk">Klubmesterskaber</a>
+        <a href="https://www.atk-tennis.dk/content/indspilningsturnering-2024">Indspilningsturnering</a>
+        <a href="https://www.atk-tennis.dk/content/doubleturnering-2023">Doubleturnering</a>
+        <a href="https://www.atk-tennis.dk/content/atk-liga-2024">ATK Liga</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/medlemskab">MEDLEMSKAB</a>
+      <div class="arrow"></div>
+      <div class="dropdown-content">
+        <a href="https://www.atk-tennis.dk/content/fakta-om-atk">Reservationsregler</a>
+        <a href="https://www.atk-tennis.dk/sites/default/files/ATK-Indmeldelsesfolder-2022.pdf">Nyt medlem</a>
+        <a href="https://www.atk-tennis.dk/content/medlemskab">Ansøg om medlemskab</a>
+        <a href="https://www.atk-tennis.dk/content/%C3%A6ndring-af-medlemskab">Ændre medlemskab</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/omatk" id="noBorder">OM ATK</a>
+      <div class="arrow"></div>
+      <div class="dropdown-content">
+        <a href="allenyheder">Nyheder</a>
+        <a href="ledelse">Ledelse</a>
+        <a href="udvalg">Udvalg</a>
+      </div>
+    </div>
+  </nav>
+  <div class="navBtns">
+    <a href=".." id="baneBook">BOOK BANE</a>
+    <a id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="baneTilstand"></a>
+  </div>
+  <div>
     <div id="menu-toggle">&#9776;</div>
     <div id="close-menu">&#10006;</div>
   </div>
@@ -68,7 +68,6 @@ const HeroImg = Astro.props.HeroImg;
 
 
 <style>
-
 .fpHeadline {
   position: absolute;
   top: 50%;
@@ -85,13 +84,9 @@ const HeroImg = Astro.props.HeroImg;
   color: white;
 }
 
-.fpHeadline a {
-  background-color: var(--primaryColor);
-  padding: 10px 30px;
-  border-radius:4px;
-  margin: 0px 20px;
+.fpBtns {
+  margin: 0px 5%;
 }
-
 
 
 
@@ -144,6 +139,23 @@ const HeroImg = Astro.props.HeroImg;
     height: auto;
   }
 
+  .dropdown > a::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url('/img/svg/arrowDown_1.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 5px;
+  transition: background-image 0.3s ease;
+}
+
+
+.dropdown:hover > a::after {
+  background-image: url('/img/svg/redarrowDown_1.svg'); /* Replace with the new arrow image */
+}
+
   .dropdown-content {
     display: none;
     border-radius: 4px;
@@ -153,6 +165,7 @@ const HeroImg = Astro.props.HeroImg;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     animation: fadeIn 0.4s ease forwards; 
      z-index: 30;
+     transition: color 0.3s ease;
   }
 
  
@@ -168,10 +181,12 @@ const HeroImg = Astro.props.HeroImg;
 .dropdown-content a:hover {
   background-color: var(--primaryColor);
   color: var(--text-white);
+  transition: color 0.3s ease, background-color 0.3s ease;
   
 }
 .dropdown:hover .dropdown-content {
   display: block;
+  animation: fadeIn 0.5s forwards; /* Apply slide-in animation */
 }
 .navBtns {
   display: flex;
