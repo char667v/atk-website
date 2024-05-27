@@ -19,18 +19,13 @@ console.log("contactInfo", contactInfo);
 ---
 
 <MainLayout title="Træning" />
-<NavigationP
-HeroImg="../img/træningHero.webp"
- />
+<NavigationP HeroImg="../img/træningHero.webp"/>
 
 <div class="main">
 
-<section class="breadcrumb_trail">
   <a href="/juniortraening"><BreadCrumb breadtitle="Hjem"/></a>
   <a href="/traening"><BreadCrumb breadtitle="Træning"/></a>
- 
 
-</section>
 
 <h2>TRÆNING</h2>
 
@@ -46,31 +41,11 @@ HeroImg="../img/træningHero.webp"
 </section>
 
 <section class="grid-2_3">
-  <a href="/juniortraening">
-  <CategoryCard
-  imgPath="../img/juniorCategory.webp"
-  title="JUNIOR"/>
-  </a>
-  
-  <a href="/seniortraening">
-  <CategoryCard 
-  imgPath="../img/seniorCategory.webp"
-  title="SENIOR"/>
-  </a>
-  
-  <a href="/motionisttraening">
-   <CategoryCard 
-  imgPath="../img/motionist_træning_hero.webp"
-  title="MOTIONIST"/>
-  </a>
-  
-  <a href="/elitetraening">
-  <CategoryCard 
-  imgPath="../img/elite_træning_hero.webp"
-  title="ELITE"/>
-  </a>
-  </section>
-
+  <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR"/></a>
+  <a href="/seniortraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR"/></a>
+  <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp"title="MOTIONIST"/></a>
+  <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE"/></a></section>
+</section>
 <Banner 
 src="bannerBg.png"
 btnTitle="TJEK MAKKERBØRS"

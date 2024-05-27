@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 import Newscard from "../components/Newscard.astro";
 import NavigationP from "../components/NavigationP.astro";
 
-const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter", {
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=6", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
@@ -17,39 +17,23 @@ console.log("newsData", newsData);
 ---
 
 <MainLayout title="Aktiviteter" />
-<NavigationP 
-HeroImg="../img/gruppebillede.webp"/>
+<NavigationP HeroImg="../img/gruppebillede.webp"/>
 
 
 <div class="main">
-  <section class="breadcrumb_trail">
+ 
     <a href="/juniortraening"><BreadCrumb breadtitle="Hjem" /></a>
     <a href="/seniortraening"><BreadCrumb breadtitle="Aktiviteter" /></a>
-  </section>
 
   <h2>AKTIVITETER</h2>
   <section class="autolayout">
     {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
   </section>
 
-  <section class="categoryCard_grid3">
-  
-    <a href="">
-      <CategoryCard imgPath="../img/Tennisballsracket.webp" title="DOUBLETURNERING" />
-
-      <a href="">
-        <CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
-
-        <a href="">
-          <CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
-
-          <a href="">
-            <CategoryCard imgPath="../img/Tennisballsracket.webp" title="ATK-LIGA" />
-          </a>
-        </a>
-      </a>
-      <!-- --------------------------------------------------------------------------------- -->
-
-   
+  <section class="grid-2_3">
+    <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="DOUBLETURNERING" />
+    <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
+    <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
+    <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="ATK-LIGA" />
   </section>
 </div>

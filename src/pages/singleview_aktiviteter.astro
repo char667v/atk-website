@@ -8,14 +8,10 @@ import NavigationP from "../components/NavigationP.astro";
 
 <div class="main">
 
-<section class="breadcrumb_trail">
-    <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-    <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-</section>
+  <a href="/juniortraening"><BreadCrumb breadtitle="Hjem"/></a>
+  <a href="/seniortraening"><BreadCrumb breadtitle="Aktiviteter"/></a>
+  <a href="/juniortraening"><BreadCrumb breadtitle={title}/></a>
+
 
 <h1>DOUBLETURNERING UDENDØRS 2024</h1>
 
@@ -43,14 +39,4 @@ import NavigationP from "../components/NavigationP.astro";
 
 </div>
 
- <!-- --------------------------------------------------------------------------------- -->
- 
- <style>
-    .breadcrumb_trail img{ /* pile i brødkrummesti */
-        width:0.7%;
-    }
-    
-    p{
-      color: blueviolet;/* OBS: skriften er pr default hvid */
-    }
-     </style>
+

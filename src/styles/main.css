@@ -73,7 +73,7 @@ h1 {
 
 h2 {
   font-size: 1.1rem;
-  text-align: center;
+  
 }
 
 h3 {
@@ -97,7 +97,6 @@ p {
 
 a {
   font-size: 1rem;
-  color: var(--text-black);
   text-decoration: none;
 }
 
@@ -110,15 +109,6 @@ a {
 }
 .paragraphLink:hover {
   color: var(--primaryColor);
-}
-
-/* Btn */
-.fpHeadline a {
-  color: white;
-  background-color: var(--primaryColor);
-  padding: 10px 30px;
-  border-radius:4px;
-  margin: 0px 20px;
 }
 
 /* Læs mere */ 
@@ -144,10 +134,18 @@ a {
 .main {
   background-color: #f9f9f9;
   margin: 0% 10%;
-  padding: 1% 10% 5% 10%;
-
+  padding: 0% 10%;
 }
 
+.content {
+  padding: 5% 0%;
+}
+
+.flexboxCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .grid-2_3,
 .grid-1_2,
 .grid1 {
@@ -164,21 +162,6 @@ a {
   gap: 20px;
   justify-content: center; /* Centers the grid items horizontally */
   align-items: center;
-}
-
-.categroyCard_grid1 {
-  grid-template-columns: 1fr;
-  grid-template-columns: 1fr;
-  grid-column-gap: 2%;
-grid-row-gap: 2%;
-}
-
-.categoryCard_grid2,
-.categoryCard_grid3,
-.categoryCard_grid4 {
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 2px;
 }
 
 

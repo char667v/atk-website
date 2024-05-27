@@ -1,6 +1,7 @@
 ---
 import "../styles/main.css";
 import "../styles/pc_style.css";
+import PrimaryButoon from "../components/PrimaryButton.astro";
 
 ---
 
@@ -60,8 +61,8 @@ import "../styles/pc_style.css";
 <div class=fpHeadline>
   <h3>Samlet om Tennis - Fra begynder til mester!</h3>
   <div>
-  <a>BOOK BANE</a> 
-  <a>KONTAKT</a>
+    <PrimaryButoon btnText="BOOK BANE" link="/allenyheder"/>
+    <PrimaryButoon btnText="KONTAKT OS" link="/allenyheder"/>
   </div>
 </div>
 
@@ -95,6 +96,10 @@ import "../styles/pc_style.css";
 
 .fpHeadline h3 {
   color: white;
+}
+
+.fpBtns {
+  margin: 0px 5%;
 }
 
 

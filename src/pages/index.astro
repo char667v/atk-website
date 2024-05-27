@@ -6,33 +6,31 @@ import CarrouselScroll from "../components/CarrouselScroll.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
-import PrimaryBtn from "../components/PrimaryBtn.astro";
+import PrimaryButoon from "../components/PrimaryButton.astro";
+import Newscard from "../components/Newscard.astro";
 
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=3", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+}).then((response) => response.json());
+
+console.log("newsData", newsData);
 ---
 
 <MainLayout title="Arbejdernes Tennisklub"/> 
 <Navigation />
 
 <div class="main">
-    <section><h2>Nyheder</h2>
-        <article class="newsBig_grid">
+    <section class="content"><h2>SENESTE NYT</h2>
           <div class="carousel-container">
             <div class="carousel-track">
-                  <div class="carousel-item">
-                    <CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/>
-                  </div>
-                  <div class="carousel-item">
-                    <CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/>
-                  </div>
-                  <div class="carousel-item">
-                    <CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/>
-                  </div>
-                  <div class="carousel-item">
-                    <CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/>
-                  </div>
-                  <div class="carousel-item">
-                    <CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/>
-                  </div>
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
             </div>
                   <div class="carousel-navigation">
                     <img src="/img/svg/redarrowLeft_1.svg" id="prevButton"></img>
@@ -44,31 +42,37 @@ import PrimaryBtn from "../components/PrimaryBtn.astro";
                     <div class="carousel-indicator" data-slide-to="2"></div>
                     <div class="carousel-indicator" data-slide-to="3"></div>
                     <div class="carousel-indicator" data-slide-to="4"></div>
-                  </div>
-        </div> 
+                  </div> 
+          </div> 
 
-                  <div class=fpHeadline>
-                    <a>Læs alle nyheder </a>
-                    </div>
+        <br>
+        <br>
+                  <div class=flexboxCenter>
+                  <PrimaryButoon btnText="SE ALLE NYHEDER" link="/allenyheder"/>
+                  <div>
+    </section>
+        
+    <section class="content"><h3>KOMMENDE AKTIVITETER</h3>
+        <article class="autolayout">
+          {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
         </article>
-      
-       
-       <section><h3>AKTIVITETER</h3>
+        <br>
+        <div class=flexboxCenter>
+          <PrimaryButoon btnText="SE ALLE AKTIVITETER" link="/allenyheder"/>
+          <div>
+    </section>
 
-              <article class="newsSmall_grid">
-              <CarrouselScroll class="carrousel1" date="11/11" headline="wow" subheadline="EPIC BATTLE BETWEEN THE"/>
-              <CarrouselScroll class="carrousel1" date="22/22" headline="wow" subheadline="EPIC BATTLE BETWEEN THE " />
-              <CarrouselScroll class="carrousel1" date="33/33" headline="wow" subheadline="EPIC BATTLE BETWEEN THE " />
-              </article>
-
-              <article class="categoryCard_grid1">
+    <section class="content">
+              <article class="grid-2_3">
               <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR"/></a>
               <a href="/motionisttraening"><CategoryCard imgPath="../img/seniorCategory.webp"title="SENIOR"/></a>
               <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp"title="MOTIONIST"/></a>
               <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE"/></a>
               </article>
+    </section>
+    
 </div>
-<Footer />
+  <Footer />
 
 <style>
     .carousel-track {
@@ -76,17 +80,6 @@ import PrimaryBtn from "../components/PrimaryBtn.astro";
       transition: transform 1s ease-in-out;
     }
  
-  .newsBig_grid{
-   }
-  
-  .newsSmall_grid{
-    display:flex;
-    justify-content: center; 
-    align-items: center; 
-    margin:10%;
-    gap: 20px;
-  }
-
   .carousel-container {
     width: 700px;
     display: flex;
