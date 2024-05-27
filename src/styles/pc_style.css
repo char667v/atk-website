@@ -30,6 +30,9 @@
   p {
     font-size: 1rem;
   }
+  .subheadline {
+    font-size: 1.4rem;
+  }
 
   .grid-2_3 {
     display: grid;

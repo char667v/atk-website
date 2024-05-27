@@ -91,7 +91,7 @@ h6 {
 }
 
 p {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   color: var(--text-black);
 }
 
@@ -99,6 +99,17 @@ a {
   font-size: 1rem;
   color: var(--secondary-color);
   text-decoration: none;
+}
+
+.subheadline {
+  font-size: 0.8rem;
+}
+
+.paragraphLink {
+  color: red;
+}
+.paragraphLink:hover {
+  color: var(--primaryColor);
 }
 
 /* Content og grids på pages */
@@ -117,6 +128,7 @@ a {
   grid-template-columns: 1fr;
   grid-column-gap: 5%;
   grid-row-gap: 5%;
+  padding-bottom: 5%;
 }
 
 .autolayout {

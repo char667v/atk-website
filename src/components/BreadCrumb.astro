@@ -52,5 +52,16 @@ const { breadtitle } = Astro.props;
     .breadcrumb_list li:hover span::after {
         visibility: visible;
     }
+
+    @media only screen and (max-width: 768px) {
+        .breadcrumb_list {
+        font-size: 0.6rem;
+    }
+    
+    .breadcrumb_list img {
+        width: 6px;
+        margin-right: 5px;
+    }
+    }
     
 </style>
