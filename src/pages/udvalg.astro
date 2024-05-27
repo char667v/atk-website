@@ -18,8 +18,8 @@ console.log("contactInfo", contactInfo);
 
 <div class="main">
 
-<section class="breadcrumb_trail">
-    <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
+  <section class="breadcrumb_trail">
+    <img class="arrow" src="../img/svg/arrowLeft_1.svg" alt="Pil">
     <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
     <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
     <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
@@ -92,7 +92,7 @@ console.log("contactInfo", contactInfo);
  
 
  <h3>IT- OG KOMMUNIKATIONSUDVALG</h3>
- <h4>Udvalget står b.la. for udsendelse af ATK-NYT, nyhedsbreve og vedligeholdelse af hjemmesiden.</h4>
+ <h4>Udvalget står bl.a. for udsendelse af ATK-NYT, nyhedsbreve og vedligeholdelse af hjemmesiden.</h4>
  <!-- contactCard-->
  <section class="infocard">
     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}

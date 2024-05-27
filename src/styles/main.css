@@ -35,6 +35,7 @@ body {
 }
 .main {
   background-color: #f9f9f9;
+  top: 10%;
   margin: 0% 10%;
   padding: 5%;
 }

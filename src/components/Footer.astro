@@ -35,7 +35,7 @@ import "../styles/pc_style.css";
 
     <div class="newsletterForm">
         <h4>Nyhedsbrev</h4>
-        <form action="/submit-email" method="POST">
+        <form action="/submit-email" method="POST" name="kontakt" netlify> <!-- Har tilføjet netlify, men skal vi beholde det? -->
           <input type="email" id="email" name="email" placeholder="Email" required>
           <button type="submit">TILMELD NYHEDSBREV</button>
         </form>
@@ -52,6 +52,7 @@ import "../styles/pc_style.css";
 </div>
 </footer>
 
+<!-- --------------------------------------------------------------------------------- -->
 <style>
 footer {
     background-color: var(--text-white);

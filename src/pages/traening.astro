@@ -22,17 +22,16 @@ console.log("contactInfo", contactInfo);
 <div class="main">
 
 <section class="breadcrumb_trail">
-  <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-  <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
+  <img class="arrow" src="../img/svg/arrowLeft_1.svg" alt="Pil">
   <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-  <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-  <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-  <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-  <a href="/ledelse"><BreadCrumb breadtitle="ledelse"/></a> <!-- husk at slette -->
-  <a href="/udvalg"><BreadCrumb breadtitle="udvalg"/></a> <!-- husk at slette -->
-  <a href="/allenyheder"><BreadCrumb breadtitle="alle nyheder"/></a> <!-- husk at slette -->
-  <a href="/singleview_nyhed"><BreadCrumb breadtitle="single nyheder"/></a> <!-- husk at slette -->
-  <a href="/singleview_aktiviteter"><BreadCrumb breadtitle="single aktivitet"/></a> <!-- husk at slette -->
+  <a href="/seniortraening"><BreadCrumb breadtitle="/ Senior"/></a>
+  <a href="/motionisttraening"><BreadCrumb breadtitle="/ Motionist"/></a>
+  <a href="/elitetraening"><BreadCrumb breadtitle="/ Elite"/></a>
+  <a href="/ledelse"><BreadCrumb breadtitle="/ ledelse"/></a> <!-- husk at slette -->
+  <a href="/udvalg"><BreadCrumb breadtitle="/ udvalg"/></a> <!-- husk at slette -->
+  <a href="/allenyheder"><BreadCrumb breadtitle="/ alle nyheder"/></a> <!-- husk at slette -->
+  <a href="/singleview_nyhed"><BreadCrumb breadtitle="/ single nyheder"/></a> <!-- husk at slette -->
+  <a href="/singleview_aktiviteter"><BreadCrumb breadtitle="/ single aktivitet"/></a> <!-- husk at slette -->
 </section>
 
 <h1>TRÆNING</h1>
@@ -83,15 +82,19 @@ btnTitle="TJEK MAKKERBØRS"
 
 <!-- --------------------------------------------------------------------------------- -->
 <style>
+  /***** MOBIL *****/
   @media (max-width: 768px) {
     .breadcrumb_trail {
         display: none;
     }}
 
-  .breadcrumb_trail img{ /* pile i brødkrummesti */
-      width:0.7%;
+  /***** DESK *****/
+  .arrow{ /* pile i brødkrummesti */
+      width: 1%;
   }
-  
+  .breadcrumb_trail img.arrow {
+      margin-right: 10px;
+    }
   p{
     color: blueviolet;/* OBS: skriften er pr default hvid */
   }
