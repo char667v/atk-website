@@ -8,6 +8,7 @@ import TrainingCard from "../components/trainingCard.astro";
 import Tabel from "../components/Tabel.astro";
 import Traening from "./traening.astro";
 import NavigationP from "../components/NavigationP.astro";
+import TrainingInfo from "../components/TrainingInfo.astro";
 
 const coachId = "23"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -35,32 +36,14 @@ HeroImg="../img/juniorHero.webp"
             <h2>JUNIORTRÆNING</h2>
 
             <section class="grid-1_2">
-                    <article>
-                      <div>
-                      <h5>SOMMERTRÆNING</h5>
-                      <div><img src="../img/svg/calender.svg" alt="calender"><p></p></div>
-                      <div><img src="" alt=""><p></p></div>
-                    </div>
-                    <div>
-                      <h5>VINTERTRÆNING</h5>
-                      <div><img src="" alt=""><p></p></div>
-                      <div><img src="" alt=""><p></p></div>
-                    </div>
-                    <div>
-                      <h5>TRÆNINGSPAUSER</h5>
-                      <div><img src="" alt=""><p></p></div>
-                      <div><img src="" alt=""><p></p></div>
-                    </div>
-                    </article>
+               <TrainingInfo datoS="1/5 - 13/9 2024" datoW="1/10 - 24/4 2024" lokationS="Genforeningspladsen 52, 2400 København NV" lokationW="Borups Allé 273, 2400 København NV" pause="Skoleferier samt helligdage"/>
 
                     <article class="infocard">
                       {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
                     </article>
               </section>
 
-
-
-                <section>
+              <section>
                   
                  
                 <a href="#" class="card-link" data-target="container1">MINITENNIS 6-10 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>

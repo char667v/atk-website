@@ -17,8 +17,7 @@ const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v
 console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Arbejdernes Tennisklub"/>
-<NavigationP 
-HeroImg="../img/elite_træning_hero.webp">
+<NavigationP HeroImg="../img/elite_træning_hero.webp">
 
 
 <div class="main">
@@ -35,23 +34,7 @@ HeroImg="../img/elite_træning_hero.webp">
  <h2>ELITETRÆNING 2024</h2>
   
  <section class="grid-1_2">
-  <article>
-    <div>
-    <h5>SOMMERTRÆNING</h5>
-    <div><img src="" alt=""><p></p></div>
-    <div><img src="" alt=""><p></p></div>
-  </div>
-  <div>
-    <h5>VINTERTRÆNING</h5>
-    <div><img src="" alt=""><p></p></div>
-    <div><img src="" alt=""><p></p></div>
-  </div>
-  <div>
-    <h5>TRÆNINGSPAUSER</h5>
-    <div><img src="" alt=""><p></p></div>
-    <div><img src="" alt=""><p></p></div>
-  </div>
-  </article>
+  
 
   <article class="infocard">
     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
@@ -91,12 +74,3 @@ HeroImg="../img/elite_træning_hero.webp">
 
 </div>  
   
-  <style>
-    .breadcrumb_trail img{ /* pile i brødkrummesti */
-        width:0.7%;
-    }
-    
-    p{
-      color: blueviolet;/* OBS: skriften er pr default hvid */
-    }
-     </style>
