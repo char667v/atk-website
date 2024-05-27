@@ -5,168 +5,137 @@ import CarrouselScroll from "../components/CarrouselScroll.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
+
 ---
 <MainLayout title="Arbejdernes Tennisklub"/> 
+
 <div class="main">
 
-<section class="breadcrumb_trail">
-<img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-<img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-<a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-<a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-<a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-<a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-</section>
+  <h1> nyheder</h1>
 
-<h1> nyheder</h1>
-
-<section class="newsBig_grid">
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <div class="carousel-item">
-        <CarrouselScroll 
-          date="11/11"
-          headline="wow"
-          subheadline="EPIC BATTLE BETWEEN THE "
-        />
-      </div>
-      <div class="carousel-item">
-        <CarrouselScroll 
-          date="11/11"
-          headline="wow"
-          subheadline="EPIC BATTLE BETWEEN THE "
-        />
-      </div>
-      <div class="carousel-item">
-        <CarrouselScroll 
-          date="11/11"
-          headline="wow"
-          subheadline="EPIC BATTLE BETWEEN THE "
-        />
-      </div>
-      <div class="carousel-item">
-        <CarrouselScroll 
-          date="12/12"
-          headline="amazing"
-          subheadline="INCREDIBLE SHOWDOWN"
-        />
-      </div>
-      <div class="carousel-item">
-        <CarrouselScroll 
-          date="01/01"
-          headline="unbelievable"
-          subheadline="UNREAL CLASH"
-        />
-      </div>
-    </div>
-    <div class="carousel-navigation">
-      <img src="/img/svg/redarrowLeft_1.svg" id="prevButton"></img>
-      <img src="/img/svg/redarrowRight_1.svg" id="nextButton"></img>
-    </div>
-    <div class="carousel-indicators">
-      <div class="carousel-indicator active" data-slide-to="0"></div>
-      <div class="carousel-indicator" data-slide-to="1"></div>
-      <div class="carousel-indicator" data-slide-to="2"></div>
-      <div class="carousel-indicator" data-slide-to="3"></div>
-      <div class="carousel-indicator" data-slide-to="4"></div>
-    </div>
-  </div> 
-</section>
+        <section class="newsBig_grid">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <div class="carousel-item">
+                <CarrouselScroll 
+                  date="11/11"
+                  headline="wow"
+                  subheadline="EPIC BATTLE BETWEEN THE "
+                />
+              </div>
+              <div class="carousel-item">
+                <CarrouselScroll 
+                  date="11/11"
+                  headline="wow"
+                  subheadline="EPIC BATTLE BETWEEN THE "
+                />
+              </div>
+              <div class="carousel-item">
+                <CarrouselScroll 
+                  date="11/11"
+                  headline="wow"
+                  subheadline="EPIC BATTLE BETWEEN THE "
+                />
+              </div>
+              <div class="carousel-item">
+                <CarrouselScroll 
+                  date="12/12"
+                  headline="amazing"
+                  subheadline="INCREDIBLE SHOWDOWN"
+                />
+              </div>
+              <div class="carousel-item">
+                <CarrouselScroll 
+                  date="01/01"
+                  headline="unbelievable"
+                  subheadline="UNREAL CLASH"
+                />
+              </div>
+            </div>
+            <div class="carousel-navigation">
+              <img src="/img/svg/redarrowLeft_1.svg" id="prevButton"></img>
+              <img src="/img/svg/redarrowRight_1.svg" id="nextButton"></img>
+            </div>
+            <div class="carousel-indicators">
+              <div class="carousel-indicator active" data-slide-to="0"></div>
+              <div class="carousel-indicator" data-slide-to="1"></div>
+              <div class="carousel-indicator" data-slide-to="2"></div>
+              <div class="carousel-indicator" data-slide-to="3"></div>
+              <div class="carousel-indicator" data-slide-to="4"></div>
+            </div>
+          </div> 
+        </section>
 
 <h2>AKTIVITETER</h2>
-<section class="newsSmall_grid">
-<CarrouselScroll class="carrousel1"
-date="11/11"
-headline="wow"
-subheadline="EPIC BATTLE BETWEEN THE "
-/>
-<CarrouselScroll class="carrousel1"
-date="22/22"
-headline="wow"
-subheadline="EPIC BATTLE BETWEEN THE "
-/>
-<CarrouselScroll class="carrousel1"
-date="33/33"
-headline="wow"
-subheadline="EPIC BATTLE BETWEEN THE "
-/>
-</section>
 
-<section class="categoryCard_grid1">
-<a href="/juniortraening">
-<CategoryCard
-imgPath="../img/Tennisballsracket.webp"
-title="JUNIOR"/>
-</a>
+        <section class="newsSmall_grid">
+        <CarrouselScroll class="carrousel1"
+        date="11/11"
+        headline="wow"
+        subheadline="EPIC BATTLE BETWEEN THE "
+        />
+        <CarrouselScroll class="carrousel1"
+        date="22/22"
+        headline="wow"
+        subheadline="EPIC BATTLE BETWEEN THE "
+        />
+        <CarrouselScroll class="carrousel1"
+        date="33/33"
+        headline="wow"
+        subheadline="EPIC BATTLE BETWEEN THE "
+        />
+        </section>
 
-<a href="/motionisttraening">
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="SENIOR"/>
-</a>
+        <section class="categoryCard_grid1">
+        <a href="/juniortraening">
+        <CategoryCard
+        imgPath="../img/Tennisballsracket.webp"
+        title="JUNIOR"/>
+        </a>
 
-<a href="/seniortraening">
- <CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="MOTIONIST"/>
-</a>
+        <a href="/motionisttraening">
+        <CategoryCard 
+        imgPath="../img/Tennisballsracket.webp"
+        title="SENIOR"/>
+        </a>
 
-<a href="/elitetraening">
-<CategoryCard 
-imgPath="../img/Tennisballsracket.webp"
-title="ELITE"/>
-</a>
-</section>
+        <a href="/seniortraening">
+        <CategoryCard 
+        imgPath="../img/Tennisballsracket.webp"
+        title="MOTIONIST"/>
+        </a>
 
- 
-
-<Banner 
-src="bannerBg.png"
-btnTitle="TJEK MAKKERBØRS"
-/>
+        <a href="/elitetraening">
+        <CategoryCard 
+        imgPath="../img/Tennisballsracket.webp"
+        title="ELITE"/>
+        </a>
+        </section>
 </div>
 
 <Footer />
 
-<!-- --------------------------------------------------------------------------------- -->
 <style>
-  
-/***** MOBIL *****/
-@media (max-width: 768px) {
-    img {
-        display: none;
+
+.carousel-container {
+      width: 760px;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      margin: auto;
     }
-    .main{
-    margin-top: 550px;
-  }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+ 
+  .newsBig_grid{
+   }
+  
   .newsSmall_grid{
     display:flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-/***** DESK *****/
-@media (min-width: 768px) {
-img{
-    width:0.8%;
-}
-
-.breadcrumb_trail img{ /* pile i brødkrummesti */
-        width:0.7%;
-    }
-    .main{
-    margin-top: 540px;
-  }
-  .newsBig_grid{
-    display: flex;
     justify-content: center; 
     align-items: center; 
-    height: 100vh; 
-    margin: 0; 
-   }
-  }
-  .newsSmall_grid{
-    display:flex;
     margin:10%;
     gap: 20px;
   }
@@ -225,57 +194,56 @@ img{
 
 
 <script>
-  const track = document.querySelector('.carousel-track') as HTMLElement;
-  const items = document.querySelectorAll('.carousel-item') as NodeListOf<HTMLElement>;
-  const totalItems = items.length;
-  const itemWidth = items[0].offsetWidth;
-  const indicators = document.querySelectorAll('.carousel-indicator');
-
-  let index = 0;
-
-  function updateCarousel() {
-    track.style.transform = `translateX(-${index * itemWidth}px)`;
-    updateIndicators();
-  }
-
-  function nextSlide() {
-    index = (index < totalItems - 1) ? index + 1 : 0;
-    updateCarousel();
-  }
-
-  function prevSlide() {
-    index = (index > 0) ? index - 1 : totalItems - 1;
-    updateCarousel();
-  }
-
-  function goToSlide(idx: number) {
-    index = idx;
-    updateCarousel();
-  }
-
-  function updateIndicators() {
-    indicators.forEach((indicator, idx) => {
-      if (idx === index) {
-        indicator.classList.add('active');
-      } else {
-        indicator.classList.remove('active');
-      }
-    });
-  }
-
-  document.getElementById('nextButton')!.addEventListener('click', nextSlide);
-  document.getElementById('prevButton')!.addEventListener('click', prevSlide);
-
-  indicators.forEach(indicator => {
-    indicator.addEventListener('click', (event) => {
-      const target = event.target as HTMLElement;
-      const slideTo = target.getAttribute('data-slide-to');
-      if (slideTo !== null) {
-        goToSlide(parseInt(slideTo));
-      }
-    });
-  });
-
-  setInterval(nextSlide, 5000); // Auto slide every 5 seconds
+    const track = document.querySelector('.carousel-track') as HTMLElement;
+    const items = document.querySelectorAll('.carousel-item') as NodeListOf<HTMLElement>;
+    const totalItems = items.length;
+    const itemWidth = items[0].offsetWidth;
+    const indicators = document.querySelectorAll('.carousel-indicator');
   
-</script>
+    let index = 0;
+  
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * itemWidth}px)`;
+      updateIndicators();
+    }
+  
+    function nextSlide() {
+      index = (index < totalItems - 1) ? index + 1 : 0;
+      updateCarousel();
+    }
+  
+    function prevSlide() {
+      index = (index > 0) ? index - 1 : totalItems - 1;
+      updateCarousel();
+    }
+  
+    function goToSlide(idx: number) {
+      index = idx;
+      updateCarousel();
+    }
+  
+    function updateIndicators() {
+      indicators.forEach((indicator, idx) => {
+        if (idx === index) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+  
+    document.getElementById('nextButton')!.addEventListener('click', nextSlide);
+    document.getElementById('prevButton')!.addEventListener('click', prevSlide);
+  
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+        const slideTo = target.getAttribute('data-slide-to');
+        if (slideTo !== null) {
+          goToSlide(parseInt(slideTo));
+        }
+      });
+    });
+  
+    setInterval(nextSlide, 5000); // Auto slide every 5 seconds
+  </script>
