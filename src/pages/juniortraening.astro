@@ -140,8 +140,8 @@ console.log("contactInfo", contactInfo);
 }
 
 .container {
+  width: 100%; /* Add this line */
   max-height: 0;
-  overflow: hidden;
   opacity: 0;
   transition: max-height 0.5s ease, opacity 0.5s ease;
 }
@@ -149,6 +149,7 @@ console.log("contactInfo", contactInfo);
 .container.active {
   max-height: 1000px; /* Adjust as needed or calculate dynamically */
   opacity: 1;
+  position: relative; /* Add this line */
 }
 
 @media (max-width: 768px) {
