@@ -4,8 +4,11 @@ import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
+import TrainingCard from "../components/trainingCard.astro";
+import Tabel from "../components/Tabel.astro";
+import Traening from "./traening.astro";
 
-const coachId = "24"; // Replace with the actual ID of the coach you want
+const coachId = "23"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
   method: "GET",
   headers: {
@@ -19,41 +22,138 @@ console.log("contactInfo", contactInfo);
 
 <div class="main">
 
-<section class="breadcrumb_trail">
-  <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-  <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-  <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-  <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-  <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-  <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-</section>
+        <section class="breadcrumb_trail">
+          <a href="/index"><BreadCrumb breadtitle="Hjem"/></a>
+          <a href="/traening"><BreadCrumb breadtitle="Træning"/></a>
+          <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
+        </section>
 
- <h1>JUNIORTRÆNING 2024</h1>
+            <h2>JUNIORTRÆNING</h2>
 
- <!-- Indsæt træningsInfo-->
+            <section class="grid-1_2">
+                    <article>
+                      <div>
+                      <h5>SOMMERTRÆNING</h5>
+                      <div><img src="" alt=""><p></p></div>
+                      <div><img src="" alt=""><p></p></div>
+                    </div>
+                    <div>
+                      <h5>VINTERTRÆNING</h5>
+                      <div><img src="" alt=""><p></p></div>
+                      <div><img src="" alt=""><p></p></div>
+                    </div>
+                    <div>
+                      <h5>TRÆNINGSPAUSER</h5>
+                      <div><img src="" alt=""><p></p></div>
+                      <div><img src="" alt=""><p></p></div>
+                    </div>
+                    </article>
 
- <!-- Indsæt contactCard -->
- <section class="infocard">
-  {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-</section>
+                    <article class="infocard">
+                      {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+                    </article>
+              </section>
 
- <Banner 
-src="bannerBg.png"
-btnTitle="PRISER OG INFO"
-/>
 
- <h3>HOLD- OG TRÆNINGSTIDSPUNKTER</h3>
 
-  <!-- minitennisCard-->
+                <section>
+                  
+                 
+                <a href="#" class="card-link" data-target="container1">MINITENNIS 6-10 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
+                <div class="container" id="container1">
+                  <div class="card">
+                    <TrainingCard />
+                  </div>
+                </div>
+                <a href="#" class="card-link" data-target="container2">KLUBSPILLER 10-18 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
+                <div class="container" id="container2">
+                  <div class="card">
+                    <TrainingCard/>
+                  </div>
+                </div>
+                <a href="#" class="card-link" data-target="container3">TURNERINGSSPILLER 10-18 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
+                <div class="container" id="container3">
+                  <div class="card">
+                    <TrainingCard />
+                  </div>
+                </div>
+                <a href="#" class="card-link" data-target="container4">ELITESPILLER 14-18 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
+                <div class="container" id="container4">
+                  <div class="card">
+                    <TrainingCard />
+                  </div>
+                </div>
 
-  <!-- clubplayerCard -->
+                </section>
 
-  <!-- teamplayerCard-->
 
-  <!-- eliteplayerCard -->
+                <h3>OM TRÆNINGEN</h3>
+                  <section class="grid-1_2">
+                    <p>I ATK tilbyder vi træning for alle juniorer mellem 5 og 18 år. Vi tager løbende juniorer ind på træningen, så længe vi har den fornødne trænerkapacitet og der er plads på banerne. Du skal være medlem og betale kontingent for at kunne tilmelde dig og deltage på træningen. Vi forventer at man som spiller er undervisningsparat og kan følge trænerens instrukser.<br><br>
+                      For at fastholde kvalitet og kontinuitet i træningen inddeles spillerne i grupper efter spillernes umiddelbare niveau, sociale interesse og motivationsmæssige udgangspunkt. Vi vægter at spillerne indgår i en positiv social atmosfære, samtidig med at alle spillere med stort engagement har gode træningsmuligheder for at udvikle sin tennis, uanset deres niveau. <br><br>
 
- <h3>PRISER</h3>
+                      Det er muligt at komme til én eller to gratis prøvetræninger, inden du afgøre om du skal være fast spiller på træningen. </p>
+                    
+                    <Tabel
+                    title="HOLD" 
+                    hold1="Fuldtidsmedlem"
+                    pris1="1.100 kr."
+                    hold2="Dagmedlem"
+                    pris2="900 kr."
+                    hold3="Juniormedlem"
+                    pris3="500 kr."
+                    hold4="Senioridræt"
+                    pris4="200 kr."
+                    hold5="Vintermedlem"
+                    pris5="200 kr."
+                    hold6="Passiv"
+                    pris6="100 kr." 
+                    />
+                  </section>
   
+</div>  
+<Footer />
+
+<style>
+   .card-link {
+    display: block; /* Set links to display as block elements */
+    margin-bottom: 5%; /* Add margin between links */
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--primaryColor);
+    padding: 5px;
+    color: var(--primaryColor);  
+  }
+  .card-link img {
+    position: absolute;
+    margin-top: 1.25%;
+    right: 20%;
+    width: 16px;
+
+  }
+  
+  .container {
+    display: none;
+    transition: display 0.5s ease-in; /* Add transition effect */
+  }
+  .container.active {
+    display: block;
+  }
+</style>
+
+
+<script>
+  const cardLinks = document.querySelectorAll('.card-link');
+
+  cardLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      const targetContainer = document.getElementById(targetId);
+
+      targetContainer.classList.toggle('active'); // Toggle the active class for the clicked container
+    });
+  });
+</script>
 </div>
 
 <Footer />

@@ -4,6 +4,10 @@ import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
+<<<<<<< HEAD
+=======
+import Navigation from "../components/Navigation.astro";
+>>>>>>> master
 import Footer from "../components/Footer.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
@@ -22,6 +26,7 @@ console.log("contactInfo", contactInfo);
 <div class="main">
 
 <section class="breadcrumb_trail">
+<<<<<<< HEAD
   <img class="arrow" src="../img/svg/arrowLeft_1.svg" alt="Pil">
   <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
   <a href="/seniortraening"><BreadCrumb breadtitle="/ Senior"/></a>
@@ -32,21 +37,28 @@ console.log("contactInfo", contactInfo);
   <a href="/allenyheder"><BreadCrumb breadtitle="/ alle nyheder"/></a> <!-- husk at slette -->
   <a href="/singleview_nyhed"><BreadCrumb breadtitle="/ single nyheder"/></a> <!-- husk at slette -->
   <a href="/singleview_aktiviteter"><BreadCrumb breadtitle="/ single aktivitet"/></a> <!-- husk at slette -->
+=======
+  <a href="/juniortraening"><BreadCrumb breadtitle="Hjem"/></a>
+  <a href="/traening"><BreadCrumb breadtitle="Træning"/></a>
+ 
+
+>>>>>>> master
 </section>
 
 <h1>TRÆNING</h1>
 
+<section class="grid-1_2">
 <p>I ATK tilbyder vi et bredt træningstilbud til alle medlemstyper. Træningen 
    tilrettelægges hver sæson af cheftræneren og forvaltes af vores erfarne trænerteam.
    Læs herunder mere om de forskellige træningskategorier eller kontakt cheftræneren 
    for at blive klogere på træningen i ATK.
 </p>
-
-<section class="infocard">
+<article class="infocard">
   {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+</article>
 </section>
 
-<section class="categoryCard_grid2">
+<section class="grid-2_3">
   <a href="/juniortraening">
   <CategoryCard
   imgPath="../img/Tennisballsracket.webp"
@@ -79,6 +91,10 @@ btnTitle="TJEK MAKKERBØRS"
 </div>
 
 <Footer />
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 
 <!-- --------------------------------------------------------------------------------- -->
 <style>
@@ -92,10 +108,15 @@ btnTitle="TJEK MAKKERBØRS"
   .arrow{ /* pile i brødkrummesti */
       width: 1%;
   }
+<<<<<<< HEAD
   .breadcrumb_trail img.arrow {
       margin-right: 10px;
     }
   p{
     color: blueviolet;/* OBS: skriften er pr default hvid */
   }
+=======
+  
+
+>>>>>>> master
    </style>

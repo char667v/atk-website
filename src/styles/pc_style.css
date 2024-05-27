@@ -7,6 +7,7 @@
 
   h2 {
     font-size: 3.8rem;
+    
   }
 
   h3,
@@ -27,16 +28,26 @@
   }
 
   p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .grid-2_3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(3, 1fr);
-grid-column-gap: 2%;
-grid-row-gap: 2%;
+    grid-template-rows: repeat(3, 1fr);
   }
+
+  .grid-1_2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+
+
+/* Content og grids på pages */
+
+
+
   /* styling for categories */
   .categoryCard_grid1,
   .categoryCard_grid2,

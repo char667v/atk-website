@@ -33,16 +33,17 @@ body {
   color: var(--text-white);
   font-family: "Avenir";
 }
+<<<<<<< HEAD
 .main {
   background-color: #f9f9f9;
   top: 10%;
   margin: 0% 10%;
   padding: 5%;
 }
+=======
+>>>>>>> master
 
-.mainContent {
- margin: 0 10%;
-}
+
 
 img,
 image {
@@ -76,12 +77,12 @@ summary {
 h1 {
   font-size: 2.2rem;
   margin-bottom: var(--spacing-medium);
-  margin-top: var(--spacing-large);
   text-align: center;
 }
 
 h2 {
   font-size: 1.1rem;
+  text-align: center;
 }
 
 h3 {
@@ -109,6 +110,47 @@ a {
   text-decoration: none;
 }
 
+/* Content og grids på pages */
+
+.main {
+  background-color: #f9f9f9;
+  margin: 0% 10%;
+  padding: 1% 10% 5% 10%;
+
+}
+
+.grid-2_3,
+.grid-1_2,
+.grid1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 5%;
+  grid-row-gap: 5%;
+}
+
+.autolayout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center; /* Centers the grid items horizontally */
+  align-items: center;
+}
+
+.categroyCard_grid1 {
+  grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2%;
+grid-row-gap: 2%;
+}
+
+.categoryCard_grid2,
+.categoryCard_grid3,
+.categoryCard_grid4 {
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 2px;
+}
+
 
 /* Logo og text i navigation */
 
@@ -120,25 +162,4 @@ a {
 #atkHome {
   width: 300px;
   height: auto;
-}
-
-
-
-/* Content og grids på pages */
-
-.content {
-  position: relative;
-  top: 500px;
-  background-color: #f9f9f9;
-}
-/* styleing for categories */
-.categroyCard_grid1,
-.grid-2_3,
-.categoryCard_grid2,
-.categoryCard_grid3,
-.categoryCard_grid4 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 2px;
 }
