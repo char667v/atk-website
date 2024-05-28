@@ -51,15 +51,14 @@ console.log("newsData", newsData);
       <AccentButton btnText="SE ALLE NYHEDER" link="/allenyheder" />
     </div>
 
-   
-      <h3>KOMMENDE AKTIVITETER</h3>
-      <article class="autolayout">
-        {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
-      </article>
-      <div class="flexboxCenter">
-        <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
-      </div>
-    
+    <h3>KOMMENDE AKTIVITETER</h3>
+    <article class="autolayout">
+      {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+    </article>
+    <div class="flexboxCenter">
+      <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
+    </div>
+
     <br />
     <br />
 
@@ -73,7 +72,7 @@ console.log("newsData", newsData);
       </div>
     </section>
     <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
-  </div>
+  
   <Footer />
 
   <style>

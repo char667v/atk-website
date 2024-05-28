@@ -19,7 +19,7 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
     <p class="news-subheadline">{subheadline}</p>
     <div class="read-more">
       <a>LÆS MERE</a>
-      <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon">
+      <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" />
     </div>
   </div>
 </article>
@@ -34,7 +34,7 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
     margin: 20px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s; 
+    transition: transform 0.3s;
   }
   .newscard:hover {
     transform: scale(1.1);
@@ -51,8 +51,8 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
     gap: 10px; /* Add gap between elements for spacing */
   }
   .news-date {
-    font-size: 0.8em; 
-    color: gray; 
+    font-size: 0.8em;
+    color: gray;
     margin: 0;
   }
   .news-headline {
@@ -63,6 +63,4 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
     font-size: 1em; /* Standard font size for subheadline */
     margin: 0;
   }
-
-  
 </style>
