@@ -7,18 +7,17 @@ const btnText = Astro.props.btnText;
 
 <style>
 .primaryBtn {
-    color: white;
-    background-color: var(--primaryColor);
+    color: var(--primaryColor);
+    background-color: white;
     padding: 10px 30px;
     border-radius:4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: background-color 0.7s ease, color 0.7s ease, transform 0.5s ease;
-    margin-right: 30px;
   }
   
   .primaryBtn:hover {
-    color: var(--primaryColor);
-    background-color: white;
+    color: white;
+    background-color: var(--primaryColor);
   }
 
 </style>

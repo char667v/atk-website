@@ -1,7 +1,8 @@
 ---
 import "../styles/main.css";
 import "../styles/pc_style.css";
-import PrimaryButoon from "../components/PrimaryButton.astro";
+import PrimaryButton from "../components/PrimaryButton.astro";
+import SecondaryBtn from "../components/SecondaryBtn.astro";
 
 ---
 
@@ -59,10 +60,11 @@ import PrimaryButoon from "../components/PrimaryButton.astro";
 </header>
 
 <div class="fpHeadline">
-  <h3>Samlet om Tennis - Fra begynder til mester!</h3>
+  <h3>Samlet om Tennis -</h3> 
+  <h3>Fra begynder til mester!</h3>
   <div class="fpBtns">
-    <PrimaryButoon btnText="BOOK BANE" link="/allenyheder"/>
-    <PrimaryButoon btnText="KONTAKT OS" link="/allenyheder"/>
+    <PrimaryButton btnText="BOOK BANE" link="/allenyheder"/>
+    <SecondaryBtn btnText="KONTAKT OS" link="/allenyheder"/>
   </div>
 </div>
 
@@ -86,18 +88,27 @@ import PrimaryButoon from "../components/PrimaryButton.astro";
 
 .fpHeadline {
   position: absolute;
-  top: 50%;
+    top: 50%;
     transform: translateY(-40%);
     width: 100%;
     display: flex;
+    text-align: center;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     z-index: 10;
+   
 }
 
 .fpHeadline h3 {
   color: white;
+  margin: 0;
+  line-height: 1;
+  font-size: 3.2rem;
+}
+
+.fpBtns {
+  margin-top: 2%;
 }
 
 .weatherWidget {
@@ -378,6 +389,13 @@ import PrimaryButoon from "../components/PrimaryButton.astro";
     display: none;
     font-size: 36px;
   }
+
+  .fpHeadline {
+    top: 40%;
+  }
+  .fpHeadline h3 {
+  font-size: 1.8rem;
+}
 }
 
 </style>
