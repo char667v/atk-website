@@ -18,58 +18,59 @@ console.log("contactInfo", contactInfo);
 <NavigationP HeroImg="../img/ledelseHero.webp"/>
 
 <div class="main">
-
+  <section class="content">
 
     <a href="/juniortraening"><BreadCrumb breadtitle="OM ATK"/></a>
     <a href="/seniortraening"><BreadCrumb breadtitle="Ledelse"/></a>
+    <h2>LEDELSE</h2>
 
 
- <h2>LEDELSE</h2>
-
- <h3>BESTYRELSE</h3>
- <p>ATKs bestyrelse valgt på generalforsamlingen D 8. februar 2024</p>
-<section class="autolayout">
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-</section>
+    <h3>BESTYRELSE</h3>
+    <p>ATKs bestyrelse valgt på generalforsamlingen D 8. februar 2024</p>
+      <div class="autolayout">
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+      </div>
 
   
 
- <h3>SEKRETARIAT</h3>
- <p>Sekretariatet tager sig af alle praktiske ting omkring indmeldelse, udmeldelse,  opkrævning af gebyrer og henvendelse til klubben.</p>
- <p> Mail: atk@atk-tennis.dk <br> Tlf: 38 34 64 38</p>
-      <section class="autolayout">
-          <article class="infocard">
-            {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-          </article>
-          <article class="infocard">
-            {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-          </article>
-          <article class="infocard">
-            {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-          </article>
-          <article class="infocard">
-            {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-          </article>
+    <h3>SEKRETARIAT</h3>
+    <p>Sekretariatet tager sig af alle praktiske ting omkring indmeldelse, udmeldelse,  opkrævning af gebyrer og henvendelse til klubben.</p>
+    <p> Mail: atk@atk-tennis.dk <br> Tlf: 38 34 64 38</p>
+          <div class="autolayout">
+              <article class="infocard">
+                {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+              </article>
+              <article class="infocard">
+                {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+              </article>
+              <article class="infocard">
+                {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+              </article>
+              <article class="infocard">
+                {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+              </article>
+          </div>
+          
       </section>
   </div>
 

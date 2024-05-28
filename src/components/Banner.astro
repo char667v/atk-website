@@ -1,6 +1,8 @@
 ---
 const src = Astro.props.src;
 const btnTitle = Astro.props.btnTitle
+
+import PrimaryButoon from "../components/PrimaryButton.astro";
 ---
 <div class="bannerWrapper">
 <a class="bannerBtn" href="">{btnTitle}</a>
@@ -18,12 +20,13 @@ const btnTitle = Astro.props.btnTitle
 .bannerBtn {
     position: absolute;
     background-color: var(--primaryColor);
-    padding: 15px 30px;
+    padding: 10px 30px;
     border-radius: 4px;
     top: 50%;
     left: 10%;
     transform: translate(0, -50%);
     text-decoration: none;
+    transition: background-color 0.7s ease, color 0.7s ease, transform 0.5s ease;
 }
 .bannerContainer {
     width: 100%;
@@ -34,6 +37,12 @@ const btnTitle = Astro.props.btnTitle
       height: 100%; 
       object-fit: cover;
 }
+
+.bannerBtn:hover {
+    color: var(--primaryColor);
+    background-color: white;
+  }
+
 
 @media only screen and (max-width: 768px) {
     .bannerContainer {

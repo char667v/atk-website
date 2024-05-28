@@ -21,19 +21,22 @@ console.log("newsData", newsData);
 
 
 <div class="main">
+    <section class="content">
  
     <a href="/juniortraening"><BreadCrumb breadtitle="Hjem" /></a>
     <a href="/seniortraening"><BreadCrumb breadtitle="Aktiviteter" /></a>
+    <h2>AKTIVITETER</h2>
 
-  <h2>AKTIVITETER</h2>
-  <section class="autolayout">
-    {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
-  </section>
+    <div class="autolayout">
+      {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+    </div>
 
-  <section class="grid-2_3">
-    <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="DOUBLETURNERING" />
-    <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
-    <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
-    <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="ATK-LIGA" />
+    <div class="grid-2_3">
+      <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="DOUBLETURNERING" />
+      <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
+      <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="INDSPILSTURNERING" />
+      <a href=""><CategoryCard imgPath="../img/Tennisballsracket.webp" title="ATK-LIGA" />
+    </div>
+    
   </section>
 </div>

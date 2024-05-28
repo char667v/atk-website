@@ -25,26 +25,26 @@ console.log("contactInfo", contactInfo);
 
 <div class="main">
 
+    <section class="content">
+
           <a href="/index"><BreadCrumb breadtitle="Hjem"/></a>
           <a href="/traening"><BreadCrumb breadtitle="Træning"/></a>
           <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-
-            <h2>JUNIORTRÆNING</h2>
+          <h2>JUNIORTRÆNING</h2>
 
             
-            <article class="grid-1_2">
+            <div class="grid-1_2">
                <TrainingInfo datoS="1/5 - 13/9 2024" datoW="1/10 - 24/4 2024" lokationS="Genforeningspladsen 52, 2400 København NV" lokationW="Borups Allé 273, 2400 København NV" pause="Skoleferier samt helligdage"/>
 
                <article class="infocard">
                 {contactInfo.length > 0 && 
-                  <ContactCard pb="../img/profilepictures/NikolajGulstorff.jpg" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}  // Add this line to pass description
-                  />
+                  <ContactCard pb="../img/profilepictures/NikolajGulstorff.jpg" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}/>
                 }
               </article>
-              </article>
-            </section>
+            </div>
+           
 
-            <section class="content"> 
+         
                 <a href="#" class="card-link" data-target="container1">MINITENNIS 6-10 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
                 <div class="container" id="container1">
                   <div class="card">
@@ -90,33 +90,15 @@ console.log("contactInfo", contactInfo);
                   </div>
                 </div>
 
-                </section>
-
-
-               <section class="content"> <h3>OM TRÆNINGEN</h3>
+              <h3>OM TRÆNINGEN</h3>
                   <article class="grid-1_2">
                     <p>I ATK tilbyder vi træning for alle juniorer mellem 5 og 18 år. Vi tager løbende juniorer ind på træningen, så længe vi har den fornødne trænerkapacitet og der er plads på banerne. Du skal være medlem og betale kontingent for at kunne tilmelde dig og deltage på træningen. Vi forventer at man som spiller er undervisningsparat og kan følge trænerens instrukser.<br><br>
                       For at fastholde kvalitet og kontinuitet i træningen inddeles spillerne i grupper efter spillernes umiddelbare niveau, sociale interesse og motivationsmæssige udgangspunkt. Vi vægter at spillerne indgår i en positiv social atmosfære, samtidig med at alle spillere med stort engagement har gode træningsmuligheder for at udvikle sin tennis, uanset deres niveau. <br><br>
                       Det er muligt at komme til én eller to gratis prøvetræninger, inden du afgøre om du skal være fast spiller på træningen. </p>
                     
-                    <Tabel
-                    title="HOLD" 
-                    hold1="Minitennis 1x/ugen"
-                    pris1="800 kr."
-                    hold2="Minitennis 2x/ugen"
-                    pris2="1.200 kr."
-                    hold3="Klubspiller 1x/ugen"
-                    pris3="800 kr."
-                    hold4="Klubspiller 2x/ugen"
-                    pris4="1.200 kr."
-                    hold5="Hold- og turneringsspiller 2-4x/ugen"
-                    pris5="1.600 kr."
-                    hold6="Elitespiller"
-                    pris6="1.600kr / 2.000 kr." 
-                    />
+                    <Tabel title="HOLD" hold1="Minitennis 1x/ugen" pris1="800 kr." hold2="Minitennis 2x/ugen" pris2="1.200 kr." hold3="Klubspiller 1x/ugen" pris3="800 kr." hold4="Klubspiller 2x/ugen" pris4="1.200 kr." hold5="Hold- og turneringsspiller 2-4x/ugen" pris5="1.600 kr." hold6="Elitespiller" pris6="1.600kr / 2.000 kr." />
                   </article>
-                </section>
-  
+      </section>
 </div>  
 <Footer />
 
