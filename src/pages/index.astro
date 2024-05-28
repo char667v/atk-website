@@ -7,7 +7,7 @@ import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import PrimaryButoon from "../components/PrimaryButton.astro";
-import Newscard from "../components/newsCard.astro";
+import Newscard from "../components/Newscard.astro";
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=3", {
   method: "GET",
@@ -37,7 +37,7 @@ console.log("newsData", newsData);
         <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" />
         <img src="/img/svg/redarrowRight_1.svg" id="nextButton" />
       </div>
-    </div>
+
     <div class="carousel-indicators">
       <div class="carousel-indicator active" data-slide-to="0"></div>
       <div class="carousel-indicator" data-slide-to="1"></div>
@@ -45,13 +45,13 @@ console.log("newsData", newsData);
       <div class="carousel-indicator" data-slide-to="3"></div>
       <div class="carousel-indicator" data-slide-to="4"></div>
     </div>
-
+  </section>
         <br>
         <br>
                   <div class=flexboxCenter>
                   <PrimaryButoon btnText="SE ALLE NYHEDER" link="/allenyheder"/>
                   </div>
-    </section>
+    
         
     <section class="content"><h3>KOMMENDE AKTIVITETER</h3>
         <article class="autolayout">

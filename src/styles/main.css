@@ -118,10 +118,14 @@ a {
   display: flex;
   align-items: center; 
   align-self: flex-end;
-  color: var(--primaryColor);
+  
   cursor: pointer;
   white-space: nowrap;
   margin-right: 3%;
+  
+}
+.read-more a {
+  color: var(--primaryColor);
   
 }
   .read-more img {
