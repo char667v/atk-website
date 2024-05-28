@@ -53,29 +53,28 @@ console.log("newsData", newsData);
       <AccentButton btnText="SE ALLE NYHEDER" link="/allenyheder" />
     </div>
 
-   
-      <h3>KOMMENDE AKTIVITETER</h3>
-      <article class="autolayout">
-        {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
-      </article>
-      <div class="flexboxCenter">
-        <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
-      </div>
-    
+    <h3>KOMMENDE AKTIVITETER</h3>
+    <article class="autolayout">
+      {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+    </article>
+    <div class="flexboxCenter">
+      <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
+    </div>
+
     <br />
     <br />
 
-      <div class="spacer">
-        <article class="grid-2_2">
-          <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" /></a>
-          <a href="/motionisttraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR" /></a>
-          <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp" title="MOTIONIST" /></a>
-          <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" /></a>
-        </article>
-      </div>
-    </section>
-    <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
-  
+    <div class="spacer">
+      <article class="grid-2_2">
+        <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" /></a>
+        <a href="/motionisttraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR" /></a>
+        <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp" title="MOTIONIST" /></a>
+        <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" /></a>
+      </article>
+    </div>
+  </section>
+  <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
+
   <Footer />
 
   <style>
