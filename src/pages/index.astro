@@ -8,29 +8,43 @@ import Footer from "../components/Footer.astro";
 import Newscard from "../components/Newscard.astro";
 import AccentButton from "../components/AccentButton.astro";
 
-const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=3", {
+// Fetch news data
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=5", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
   },
 }).then((response) => response.json());
 
-console.log("newsData", newsData);
+const imagePaths = [
+  "../img/news/motionist_træning_hero.webp",
+  "../img/news/indspilningsturnering.png",
+  "../img/news/padelbaner.webp",
+  "../img/news/ATK-Liga.png",
+  "../img/news/pinseturnering.jpg",
+];
+
+
+const updatedNewsData = newsData.map((news, index) => ({
+  ...news,
+  manualImage: imagePaths[index % imagePaths.length]
+}));
+
+console.log("updatedNewsData", updatedNewsData);
 ---
 
 <MainLayout title="Arbejdernes Tennisklub" />
 <Navigation />
-
 <div class="main">
   <section class="content" id="fpMain">
     <h2>SENESTE NYT</h2>
     <div class="carousel-container">
       <div class="carousel-track">
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
+        {updatedNewsData.map((news) => (
+          <div class="carousel-item">
+            <CarrouselScroll news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />
+          </div>
+        ))}
       </div>
       <div class="carousel-navigation">
         <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" />
@@ -38,11 +52,9 @@ console.log("newsData", newsData);
       </div>
 
       <div class="carousel-indicators">
-        <div class="carousel-indicator active" data-slide-to="0"></div>
-        <div class="carousel-indicator" data-slide-to="1"></div>
-        <div class="carousel-indicator" data-slide-to="2"></div>
-        <div class="carousel-indicator" data-slide-to="3"></div>
-        <div class="carousel-indicator" data-slide-to="4"></div>
+        {updatedNewsData.map((_, index) => (
+          <div class={`carousel-indicator ${index === 0 ? 'active' : ''}`} data-slide-to={index}></div>
+        ))}
       </div>
     </div>
     <br />
@@ -53,7 +65,9 @@ console.log("newsData", newsData);
 
     <h3>KOMMENDE AKTIVITETER</h3>
     <article class="autolayout">
-      {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+      {updatedNewsData.slice(0, 3).map((news) => (
+        <Newscard news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />
+      ))}
     </article>
     <div class="flexboxCenter">
       <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
@@ -62,16 +76,16 @@ console.log("newsData", newsData);
     <br />
     <br />
 
-      <div class="spacer">
-        <article class="grid-2_2">
-          <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" /></a>
-          <a href="/motionisttraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR" /></a>
-          <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp" title="MOTIONIST" /></a>
-          <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" /></a>
-        </article>
-      </div>
-    </section>
-    <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
+    <div class="spacer">
+      <article class="grid-2_2">
+        <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" /></a>
+        <a href="/motionisttraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR" /></a>
+        <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp" title="MOTIONIST" /></a>
+        <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" /></a>
+      </article>
+    </div>
+  </section>
+  <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
   
   <Footer />
 
@@ -134,8 +148,8 @@ console.log("newsData", newsData);
   </style>
 
   <script>
-    const track = document.querySelector(".carousel-track") as HTMLElement;
-    const items = document.querySelectorAll(".carousel-item") as NodeListOf<HTMLElement>;
+    const track = document.querySelector(".carousel-track");
+    const items = document.querySelectorAll(".carousel-item");
     const totalItems = items.length;
     const itemWidth = items[0].offsetWidth;
     const indicators = document.querySelectorAll(".carousel-indicator");
@@ -157,7 +171,7 @@ console.log("newsData", newsData);
       updateCarousel();
     }
 
-    function goToSlide(idx: number) {
+    function goToSlide(idx) {
       index = idx;
       updateCarousel();
     }
@@ -172,12 +186,12 @@ console.log("newsData", newsData);
       });
     }
 
-    document.getElementById("nextButton")!.addEventListener("click", nextSlide);
-    document.getElementById("prevButton")!.addEventListener("click", prevSlide);
+    document.getElementById("nextButton").addEventListener("click", nextSlide);
+    document.getElementById("prevButton").addEventListener("click", prevSlide);
 
     indicators.forEach((indicator) => {
       indicator.addEventListener("click", (event) => {
-        const target = event.target as HTMLElement;
+        const target = event.target;
         const slideTo = target.getAttribute("data-slide-to");
         if (slideTo !== null) {
           goToSlide(parseInt(slideTo));
@@ -185,6 +199,6 @@ console.log("newsData", newsData);
       });
     });
 
-    setInterval(nextSlide, 5000); // Auto slide every 5 seconds
+    setInterval(nextSlide, 6000); // Auto slide every 5 seconds
   </script>
 </div>

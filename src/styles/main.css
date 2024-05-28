@@ -40,11 +40,10 @@ image {
   height: auto;
 }
 
-/* Styling for fonts */
+/* Styling for fonts between 1024px and 600px */
 h2,
 h3,
 h4,
-summary,
 p,
 a {
   margin-bottom: var(--spacing-small);
@@ -55,8 +54,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-summary {
+h6 {
   font-weight: bold;
   text-transform: uppercase;
   font-family: "Avenir";
@@ -70,21 +68,20 @@ h1 {
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
-h4,
-summary {
-  font-size: 0.6rem;
+h4 {
+  font-size: 1.4rem;
 }
 
 h5,
 h6 {
-  font-size: 0.6rem;
+  font-size: 0.8em;
 }
 
 p {
@@ -93,7 +90,6 @@ p {
 }
 
 a {
-  color: white;
   font-size: 1rem;
   text-decoration: none;
 }
@@ -221,7 +217,7 @@ a {
   height: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .card-link {
     font-size: 1rem;
     margin-top: 10%;
@@ -232,8 +228,47 @@ a {
     padding-left: 30px;
   }
   
-
   .spacer {
     margin-bottom: 45%;
+  }
+
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  h4,
+  summary {
+    font-size: 0.8rem;
+  }
+  
+  h5,
+  h6 {
+    font-size: 0.8rem;
+  }
+  
+  p {
+    font-size: 0.7rem;
+    color: var(--text-black);
+  }
+  
+  a {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  
+  .subheadline {
+    font-size: 0.8rem;
   }
 }

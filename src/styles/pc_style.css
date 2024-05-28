@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   /* Font sizes on pc */
 
   h1 {
@@ -33,9 +33,11 @@
   .subheadline {
     font-size: 1.4rem;
   }
+}
 
   /* Content og grids på pages */
   
+  @media (min-width: 768px) {
   .grid-2_3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -67,4 +69,5 @@ grid-row-gap: 0px;
 }
   
 }
+
 

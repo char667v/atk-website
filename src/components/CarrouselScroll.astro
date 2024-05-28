@@ -13,7 +13,7 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
 
 <div class="news_card">
   <div class="card-image">
-     <img src="/img/serv2.webp" alt="" class="news-img">
+     <img src={news_image}" alt="" class="news-img">
   </div>
   <div class="card-content">
       <p class="news-date">{date}</p>
