@@ -40,7 +40,7 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
       </div>
     </div>
     <div class="dropdown">
-      <a href="/omatk" id="noBorder">OM ATK</a>
+      <a href="/omatk">OM ATK</a>
       <div class="arrow"></div>
       <div class="dropdown-content">
         <a href="allenyheder">Nyheder</a>
@@ -57,13 +57,13 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
     <div id="menu-toggle">&#9776;</div>
     <div id="close-menu">&#10006;</div>
   </div>
-</header>
+</header>   
 
 <div class="fpHeadline">
   <h3>Samlet om Tennis -</h3> 
   <h3>Fra begynder til mester!</h3>
   <div class="fpBtns">
-    <PrimaryButton btnText="BOOK BANE" link="/allenyheder"/>
+    <PrimaryButton btnText="BOOK BANE" link="https://atk.halbooking.dk/newlook/default.asp?login=open&pid=00"/>
     <SecondaryBtn btnText="KONTAKT OS" link="/allenyheder"/>
   </div>
 </div>
@@ -85,32 +85,6 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
 
 
 <style>
-
-.fpHeadline {
-  position: absolute;
-    top: 50%;
-    transform: translateY(-40%);
-    width: 100%;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-   
-}
-
-.fpHeadline h3 {
-  color: white;
-  margin: 0;
-  line-height: 1;
-  font-size: 3.2rem;
-}
-
-.fpBtns {
-  margin-top: 2%;
-}
-
 .weatherWidget {
     display: none;
     position: absolute;
@@ -121,12 +95,7 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
     opacity: 0;
     transition: opacity 0.5s ease;
 }
-        #baneTilstand:hover + .weatherWidget {
-    display: block; /* Show the widget */
-    animation: slideInFromTop 0.5s forwards; 
-    opacity: 1;
-}
-  
+    
   header {
     display: flex;
     align-items: center;
@@ -139,7 +108,6 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
     z-index: 20;
   }
 
-  
   nav a {
     font-size: 1rem;
     color: var(--text-black);
@@ -189,7 +157,6 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
      transition: color 0.3s ease;
   }
 
- 
 .dropdown-content a {
   font-size: 0.8rem;
   padding: 10px 10px 10px 10px;
@@ -210,9 +177,8 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
   animation: fadeIn 0.5s forwards; /* Apply slide-in animation */
 }
 
-.navBtns {
-  display: flex;
-  align-items: center;
+#menu-toggle #close-menu {
+  display: none;
 }
 
 #baneTilstand {
@@ -220,17 +186,12 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
   height: auto;
   margin-top: 5%;
   margin-left: var(--spacing-small);
+  transition: transform ease 0.5s;
 }
 
-#baneBook {
-  background-color: var(--secondaryColor);
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 4px;
-}
-
-#baneBook:hover {
-  background-color: var(--secondaryColor_dark);
+#baneTilstand:hover {
+transform: scale(1.1);
+cursor: pointer;
 }
 
  .heroWrapper {
@@ -239,13 +200,14 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
     height: 75vh;
     overflow: hidden;
   }
+  
 .heroVideo {
   position: absolute; 
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  
 }
+
 .heroVideo video {
   position: relative;
   width: 100%;
@@ -253,9 +215,31 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
   object-fit: cover;
 }
 
-#menu-toggle #close-menu {
-  display: none;
+.fpHeadline {
+  position: absolute;
+    top: 50%;
+    transform: translateY(-40%);
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+   
 }
+
+.fpHeadline h3 {
+  color: white;
+  margin: 0;
+  line-height: 1;
+  font-size: 3.2rem;
+}
+
+.fpBtns {
+  margin-top: 2%;
+}
+
 
 @keyframes fadeIn {
   from {
@@ -283,25 +267,8 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
   }
 }
 
-@media only screen and (max-width: 1170px) {
-  a {
-    font-size: 0.8rem;
-  }
-}
 
-@media only screen and (max-width: 924px) {
-  a {
-    font-size: 0.7rem;
-  }
-  #baneTilstand {
-    width: 36px;
-  }
-  nav a {
-    padding: 0px 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   header {
     position: fixed;
     height: 75px;
@@ -356,12 +323,6 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
   color: white;
  
 }
-
-
-  #atkHome {
-    padding-left: var(--spacing-small);
-    width: 200px;
-  }
 
   #baneTilstand {
     width: 36px;

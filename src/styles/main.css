@@ -180,15 +180,11 @@ a {
 
 /* Logo og text i navigation */
 
-#atkLogo {
-  width: 80px;
-  height: auto;
+#atkHome {
+  width: 20%;
 }
 
-#atkHome {
-  width: 300px;
-  height: auto;
-}
+/* Stuff */
 
 .card-link {
   display: block; /* Set links to display as block elements */
@@ -220,11 +216,22 @@ a {
   position: relative; /* Add this line */
 }
 
+#atkLogo {
+  width: 80px;
+  height: auto;
+}
+
 @media (max-width: 768px) {
   .card-link {
     font-size: 1rem;
     margin-top: 10%;
   }
+
+  #atkHome {
+    width: 30%;
+    padding-left: 30px;
+  }
+  
 
   .spacer {
     margin-bottom: 45%;

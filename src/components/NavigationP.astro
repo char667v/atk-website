@@ -101,11 +101,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
     opacity: 0;
     transition: opacity 0.5s ease;
 }
-        #baneTilstand:hover + .weatherWidget {
-    display: block; /* Show the widget */
-    animation: slideInFromTop 0.5s forwards; 
-    opacity: 1;
-}
+  
   
   header {
     display: flex;
@@ -187,7 +183,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
 }
 .dropdown:hover .dropdown-content {
   display: block;
-  animation: fadeIn 0.5s forwards; /* Apply slide-in animation */
+  animation: fadeIn 0.5s forwards;
 }
 .navBtns {
   display: flex;
@@ -201,16 +197,19 @@ import PrimaryButton from "../components/PrimaryButton.astro";
   margin-left: var(--spacing-small);
 }
 
-#baneBook {
-  background-color: var(--secondaryColor);
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 4px;
+#baneTilstand {
+  width: 42px;
+  height: auto;
+  margin-top: 5%;
+  margin-left: var(--spacing-small);
+  transition: transform ease 0.5s;
 }
 
-#baneBook:hover {
-  background-color: var(--secondaryColor_dark);
-}
+#baneTilstand:hover {
+transform: scale(1.1);
+cursor: pointer;
+ }
+
 
 .heroWrapper {
   position: relative;
@@ -282,25 +281,8 @@ import PrimaryButton from "../components/PrimaryButton.astro";
   }
 }
 
-@media only screen and (max-width: 1170px) {
-  a {
-    font-size: 0.8rem;
-  }
-}
 
-@media only screen and (max-width: 924px) {
-  a {
-    font-size: 0.7rem;
-  }
-  #baneTilstand {
-    width: 36px;
-  }
-  nav a {
-    padding: 0px 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   header {
     position: fixed;
     height: 75px;
@@ -355,12 +337,6 @@ import PrimaryButton from "../components/PrimaryButton.astro";
   color: white;
  
 }
-
-
-  #atkHome {
-    padding-left: var(--spacing-small);
-    width: 200px;
-  }
 
   #baneTilstand {
     width: 36px;
