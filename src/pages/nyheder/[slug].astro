@@ -1,0 +1,40 @@
+---
+
+import MainLayout from "../../layouts/MainLayout.astro";
+import NavigationP from "../../components/NavigationP.astro"
+
+interface News {
+  slug: string;
+  // Define other properties as needed
+  news_image: string;
+  date: string;
+  headline: string;
+  subheadline: string;
+  article: string;
+  id: string;
+}
+
+export async function getStaticPaths() {
+  const data: News[] = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=5", {
+    method: "GET",
+    headers: {
+      apikey:  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+    },
+  }).then((response) => response.json());
+  
+  return data.map((news) => {
+    return {
+      params: { slug: news.slug },
+      props: { myData: news },
+    };
+  });
+}
+
+const {myData} = Astro.props
+console.log(myData);
+---
+
+<MainLayout title={myData.slug}/>
+<NavigationP />
+
+<p>{myData.article}</p>

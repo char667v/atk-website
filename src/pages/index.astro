@@ -8,7 +8,6 @@ import Footer from "../components/Footer.astro";
 import Newscard from "../components/Newscard.astro";
 import AccentButton from "../components/AccentButton.astro";
 
-// Fetch news data
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=5", {
   method: "GET",
   headers: {
@@ -23,7 +22,6 @@ const imagePaths = [
   "../img/news/ATK-Liga.png",
   "../img/news/pinseturnering.jpg",
 ];
-
 
 const updatedNewsData = newsData.map((news, index) => ({
   ...news,
@@ -42,7 +40,7 @@ console.log("updatedNewsData", updatedNewsData);
       <div class="carousel-track">
         {updatedNewsData.map((news) => (
           <div class="carousel-item">
-            <CarrouselScroll news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />
+            <CarrouselScroll slug={news.slug} news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />
           </div>
         ))}
       </div>
@@ -86,7 +84,7 @@ console.log("updatedNewsData", updatedNewsData);
     </div>
   </section>
   <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
-  
+  </div>
   <Footer />
 
   <style>
@@ -148,57 +146,70 @@ console.log("updatedNewsData", updatedNewsData);
   </style>
 
   <script>
-    const track = document.querySelector(".carousel-track");
-    const items = document.querySelectorAll(".carousel-item");
-    const totalItems = items.length;
-    const itemWidth = items[0].offsetWidth;
-    const indicators = document.querySelectorAll(".carousel-indicator");
+   const track = document.querySelector<HTMLElement>(".carousel-track");
+const items = document.querySelectorAll<HTMLElement>(".carousel-item");
+const indicators = document.querySelectorAll<HTMLElement>(".carousel-indicator");
 
-    let index = 0;
+// Check if the elements exist before accessing their properties
+if (track && items.length > 0) {
+  const totalItems = items.length;
+  const itemWidth = items[0].offsetWidth;
 
-    function updateCarousel() {
+  let index = 0;
+
+  function updateCarousel() {
+    if (track) {
       track.style.transform = `translateX(-${index * itemWidth}px)`;
       updateIndicators();
     }
+  }
 
-    function nextSlide() {
-      index = index < totalItems - 1 ? index + 1 : 0;
-      updateCarousel();
-    }
+  function nextSlide() {
+    index = index < totalItems - 1 ? index + 1 : 0;
+    updateCarousel();
+  }
 
-    function prevSlide() {
-      index = index > 0 ? index - 1 : totalItems - 1;
-      updateCarousel();
-    }
+  function prevSlide() {
+    index = index > 0 ? index - 1 : totalItems - 1;
+    updateCarousel();
+  }
 
-    function goToSlide(idx) {
-      index = idx;
-      updateCarousel();
-    }
+  function goToSlide(idx: number) {
+    index = idx;
+    updateCarousel();
+  }
 
-    function updateIndicators() {
-      indicators.forEach((indicator, idx) => {
+  function updateIndicators() {
+    indicators.forEach((indicator, idx) => {
+      if (indicator) {
         if (idx === index) {
           indicator.classList.add("active");
         } else {
           indicator.classList.remove("active");
         }
-      });
-    }
-
-    document.getElementById("nextButton").addEventListener("click", nextSlide);
-    document.getElementById("prevButton").addEventListener("click", prevSlide);
-
-    indicators.forEach((indicator) => {
-      indicator.addEventListener("click", (event) => {
-        const target = event.target;
-        const slideTo = target.getAttribute("data-slide-to");
-        if (slideTo !== null) {
-          goToSlide(parseInt(slideTo));
-        }
-      });
+      }
     });
+  }
 
-    setInterval(nextSlide, 6000); // Auto slide every 5 seconds
+  const nextButton = document.getElementById("nextButton");
+  const prevButton = document.getElementById("prevButton");
+
+  // Check if the buttons exist before adding event listeners
+  if (nextButton && prevButton) {
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
+  }
+
+  indicators.forEach((indicator) => {
+    indicator.addEventListener("click", (event) => {
+      const target = event.target as HTMLElement;
+      const slideTo = target.getAttribute("data-slide-to");
+      if (slideTo !== null) {
+        goToSlide(parseInt(slideTo));
+      }
+    });
+  });
+
+  setInterval(nextSlide, 6000); // Auto slide every 6 seconds
+}
   </script>
-</div>
