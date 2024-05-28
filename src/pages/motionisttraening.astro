@@ -41,20 +41,48 @@ console.log("contactInfo", contactInfo);
 
 
     <article>
-    <h4>HOLD- OG TRÆNINGSTIDSPUNKTER</h4>
-    <TrainingCard />
+    <a href="#" class="card-link" data-target="container5">TENNIS4VOKSNE<img src="/img/svg/redarrowDown_1.svg"></a>
+                <div class="container" id="container5">
+                  <div class="card">
+                  <TrainingCard
+                  teamDescription="Tennis4Voksne"
+                  mondayW="N/A" mondayS="N/A" tuesdayW="N/A" tuesdayS="18:00-21:00" wednesdayW="N/A" wednesdayS="18:00-21:00" thursdayS="N/A" thursdayW="20:00-22:00" fridayS="N/A" fridayW="N/A" saturdayS="N/A" saturdayW="N/A" sundayS="N/A" sundayW="12:00-15:00"
+                  team1="https://atk.halbooking.dk?pid=01&hold=27437" trainingTeam1="Tennis4Voksne begynder/letøvet"  team2="https://atk.halbooking.dk?pid=01&hold=27417" trainingTeam2="Tennis4Voksne øvet"
+                  teamImg="../img/motionist_træning_hero.webp"
+                  />
+                </div>
+              </div>
     </article>
 
     <h4>PRISER</h4>
     <div class="grid-1_2">
       <p>Tilmeld dig på ATKs hjemmeside via reservationssystemet eller benyt dig af nedenstående links. Log ind med medlemsnummer og pinkode og betal det valgte træningsgebyr under "sæsonhold". Tilmeldingen er bindende for hele vintersæsonen.
         Husk, man skal være medlem af ATK for at kunne modtage træning. Hvis du ikke allerede er medlem af ATK kan du ansøge om juniormedlemskab via formularen her på hjemmesiden.</p>
-      <Tabel title="HOLD" hold1="Fuldtidsmedlem" pris1="1.100 kr." hold2="Dagmedlem" pris2="900 kr." hold3="Juniormedlem" pris3="500 kr." hold4="Senioridræt" pris4="200 kr." hold5="Vintermedlem" pris5="200 kr."hold6="Passiv" pris6="100 kr." 
-      />
+        <Tabel title="HOLD" hold1="Tennis4Voksne begynder hverdagstræning" pris1="100 kr. pr. gang" hold2="Tennis4Voksne begynder søndagstræning" pris2="175 kr. pr. gang" hold3="Tennis4Voksne letøvet hverdagstræning"  pris3="150 kr. pr. gang" hold4="Tennis4Voksne letøvet søndagstræning"  pris4="200 kr. pr. gang" hold5="Tennis4Voksne øvet hverdagstræning"  pris5="150 kr. pr. gang" hold6="Tennis4Voksne øvet søndagsstræning"  pris6="250 kr. pr. gang" />
+      
     </div>
 
   </section>
 </div>  
 
-<!-- --------------------------------------------------------------------------------- -->
 
+<script>
+  const cardLinks = document.querySelectorAll('.card-link');
+
+  cardLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      const targetContainer = document.getElementById(targetId);
+
+      if (targetContainer.classList.contains('active')) {
+        targetContainer.classList.remove('active');
+      } else {
+        document.querySelectorAll('.container.active').forEach(container => {
+          container.classList.remove('active');
+        });
+        targetContainer.classList.add('active');
+      }
+    });
+  });
+</script>

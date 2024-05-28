@@ -39,19 +39,62 @@ console.log("contactInfo", contactInfo);
         </div>
 
         <article>
-        <h4>HOLD- OG TRÆNINGSTIDSPUNKTER</h4>
-        <TrainingCard />
-        </article>
+          <a href="#" class="card-link" data-target="container5">4-8. HOLD<img src="/img/svg/redarrowDown_1.svg"></a>
+                      <div class="container" id="container5">
+                        <div class="card">
+                        <TrainingCard
+                        teamDescription="4-8 hold"
+                        mondayW="N/A" mondayS="N/A" tuesdayW="N/A" tuesdayS="N/A" wednesdayW="N/A" wednesdayS="N/A" thursdayS="N/A" thursdayW="N/A"  fridayS="N/A" fridayW="N/A" saturdayS="N/A" saturdayW="N/A" sundayS="15:00-18:00" sundayW="11:00-13:00"
+                        team1="https://atk.halbooking.dk?pid=01&hold=27437" trainingTeam1="4-8. hold træning vinter"  team2="https://atk.halbooking.dk?pid=01&hold=27417" trainingTeam2="4-8. hold træning sommer"
+                        teamImg="../img/4-8hold.webp"
+                        />
+                      </div>
+                    </div>
+          </article>
 
-        <h4>PRISER</h4>
+          <article>
+            <a href="#" class="card-link" data-target="container6">VETERAN<img src="/img/svg/redarrowDown_1.svg"></a>
+                        <div class="container" id="container6">
+                          <div class="card">
+                          <TrainingCard
+                          teamDescription="Træning for klubbens veteraner"
+                          mondayW="N/A" mondayS="N/A" tuesdayW="N/A" tuesdayS="N/A" wednesdayW="N/A" wednesdayS="N/A" thursdayS="N/A" thursdayW="N/A"  fridayS="N/A" fridayW="N/A" saturdayS="N/A" saturdayW="N/A" sundayS="15:00-18:00" sundayW="11:00-13:00"
+                          team1="https://atk.halbooking.dk?pid=01&hold=27437" trainingTeam1="Veterantræning sommer"  team2="https://atk.halbooking.dk?pid=01&hold=27417" trainingTeam2="Veterantræning vinter"
+                          teamImg="../img/veterantræning.webp"
+                          />
+                        </div>
+                      </div>
+            </article>
+        <h4>OM TRÆNINGEN</h4>
         <div class="grid-1_2">
           <p>Tilmeld dig på ATKs hjemmeside via reservationssystemet eller benyt dig af nedenstående links. Log ind med medlemsnummer og pinkode og betal det valgte træningsgebyr under "sæsonhold". Tilmeldingen er bindende for hele vintersæsonen.
             Husk, man skal være medlem af ATK for at kunne modtage træning. Hvis du ikke allerede er medlem af ATK kan du ansøge om juniormedlemskab via formularen her på hjemmesiden.</p>
-          <Tabel title="HOLD" hold1="Fuldtidsmedlem"pris1="1.100 kr." hold2="Dagmedlem" pris2="900 kr." hold3="Juniormedlem" pris3="500 kr." hold4="Senioridræt" pris4="200 kr." hold5="Vintermedlem" pris5="200 kr." hold6="Passiv" pris6="100 kr." />
+          
         </div>
         
       </section>
 </div>  
 <Footer />
+
+<script>
+  const cardLinks = document.querySelectorAll('.card-link');
+
+  cardLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      const targetContainer = document.getElementById(targetId);
+
+      if (targetContainer.classList.contains('active')) {
+        targetContainer.classList.remove('active');
+      } else {
+        document.querySelectorAll('.container.active').forEach(container => {
+          container.classList.remove('active');
+        });
+        targetContainer.classList.add('active');
+      }
+    });
+  });
+</script>
 
 

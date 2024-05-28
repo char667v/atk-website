@@ -192,3 +192,44 @@ a {
   width: 300px;
   height: auto;
 }
+
+.card-link {
+  display: block; /* Set links to display as block elements */
+  margin-bottom: 5%; /* Add margin between links */
+  font-size: 1.8rem;
+  border-bottom: 1px solid var(--primaryColor);
+  padding: 5px;
+  color: var(--primaryColor);  
+  position: relative;
+  
+}
+
+.card-link img {
+  position: absolute;
+  margin-top: 1.25%;
+  right: 2%;
+  width: 16px;
+}
+
+.container {
+  width: 100%; /* Add this line */
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.container.active {
+  max-height: 1000px; /* Adjust as needed or calculate dynamically */
+  opacity: 1;
+  position: relative; /* Add this line */
+}
+
+@media (max-width: 768px) {
+  .card-link {
+    font-size: 1rem;
+    margin-top: 10%;
+  }
+}
+
+
+
