@@ -52,7 +52,7 @@ console.log("newsData", newsData);
       <PrimaryButoon btnText="SE ALLE NYHEDER" link="/allenyheder" />
     </div>
 
-    <section class="content">
+   
       <h3>KOMMENDE AKTIVITETER</h3>
       <article class="autolayout">
         {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
@@ -60,11 +60,10 @@ console.log("newsData", newsData);
       <div class="flexboxCenter">
         <PrimaryButoon btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
       </div>
-    </section>
+    
     <br />
     <br />
 
-    <section class="content">
       <div class="spacer">
         <article class="grid-2_2">
           <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" /></a>
@@ -73,7 +72,6 @@ console.log("newsData", newsData);
           <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" /></a>
         </article>
       </div>
-    </section>
     <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
   </section>
   <Footer />
