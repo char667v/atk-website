@@ -233,6 +233,10 @@ a {
     font-size: 1rem;
     margin-top: 10%;
   }
+
+  .spacer {
+    margin-bottom: 45%;
+  }
 }
 
 

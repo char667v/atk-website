@@ -65,18 +65,22 @@ console.log("newsData", newsData);
     <br>
 
   <section class="content">
+    <div class="spacer">
     <article class="grid-2_2">
       <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" /></a>
       <a href="/motionisttraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR" /></a>
       <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp" title="MOTIONIST" /></a>
       <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" /></a>
     </article>
+  </div>
+
   </section>
   <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
 </div>
 <Footer />
 
 <style>
+
   .carousel-track {
     display: flex;
     transition: transform 1s ease-in-out;
@@ -132,6 +136,8 @@ console.log("newsData", newsData);
   .carousel-indicator.active {
     background-color: #555;
   }
+  
+ 
 </style>
 
 <script>

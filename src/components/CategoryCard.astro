@@ -4,15 +4,19 @@ const { title, imgPath } = Astro.props;
 
  
   <div class="categoryContainer">
-   <div class="content-card">
+    <div class="content-card">
      <img class="background-img" src={imgPath} alt="Tennisracket" />
      <div class="gradient-card"></div> 
      <h3>{title}</h3>
    </div>
+  </div>
+
 
 
 <style> 
 
+.spacer {
+}
 .categoryContainer {
     position: relative;
     border-radius: 4px;
@@ -68,9 +72,5 @@ h3 {
     }
 }
 
-@media (max-width: 768px) {
-  .categoryContainer { 
-}
-}
 </style>
 
