@@ -7,7 +7,7 @@ import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import PrimaryButoon from "../components/PrimaryButton.astro";
-import Newscard from "../components/newsCard.astro";
+import Newscard from "../components/Newscard.astro";
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=3", {
   method: "GET",
@@ -19,60 +19,59 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
 console.log("newsData", newsData);
 ---
 
-<MainLayout title="Arbejdernes Tennisklub" />
+<MainLayout title="Arbejdernes Tennisklub"/> 
 <Navigation />
 
 <div class="main">
-  <section class="content">
-    <h2>SENESTE NYT</h2>
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
-        <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable" subheadline="UNREAL CLASH" /></div>
-      </div>
-      <div class="carousel-navigation">
-        <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" />
-      </div>
-      <img src="/img/svg/redarrowRight_1.svg" id="nextButton" />
-    </div>
-  </section>
-  <div class="carousel-indicators">
-    <div class="carousel-indicator active" data-slide-to="0"></div>
-    <div class="carousel-indicator" data-slide-to="1"></div>
-    <div class="carousel-indicator" data-slide-to="2"></div>
-    <div class="carousel-indicator" data-slide-to="3"></div>
-    <div class="carousel-indicator" data-slide-to="4"></div>
-  </div>
-</div>
+    <section class="content"><h2>SENESTE NYT</h2>
+          <div class="carousel-container">
+            <div class="carousel-track">
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
+                  <div class="carousel-item"><CarrouselScroll date="01/01" headline="unbelievable"subheadline="UNREAL CLASH"/></div>
+            </div>
+                  <div class="carousel-navigation">
+                    <img src="/img/svg/redarrowLeft_1.svg" id="prevButton"></img>
+                    <img src="/img/svg/redarrowRight_1.svg" id="nextButton"></img>
+                  </div>
+                  <div class="carousel-indicators">
+                    <div class="carousel-indicator active" data-slide-to="0"></div>
+                    <div class="carousel-indicator" data-slide-to="1"></div>
+                    <div class="carousel-indicator" data-slide-to="2"></div>
+                    <div class="carousel-indicator" data-slide-to="3"></div>
+                    <div class="carousel-indicator" data-slide-to="4"></div>
+                  </div> 
+          </div> 
 
-<br />
-<br />
-<div class="flexboxCenter">
-  <PrimaryButoon btnText="SE ALLE NYHEDER" link="/allenyheder" />
-  <div></div>
-
-  <section class="content">
-    <h3>KOMMENDE AKTIVITETER</h3>
-    <article class="autolayout">
-      {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
-    </article>
-    <br />
-    <div class="flexboxCenter">
-      <PrimaryButoon btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
-      <div></div>
+        <br>
+        <br>
+                  <div class=flexboxCenter>
+                  <PrimaryButoon btnText="SE ALLE NYHEDER" link="/allenyheder"/>
+                  </div>
+    </section>
+        
+    <section class="content"><h3>KOMMENDE AKTIVITETER</h3>
+        <article class="autolayout">
+          {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+        </article>
+        <div class=flexboxCenter>
+          <PrimaryButoon btnText="SE ALLE AKTIVITETER" link="/allenyheder"/>
+          <div>
+    </section>
+    <br>
+    <br>
 
     <section class="content">
-              <article class="grid-2_3">
+              <article class="grid-2_2">
               <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR"/></a>
               <a href="/motionisttraening"><CategoryCard imgPath="../img/seniorCategory.webp"title="SENIOR"/></a>
               <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp"title="MOTIONIST"/></a>
               <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE"/></a>
               </article>
     </section>
-    
+    <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS"/>
 </div>
   <Footer />
 
@@ -132,62 +131,62 @@ console.log("newsData", newsData);
   .carousel-indicator.active {
     background-color: #555;
   }
+
+
 </style>
 
 
-    <script>
-      const track = document.querySelector(".carousel-track") as HTMLElement;
-      const items = document.querySelectorAll(".carousel-item") as NodeListOf<HTMLElement>;
-      const totalItems = items.length;
-      const itemWidth = items[0].offsetWidth;
-      const indicators = document.querySelectorAll(".carousel-indicator");
-
-      let index = 0;
-
-      function updateCarousel() {
-        track.style.transform = `translateX(-${index * itemWidth}px)`;
-        updateIndicators();
-      }
-
-      function nextSlide() {
-        index = index < totalItems - 1 ? index + 1 : 0;
-        updateCarousel();
-      }
-
-      function prevSlide() {
-        index = index > 0 ? index - 1 : totalItems - 1;
-        updateCarousel();
-      }
-
-      function goToSlide(idx: number) {
-        index = idx;
-        updateCarousel();
-      }
-
-      function updateIndicators() {
-        indicators.forEach((indicator, idx) => {
-          if (idx === index) {
-            indicator.classList.add("active");
-          } else {
-            indicator.classList.remove("active");
-          }
-        });
-      }
-
-      document.getElementById("nextButton")!.addEventListener("click", nextSlide);
-      document.getElementById("prevButton")!.addEventListener("click", prevSlide);
-
-      indicators.forEach((indicator) => {
-        indicator.addEventListener("click", (event) => {
-          const target = event.target as HTMLElement;
-          const slideTo = target.getAttribute("data-slide-to");
-          if (slideTo !== null) {
-            goToSlide(parseInt(slideTo));
-          }
-        });
+<script>
+    const track = document.querySelector('.carousel-track') as HTMLElement;
+    const items = document.querySelectorAll('.carousel-item') as NodeListOf<HTMLElement>;
+    const totalItems = items.length;
+    const itemWidth = items[0].offsetWidth;
+    const indicators = document.querySelectorAll('.carousel-indicator');
+  
+    let index = 0;
+  
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * itemWidth}px)`;
+      updateIndicators();
+    }
+  
+    function nextSlide() {
+      index = (index < totalItems - 1) ? index + 1 : 0;
+      updateCarousel();
+    }
+  
+    function prevSlide() {
+      index = (index > 0) ? index - 1 : totalItems - 1;
+      updateCarousel();
+    }
+  
+    function goToSlide(idx: number) {
+      index = idx;
+      updateCarousel();
+    }
+  
+    function updateIndicators() {
+      indicators.forEach((indicator, idx) => {
+        if (idx === index) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
       });
-
-      setInterval(nextSlide, 5000); // Auto slide every 5 seconds
-    </script>
-  </section>
-</div>
+    }
+  
+    document.getElementById('nextButton')!.addEventListener('click', nextSlide);
+    document.getElementById('prevButton')!.addEventListener('click', prevSlide);
+  
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+        const slideTo = target.getAttribute('data-slide-to');
+        if (slideTo !== null) {
+          goToSlide(parseInt(slideTo));
+        }
+      });
+    });
+  
+    setInterval(nextSlide, 5000); // Auto slide every 5 seconds
+  </script>
