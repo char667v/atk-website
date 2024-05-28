@@ -8,6 +8,7 @@ import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import PrimaryButoon from "../components/PrimaryButton.astro";
 import Newscard from "../components/Newscard.astro";
+import AccentButton from "../components/AccentButton.astro";
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=3", {
   method: "GET",
@@ -49,7 +50,7 @@ console.log("newsData", newsData);
     <br />
     <br />
     <div class="flexboxCenter">
-      <PrimaryButoon btnText="SE ALLE NYHEDER" link="/allenyheder" />
+      <AccentButton btnText="SE ALLE NYHEDER" link="/allenyheder" />
     </div>
 
    
@@ -58,7 +59,7 @@ console.log("newsData", newsData);
         {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
       </article>
       <div class="flexboxCenter">
-        <PrimaryButoon btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
+        <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
       </div>
     
     <br />
@@ -72,8 +73,9 @@ console.log("newsData", newsData);
           <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" /></a>
         </article>
       </div>
+    </section>
     <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
-  </section>
+  
   <Footer />
 
   <style>
