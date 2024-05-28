@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Avenir";
-  src: local("Avenir Regular"), url("/Avenir Regualar.woff2") format("woff");
+  src: local("Avenir Regular"), url("/Avenir Regular.woff2") format("woff2");
 }
 
 /*mbody  {
