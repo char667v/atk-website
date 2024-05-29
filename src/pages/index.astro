@@ -7,7 +7,8 @@ import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
 import AccentButton from "../components/AccentButton.astro";
 import HeroVideo from "../components/HeroVideo.astro";
-import Newscard from "../components/Newscard";
+import Newscard from "../components/Newscard.astro";
+import Activitycard from "../components/Activitycard.astro";
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=5", {
   method: "GET",
@@ -51,7 +52,7 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
 
     <h3>KOMMENDE AKTIVITETER</h3>
     <article class="autolayout">
-      {newsData.slice(0, 3).map((news) => <Newscard news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+      {newsData.slice(0, 3).map((news) => <Activitycard slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
     </article>
     <div class="flexboxCenter">
       <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />

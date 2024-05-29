@@ -1,13 +1,23 @@
 ---
 // Newscard.astro
+
+export interface NewsData {
+  slug: string;
+  // add other properties if needed
+}
 export interface NewsProps {
   news_image: string;
   date: string;
   headline: string;
   subheadline: string;
+  article: string;
+  id: string; 
+  slug: string;
+  data: NewsData;
 }
 
-const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
+
+const { news_image, date, headline, subheadline, slug } = Astro.props as NewsProps;
 ---
 
 <article class="newscard">
@@ -19,7 +29,7 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
     <h4 class="news-headline">{headline}</h4>
     <p class="news-subheadline">{subheadline}</p>
     <div class="read-more">
-      <a>LÆS MERE</a>
+      <a href={`nyheder/${slug}`}>LÆS MERE</a>
       <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" />
     </div>
   </div>
