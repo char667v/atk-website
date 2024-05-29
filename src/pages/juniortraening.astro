@@ -44,8 +44,6 @@ console.log("contactInfo", contactInfo);
                 }
               </article>
             </div>
-           
-
          
                 <a href="#" class="card-link" data-target="container1">MINITENNIS 6-10 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
                 <div class="container" id="container1">
@@ -116,37 +114,30 @@ console.log("contactInfo", contactInfo);
   position: relative;
   
 }
-
 .card-link img {
   position: absolute;
   margin-top: 1.25%;
   right: 2%;
   width: 16px;
 }
-
 .container {
   width: 100%; /* Add this line */
   max-height: 0;
   opacity: 0;
   transition: max-height 0.5s ease, opacity 0.5s ease;
 }
-
 .container.active {
   max-height: 1000px; /* Adjust as needed or calculate dynamically */
   opacity: 1;
   position: relative; /* Add this line */
 }
-
 @media (max-width: 768px) {
   .card-link {
     font-size: 1rem;
     margin-top: 10%;
   }
 }
- 
 </style>
-¨
-
 
 <script>
   const cardLinks = document.querySelectorAll('.card-link');
