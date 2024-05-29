@@ -6,9 +6,11 @@ export interface ContactProps {
   phone: string;
   pb: string;
   description: string;
+  img: string;
 }
 
-const { role, name, description, email, phone, pb, } = Astro.props as ContactProps;
+
+const { role, name, description, img, email, phone, pb, } = Astro.props as ContactProps;
 ---
 
 <article class="contactCard">
@@ -17,7 +19,7 @@ const { role, name, description, email, phone, pb, } = Astro.props as ContactPro
       <div> <p>{name}</p> <p>{email}</p><p>{phone}</p></div>
   </div>
 
-    <div class="profile-picture"> <img src={pb} alt={`${name}'s Profile Picture`} /></div>
+    <div class="profile-picture"> <img src={img} alt={`${name}'s Profile Picture`} /></div>
 
    
    
@@ -61,6 +63,7 @@ grid-template-rows: repeat(2, 1fr);
   .profile-picture img {
     object-fit: cover; 
     border-radius: 4px;
+    max-height: 140px;
 
   }
   .contactContent h4 {
