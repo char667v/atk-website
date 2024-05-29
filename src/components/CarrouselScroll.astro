@@ -19,29 +19,36 @@ const { article, data, news_image, date, headline, subheadline, slug, id } = Ast
 ---
 
 <div class="news_card">
+
   <div class="card-image">
     <img src={news_image} alt="" class="news-img">
   </div>
+
   <div class="card-content">
     <p class="news-date">{date}</p>
     <h4 class="news-headline">{headline}</h4>
     <p class="news-subheadline">{subheadline}</p>
+  </div>
+
     <div class="read-more">
       <a href={`nyheder/${slug}`}>LÆS MERE</a>
       <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon">
     </div>
-  </div>
+ 
 </div>
 
 <style>
 .news_card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr repeat(2, 1fr);
+  transition: transform 0.3s;
   width: 700px;
   height: 400px;
+  background-color: #f9f9f9;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  display: flex;
-  flex-direction: column;
+ 
 }
 
 .news-img {
@@ -60,7 +67,7 @@ const { article, data, news_image, date, headline, subheadline, slug, id } = Ast
 
 .read-more img {
   height: 17px;
-  margin-left: 10px;
+  
 }
 
 .news-date {

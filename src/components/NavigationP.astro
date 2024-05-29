@@ -4,7 +4,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
 ---
 
 <header>
-  <a href="/" id="atkHome"><img src="/img/atkHome.webp" alt="logo" /></a>
+  <a href="/" id="atkHome"><img src="/img/atkHome.webp" id="atkhomeImg" alt="logo"/></a>
   <nav class="navContainer">
     <div class="dropdown">
       <a href="/traening">TRÆNING</a>
@@ -48,7 +48,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
   </nav>
   <div class="flexboxCenter">
     <PrimaryButton btnText="BOOK BANE" link="/allenyheder" />
-    <a id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="https://atk.halbooking.dk/newlook/default.asp?login=open&pid=00" /></a>
+    <a><img src="/img/courtCondition_icon.png" alt="https://atk.halbooking.dk/newlook/default.asp?login=open&pid=00" id="baneTilstand"/></a>
   </div>
   <div>
     <div id="menu-toggle">&#9776;</div>
@@ -65,7 +65,20 @@ import PrimaryButton from "../components/PrimaryButton.astro";
 
 <style>
 
+#atkHome {
+  width: 20%;
+}
+#atkhomeImg {
+  width: 100%;
+}
 
+#baneTilstand {
+    width: 48px;
+    height: auto;
+    margin-top: 15%;
+    margin-left: var(--spacing-small);
+    transition: transform ease 0.5s;
+  }
 
   .fpHeadline {
     position: absolute;
@@ -83,9 +96,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
     color: white;
   }
 
-  .fpBtns {
-    margin: 0px 5%;
-  }
+ 
 
   .weatherWidget {
     display: none;
@@ -183,20 +194,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
     align-items: center;
   }
 
-  #baneTilstand {
-    width: 42px;
-    height: auto;
-    margin-top: 5%;
-    margin-left: var(--spacing-small);
-  }
 
-  #baneTilstand {
-    width: 42px;
-    height: auto;
-    margin-top: 5%;
-    margin-left: var(--spacing-small);
-    transition: transform ease 0.5s;
-  }
 
   #baneTilstand:hover {
     transform: scale(1.1);
