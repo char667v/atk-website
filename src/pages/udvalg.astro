@@ -30,6 +30,7 @@ console.log("contactInfo", contactInfo);
 
       <h3>BREDDEUDVALG</h3>
       <p class="subheadline">Udvalget står for at lave arrangementer for bredden i klubben, bl.a. Hyg-ind og Motionisttræning.</p>
+      
       <div class=autolayout>
       <article class="infocard">
           {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}

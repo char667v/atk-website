@@ -11,69 +11,82 @@ export interface ContactProps {
 const { role, name, description, email, phone, pb, } = Astro.props as ContactProps;
 ---
 
-<article class="contactcard">
-  <div class="contact-info">
-    <div>
-    <h4>{role}</h4>
-    </div>
-    <div class="profile-picture">
-      <img src={pb} alt={`${name}'s Profile Picture`} />
-    </div>
-    <div>
-    <p>{description}
-    <p>{name}</p>
-    <p>{email}</p>
-    <p>{phone}</p>
+<article class="contactCard">
+    <div class="contactContent">
+      <div class="headline"><h4>{role}</h4></div>
+      <div><p>{description}</div>
+      <div> <p>{name}</p> <p>{email}</p><p>{phone}</p></div>
   </div>
-  </div>
+
+    <div class="profile-picture"> <img src={pb} alt={`${name}'s Profile Picture`} /></div>
+
+   
+   
+
 </article>
 
 <style>
 
-  .contactcard {
+  .contactCard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
     background-color: rgb(255, 255, 255);
-    position: relative;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    overflow: hidden;
-    width: 300px;
-    height: 200px
-    padding: 20px;
+    width: 400px;
+    height: 100%;
     transition: transform 0.3s; 
+  }
+
+  .contactContent {
+    display: grid;
+grid-template-columns: 2fr;
+grid-template-rows: repeat(2, 1fr);
+    padding: 5%;
+  }
+
+  .contactCard h4 {
+    font-size: 1.2rem;
   }
   .contactcard:hover {
     transform: scale(1.1);
   }
   
-  .contact-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 2fr;
-  }
   .profile-picture img {
-    width: 100px; 
-    height: 100px; 
     object-fit: cover; 
-    border-radius: 50%; 
+
   }
-  .contactcard h6,
+  .contactContent h4 {
+    font-size: 1rem;
+  }
   .contactcard p {
     margin: 0; 
-    padding: 1% 0%; 
+  
+  }
+  .profile-picture img {
+    width: 100%;
   }
 
-  .contactcard p {
+
+  @media only screen and (max-width: 1024px) {
+
+    .contactCard h4 {
     font-size: 0.8rem;
   }
 
-  @media only screen and (max-width: 480px) {
-    .profile-picture img {
-    width: 75px; 
-    height: 75px; 
-    object-fit: cover; 
-    border-radius: 50%; 
+    .contactCard {
+    width: 250px;
   }
-  .contactcard p {
+
+
+  }
+
+  @media only screen and (max-width: 400px) {
+    .contactCard {
+    width: 250px;
+  }
+  .contactCard p {
     font-size: 0.6rem;
   }
     
