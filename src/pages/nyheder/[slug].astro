@@ -1,7 +1,8 @@
 ---
 
 import MainLayout from "../../layouts/MainLayout.astro";
-import NavigationP from "../../components/NavigationP.astro"
+import NavigationP from "../../components/NavigationP.astro";
+import BreadCrumb from "../../components/BreadCrumb.astro";
 
 interface News {
   slug: string;
@@ -36,5 +37,9 @@ console.log(myData);
 
 <MainLayout title={myData.slug}/>
 <NavigationP />
-
+<div class="main">
+  <section class="content">
+<h2>{myData.headline}</h2>
 <p>{myData.article}</p>
+</section>
+</div>
