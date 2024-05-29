@@ -3,9 +3,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import NavigationP from "../../components/NavigationP.astro";
 import BreadCrumb from "../../components/BreadCrumb.astro";
-import NewsCardSmall from "../../components/NewsCardSmall.astro";
-import Newscard from "../../components/Newscard.astro";
-import HeroImg from "../../components/HeroImg.astro";
+import Footer from "../../components/Footer.astro";
 
 /* const image = window.location.search; */
 interface News {
@@ -40,7 +38,7 @@ console.log(myData);
 
 <MainLayout title={myData.slug}/>
 <NavigationP />
-<div class="main">
+<div class="mainv2">
   <section class="content">
     <a href="/juniortraening"><BreadCrumb breadtitle="Hjem" /></a>
     <a href="/seniortraening"><BreadCrumb breadtitle="Nyheder" /></a>
@@ -53,13 +51,11 @@ console.log(myData);
               <p class="subheadline">{myData.subheadline}</p>
               <p>{myData.article}</p>
             </div>
-            <div>
-             
-              
-            <div>
           </div>
       </section>
+    
       </div>
+      <Footer />
 
       <style>
 

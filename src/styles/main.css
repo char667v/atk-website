@@ -127,10 +127,14 @@ a {
 
 /* Content og grids på pages */
 
-.main {
+.main, .mainv2 {
   background-color: #f9f9f9;
   margin: 0% 10%;
   padding-bottom: 5%;
+}
+.mainv2 {
+  margin: 5% 10%;
+ 
 }
 
 .content {
