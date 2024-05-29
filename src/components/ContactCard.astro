@@ -14,7 +14,6 @@ const { role, name, description, email, phone, pb, } = Astro.props as ContactPro
 <article class="contactCard">
     <div class="contactContent">
       <div class="headline"><h4>{role}</h4></div>
-      <div><p>{description}</div>
       <div> <p>{name}</p> <p>{email}</p><p>{phone}</p></div>
   </div>
 
@@ -46,15 +45,22 @@ grid-template-rows: repeat(2, 1fr);
     padding: 5%;
   }
 
+  
+  .contactContent p {
+   font-size: 0.8rem;
+  }
+
+
   .contactCard h4 {
     font-size: 1.2rem;
   }
-  .contactcard:hover {
+  .contactCard:hover {
     transform: scale(1.1);
   }
   
   .profile-picture img {
     object-fit: cover; 
+    border-radius: 4px;
 
   }
   .contactContent h4 {
