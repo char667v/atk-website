@@ -221,6 +221,10 @@ a {
   transform: translateX(10px); /* Adjust the value as needed */
 }
 
+#fpMain {
+  padding-top: 3%;
+}
+
 @media (max-width: 1024px) {
   .card-link {
     font-size: 1rem;
