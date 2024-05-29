@@ -29,7 +29,7 @@ console.log("newsData", newsData);
     <h2>NYHEDER</h2>
 
     <div class="autolayout">
-      {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+      {newsData.map((news) => <Newscard slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
     </div>
 
     </section>
