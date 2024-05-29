@@ -16,20 +16,6 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
   },
 }).then((response) => response.json());
 
-const imagePaths = [
-  "../img/news/motionist_træning_hero.webp",
-  "../img/news/indspilningsturnering.png",
-  "../img/news/padelbaner.webp",
-  "../img/news/ATK-Liga.png",
-  "../img/news/pinseturnering.jpg",
-];
-
-const updatedNewsData = newsData.map((news, index) => ({
-  ...news,
-  manualImage: imagePaths[index % imagePaths.length]
-}));
-
-console.log("updatedNewsData", updatedNewsData);
 ---
 
 <MainLayout title="Arbejdernes Tennisklub" />
@@ -43,9 +29,9 @@ console.log("updatedNewsData", updatedNewsData);
     <h2>SENESTE NYT</h2>
     <div class="carousel-container">
       <div class="carousel-track">
-        {updatedNewsData.map((news) => (
+        {newsData.map((news) => (
           <div class="carousel-item">
-            <CarrouselScroll slug={news.slug} news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />
+            <CarrouselScroll slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />
           </div>
         ))}
       </div>
@@ -55,7 +41,7 @@ console.log("updatedNewsData", updatedNewsData);
       </div>
 
       <div class="carousel-indicators">
-        {updatedNewsData.map((_, index) => (
+        {newsData.map((_, index) => (
           <div class={`carousel-indicator ${index === 0 ? 'active' : ''}`} data-slide-to={index}></div>
         ))}
       </div>
@@ -68,7 +54,7 @@ console.log("updatedNewsData", updatedNewsData);
 
     <h3>KOMMENDE AKTIVITETER</h3>
     <article class="autolayout">
-      {updatedNewsData.slice(0, 3).map((news) => (
+      {newsData.slice(0, 3).map((news) => (
         <Newscard news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />
       ))}
     </article>

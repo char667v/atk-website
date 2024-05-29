@@ -13,14 +13,18 @@ const { role, name, description, email, phone, pb, } = Astro.props as ContactPro
 
 <article class="contactcard">
   <div class="contact-info">
+    <div>
     <h4>{role}</h4>
+    </div>
+    <div class="profile-picture">
+      <img src={pb} alt={`${name}'s Profile Picture`} />
+    </div>
+    <div>
     <p>{description}
     <p>{name}</p>
     <p>{email}</p>
     <p>{phone}</p>
   </div>
-  <div class="profile-picture">
-    <img src={pb} alt={`${name}'s Profile Picture`} />
   </div>
 </article>
 
@@ -32,11 +36,9 @@ const { role, name, description, email, phone, pb, } = Astro.props as ContactPro
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 200px
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
     transition: transform 0.3s; 
   }
   .contactcard:hover {
@@ -44,12 +46,13 @@ const { role, name, description, email, phone, pb, } = Astro.props as ContactPro
   }
   
   .contact-info {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 2fr;
   }
   .profile-picture img {
-    width: 150px; 
-    height: 150px; 
+    width: 100px; 
+    height: 100px; 
     object-fit: cover; 
     border-radius: 50%; 
   }

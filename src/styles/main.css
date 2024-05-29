@@ -41,13 +41,7 @@ image {
 }
 
 /* Styling for fonts between 1024px and 600px */
-h2,
-h3,
-h4,
-p,
-a {
-  margin-bottom: var(--spacing-small);
-}
+
 
 h1,
 h2,
@@ -59,6 +53,11 @@ h6 {
   text-transform: uppercase;
   font-family: "Avenir";
   color: var(--text-black);
+}
+h1,
+h2,
+h3 {
+  margin: 1% 0%;
 }
 
 h1 {
@@ -92,6 +91,7 @@ p {
 a {
   font-size: 1rem;
   text-decoration: none;
+  color: white;
 }
 
 .subheadline {

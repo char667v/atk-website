@@ -1,9 +1,9 @@
 ---
 const src = Astro.props.src;
 const btnTitle = Astro.props.btnTitle
-
 import PrimaryButoon from "../components/PrimaryButton.astro";
 ---
+
 <div class="bannerWrapper">
     <p class="bannerText">Savner du en ny træningsmakker?</p> 
     <a class="bannerBtn" href="">{btnTitle}</a>
@@ -16,6 +16,8 @@ import PrimaryButoon from "../components/PrimaryButton.astro";
 
 .bannerWrapper {
   position: relative; 
+}
+.bannerWrapper a {
 }
 
 .bannerBtn {
@@ -30,8 +32,6 @@ import PrimaryButoon from "../components/PrimaryButton.astro";
     transition: background-color 0.7s ease, color 0.7s ease, transform 0.5s ease;
     
 }
-
-
 
 .bannerText {
     top: 30%;
