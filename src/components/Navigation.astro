@@ -59,29 +59,13 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
   </div>
 </header>   
 
-<div class="fpHeadline">
-  <h3>Samlet om Tennis -</h3> 
-  <h3>Fra begynder til mester!</h3>
-  <div class="fpBtns">
-    <PrimaryButton btnText="BOOK BANE" link="https://atk.halbooking.dk/newlook/default.asp?login=open&pid=00"/>
-    <SecondaryBtn btnText="KONTAKT OS" link="/allenyheder"/>
-  </div>
-</div>
 
-<div class="heroWrapper">
-  <div class="heroVideo">
-    <video autoplay muted loop>
-      <source src="/img/heroVideo.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-
-<div class="weatherWidget">
+<!-- <div class="weatherWidget">
   <div id="ww_4840c547744da" v='1.3' loc='id' a='{"t":"horizontal","lang":"da","sl_lpl":1,"ids":["wl1596"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"#892911","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#FFFFFF","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FFFFFF"}'>
     <a href="https://weatherwidget.org/" id="ww_4840c547744da_u" target="_blank">Html weather widget</a>
   </div>
   <script async src="https://app2.weatherwidget.org/js/?id=ww_4840c547744da"></script>
-</div> 
+</div> -->
 
 
 <style>
@@ -192,52 +176,6 @@ import SecondaryBtn from "../components/SecondaryBtn.astro";
 #baneTilstand:hover {
 transform: scale(1.1);
 cursor: pointer;
-}
-
- .heroWrapper {
-    position: relative  ;
-    width: 100%;
-    height: 75vh;
-    overflow: hidden;
-  }
-  
-.heroVideo {
-  position: absolute; 
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.heroVideo video {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.fpHeadline {
-  position: absolute;
-    top: 50%;
-    transform: translateY(-40%);
-    width: 100%;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-   
-}
-
-.fpHeadline h3 {
-  color: white;
-  margin: 0;
-  line-height: 1;
-  font-size: 3.2rem;
-}
-
-.fpBtns {
-  margin-top: 2%;
 }
 
 

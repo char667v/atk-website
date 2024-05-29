@@ -4,6 +4,7 @@ import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
 import NavigationP from "../components/NavigationP.astro";
 import Footer from "../components/Footer.astro";
+import HeroImg from "../components/HeroImg.astro";
 
 const contactInfo = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info", {
   method: "GET",
@@ -16,7 +17,8 @@ console.log("contactInfo", contactInfo);
 ---
 
 <MainLayout title="Ledelse" />
-<NavigationP HeroImg="../img/ledelseHero.webp" />
+<NavigationP />
+<HeroImg heroImg="../img/ledelseHero.webp"/>
 
 <div class="main">
   <section class="content">

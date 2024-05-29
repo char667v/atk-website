@@ -28,7 +28,7 @@ const { article, data, news_image, date, headline, subheadline, slug, id } = Ast
     <h4 class="news-headline">{headline}</h4>
     <p class="news-subheadline">{subheadline}</p>
     <div class="read-more">
-      <a href={`nyheder/${slug}`}>LÆS MERE</a>
+      <a href={`nyheder/${slug}?image=${news_image}`}>LÆS MERE</a>
       <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon">
     </div>
   </div>

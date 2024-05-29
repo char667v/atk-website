@@ -55,17 +55,11 @@ import PrimaryButton from "../components/PrimaryButton.astro";
     <div id="close-menu">&#10006;</div>
   </div>
 </header>
-
-<div class="heroWrapper">
-  <div class="heroImg">
-      <img src={HeroImg} alt="HeroImg">
-  </div>
-</div>
-
   
+<!-- 
 <div class="weatherWidget">
 <div id="ww_4840c547744da"  v='1.3' loc='id' a='{"t":"horizontal","lang":"da","sl_lpl":1,"ids":["wl1596"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"#892911","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#FFFFFF","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FFFFFF"}'><a href="https://weatherwidget.org/" id="ww_4840c547744da_u" target="_blank">Html weather widget</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_4840c547744da"></script>
-</div>  
+</div>  -->
 
 
 <style>
@@ -210,28 +204,6 @@ transform: scale(1.1);
 cursor: pointer;
  }
 
-
-.heroWrapper {
-  position: relative;
-  width: 100%;
-  height: 75vh;
-  overflow: hidden;
-}
-
-.heroImg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.heroImg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 10%; /* Adjust the vertical position of the image */
-}
 
 #menu-toggle #close-menu {
   display: none;
