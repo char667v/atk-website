@@ -45,24 +45,68 @@ console.log("min data",myData);
     <a href="/seniortraening"><BreadCrumb breadtitle="Nyheder" /></a>
     <a href="/seniortraening"><BreadCrumb breadtitle={myData.headline} /></a>
         
-      <h2>{myData.headline}</h2>
-
-          <div class="grid-1_2">
-            <div>
-              <p class="subheadline">{myData.subheadline}</p>
-              <div class="newsImage">
-                <img src={myData.image} />
-              </div>
-              <p>{myData.article}</p>
-            </div>
-            
-          </div>
-      </section>
     
-      </div>
-      <Footer />
+    <article class="newsArticle">
 
-      <style>
+          <h2 class="">{myData.headline}</h2>
+          <p class="subheadline">{myData.subheadline}</p>
 
-        
+          <figure class="newsImageContainer">
+            <img src={myData.image} />
+            <figcaption>{myData.headline}</figcaption>
+          </figure>
+      
+          <p class="newsText">{myData.article}</p>
+
+    </article>
+  </section>
+</div>
+
+    <Footer />
+    
+    <style>
+    .newsArticle {
+      margin-top: 3%;
+      display: flex;
+      flex-direction: column;
+      
+    }
+    .newsImageContainer  {
+  margin-bottom: 5%; 
+}
+
+.newsText, .subheadline, .newsArticle h2 {
+  margin: 0% 15%;
+  margin-bottom: 3%; 
+}
+
+.newsImageContainer {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.newsImageContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+figure {
+     position: relative;
+}
+figcaption {
+  background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1% 5%;
+}
+
+
+
       </style>
