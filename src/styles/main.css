@@ -100,7 +100,7 @@ a {
 }
 
 .paragraphLink {
-  color: red;
+  color: rgb(204, 18, 18);
 }
 .paragraphLink:hover {
   color: var(--primaryColor);
@@ -172,7 +172,7 @@ a {
 
 .autolayout {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax( 1fr, 1fr));
   gap: 20px;
   justify-content: center;
   align-items: center;
