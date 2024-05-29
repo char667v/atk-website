@@ -1,23 +1,23 @@
 ---
-// Newscard.astro
-export interface NewsProps {
+// Activitycard.astro
+export interface ActivityProps {
   news_image: string;
   date: string;
   headline: string;
   subheadline: string;
 }
 
-const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
+const { news_image, date, headline, subheadline } = Astro.props as ActivityProps;
 ---
 
-<article class="newscard">
-  <div class="news-picture">
-    <img src={news_image} alt="News Image" />
+<article class="activitycard">
+  <div class="activity-picture">
+    <img src={news_image} alt="Activity Image" />
   </div>
-  <div class="news-info">
-    <p class="news-date">{date}</p>
-    <h4 class="news-headline">{headline}</h4>
-    <p class="news-subheadline">{subheadline}</p>
+  <div class="activity-info">
+    <p class="activity-date">{date}</p>
+    <h4 class="activity-headline">{headline}</h4>
+    <p class="activity-subheadline">{subheadline}</p>
     <div class="read-more">
       <a>LÆS MERE</a>
       <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" />
@@ -26,7 +26,7 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
 </article>
 
 <style>
-  .newscard {
+  .activitycard {
     background-color: #f9f9f9;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -37,30 +37,30 @@ const { news_image, date, headline, subheadline } = Astro.props as NewsProps;
     flex-direction: column;
     transition: transform 0.3s;
   }
-  .newscard:hover {
+  .activitycard:hover {
     transform: scale(1.1);
   }
-  .news-picture img {
+  .activity-picture img {
     width: 100%;
     height: 200px;
     object-fit: cover;
   }
-  .news-info {
+  .activity-info {
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .news-date {
+  .activity-date {
     font-size: 0.8em;
     color: gray;
     margin: 0;
   }
-  .news-headline {
+  .activity-headline {
     font-size: 1.2em;
     margin: 0;
   }
-  .news-subheadline {
+  .activity-subheadline {
     font-size: 1em;
     margin: 0;
   }
