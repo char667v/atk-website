@@ -1,0 +1,112 @@
+---
+
+import MainLayout from "../../layouts/MainLayout.astro";
+import NavigationP from "../../components/NavigationP.astro";
+import BreadCrumb from "../../components/BreadCrumb.astro";
+import Footer from "../../components/Footer.astro";
+
+/* const image = window.location.search; */
+interface News {
+  slug: string;
+  news_image: string;
+  date: string;
+  headline: string;
+  subheadline: string;
+  article: string;
+  id: string;
+  image: string;
+}
+
+export async function getStaticPaths() {
+  const data: News[] = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=5", {
+    method: "GET",
+    headers: {
+      apikey:  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+    },
+  }).then((response) => response.json());
+  
+  return data.map((news) => {
+    return {
+      params: { slug: news.slug },
+      props: { myData: news },
+    };
+  });
+}
+
+const {myData} = Astro.props
+console.log("min data",myData);
+---
+
+<MainLayout title={myData.slug}/>
+<NavigationP />
+<div class="mainv2">
+  <section class="content">
+    <a href="/juniortraening"><BreadCrumb breadtitle="Hjem" /></a>
+    <a href="/seniortraening"><BreadCrumb breadtitle="Nyheder" /></a>
+    <a href="/seniortraening"><BreadCrumb breadtitle={myData.headline} /></a>
+        
+    
+    <article class="newsArticle">
+
+          <h2 class="">{myData.headline}</h2>
+          <p class="subheadline">{myData.subheadline}</p>
+
+          <figure class="newsImageContainer">
+            <img src={myData.image} />
+            <figcaption>{myData.headline}</figcaption>
+          </figure>
+      
+          <p class="newsText">{myData.article}</p>
+
+    </article>
+  </section>
+</div>
+
+    <Footer />
+    
+    <style>
+    .newsArticle {
+      margin-top: 3%;
+      display: flex;
+      flex-direction: column;
+      
+    }
+    .newsImageContainer  {
+  margin-bottom: 5%; 
+}
+
+.newsText, .subheadline, .newsArticle h2 {
+  margin: 0% 15%;
+  margin-bottom: 3%; 
+}
+
+.newsImageContainer {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.newsImageContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+figure {
+     position: relative;
+}
+figcaption {
+  background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1% 5%;
+}
+
+
+
+      </style>
