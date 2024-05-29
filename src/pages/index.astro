@@ -15,25 +15,24 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
   },
 }).then((response) => response.json());
-
 ---
 
 <MainLayout title="Arbejdernes Tennisklub" />
 <NavigationP />
 <HeroVideo />
 
-
-
 <div class="main">
   <section class="content" id="fpMain">
     <h2>SENESTE NYT</h2>
     <div class="carousel-container">
       <div class="carousel-track">
-        {newsData.map((news) => (
-          <div class="carousel-item">
-            <CarrouselScroll slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />
-          </div>
-        ))}
+        {
+          newsData.map((news) => (
+            <div class="carousel-item">
+              <CarrouselScroll slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />
+            </div>
+          ))
+        }
       </div>
       <div class="carousel-navigation">
         <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" />
@@ -41,9 +40,7 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
       </div>
 
       <div class="carousel-indicators">
-        {newsData.map((_, index) => (
-          <div class={`carousel-indicator ${index === 0 ? 'active' : ''}`} data-slide-to={index}></div>
-        ))}
+        {newsData.map((_, index) => <div class={`carousel-indicator ${index === 0 ? "active" : ""}`} data-slide-to={index} />)}
       </div>
     </div>
     <br />
@@ -54,9 +51,7 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
 
     <h3>KOMMENDE AKTIVITETER</h3>
     <article class="autolayout">
-      {newsData.slice(0, 3).map((news) => (
-        <Newscard news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />
-      ))}
+      {newsData.slice(0, 3).map((news) => <Newscard news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
     </article>
     <div class="flexboxCenter">
       <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
@@ -75,132 +70,132 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
     </div>
   </section>
   <Banner src="bannerBg.png" btnTitle="TJEK MAKKERBØRS" />
-  </div>
-  <Footer />
+</div>
+<Footer />
 
-  <style>
-    .carousel-track {
-      display: flex;
-      transition: transform 1s ease-in-out;
-    }
-
-    .carousel-container {
-      width: 700px;
-      display: flex;
-      overflow: hidden;
-      position: relative;
-      margin: auto;
-    }
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-    .carousel-item {
-      flex: 0 0 100%;
-    }
-    .carousel-navigation {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 2;
-    }
-    .carousel-navigation img {
-      background: rgba(255, 255, 255, 0.5);
-      width: 50px;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-    }
-    .carousel-indicators {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      z-index: 2;
-    }
-    .carousel-indicator {
-      width: 10px;
-      height: 10px;
-      background-color: #ccc;
-      border-radius: 50%;
-      margin: 0 5px;
-      cursor: pointer;
-    }
-    .carousel-indicator.active {
-      background-color: #555;
-    }
-  </style>
-
-  <script>
-   const track = document.querySelector<HTMLElement>(".carousel-track");
-const items = document.querySelectorAll<HTMLElement>(".carousel-item");
-const indicators = document.querySelectorAll<HTMLElement>(".carousel-indicator");
-
-// Check if the elements exist before accessing their properties
-if (track && items.length > 0) {
-  const totalItems = items.length;
-  const itemWidth = items[0].offsetWidth;
-
-  let index = 0;
-
-  function updateCarousel() {
-    if (track) {
-      track.style.transform = `translateX(-${index * itemWidth}px)`;
-      updateIndicators();
-    }
+<style>
+  .carousel-track {
+    display: flex;
+    transition: transform 1s ease-in-out;
   }
 
-  function nextSlide() {
-    index = index < totalItems - 1 ? index + 1 : 0;
-    updateCarousel();
+  .carousel-container {
+    width: 700px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
   }
-
-  function prevSlide() {
-    index = index > 0 ? index - 1 : totalItems - 1;
-    updateCarousel();
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
   }
-
-  function goToSlide(idx: number) {
-    index = idx;
-    updateCarousel();
+  .carousel-item {
+    flex: 0 0 100%;
   }
+  .carousel-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+  .carousel-navigation img {
+    background: rgba(255, 255, 255, 0.5);
+    width: 50px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 2;
+  }
+  .carousel-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .carousel-indicator.active {
+    background-color: #555;
+  }
+</style>
 
-  function updateIndicators() {
-    indicators.forEach((indicator, idx) => {
-      if (indicator) {
-        if (idx === index) {
-          indicator.classList.add("active");
-        } else {
-          indicator.classList.remove("active");
+<script>
+  const track = document.querySelector<HTMLElement>(".carousel-track");
+  const items = document.querySelectorAll<HTMLElement>(".carousel-item");
+  const indicators = document.querySelectorAll<HTMLElement>(".carousel-indicator");
+
+  // Check if the elements exist before accessing their properties
+  if (track && items.length > 0) {
+    const totalItems = items.length;
+    const itemWidth = items[0].offsetWidth;
+
+    let index = 0;
+
+    function updateCarousel() {
+      if (track) {
+        track.style.transform = `translateX(-${index * itemWidth}px)`;
+        updateIndicators();
+      }
+    }
+
+    function nextSlide() {
+      index = index < totalItems - 1 ? index + 1 : 0;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      index = index > 0 ? index - 1 : totalItems - 1;
+      updateCarousel();
+    }
+
+    function goToSlide(idx: number) {
+      index = idx;
+      updateCarousel();
+    }
+
+    function updateIndicators() {
+      indicators.forEach((indicator, idx) => {
+        if (indicator) {
+          if (idx === index) {
+            indicator.classList.add("active");
+          } else {
+            indicator.classList.remove("active");
+          }
         }
-      }
+      });
+    }
+
+    const nextButton = document.getElementById("nextButton");
+    const prevButton = document.getElementById("prevButton");
+
+    // Check if the buttons exist before adding event listeners
+    if (nextButton && prevButton) {
+      nextButton.addEventListener("click", nextSlide);
+      prevButton.addEventListener("click", prevSlide);
+    }
+
+    indicators.forEach((indicator) => {
+      indicator.addEventListener("click", (event) => {
+        const target = event.target as HTMLElement;
+        const slideTo = target.getAttribute("data-slide-to");
+        if (slideTo !== null) {
+          goToSlide(parseInt(slideTo));
+        }
+      });
     });
+
+    setInterval(nextSlide, 6000); // Auto slide every 6 seconds
   }
-
-  const nextButton = document.getElementById("nextButton");
-  const prevButton = document.getElementById("prevButton");
-
-  // Check if the buttons exist before adding event listeners
-  if (nextButton && prevButton) {
-    nextButton.addEventListener("click", nextSlide);
-    prevButton.addEventListener("click", prevSlide);
-  }
-
-  indicators.forEach((indicator) => {
-    indicator.addEventListener("click", (event) => {
-      const target = event.target as HTMLElement;
-      const slideTo = target.getAttribute("data-slide-to");
-      if (slideTo !== null) {
-        goToSlide(parseInt(slideTo));
-      }
-    });
-  });
-
-  setInterval(nextSlide, 6000); // Auto slide every 6 seconds
-}
-  </script>
+</script>
