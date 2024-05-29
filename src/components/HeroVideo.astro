@@ -1,6 +1,6 @@
 ---
-import PrimaryButton from "./PrimaryButton.astro"
-import SecondaryBtn from "./SecondaryBtn.astro"
+import PrimaryButton from "./PrimaryButton.astro";
+import SecondaryBtn from "./SecondaryBtn.astro";
 ---
 
 <div class="fpHeadline">
@@ -19,31 +19,32 @@ import SecondaryBtn from "./SecondaryBtn.astro"
       </video>
     </div>
   </div>
+</div>
 
-  <style>
-     .heroWrapper {
-    position: relative  ;
+<style>
+  .heroWrapper {
+    position: relative;
     width: 100%;
     height: 75vh;
     overflow: hidden;
   }
-  
-.heroVideo {
-  position: absolute; 
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
 
-.heroVideo video {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .heroVideo {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-.fpHeadline {
-  position: absolute;
+  .heroVideo video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .fpHeadline {
+    position: absolute;
     top: 50%;
     transform: translateY(-40%);
     width: 100%;
@@ -53,18 +54,16 @@ import SecondaryBtn from "./SecondaryBtn.astro"
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-   
-}
+  }
 
-.fpHeadline h3 {
-  color: white;
-  margin: 0;
-  line-height: 1;
-  font-size: 3.2rem;
-}
+  .fpHeadline h3 {
+    color: white;
+    margin: 0;
+    line-height: 1;
+    font-size: 3.2rem;
+  }
 
-.fpBtns {
-  margin-top: 2%;
-}
-
-  </style>
+  .fpBtns {
+    margin-top: 2%;
+  }
+</style>
