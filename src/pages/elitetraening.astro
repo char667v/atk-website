@@ -21,7 +21,7 @@ console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Elitetræning"/>
 <NavigationP />
-<HeroImg heroImg="../img/elite_træning_hero.webp"/>
+<HeroImg heroImg="../img/elite_træning_hero.webp" alt="headerbillede"/>
 
 <div class="main">
     <section class="content">
@@ -35,21 +35,21 @@ console.log("contactInfo", contactInfo);
         <TrainingInfo datoS="1/5 - 13/9 2024" datoW="1/10 - 24/4 2024" lokationS="Genforeningspladsen 52, 2400 København NV" lokationW="Borups Allé 273, 2400 København NV" pause="Skoleferier samt helligdage"/>
         <article class="infocard">
           {contactInfo.length > 0 && 
-            <ContactCard pb="../img/profilepictures/JensSeibaek.jpg" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}  
+            <ContactCard pb="../img/profilepictures/JensSeibaek.jpg" alt="træner" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}  
             />
           }
         </article>
       </div>
 
       <article>
-        <a href="#" class="card-link" data-target="container5">Træning for 1-3 elitehold<img src="/img/svg/redarrowDown_1.svg"></a>
+        <a href="#" class="card-link" data-target="container5">Træning for 1-3 elitehold<img src="/img/svg/redarrowDown_1.svg" alt="rød pil ned"></a>
                     <div class="container" id="container5">
                       <div class="card">
                       <TrainingCard
                       teamDescription="Træning for klubbens elitehold. Der udsendes ugentlige programmer til aktuelle spillere med hvem, der træner hvornår."
                       mondayW="N/A" mondayS="18:00-21:00" tuesdayW="19:00-23:00" tuesdayS="N/A" wednesdayW="N/A" wednesdayS="N/A" thursdayS="18:00-21:00" thursdayW="18:00-21:00" fridayS="18:00-20:00" fridayW="N/A" saturdayS="N/A" saturdayW="N/A" sundayS="N/A" sundayW="13:00-16:00"
                       team1="https://atk.halbooking.dk?pid=01&hold=27437" trainingTeam1="Elitetræning sommer"  team2="https://atk.halbooking.dk?pid=01&hold=27417" trainingTeam2="Elitetræning vinter"
-                      teamImg="../img/elite_træning_hero.webp"
+                      teamImg="../img/elite_træning_hero.webp" alt="elitetræning billede"
                       />
                     </div>
                   </div>

@@ -9,16 +9,16 @@ import NavigationP from "../components/NavigationP.astro";
 import HeroImg from "../components/HeroImg.astro";
 ---
 
-<MainLayout title="Medlemsskab"/>
+<MainLayout title="Medlemskab"/>
 <NavigationP />
-<HeroImg  heroImg="../img/medlemskabHero.webp"/>
+<HeroImg  heroImg="../img/medlemskabHero.webp" alt="herobillede"/>
 
 
 <div class="main">  
   <section class="content">
     
       <a href="/index"><BreadCrumb breadtitle="Hjem" /></a>
-      <a href="/medlemskab"><BreadCrumb breadtitle="Medlemsskab" /></a>
+      <a href="/medlemskab"><BreadCrumb breadtitle="Medlemskab" /></a>
       <h2>MEDLEMSKAB</h2>
     
         <div id="medlemskab">
@@ -36,15 +36,15 @@ import HeroImg from "../components/HeroImg.astro";
             Vi tager regelmæssigt nye ansøgere ind omkring februar efter årsskifte.</p>
           </div>
       
-          <Tabel title="MEDLEMSSKAB" hold1="Fuldtidsmedlem"pris1="1.100 kr." hold2="Dagmedlem" pris2="900 kr."hold3="Juniormedlem"pris3="500 kr."hold4="Senioridræt"pris4="200 kr."hold5="Vintermedlem"pris5="200 kr."hold6="Passiv"pris6="100 kr."/>
+          <Tabel title="MEDLEMSKAB" hold1="Fuldtidsmedlem"pris1="1.100 kr." hold2="Dagmedlem" pris2="900 kr."hold3="Juniormedlem"pris3="500 kr."hold4="Senioridræt"pris4="200 kr."hold5="Vintermedlem"pris5="200 kr."hold6="Passiv"pris6="100 kr."/>
         </div>
 
         <div class="spacer">
           <div class="grid-2_2">
-          <a href=""><CategoryCard imgPath="../img/reservationsRegler.webp"title="RESERVATIONSREGLER"/> </a>
-          <a href=""><CategoryCard imgPath="../img/medlemskab.webp"title="ANSØG OM MEDLEMSKAB"/></a>
-          <a href=""><CategoryCard imgPath="../img/nytMedlem.webp"title="NYT MEDLEM"/></a>
-          <a href=""><CategoryCard imgPath="../img/ændreMedlemskab.webp"title="ÆNDRE MEDLEMSKAB"/></a>
+          <a href=""><CategoryCard imgPath="../img/reservationsRegler.webp" title="RESERVATIONSREGLER" alt="reservationstabel"/> </a>
+          <a href=""><CategoryCard imgPath="../img/medlemskab.webp" title="ANSØG OM MEDLEMSKAB" alt="ATK tshirt"/></a>
+          <a href=""><CategoryCard imgPath="../img/nytMedlem.webp" title="NYT MEDLEM" alt="glade medlemmer"/></a>
+          <a href=""><CategoryCard imgPath="../img/ændreMedlemskab.webp" title="ÆNDRE MEDLEMSKAB" alt="håndtryk"/></a>
         </div>
       </div>
       
