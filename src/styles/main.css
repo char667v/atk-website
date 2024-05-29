@@ -3,7 +3,7 @@
   src: local("Avenir Regular"), url("/fonts/Avenir Regular.woff2") format("woff2");
 }
 
-/*mbody  {
+body  {
     cursor: url('/img/racketCursor.png'), auto; 
 }
 
