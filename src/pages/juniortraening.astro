@@ -9,6 +9,7 @@ import Tabel from "../components/Tabel.astro";
 import Traening from "./traening.astro";
 import NavigationP from "../components/NavigationP.astro";
 import TrainingInfo from "../components/TrainingInfo.astro";
+import HeroImg from "../components/HeroImg.astro";
 
 const coachId = "23"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -21,7 +22,8 @@ const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v
 console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Juniortræning"/>
-<NavigationP HeroImg="../img/juniorHero.webp"/>
+<NavigationP />
+<HeroImg heroImg="../img/juniorHero.webp" />
 
 <div class="main">
 

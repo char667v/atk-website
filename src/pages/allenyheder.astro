@@ -4,6 +4,7 @@ import BreadCrumb from "../components/BreadCrumb.astro";
 import Footer from "../components/Footer.astro";
 import NavigationP from "../components/NavigationP.astro";
 import Newscard from "../components/Newscard.astro";
+import HeroImg from "../components/HeroImg.astro";
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=12", {
   method: "GET",
@@ -15,8 +16,9 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
 console.log("newsData", newsData);
 ---
 
-<MainLayout title="Aktiviteter" />
-<NavigationP HeroImg="../img/gruppebillede.webp"/>
+<MainLayout title="Alle nyheder" />
+<NavigationP />
+<HeroImg heroImg="../img/gruppebillede.webp"/>
 
 
 <div class="main">
