@@ -14,8 +14,9 @@ import Footer from "../components/Footer.astro";
 <div class="main">
   <section class="content">
 
-      <a href="/index"><BreadCrumb breadtitle="Hjem"/></a>
+      <a href="/" id="atkHome"><BreadCrumb breadtitle="Hjem"/></a>
       <a href="/omatk"><BreadCrumb breadtitle="Om ATK"/></a>
+
       <h2>OM ATK</h2>
 
       <div class="flexboxcenterColumn">
@@ -45,10 +46,7 @@ import Footer from "../components/Footer.astro";
           </div>
       </div>
 
-
-
       <div class=grid-2_3>
-
           <p>Arbejdernes Tennisklub er grundlagt i 1928 og ligger som en lille byoase på Genforeningspladsen i København NV. ATK råder over 10 udendørs tennisbaner, herunder to helårs RedPlus baner, to padelbaner samt to  indendørs hardcourtbaner.</p>
           <div><img src="../img/atkbane.webp" alt="" /></div>
 
@@ -61,20 +59,46 @@ import Footer from "../components/Footer.astro";
 
           <div><img src="../img/ledelseHero.webp" alt="" /></div>    
           <p> Med et fokus på at gøre tennis tilgængelig for alle, tilbyder klubben ofte særlige medlemskabspriser og programmer for dem, der måske ikke har råd til traditionelle sportsklubber. Arbejdernes Tennisklub er mere end bare en sportsklub; det er et fællesskab, der binder medlemmer sammen gennem deres kærlighed til sporten og deres ønske om at støtte hinanden i at opnå deres bedste.</p>
-           
       </div>
 
   </section>
 </div>
+
 <Footer />
 
-
+<!-- -------------------------------------------------------- -->
 <style>
 
 .membersIcon {
 width: 21%;
 }
-
+@media (max-width: 768px){
+.tennisbaner{
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  white-space: nowrap;
+  width: 25%;
+  justify-self: center; 
+  margin-bottom: 10%;
+  }
+  .grid-2_4{
+    margin-bottom: 10%;
+  }
+  .grid-2_3{
+    margin-top: 20%;
+  }
+  .grid-2_3 img{
+    margin-top: -8%;
+  }
+  .grid-2_3 p{
+    margin-top: -10%;
+  }
+}
+@media (min-width: 768px) {
+.flexboxcenterColumn{
+  margin-bottom: 1%;
+  }
 .tennisbaner{
   display: flex;
   align-items:center;
@@ -82,8 +106,10 @@ width: 21%;
   white-space: nowrap;
   width: 20%;
   justify-self: center; 
+  margin-bottom: 100px;
   }
-
-
-
+.grid-2_3 img {
+  border-radius: 4px;
+  }
+ }
 </style>

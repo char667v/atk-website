@@ -34,10 +34,9 @@ const { breadtitle } = Astro.props;
         transition: transform 0.3s ease;
     }
 
-    .breadcrumb_list li:hover {
+   /*  .breadcrumb_list li:hover {
     transform: translateX(-7px);
-    
-}
+    } */
     .breadcrumb_list li span::after {
         content: "";
         position: absolute;
@@ -55,6 +54,6 @@ const { breadtitle } = Astro.props;
     @media only screen and (max-width: 768px) {
         .breadcrumb_list {
         display: none;
+        }
     }
-}
 </style>
