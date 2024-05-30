@@ -1,101 +1,103 @@
 ---
 import "../styles/main.css";
 import "../styles/pc_style.css";
+import Banner from "./Banner.astro";
 ---
 
+<div><Banner src="eliteHold.webp" btnTitle="TJEK MAKKERBØRS" /></div>
 <footer>
-<div class="footerContent">
-    <a href="/"> <img src="/img/atklogo.webp" id="atkLogo" alt="logo"></a>
+  <div class="footerContent">
+    <a href="/"> <img src="/img/atklogo.webp" id="atkLogo" alt="logo" /></a>
     <div>
-        <h5>ATK Arbejdernes tennis klub</h5>
-        <p>Genforeningspladsen 54</p>
-        <p>2400 København NV</p>
-        <br>
-        <h5>ATK HALLEN</h5>
-        <p>Borups allé 273</p>
-        <p>2700 Brønshøj</p>
+      <h5>ATK Arbejdernes tennis klub</h5>
+      <p>Genforeningspladsen 54</p>
+      <p>2400 København NV</p>
+      <br />
+      <h5>ATK HALLEN</h5>
+      <p>Borups allé 273</p>
+      <p>2700 Brønshøj</p>
     </div>
 
     <div>
-        <h5>KONTORTIDER</h5>
-        <p>Tirsdag 17:00-18:00 (sommer)</p>
-        <p>Mandag 17:00-18:00 (vinter)</p>
-        <br>
-        <h5 >TELEFON: <span id="atkTlf"> 38 34 64 38</span></h5>
-        <h5>E-MAIL: <span id="atkEmail">ATK@ATK-TENNIS.DK</span></h5>
+      <h5>KONTORTIDER</h5>
+      <p>Tirsdag 17:00-18:00 (sommer)</p>
+      <p>Mandag 17:00-18:00 (vinter)</p>
+      <br />
+      <h5>TELEFON: <span id="atkTlf"> 38 34 64 38</span></h5>
+      <h5>E-MAIL: <span id="atkEmail">ATK@ATK-TENNIS.DK</span></h5>
     </div>
 
     <div class="footerNav">
-        <div><a href="/traening">TRÆNING</a></div>
-        <div><a href="/aktiviteter">AKTIVITETER</a></div>
-        <div><a href="medlemskab">MEDLEMSKAB</a></div>
-        <div><a href="/omatk">OM ATK</a></div>
-        <div><a href="https://www.facebook.com/groups/25078266748">FACEBOOK</a></div>
+      <div><a href="/traening">TRÆNING</a></div>
+      <div><a href="/aktiviteter">AKTIVITETER</a></div>
+      <div><a href="medlemskab">MEDLEMSKAB</a></div>
+      <div><a href="/omatk">OM ATK</a></div>
+      <div><a href="https://www.facebook.com/groups/25078266748">FACEBOOK</a></div>
     </div>
 
     <div class="newsletterForm">
-        <h4>Nyhedsbrev</h4>
-        <form action="/submit-email" method="POST">
-          <input type="email" id="email" name="email" placeholder="Email" required>
-          <button type="submit">TILMELD NYHEDSBREV</button>
-        </form>
-      </div>
-  
-</div>
+      <h4>Nyhedsbrev</h4>
+      <form action="/submit-email" method="POST">
+        <input type="email" id="email" name="email" placeholder="Email" required />
+        <button type="submit">TILMELD NYHEDSBREV</button>
+      </form>
+    </div>
+  </div>
 
-<div class="footerSponsors">
-    <a href="http://sportscafeen.net" id="sportsCafe"> <img src="/img/footer/sportsCafe.webp" alt="Sports Cafe"></a>
-    <a href="https://olsensport.dk" id="olsenSport"> <img src="/img/footer/olsenSport.svg" alt="Olsen Sport"></a>
-    <a href="https://proalign.dk" id="proAlign"> <img src="/img/footer/proAlign.webp" alt="Pro Align"></a>
-    <a href="https://www.head.com/en_DK/" id="headLogo"> <img src="/img/footer/head.svg" alt="Head Tennis"></a>
-
-</div>
+  <div class="footerSponsors">
+    <a href="http://sportscafeen.net" id="sportsCafe"> <img src="/img/footer/sportsCafe.webp" alt="Sports Cafe" /></a>
+    <a href="https://olsensport.dk" id="olsenSport"> <img src="/img/footer/olsenSport.svg" alt="Olsen Sport" /></a>
+    <a href="https://proalign.dk" id="proAlign"> <img src="/img/footer/proAlign.webp" alt="Pro Align" /></a>
+    <a href="https://www.head.com/en_DK/" id="headLogo"> <img src="/img/footer/head.svg" alt="Head Tennis" /></a>
+  </div>
 </footer>
 
 <style>
-footer {
+  footer {
+    position: absolute;
     background-color: var(--text-white);
     color: var(--text-black);
     width: 100%;
-    clip-path: polygon(100% 100%, 0 100%, 0 20%, 100% 0, 100% 30%);
-    margin-top: -170px;
-}
 
-.footerContent {
+    clip-path: polygon(100% 100%, 0 100%, 0 20%, 100% 0, 100% 30%);
+    z-index: 50;
+  }
+
+  .footerContent {
     display: flex;
     justify-content: space-between;
     padding-bottom: 2%;
     margin: 0 var(--spacing-large);
     padding-top: 7%;
-}
+  }
 
-footer a {
+  footer a {
     color: var(--text-black);
-}
+  }
 
-footer a:hover {
+  footer a:hover {
     color: var(--primaryColor);
-}
+  }
 
-.footerContent h5, .footerContent p {
-  margin: 0%;
-}
+  .footerContent h5,
+  .footerContent p {
+    margin: 0%;
+  }
 
-.newsletterForm {
+  .newsletterForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 20%;
-}
+  }
 
-.newsletterForm form {
+  .newsletterForm form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    
-}
+  }
 
-.newsletterForm input[type="email"] {
+  .newsletterForm input[type="email"] {
     width: 100%;
     font-size: 0.8rem;
     padding: 10px;
@@ -103,9 +105,9 @@ footer a:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}
+  }
 
-.newsletterForm button {
+  .newsletterForm button {
     background-color: var(--secondaryColor);
     font-size: 0.8rem;
     color: white;
@@ -113,77 +115,82 @@ footer a:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
 
-.newsletterForm button:hover {
+  .newsletterForm button:hover {
     background-color: var(--primaryColor);
-}
+  }
 
-#atkTlf, #atkEmail {
+  #atkTlf,
+  #atkEmail {
     color: var(--primaryColor);
-}
+  }
 
-.footerSponsors {
+  .footerSponsors {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: rgb(255, 255, 255);
     padding: 0% 5%;
     flex: 1;
-}
+  }
 
-.footerSponsors img {
+  .footerSponsors img {
     max-width: 150px;
     height: auto;
-}
+  }
 
-@media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1024px) {
     footer {
-        clip-path: none;
+      clip-path: none;
     }
 
     .footerContent {
-        padding-top: 5%;
-        flex-direction: column;
-        align-items: center;
+      padding-top: 5%;
+      flex-direction: column;
+      align-items: center;
     }
 
     .footerContent > div {
-        width: 100%;
-        margin-bottom: var(--spacing-large);
+      width: 100%;
+      margin-bottom: var(--spacing-large);
     }
 
     .footerSponsors {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        place-items: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      place-items: center;
     }
 
     .footerSponsors img {
-        max-width: 100px;
+      max-width: 100px;
     }
 
-    .newsletterForm button, .newsletterForm input {
-    font-size: 0.6rem;
+    .newsletterForm button,
+    .newsletterForm input {
+      font-size: 0.6rem;
     }
 
     .newsletterForm form {
-        width: 300px;
+      width: 300px;
     }
-}
+  }
 
-@media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     h4 {
-    font-size: 1.4rem;
-  }
+      font-size: 1.4rem;
+    }
 
-  h5 {
-    font-size: 0.8rem;
-  }
+    h5 {
+      font-size: 0.8rem;
+    }
 
-  p {
-    font-size: 0.8rem;
+    p {
+      font-size: 0.8rem;
+    }
   }
-}
+</style>
