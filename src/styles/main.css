@@ -3,9 +3,9 @@
   src: local("Avenir Regular"), url("/fonts/Avenir Regular.woff2") format("woff2");
 }
 
-body  {
-   /* cursor: url('/img/racketCursorV3.cur'), auto; */
-}
+/* body  {
+   cursor: url('/img/racketCursorV3.cur'), auto;
+} */
 
 /* Variables */
 :root {
