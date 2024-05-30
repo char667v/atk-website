@@ -28,7 +28,14 @@ console.log("newsData", newsData);
     <h2>AKTIVITETER</h2>
 
     <div class="autolayout">
-      {newsData.map((news) => <Activitycard slug={news.slug} news_image={news.image}  date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+      {newsData.map((news) =><Activitycard 
+        key={news.id}
+        slug={news.slug} 
+        news_image={news.image} 
+        date={news.date} 
+        headline={news.headline} 
+        subheadline={news.subheadline} 
+      />)}
     </div>
 
     <div class="spacer">
@@ -43,8 +50,9 @@ console.log("newsData", newsData);
             </a>
           </a>
         </a>
-        <Footer />
+      
       </div>
     </div>
   </section>
 </div>
+<Footer />
