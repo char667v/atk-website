@@ -13,7 +13,7 @@ const saturdayW = Astro.props.saturdayW;
 const saturdayS = Astro.props.saturdayS;
 const sundayW = Astro.props.sundayW;
 const sundayS = Astro.props.sundayS;
-const src = Astro.props.src;
+const teamImg = Astro.props.teamImg;
 const teamDescription = Astro.props.teamDescription;
 const teamTitle = Astro.props.teamTitle;
 const team1  = Astro.props.team1;
@@ -26,11 +26,11 @@ const trainingTeam3 = Astro.props.trainingTeam3;
 ---
 <section class="trainingCard">
   <div class="trainingTitle">
-      <h4>{teamTitle}</h4>
+      <p class=subheadline>{teamTitle}</p>
       <p>{teamDescription}</p>
   </div>
   <div class="trainingImg_container">
-      <img src="/img/træning/${src}">
+      <img src={teamImg} alt="Picture of training team">
   </div>
   <table class="trainingTable">
       <thead>
@@ -87,7 +87,6 @@ const trainingTeam3 = Astro.props.trainingTeam3;
         <div class="dropdown-menu" id="dropdown-menu">
           <a href={team1}>{trainingTeam1}</a>
           <a href={team2}>{trainingTeam2}</a>
-          <a href={team3}>{trainingTeam3}</a>
         </div>
       </div>
     </div>
@@ -200,7 +199,7 @@ tr:nth-child(odd) {
   background-color: #f9f9f9;
   width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Links inside the dropdown */

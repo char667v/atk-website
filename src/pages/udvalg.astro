@@ -2,6 +2,9 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import ContactCard from "../components/ContactCard.astro";
+import NavigationP from "../components/NavigationP.astro";
+import Footer from "../components/Footer.astro";
+import HeroImg from "../components/HeroImg.astro";
 import Footer from "../components/Footer.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
@@ -15,148 +18,77 @@ const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v
 console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Udvalg"/>
+<NavigationP />
+<HeroImg heroImg="../img/udvalgHero.webp" alt="herobillede"/>
 
 <div class="main">
-
-<<<<<<< HEAD
-  <section class="breadcrumb_trail">
-    <img class="arrow" src="../img/svg/arrowLeft_1.svg" alt="Pil">
-    <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-=======
-<section class="breadcrumb_trail">
-    <a href="/juniortraening"><BreadCrumb breadtitle="Hjem"/></a>
-    <a href="/seniortraening"><BreadCrumb breadtitle="Om ATK"/></a>
-    <a href="/motionisttraening"><BreadCrumb breadtitle="Udvalg"/></a>  
->>>>>>> master
-</section>
-
-<h1>UDVALG</h1>
-
-<h3>BREDDEUDVALG</h3>
-<h4>Udvalget står for at lave arrangementer for bredden i klubben, bl.a. Hyg-ing og Motionisttræning.</h4>
- <section class=autolayout>
- <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-</section>
-
-<h3>SENIORUDVALG</h3>
-<h4>Seniorholdudvalget tager sig af 4.-7. hold, veteran B hold samt puljeturnering.</h4>
- <!-- contactCard-->
- <section class=autolayout>
-  <article class="infocard">
-     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-   </article>
-   <article class="infocard">
-     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-   </article>
-   <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
- </section>
-
- <h3>JUNIORUDVALG</h3>
- <h4>Juniorudvalgets (den daglige ledelse) opgave er at udstikke de overordnede rammer, struktur og retningslinjer for juniorafdelingen.</h4>
- <section class=autolayout>
-  <article class="infocard">
-     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-   </article>
-   <article class="infocard">
-     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-   </article>
-   <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
- </section>
-
-
- <h3>ELITEUDVALG</h3>
- <h4>Eliteudvalget beskæftiger sig med klubrangliste, træning og arrangementer for klubbens elitespillere.</h4>
- <!-- contactCard-->
- <section class=autolayout>
-  <article class="infocard">
-     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-   </article>
-  </section>
-  
-
- <h3>TURNERINGSUDVALG</h3>
- <h4>Udvalget arrangerer tilbagevendende klubturneringer- og aktiviteter.</h4>
- <!-- contactCard-->
- <section class=autolayout>
-  <article class="infocard">
-     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-   </article>
-   <article class="infocard">
-     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-   </article>
-   <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
- </section>
-
-
- <h3>IT- OG KOMMUNIKATIONSUDVALG</h3>
- <h4>Udvalget står bl.a. for udsendelse af ATK-NYT, nyhedsbreve og vedligeholdelse af hjemmesiden.</h4>
- <!-- contactCard-->
-<<<<<<< HEAD
- <section class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </section>
-  <section class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </section>
-  <section class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </section>
-</div>
-
-<Footer />
-
-<!-- --------------------------------------------------------------------------------- -->
-<style>
-    .breadcrumb_trail img{ /* pile i brødkrummesti */
-        width:0.7%;
-    }
+  <section class="content">
     
-    p{
-      color: blueviolet;/* OBS: skriften er pr default hvid */
-    }
-     </style>
-=======
- <section class=autolayout>
-  <article class="infocard">
-     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-   </article>
-   <article class="infocard">
-     {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-   </article>
-   <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
- </section>
+    <a href="/index"><BreadCrumb breadtitle="Hjem"/></a>
+    <a href="/omatk"><BreadCrumb breadtitle="Om ATK"/></a>
+    <a href="/udvalg"><BreadCrumb breadtitle="Udvalg"/></a>  
+    <h2>UDVALG</h2>
+
+      <h3>BREDDEUDVALG</h3>
+      <p class="subheadline">Udvalget står for at lave arrangementer for bredden i klubben, bl.a. Hyg-ind og Motionisttræning.</p>
+
+      <div class=autolayout>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+      </div>
+
+      <h3>SENIORUDVALG</h3>
+      <p class="subheadline">Seniorholdudvalget tager sig af 4.-7. hold, veteran B hold samt puljeturnering.</p4>
+      <!-- contactCard-->
+      <div class=autolayout>
+        
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+      </div>
+
+      <h3>JUNIORUDVALG</h3>
+      <p class="subheadline">Juniorudvalgets (den daglige ledelse) opgave er at udstikke de overordnede rammer, struktur og retningslinjer for juniorafdelingen.</p>
+      <div class=autolayout>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+      </div>
+
+
+      <h3>ELITEUDVALG</h3>
+      <p class="subheadline">Eliteudvalget beskæftiger sig med klubrangliste, træning og arrangementer for klubbens elitespillere.</p>
+      <div class=autolayout>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+        </div>
+        
+
+      <h3>TURNERINGSUDVALG</h3>
+      <p class="subheadline">Udvalget arrangerer tilbagevendende klubturneringer- og aktiviteter.</p>
+      <!-- contactCard-->
+      <div class=autolayout>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+      </div>
+
+
+      <h3>IT- OG KOMMUNIKATIONSUDVALG</h3>
+      <p class="subheadline">Udvalget står b.la. for udsendelse af ATK-NYT, nyhedsbreve og vedligeholdelse af hjemmesiden.</p>
+      <div class=autolayout>
+        <article class="infocard">
+          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
+        </article>
+      </div>
+
+    </section>
 
  
  </div>
+
+ <Footer />
  
  
->>>>>>> master

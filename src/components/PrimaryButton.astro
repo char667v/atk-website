@@ -1,0 +1,30 @@
+---
+const link = Astro.props.link;
+const btnText = Astro.props.btnText;
+---
+
+<a class=primaryBtn href={link}>{btnText}</a>
+
+<style>
+.primaryBtn {
+    color: white;
+    background-color: var(--secondaryColor);
+    padding: 10px 30px;
+    border-radius:4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.7s ease, color 0.7s ease, transform 0.5s ease;
+    margin-right: 30px;
+  }
+  
+  .primaryBtn:hover {
+    color: white;
+    background-color: var(--primaryColor);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .primaryBtn {
+      font-size: 0.6rem;
+    }
+  }
+
+</style>

@@ -3,57 +3,48 @@ import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Footer from "../components/Footer.astro";
+import NavigationP from "../components/NavigationP.astro";
+import HeroImg from "../components/HeroImg.astro";
+import Newscard from "../components/newsCard.astro";
+import Activitycard from "../components/Activitycard.astro";
+
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=6", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+}).then((response) => response.json());
+
+console.log("newsData", newsData);
 ---
 
 <MainLayout title="Aktiviteter" />
+<NavigationP />
+<HeroImg heroImg="../img/gruppebillede.webp"/>
 
 <div class="main">
-  <section class="breadcrumb_trail">
-    <img src="../img/svg/arrowLeft_1.svg" alt="Pil" />
-    <img src="../img/svg/arrowLeft_1.svg" alt="Pil" />
-    <a href="/juniortraening"><BreadCrumb breadtitle="Junior" /></a>
-    <a href="/seniortraening"><BreadCrumb breadtitle="Senior" /></a>
-    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist" /></a>
-    <a href="/elitetraening"><BreadCrumb breadtitle="Elite" /></a>
+    <section class="content">
+ 
+    <a href="/index"><BreadCrumb breadtitle="Hjem" /></a>
+    <a href="/aktiviteter"><BreadCrumb breadtitle="Aktiviteter" /></a>
+    <h2>AKTIVITETER</h2>
+
+    <div class="autolayout">
+      {newsData.map((news) => <Activitycard slug={news.slug} news_image={news.image}  date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+    </div>
+
+    <div class="spacer">
+    <div class="grid-2_2">
+      <a href=""><CategoryCard imgPath="../img/gruppebillede.webp" title="KLUBMESTERSKABER" alt="gruppebillede af glade medlemmer" />
+      <a href=""><CategoryCard imgPath="../img/4-8hold.webp" title="DOUBLETURNERING" alt="gruppebillede klar til turnering" />
+      <a href=""><CategoryCard imgPath="../img/veteran.webp" title="INDSPILNINGSTURNERING" alt="to tennisglade medlemmer" />
+      <a href=""><CategoryCard imgPath="../img/seniorcategory.webp" title="ATK-LIGA" alt="seniorspillere klar til kamp" />
+    </div>
+  </div>
+    
   </section>
-
-  <h1>AKTIVITETER</h1>
-  <section class="news-grid">
-    {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
-  </section>
-
-  <!-- Indsæt nyhedBIG_verticalScroll -->
-
-  <section class="categoryCard_grid3">
-    <!-- Hvor skal disse linke hen til?? -->
-    <a href="">
-    <CategoryCard
-    imgPath="../img/Tennisballsracket.webp"
-    title="DOUBLETURNERING">
-    </a>
-    
-    <a href="">
-    <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="INDSPILSTURNERING">
-    </a>
-    
-    <a href="">
-     <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="INDSPILSTURNERING">
-    </a>
-    
-    <a href="">
-    <CategoryCard 
-    imgPath="../img/Tennisballsracket.webp"
-    title="ATK-LIGA">
-    </a>
-    </section>
-
-</section>
-
 </div>
+<Footer />
 
 <Footer />
 

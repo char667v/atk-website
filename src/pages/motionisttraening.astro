@@ -7,7 +7,11 @@ import Footer from "../components/Footer.astro";
 =======
 import Tabel from "../components/Tabel.astro";
 import TrainingCard from "../components/trainingCard.astro";
->>>>>>> master
+import NavigationP from "../components/NavigationP.astro";
+import TrainingInfo from "../components/TrainingInfo.astro";
+import HeroImg from "../components/HeroImg.astro";
+import Footer from "../components/Footer.astro";
+import TrainerCard from "../components/TrainerCard.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -20,85 +24,76 @@ const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v
 console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Motionisttræning"/>
+<NavigationP />
+<HeroImg heroImg="../img/motionist_træning_hero.webp" alt="herobillede"/>
+
 
 <div class="main">
+  <section class="content">
+  
+    <a href="/index"><BreadCrumb breadtitle="Hjem"/></a>
+    <a href="/traening"><BreadCrumb breadtitle="Træning"/></a>
+    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionistræning"/></a>
+    <h2>MOTIONISTTRÆNING</h2>
 
-<section class="breadcrumb_trail">
-    <img class="arrow" src="../img/svg/arrowLeft_1.svg" alt="Pil">
-    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-</section>
-
-<h2>MOTIONISTTRÆNING 2024</h2>
-
-<section class="grid-1_2">
-  <article>
-    <div>
-    <h5>SOMMERTRÆNING</h5>
-    <div><img src="" alt=""><p></p></div>
-    <div><img src="" alt=""><p></p></div>
-  </div>
-  <div>
-    <h5>VINTERTRÆNING</h5>
-    <div><img src="" alt=""><p></p></div>
-    <div><img src="" alt=""><p></p></div>
-  </div>
-  <div>
-    <h5>TRÆNINGSPAUSER</h5>
-    <div><img src="" alt=""><p></p></div>
-    <div><img src="" alt=""><p></p></div>
-  </div>
-  </article>
-
-  <article class="infocard">
-    {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-  </article>
-</section>
+    <div class="grid-1_2">
+      <TrainingInfo datoS="1/5 - 13/9 2024" datoW="1/10 - 24/4 2024" lokationS="Genforeningspladsen 52, 2400 København NV" lokationW="Borups Allé 273, 2400 København NV" pause="Skoleferier samt helligdage"/>
+      <article class="infocard">
+        {contactInfo.length > 0 && 
+          <TrainerCard pb="../img/profilepictures/JensSeibaek.jpg" alt="træner" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}  
+          />
+        }
+      </article>
+    </div>
 
 
-<section>
-<h4>HOLD- OG TRÆNINGSTIDSPUNKTER</h4>
-<TrainingCard />
-</section>
+    <article>
+    <a href="#" class="card-link" data-target="container5">TENNIS4VOKSNE<img src="/img/svg/redarrowDown_1.svg" alt="rød pil ned"></a>
+                <div class="container" id="container5">
+                  <div class="card">
+                  <TrainingCard
+                  teamDescription="Tennis4Voksne"
+                  mondayW="N/A" mondayS="N/A" tuesdayW="N/A" tuesdayS="18:00-21:00" wednesdayW="N/A" wednesdayS="18:00-21:00" thursdayS="N/A" thursdayW="20:00-22:00" fridayS="N/A" fridayW="N/A" saturdayS="N/A" saturdayW="N/A" sundayS="N/A" sundayW="12:00-15:00"
+                  team1="https://atk.halbooking.dk?pid=01&hold=27437" trainingTeam1="Tennis4Voksne begynder/letøvet"  team2="https://atk.halbooking.dk?pid=01&hold=27417" trainingTeam2="Tennis4Voksne øvet"
+                  teamImg="../img/motionist_træning_hero.webp" alt="motionisttræning"
+                  />
+                </div>
+              </div>
+    </article>
 
+    <h4>PRISER</h4>
+    <div class="grid-1_2">
+      <p>Tilmeld dig på ATKs hjemmeside via reservationssystemet eller benyt dig af nedenstående links. Log ind med medlemsnummer og pinkode og betal det valgte træningsgebyr under "sæsonhold". Tilmeldingen er bindende for hele vintersæsonen.
+        Husk, man skal være medlem af ATK for at kunne modtage træning. Hvis du ikke allerede er medlem af ATK kan du ansøge om juniormedlemskab via formularen her på hjemmesiden.</p>
+        <Tabel title="HOLD" hold1="Tennis4Voksne begynder hverdagstræning" pris1="100 kr. pr. gang" hold2="Tennis4Voksne begynder søndagstræning" pris2="175 kr. pr. gang" hold3="Tennis4Voksne letøvet hverdagstræning"  pris3="150 kr. pr. gang" hold4="Tennis4Voksne letøvet søndagstræning"  pris4="200 kr. pr. gang" hold5="Tennis4Voksne øvet hverdagstræning"  pris5="150 kr. pr. gang" hold6="Tennis4Voksne øvet søndagsstræning"  pris6="250 kr. pr. gang" />
+      
+    </div>
 
-<h4>PRISER</h4>
-<section class="grid-1_2">
-  <p>Tilmeld dig på ATKs hjemmeside via reservationssystemet eller benyt dig af nedenstående links. Log ind med medlemsnummer og pinkode og betal det valgte træningsgebyr under "sæsonhold". Tilmeldingen er bindende for hele vintersæsonen.
-
-
-
-    Husk, man skal være medlem af ATK for at kunne modtage træning. Hvis du ikke allerede er medlem af ATK kan du ansøge om juniormedlemskab via formularen her på hjemmesiden.</p>
-  <Tabel
-  title="HOLD" 
-  hold1="Fuldtidsmedlem"
-  pris1="1.100 kr."
-  hold2="Dagmedlem"
-  pris2="900 kr."
-  hold3="Juniormedlem"
-  pris3="500 kr."
-  hold4="Senioridræt"
-  pris4="200 kr."
-  hold5="Vintermedlem"
-  pris5="200 kr."
-  hold6="Passiv"
-  pris6="100 kr." 
-  />
-</section>
-
+  </section>
 </div>  
 
 <Footer />
 
-<!-- --------------------------------------------------------------------------------- -->
-<style>
-.breadcrumb_trail img{ /* pile i brødkrummesti */
-    width:0.7%;
-}
+<Footer />
 
-p{
-  color: blueviolet;/* OBS: skriften er pr default hvid */
-}
- </style>
+
+<script>
+  const cardLinks = document.querySelectorAll('.card-link');
+
+  cardLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      const targetContainer = document.getElementById(targetId);
+
+      if (targetContainer.classList.contains('active')) {
+        targetContainer.classList.remove('active');
+      } else {
+        document.querySelectorAll('.container.active').forEach(container => {
+          container.classList.remove('active');
+        });
+        targetContainer.classList.add('active');
+      }
+    });
+  });
+</script>

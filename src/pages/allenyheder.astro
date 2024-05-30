@@ -3,8 +3,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import Newscard from "../components/newsCard.astro";
 import Footer from "../components/Footer.astro";
+import NavigationP from "../components/NavigationP.astro";
+import Newscard from "../components/Newscard.astro";
+import HeroImg from "../components/HeroImg.astro";
 
-const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter", {
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=12", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
@@ -13,44 +16,27 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
 
 console.log("newsData", newsData);
 ---
-<MainLayout title="Nyheder"/>
+
+<MainLayout title="Alle nyheder" />
+<NavigationP />
+<HeroImg heroImg="../img/gruppebillede.webp" alt="headerbilleder"/>
+
 
 <div class="main">
+    <section class="content">
+ 
+    <a href="/juniortraening"><BreadCrumb breadtitle="Hjem" /></a>
+    <a href="/allenyheder"><BreadCrumb breadtitle="Nyheder" /></a>
+    <h2>NYHEDER</h2>
 
-<section class="breadcrumb_trail">
-    <img src="../img/svg/arrowLeft_1.svg" alt="Pil">
-    <img src="../img/svg/arrowLeft-1.svg" alt="Pil">
-    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-</section>
+    <div class="autolayout">
+      {newsData.map((news) => <Newscard slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+    </div>
 
-
-<h1>ALLE NYHEDER</h1>
-
-<!-- Indsæt nyhedBIG_verticalScroll -->
-
-<!-- Indsæt nyhederSmall -->
-<section class="news-grid">
-  {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
-</section>
-<!-- Indsæt nyhederSmall -->
+    </section>
 </div>
 
 <Footer />
 
-<!-- --------------------------------------------------------------------------------- -->
-<style>
-   @media (max-width: 768px) {
-    .breadcrumb_trail {
-        display: none;
-    }}
-    .breadcrumb_trail img{ /* pile i brødkrummesti */
-        width:0.7%;
-    }
-    
-    p{
-      color: blueviolet;/* OBS: skriften er pr default hvid */
-    }
-     </style>
+ 
+ <

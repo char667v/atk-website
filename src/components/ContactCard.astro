@@ -4,57 +4,100 @@ export interface ContactProps {
   name: string;
   email: string;
   phone: string;
-  profile_picture: string;
+  pb: string;
+  description: string;
+  img: string;
 }
 
-const { role, name, email, phone, profile_picture, } = Astro.props as ContactProps;
+
+const { role, name, description, img, email, phone, pb, } = Astro.props as ContactProps;
 ---
 
-<article class="contactcard">
-  <div class="contact-info">
-    <h4>{role}</h4>
-    <p>{name}</p>
-    <p>{email}</p>
-    <p>{phone}</p>
+<article class="contactCard">
+    <div class="contactContent">
+      <div class="headline"><h4>{role}</h4></div>
+      <div> <p>{name}</p> <p>{email}</p><p>{phone}</p></div>
   </div>
-  <div class="profile-picture">
-    <img src={profile_picture} alt={`${name}'s Profile Picture`} />
-  </div>
+
+    <div class="profile-picture"> <img src={img} alt={`${name}'s Profile Picture`} /></div>
+
+   
+   
+
 </article>
 
 <style>
-  .contactcard {
+
+  .contactCard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
     background-color: rgb(255, 255, 255);
-    position: relative;
-    border-radius: 10px;
+    border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    overflow: hidden;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s; /* smoother transition combined with the hovering */
+    width: 400px;
+    height: 100%;
+    transition: transform 0.3s; 
   }
-  .contactcard:hover {
+
+  .contactContent {
+    display: grid;
+grid-template-columns: 2fr;
+grid-template-rows: repeat(2, 1fr);
+    padding: 5%;
+  }
+
+  
+  .contactContent p {
+   font-size: 0.8rem;
+  }
+
+
+  .contactCard h4 {
+    font-size: 1.2rem;
+  }
+  .contactCard:hover {
     transform: scale(1.1);
   }
-  .contactcard h6,
-  .contactcard p {
-    color: black; /* Set the text color to black for h6 and p elements */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+  
+  .profile-picture img {
+    object-fit: cover; 
+    border-radius: 4px;
+    max-height: 140px;
+
   }
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align items at the start of the container */
-    gap: 4px; /* Add gap between elements for spacing */
+  .contactContent h4 {
+    font-size: 1rem;
+  }
+  .contactcard p {
+    margin: 0; 
+  
   }
   .profile-picture img {
-    width: 100px; /* Set the desired width */
-    height: 100px; /* Set the desired height */
-    object-fit: cover; /* Ensure the image covers the area, maintaining aspect ratio */
-    border-radius: 50%; /* Make the image circular */
+    width: 100%;
   }
+
+
+  @media only screen and (max-width: 1024px) {
+
+    .contactCard h4 {
+    font-size: 0.8rem;
+  }
+
+    .contactCard {
+    width: 250px;
+  }
+
+
+  }
+
+  @media only screen and (max-width: 400px) {
+    .contactCard {
+    width: 250px;
+  }
+  .contactCard p {
+    font-size: 0.6rem;
+  }
+    
+    }
 </style>

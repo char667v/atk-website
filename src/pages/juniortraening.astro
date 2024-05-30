@@ -7,6 +7,10 @@ import Footer from "../components/Footer.astro";
 import TrainingCard from "../components/trainingCard.astro";
 import Tabel from "../components/Tabel.astro";
 import Traening from "./traening.astro";
+import NavigationP from "../components/NavigationP.astro";
+import TrainingInfo from "../components/TrainingInfo.astro";
+import TrainerCard from "../components/TrainerCard.astro";
+import HeroImg from "../components/HeroImg.astro";
 
 const coachId = "23"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -19,126 +23,129 @@ const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v
 console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Juniortræning"/>
+<NavigationP />
+<HeroImg heroImg="../img/juniorHero.webp" alt="herobillede" />
 
 <div class="main">
 
-        <section class="breadcrumb_trail">
+    <section class="content">
+
           <a href="/index"><BreadCrumb breadtitle="Hjem"/></a>
           <a href="/traening"><BreadCrumb breadtitle="Træning"/></a>
           <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-        </section>
+          <h2>JUNIORTRÆNING</h2>
 
-            <h2>JUNIORTRÆNING</h2>
+            
+            <div class="grid-1_2">
+               <TrainingInfo datoS="1/5 - 13/9 2024" datoW="1/10 - 24/4 2024" lokationS="Genforeningspladsen 52, 2400 København NV" lokationW="Borups Allé 273, 2400 København NV" pause="Skoleferier samt helligdage"/>
 
-            <section class="grid-1_2">
-                    <article>
-                      <div>
-                      <h5>SOMMERTRÆNING</h5>
-                      <div><img src="" alt=""><p></p></div>
-                      <div><img src="" alt=""><p></p></div>
-                    </div>
-                    <div>
-                      <h5>VINTERTRÆNING</h5>
-                      <div><img src="" alt=""><p></p></div>
-                      <div><img src="" alt=""><p></p></div>
-                    </div>
-                    <div>
-                      <h5>TRÆNINGSPAUSER</h5>
-                      <div><img src="" alt=""><p></p></div>
-                      <div><img src="" alt=""><p></p></div>
-                    </div>
-                    </article>
+               <article class="infocard">
+                {contactInfo.length > 0 && 
+                  <TrainerCard pb="../img/profilepictures/NikolajGulstorff.jpg" alt="træner" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}/>
+                }
+              </article>
+            </div>
+           
 
-                    <article class="infocard">
-                      {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-                    </article>
-              </section>
-
-
-
-                <section>
-                  
-                 
-                <a href="#" class="card-link" data-target="container1">MINITENNIS 6-10 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
+         
+                <a href="#" class="card-link" data-target="container1">MINITENNIS 6-10 ÅR<img src="/img/svg/redarrowDown_1.svg" alt="rød pil ned"></a>
                 <div class="container" id="container1">
                   <div class="card">
-                    <TrainingCard />
+                    <TrainingCard 
+                    teamDescription="Træning for begyndere og letøvede mellem 6-10 år. Træningen foregår som boldkoordination, grundlæggende teknik og slagøvelser samt små spil og lege med bold. Der trænes med røde, orange og skumbolde på en tilpasset bane. Vi træner i hallen på Borups Allé 273. Træningen ligger lidt sent, så far og mor bedre kan nå at følge."
+                    mondayW="N/A" mondayS="N/A" tuesdayW="17:00-18:00" tuesdayS="17:00-18:00" wednesdayW="N/A" wednesdayS="N/A" thursdayS="17:00-18:00" thursdayW="N/A" fridayS="N/A" fridayW="N/A" saturdayS="N/A" saturdayW="09:00-10:00" sundayS="N/A" sundayW="N/A"
+                    team1="https://atk.halbooking.dk?pid=01&holdnr=494" trainingTeam1="Minitennis 1x/ugen"  team2="https://atk.halbooking.dk?pid=01&holdnr=495" trainingTeam2="Minitennis 2x/ugen"  team3="" trainingTeam3=""
+                    teamImg="../img/u12_1.webp" alt="unge medlemmer"
+                     />
                   </div>
                 </div>
-                <a href="#" class="card-link" data-target="container2">KLUBSPILLER 10-18 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
+                <a href="#" class="card-link" data-target="container2">KLUBSPILLER 10-18 ÅR<img src="/img/svg/redarrowDown_1.svg" alt="rød pil ned"></a>
                 <div class="container" id="container2">
                   <div class="card">
-                    <TrainingCard/>
+                    <TrainingCard
+                    teamDescription="Begyndere, letøvede og øvede spillere mellem 10-16 år, der typisk er selvtransporterende til træning. Vi opbygger kendskab til de grundlæggende slag op fra bunden gennem tekniske øvelser, spil og leg. Motiverede klubspillere, der har dygtiggjort sig til et øvet niveau og udviser positiv engagement  overfor træningen, har mulighed for at træne videre i den efterfølgende time, såfremt der er banekapacitet til det. "
+                    mondayW="N/A" mondayS="15:00-17:00" tuesdayW="15:00-16:00" tuesdayS="15:00-16:00" wednesdayW="15:00-16:00" wednesdayS="15:00-16:00" thursdayS="15:00-17:00" thursdayW="15:00-16:00" fridayS="15:00-16:00" fridayW="15:00-16:00" saturdayS="10:00-11:00" saturdayW="10:00-11:00" sundayS="N/A" sundayW="N/A"
+                    team1="	https://atk.halbooking.dk?pid=01&holdnr=496" trainingTeam1="Klubspiller 1x/ugen"  team2="	https://atk.halbooking.dk?pid=01&holdnr=497" trainingTeam2="Klubspiller 2x/ugen"  
+                    teamImg="../img/klubHold.webp" alt="klubhold"/>
                   </div>
                 </div>
-                <a href="#" class="card-link" data-target="container3">TURNERINGSSPILLER 10-18 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
+                <a href="#" class="card-link" data-target="container3">TURNERINGSSPILLER 11-18 ÅR<img src="/img/svg/redarrowDown_1.svg" alt="rød pil ned"></a>
                 <div class="container" id="container3">
                   <div class="card">
-                    <TrainingCard />
+                    <TrainingCard 
+                    teamDescription="Træning for spillere, som deltager jævnligt i turneringer og holdkampe. Træningen foregår som tekniske slagøvelser og kampspil, der videreudvikler den individuelle spillers tennis-værktøjskasse. Træningen har et større fokus på koncentration og intensitet."
+                    mondayW="N/A" mondayS="15:00-17:00" tuesdayW="15:00-17:00" tuesdayS="15:00-17:00" wednesdayW="15:00-17:00" wednesdayS="15:00-17:00" thursdayS="15:00-17:00" thursdayW="15:00-17:00" fridayS="15:00-16:00" fridayW="15:00-17:00" saturdayS="N/A" saturdayW="10:00-12:00" sundayS="N/A" sundayW="N/A"
+                    team1="https://atk.halbooking.dk?pid=01&holdnr=499" trainingTeam1="Turneringsspiller 2-4x/ugen" team2="https://atk.halbooking.dk?pid=01&holdnr=499" trainingTeam2="Holdspiller 2-4x/ugen" 
+                    teamImg="../img/holdspillerHold.webp" alt="holdspiller"
+                    />
+                    
                   </div>
                 </div>
-                <a href="#" class="card-link" data-target="container4">ELITESPILLER 14-18 ÅR<img src="/img/svg/redarrowDown_1.svg"></a>
+                <a href="#" class="card-link" data-target="container4">ELITESPILLER 14-18 ÅR<img src="/img/svg/redarrowDown_1.svg" alt="rød pil ned"></a>
                 <div class="container" id="container4">
                   <div class="card">
-                    <TrainingCard />
+                    <TrainingCard
+                    teamDescription="Træning for udvalgte turneringsspillere, der deltager jævnligt i turneringer, på seniortræningen og spiller seniorholdkampe. Træningen har et større fokus på at opnå kontinuitet og teknisk perfektion hos de enkelte spillere."
+                    mondayW="15:00-17:00" mondayS="N/A" tuesdayW="08:00-10:00" tuesdayS="08:00-10:00 / 16:00-18:00" wednesdayW="16:00-18:00" wednesdayS="16:00-18:00" thursdayS="08:00-10:00" thursdayW="08:00-10:00" fridayS="17:00-19:00" fridayW="16:00-18:00" saturdayS="N/A" saturdayW="N/A" sundayS="N/A" sundayW="N/A"
+                    team1="https://atk.halbooking.dk?pid=01&holdnr=500" trainingTeam1="Elitejunior med morgentræning"  team2="https://atk.halbooking.dk?pid=01&holdnr=500" trainingTeam2="Elitejunior uden morgentræning"
+                    teamImg="../img/eliteHold.webp" alt="elitehold"
+                     />
                   </div>
                 </div>
 
-                </section>
-
-
-                <h3>OM TRÆNINGEN</h3>
-                  <section class="grid-1_2">
-                    <p>I ATK tilbyder vi træning for alle juniorer mellem 5 og 18 år. Vi tager løbende juniorer ind på træningen, så længe vi har den fornødne trænerkapacitet og der er plads på banerne. Du skal være medlem og betale kontingent for at kunne tilmelde dig og deltage på træningen. Vi forventer at man som spiller er undervisningsparat og kan følge trænerens instrukser.<br><br>
-                      For at fastholde kvalitet og kontinuitet i træningen inddeles spillerne i grupper efter spillernes umiddelbare niveau, sociale interesse og motivationsmæssige udgangspunkt. Vi vægter at spillerne indgår i en positiv social atmosfære, samtidig med at alle spillere med stort engagement har gode træningsmuligheder for at udvikle sin tennis, uanset deres niveau. <br><br>
-
-                      Det er muligt at komme til én eller to gratis prøvetræninger, inden du afgøre om du skal være fast spiller på træningen. </p>
+              <h3>OM TRÆNINGEN</h3>
+                  <article class="grid-1_2">
+                    <p>I ATK tilbyder vi træning for alle juniorer mellem 5 og 18 år. Vi tager løbende juniorer ind på træningen, så længe vi har den fornødne trænerkapacitet og der er plads på banerne. Du skal være medlem og betale kontingent for at kunne tilmelde dig og deltage i træningen. Vi forventer, at man som spiller er undervisningsparat og kan følge trænerens instrukser.<br><br>
+                      For at fastholde kvalitet og kontinuitet i træningen inddeles spillerne i grupper efter spillernes umiddelbare niveau, sociale interesser og motivationsmæssige udgangspunkt. Vi vægter, at spillerne indgår i en positiv social atmosfære, samtidig med at alle spillere med stort engagement har gode træningsmuligheder for at udvikle deres tennis, uanset deres niveau.<br><br>
+                      Det er muligt at komme til én eller to gratis prøvetræninger, inden du afgør, om du skal være fast spiller på træningen.</p>
                     
-                    <Tabel
-                    title="HOLD" 
-                    hold1="Fuldtidsmedlem"
-                    pris1="1.100 kr."
-                    hold2="Dagmedlem"
-                    pris2="900 kr."
-                    hold3="Juniormedlem"
-                    pris3="500 kr."
-                    hold4="Senioridræt"
-                    pris4="200 kr."
-                    hold5="Vintermedlem"
-                    pris5="200 kr."
-                    hold6="Passiv"
-                    pris6="100 kr." 
-                    />
-                  </section>
-  
+                    <Tabel title="HOLD" hold1="Minitennis 1x/ugen" pris1="800 kr." hold2="Minitennis 2x/ugen" pris2="1.200 kr." hold3="Klubspiller 1x/ugen" pris3="800 kr." hold4="Klubspiller 2x/ugen" pris4="1.200 kr." hold5="Hold- og turneringsspiller 2-4x/ugen" pris5="1.600 kr." hold6="Elitespiller" pris6="1.600kr / 2.000 kr." />
+                  </article>
+      </section>
 </div>  
 <Footer />
 
 <style>
-   .card-link {
-    display: block; /* Set links to display as block elements */
-    margin-bottom: 5%; /* Add margin between links */
-    font-size: 1.8rem;
-    border-bottom: 1px solid var(--primaryColor);
-    padding: 5px;
-    color: var(--primaryColor);  
-  }
-  .card-link img {
-    position: absolute;
-    margin-top: 1.25%;
-    right: 20%;
-    width: 16px;
-
-  }
+  .card-link {
+  display: block; /* Set links to display as block elements */
+  margin-bottom: 5%; /* Add margin between links */
+  font-size: 1.8rem;
+  border-bottom: 1px solid var(--primaryColor);
+  padding: 5px;
+  color: var(--primaryColor);  
+  position: relative;
   
-  .container {
-    display: none;
-    transition: display 0.5s ease-in; /* Add transition effect */
+}
+
+.card-link img {
+  position: absolute;
+  margin-top: 1.25%;
+  right: 2%;
+  width: 16px;
+}
+
+.container {
+  width: 100%; /* Add this line */
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.container.active {
+  max-height: 1000px; /* Adjust as needed or calculate dynamically */
+  opacity: 1;
+  position: relative; /* Add this line */
+}
+
+@media (max-width: 768px) {
+  .card-link {
+    font-size: 1rem;
+    margin-top: 10%;
   }
-  .container.active {
-    display: block;
-  }
+}
+ 
 </style>
+¨
 
 
 <script>
@@ -150,7 +157,14 @@ console.log("contactInfo", contactInfo);
       const targetId = link.getAttribute('data-target');
       const targetContainer = document.getElementById(targetId);
 
-      targetContainer.classList.toggle('active'); // Toggle the active class for the clicked container
+      if (targetContainer.classList.contains('active')) {
+        targetContainer.classList.remove('active');
+      } else {
+        document.querySelectorAll('.container.active').forEach(container => {
+          container.classList.remove('active');
+        });
+        targetContainer.classList.add('active');
+      }
     });
   });
 </script>

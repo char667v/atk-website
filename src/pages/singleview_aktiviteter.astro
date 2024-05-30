@@ -1,19 +1,18 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
+import NavigationP from "../components/NavigationP.astro";
 import Footer from "../components/Footer.astro";
 ---
 <MainLayout title="Nyheder"/>
+<NavigationP />
 
 <div class="main">
+    <section class="content">
+      <a href="/index"><BreadCrumb breadtitle="Hjem"/></a>
+      <a href="/aktiviteter"><BreadCrumb breadtitle="Aktiviteter"/></a>
+      <a href="/singleview_aktiviteter"><BreadCrumb breadtitle={title}/></a>
 
-<section class="breadcrumb_trail">
-    <img class="arrow" src="../img/svg/arrowLeft_1.svg" alt="Pil">
-    <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-    <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-    <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-    <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-</section>
 
 <h1>DOUBLETURNERING UDENDØRS 2024</h1>
 
@@ -38,18 +37,8 @@ import Footer from "../components/Footer.astro";
 </p>
 
 <!-- Indsæt billed -->
-
+</section>
 </div>
-
 <Footer />
 
-<!-- --------------------------------------------------------------------------------- -->
-<style>
-    .breadcrumb_trail img{ /* pile i brødkrummesti */
-        width:0.7%;
-    }
-    
-    p{
-      color: blueviolet;/* OBS: skriften er pr default hvid */
-    }
-     </style>
+

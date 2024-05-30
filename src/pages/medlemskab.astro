@@ -2,102 +2,57 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
-<<<<<<< HEAD
-import Footer from "../components/Footer.astro";
----
-
-<MainLayout title="Medlemskab"/>
-
-
-<div class="main">
-    <div class="mainContent">
-             <section class="breadcrumb_trail">
-                <img class="arrow" src="../img/svg/arrowLeft_1.svg" alt="Pil">
-                <a href="/juniortraening"><BreadCrumb breadtitle="Junior"/></a>
-                <a href="/seniortraening"><BreadCrumb breadtitle="Senior"/></a>
-                <a href="/motionisttraening"><BreadCrumb breadtitle="Motionist"/></a>
-                <a href="/elitetraening"><BreadCrumb breadtitle="Elite"/></a>
-            </section>
-
-            <h1>MEDLEMSKAB</h1>
-            <h4>LUKKET FOR OPTAGELSE AF NYE MEDLEMMER</h4> 
-=======
-import Navigation from "../components/Navigation.astro";
 import Tabel from "../components/Tabel.astro";
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
+import NavigationP from "../components/NavigationP.astro";
+import HeroImg from "../components/HeroImg.astro";
 ---
 
+<MainLayout title="Medlemskab"/>
+<NavigationP />
+<HeroImg  heroImg="../img/medlemskabHero.webp" alt="herobillede"/>
 
 
-<MainLayout title="Medlemsskab"/>
-
-<div class="main">
-    <section class="breadcrumb_trail">
-      <a href="/juniortraening"><BreadCrumb breadtitle="Hjem" /></a>
-      <a href="/juniortraening"><BreadCrumb breadtitle="Medlemsskab" /></a>
-    </section>
-  
-    <h1>MEDLEMSKAB</h1>
+<div class="main">  
+  <section class="content">
     
-    <h4>LUKKET FOR OPTAGELSE AF NYE MEDLEMMER</h4>
-  
-    <div class="grid-2_3">
-      <p>
-        Idet vi begrænser os til kun at have ca. 700 fuldtidsmedlemmer, kan man normalt kun blive direkte optaget som dagmedlem.
-        Juniorer kan som sædvanlig blive medlemmer nårsom helst. Man kan kun være juniormedlem indtil man fylder 18 år.
-        Vær opmærksom på, at der gør sig forskellige reservationsregler gældende afhængigt af, hvilken type medlemskab du har.
-        Vi tager regelmæssigt nye ansøgere ind omkring februar efter årsskifte.
-      </p>
-  
-      <Tabel
-        title="MEDLEMSSKAB" 
-        hold1="Fuldtidsmedlem"
-        pris1="1.100 kr."
-        hold2="Dagmedlem"
-        pris2="900 kr."
-        hold3="Juniormedlem"
-        pris3="500 kr."
-        hold4="Senioridræt"
-        pris4="200 kr."
-        hold5="Vintermedlem"
-        pris5="200 kr."
-        hold6="Passiv"
-        pris6="100 kr."
-      />
-  
-        <a href="">
-          <CategoryCard 
-            imgPath="../img/Tennisballsracket.webp"
-            title="RESERVATIONSREGLER"
-          />
-        </a>
-     
-        <a href="">
-          <CategoryCard 
-            imgPath="../img/Tennisballsracket.webp"
-            title="ANSØG OM MEDLEMSKAB"
-          />
-        </a>
+      <a href="/index"><BreadCrumb breadtitle="Hjem" /></a>
+      <a href="/medlemskab"><BreadCrumb breadtitle="Medlemskab" /></a>
+      <h2>MEDLEMSKAB</h2>
+    
+        <div id="medlemskab">
+          <p class="subheadline" id="status"><span class="red-dot"></span>LUKKET FOR OPTAGELSE AF NYE MEDLEMMER</p>
+        </div>
+        
+      
+        <div class="grid-1_2">
+          <div>
+          <p>Idet vi begrænser os til kun at have ca. 700 fuldtidsmedlemmer, kan man normalt kun blive direkte optaget som dagmedlem.<br><br>
+            Juniorer kan som sædvanlig blive medlemmer nårsom helst. Man kan kun være juniormedlem indtil man fylder 18 år.<br><br>
+            Vær opmærksom på, at der gør sig forskellige 
+            <a href="https://www.atk-tennis.dk/content/%C3%A6ndring" class="paragraphLink">reservationsregler</a>
+            gældende afhængigt af, hvilken type medlemskab du har.
+            Vi tager regelmæssigt nye ansøgere ind omkring februar efter årsskifte.</p>
+          </div>
+      
+          <Tabel title="MEDLEMSKAB" hold1="Fuldtidsmedlem"pris1="1.100 kr." hold2="Dagmedlem" pris2="900 kr."hold3="Juniormedlem"pris3="500 kr."hold4="Senioridræt"pris4="200 kr."hold5="Vintermedlem"pris5="200 kr."hold6="Passiv"pris6="100 kr."/>
+        </div>
+
+        <div class="spacer">
+          <div class="grid-2_2">
+          <a href=""><CategoryCard imgPath="../img/reservationsRegler.webp" title="RESERVATIONSREGLER" alt="reservationstabel"/> </a>
+          <a href=""><CategoryCard imgPath="../img/medlemskab.webp" title="ANSØG OM MEDLEMSKAB" alt="ATK tshirt"/></a>
 >>>>>>> master
-    
-        <a href="">
-          <CategoryCard 
-            imgPath="../img/Tennisballsracket.webp"
-            title="NYT MEDLEM"
-          />
-        </a>
-
-      <div>
-        <a href="">
-          <CategoryCard 
-            imgPath="../img/Tennisballsracket.webp"
-            title="ÆNDRE MEDLEMSKAB"
-          />
-        </a>
+          <a href=""><CategoryCard imgPath="../img/nytMedlem.webp" title="NYT MEDLEM" alt="glade medlemmer"/></a>
+          <a href=""><CategoryCard imgPath="../img/ændreMedlemskab.webp" title="ÆNDRE MEDLEMSKAB" alt="håndtryk"/></a>
+        </div>
       </div>
+      
+    </section>
     </div>
-  </div>
+ 
+
   <Footer />
 
 <<<<<<< HEAD
@@ -141,8 +96,29 @@ import Banner from "../components/Banner.astro";
 
  <style>
 
-.breadcrumb_trail img{ /* pile i brødkrummesti */
-    width:0.7%;
+#medlemskab {
+  margin: 3% 0%;
 }
 
+#status {
+  color: red;
+}
+
+.red-dot {
+  width: 18px; 
+  height: 18px; 
+  background-color: red;
+  margin-right: 10px; 
+  border-radius: 50%; 
+  display: inline-block;
+ 
+} 
+
+@media only screen and (max-width: 768px) {
+  .red-dot {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px; 
+  }
+}
  </style>

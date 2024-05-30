@@ -1,29 +1,44 @@
 ---
 const src = Astro.props.src;
 const btnTitle = Astro.props.btnTitle
+import PrimaryButoon from "../components/PrimaryButton.astro";
 ---
+
 <div class="bannerWrapper">
-<a class="bannerBtn" href="">{btnTitle}</a>
-<div class="bannerContainer">
-    <img src=`/img/traening/${src}`>
-</div>
-</div>
+    <p class="bannerText">Savner du en ny træningsmakker?</p> 
+    <a class="bannerBtn" href="">{btnTitle}</a>
+    <div class="bannerContainer">
+      <img src=`/img/traening/${src}`>
+    </div>
+  </div>
 
 <style>
 
 .bannerWrapper {
   position: relative; 
 }
+.bannerWrapper a {
+}
 
 .bannerBtn {
     position: absolute;
     background-color: var(--primaryColor);
-    padding: 15px 30px;
+    padding: 10px 30px;
     border-radius: 4px;
     top: 50%;
     left: 10%;
     transform: translate(0, -50%);
     text-decoration: none;
+    transition: background-color 0.7s ease, color 0.7s ease, transform 0.5s ease;
+    
+}
+
+.bannerText {
+    top: 30%;
+    left: 10%;
+    transform: translate(0, -50%);
+    position: absolute;
+    color: white;
 }
 .bannerContainer {
     width: 100%;
@@ -33,13 +48,24 @@ const btnTitle = Astro.props.btnTitle
       width: 100%;
       height: 100%; 
       object-fit: cover;
+      object-position: center 35%;
 }
+
+.bannerBtn:hover {
+    background-color: var(--secondaryColor);
+  }
+
 
 @media only screen and (max-width: 768px) {
     .bannerContainer {
     width: 100%;
-    height: 100px;
+    height: 150px;
 }
+
+.bannerBtn {
+  font-size: 0.8rem;
+}
+
 
 }
 

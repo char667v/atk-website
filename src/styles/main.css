@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Avenir";
-  src: local("Avenir Regular"), url("/Avenir Regualar.woff2") format("woff");
+  src: local("Avenir Regular"), url("/fonts/Avenir Regular.woff2") format("woff2");
 }
 
-/*mbody  {
+body  {
     cursor: url('/img/racketCursor.png'), auto; 
 }
 
@@ -23,7 +23,7 @@
 
 * {
   margin: 0;
-  padding: 0  ;
+  padding: 0;
   box-sizing: border-box;
   font-size: 62, 5%;
 }
@@ -44,34 +44,25 @@ body {
 >>>>>>> master
 
 
+/* Styling for fonts between 1024px and 600px */
 
-img,
-image {
-  width: 100%;
-  height: auto;
-}
-
-/* Styling for fonts */
-h2,
-h3,
-h4,
-summary,
-p,
-a {
-  margin-bottom: var(--spacing-small);
-}
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-summary {
+h6 {
   font-weight: bold;
   text-transform: uppercase;
   font-family: "Avenir";
   color: var(--text-black);
+}
+h1,
+h2,
+h3 {
+  margin: 1% 0% 2% 0%;
+  line-height: 1.2;
 }
 
 h1 {
@@ -81,85 +72,220 @@ h1 {
 }
 
 h2 {
-  font-size: 1.1rem;
-  text-align: center;
+  font-size: 2.4rem;
 }
 
 h3 {
-  font-size: 0.8rem;
+  font-size: 1.4rem;
 }
 
-h4,
-summary {
-  font-size: 0.6rem;
+h4 {
+  font-size: 1.4rem;
 }
 
 h5,
 h6 {
-  font-size: 0.6rem;
+  font-size: 0.8em;
 }
 
 p {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   color: var(--text-black);
 }
 
 a {
   font-size: 1rem;
-  color: var(--secondary-color);
   text-decoration: none;
+  color: white;
 }
+
+.subheadline {
+  font-size: 0.8rem;
+}
+
+.paragraphLink {
+  color: red;
+}
+.paragraphLink:hover {
+  color: var(--primaryColor);
+}
+
+/* Læs mere */
+
 
 /* Content og grids på pages */
 
-.main {
+.main, .mainv2 {
   background-color: #f9f9f9;
   margin: 0% 10%;
-  padding: 1% 10% 5% 10%;
-
+  padding-bottom: 5%;
+}
+.mainv2 {
+  margin: 5% 10%;
+ 
 }
 
+.content {
+  padding: 0% 10%;
+}
+
+.flexboxCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flexboxcenterColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .grid-2_3,
+.grid-2_2,
 .grid-1_2,
 .grid1 {
   display: grid;
   grid-template-columns: 1fr;
   grid-column-gap: 5%;
   grid-row-gap: 5%;
+  padding-bottom: 5%;
+}
+
+.grid-2_4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
 }
 
 .autolayout {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  justify-content: center; /* Centers the grid items horizontally */
+  justify-content: center;
   align-items: center;
+  margin-bottom: 5%;
 }
-
-.categroyCard_grid1 {
-  grid-template-columns: 1fr;
-  grid-template-columns: 1fr;
-  grid-column-gap: 2%;
-grid-row-gap: 2%;
-}
-
-.categoryCard_grid2,
-.categoryCard_grid3,
-.categoryCard_grid4 {
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 2px;
-}
-
 
 /* Logo og text i navigation */
+
+#atkHome {
+  width: 20%;
+}
 
 #atkLogo {
   width: 80px;
   height: auto;
 }
 
-#atkHome {
-  width: 300px;
-  height: auto;
+/* Stuff */
+
+.card-link {
+  display: block; 
+  margin-bottom: 5%; 
+  font-size: 1.8rem;
+  border-bottom: 1px solid var(--primaryColor);
+  padding: 5px;
+  color: var(--primaryColor);
+  position: relative;
+}
+
+.card-link img {
+  position: absolute;
+  margin-top: 1.25%;
+  right: 2%;
+  width: 16px;
+}
+
+.container {
+  width: 100%; 
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.container.active {
+  max-height: 1000px; /* Adjust as needed or calculate dynamically */
+  opacity: 1;
+  position: relative; /* Add this line */
+}
+
+.read-more {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align to the right */
+  white-space: nowrap;
+  margin-right: 5%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.read-more a {
+  color: var(--primaryColor);
+}
+.read-more img {
+  height: 12px;
+  padding-left: 2%;
+}
+
+.read-more:hover {
+  transform: translateX(10px); /* Adjust the value as needed */
+}
+
+#fpMain {
+  padding-top: 3%;
+}
+
+@media (max-width: 1024px) {
+  .card-link {
+    font-size: 1rem;
+    margin-top: 10%;
+  }
+
+  #atkHome {
+    width: 30%;
+    padding-left: 30px;
+  }
+  
+  .spacer {
+    margin-bottom: 45%;
+  }
+
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  h4,
+  summary {
+    font-size: 0.8rem;
+  }
+  
+  h5,
+  h6 {
+    font-size: 0.8rem;
+  }
+  
+  p {
+    font-size: 0.7rem;
+    color: var(--text-black);
+  }
+  
+  a {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  
+  .subheadline {
+    font-size: 0.8rem;
+  }
 }

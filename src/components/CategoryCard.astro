@@ -4,66 +4,73 @@ const { title, imgPath } = Astro.props;
 
  
   <div class="categoryContainer">
-   <div class="content-card">
+    <div class="content-card">
      <img class="background-img" src={imgPath} alt="Tennisracket" />
      <div class="gradient-card"></div> 
      <h3>{title}</h3>
    </div>
+  </div>
+
 
 
 <style> 
 
-
-
+.spacer {
+}
 .categoryContainer {
     position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 100%;
-    height: 300px;
-    transition: transform 0.3s;/* smoother transition combined with the hovering */
-  } 
-  .content-card {
-    width: 100%;
-    height: 100%;
+    transition: transform 0.3s;
+}
+
+.content-card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;  
-    align-items: center; 
-    
-  }
-   .background-img {
-    position: absolute;
-    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    z-index: 3;
-  } 
-  .gradient-card {
+    height: 100%; /* Ensure it takes full height of its container */
+}
+
+.background-img {
     position: absolute;
-    margin-top: 85px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(255, 111, 0, 0.741), transparent); 
-    z-index: 5;
-  }
- h3 {
+    object-fit: cover;
+    z-index: 1; /* Changed from 3 to 1 */
+}
+
+.gradient-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    z-index: 2; /* Changed from 5 to 2 */
+}
+
+h3 {
+    position: relative; /* Added relative positioning */
     color: rgb(255, 255, 255);
     font-size: 20px;
     text-align: center;
-    margin-top: 60%;
-    z-index: 6;
-  }
- 
-  @media (min-width: 768px)
- {
-  
-  .category-card:hover{
-    transform: scale(1.1);
-  }
- }
+    margin-top: 50%;
+    z-index: 3; /* Changed from 6 to 3 */
+}
+
+@media (min-width: 768px) {
+    .categoryContainer:hover {
+        transform: scale(1.1);
+    }
+}
+
 </style>
 

@@ -1,0 +1,79 @@
+---
+// Activitycard.astro
+
+export interface NewsData {
+  slug: string;
+}
+export interface ActivityProps {
+  news_image: string;
+  date: string;
+  headline: string;
+  subheadline: string;
+  article: string;
+  id: string; 
+  slug: string;
+  data: NewsData;
+}
+
+const { news_image, date, headline, subheadline, slug } = Astro.props as ActivityProps;
+---
+
+<article class="activitycard">
+
+  <div class="activity-picture">
+    <img src={news_image} alt="Activity Image" />
+  </div>
+
+  <div class="activity-info">
+    <p class="activity-date">{date}</p>
+    <h4 class="activity-headline">{headline}</h4>
+    <p class="activity-subheadline">{subheadline}</p>
+  </div>
+
+    <div class="read-more">
+      <a href={`aktiviteter/${slug}`}>LÆS MERE</a>
+      <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" alt="pil" />
+    
+  </div>
+</article>
+
+<style>
+  .activitycard {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 350px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr repeat(2, 1fr);
+    transition: transform 0.3s;
+  }
+  .activitycard:hover {
+    transform: scale(1.1);
+  }
+  .activity-picture img {
+    width: 100%;
+    height: 175px;
+    min-height: 175px;
+    object-fit: cover;
+  }
+  .activity-info {
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .activity-date {
+    font-size: 0.8em;
+    color: gray;
+    margin: 0;
+  }
+  .activity-headline {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  .activity-subheadline {
+    font-size: 1em;
+    margin: 0;
+  }
+</style>

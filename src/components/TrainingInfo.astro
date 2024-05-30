@@ -1,0 +1,38 @@
+---
+const datoS = Astro.props.datoS;
+const datoW = Astro.props.datoW;
+const lokationS = Astro.props.lokationS;
+const lokationW = Astro.props.lokationW;
+const pause = Astro.props.pause;
+---
+<article>
+    <div>
+    <h5>SOMMERTRÆNING</h5>
+    <div class=trainingInfo><img src="../img/svg/calender.svg" alt="calender"><p>{datoS}</p></div>
+    <div class=trainingInfo><img src="../img/svg/location-marker.svg" alt="location"><p>{lokationS}</p></div>
+  </div>
+  <div>
+    <h5>VINTERTRÆNING</h5>
+    <div class=trainingInfo><img src="../img/svg/calender.svg" alt="calender"><p>{datoW}</p></div>
+    <div class=trainingInfo><img src="../img/svg/location-marker.svg" alt="location"><p>{lokationW}</p></div>
+  </div>
+  <div>
+    <h5>TRÆNINGSPAUSER</h5>
+    <div class=trainingInfo><img src="../img/svg/sun.svg" alt="sun"><p>{pause}</p></div>
+  </div>
+  </article>
+
+  <style>
+  .trainingInfo {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  gap: 8px; /* Adjust as needed */
+  padding-bottom: 3%;
+}
+
+.trainingInfo img {
+  width: 16px;
+  height: auto;
+  margin-bottom: 1%; 
+}
+</style>
