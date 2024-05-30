@@ -12,11 +12,13 @@ const { role, name, description, email, phone, pb, } = Astro.props as ContactPro
 ---
 
 <article class="contactCard">
+  <div class="contactCardInner">
     <div class="contactContent">
       <div class="headline"><h4>{role}</h4></div>
       <div><p>{description}</div>
       <div class="info"> <p>{name}</p> <p>{email}</p><p>{phone}</p></div>
   </div>
+</div>
 
     <div class="profile-picture"> <img src={pb} alt={`${name}'s Profile Picture`} /></div>
 
@@ -31,23 +33,15 @@ const { role, name, description, email, phone, pb, } = Astro.props as ContactPro
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
+    position: relative;
     background-color: rgb(255, 255, 255);
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     height: 100%;
-    transition: transform 0.3s; 
-  }
+    padding: 10px; /* Giv lidt padding til indholdet */
+}
 
-  .contactContent {
-    display: grid;
-    display: grid;
-grid-template-columns: 2fr;
-grid-template-rows: 1fr repeat(2, 2fr);
-    padding: 5%;
-  }
 
-  
   .contactContent p {
    font-size: 0.7rem;
    padding-right: 5%;
