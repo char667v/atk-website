@@ -7,7 +7,7 @@ import NavigationP from "../components/NavigationP.astro";
 import HeroImg from "../components/HeroImg.astro";
 import Activitycard from "../components/Activitycard.astro";
 
-const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=6", {
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?type=eq.Aktivitet", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
@@ -19,17 +19,24 @@ console.log("newsData", newsData);
 
 <MainLayout title="Aktiviteter" />
 <NavigationP />
-<HeroImg heroImg="../img/gruppebillede.webp"/>
+<HeroImg heroImg="../img/gruppebillede.webp" />
 
 <div class="main">
-    <section class="content">
- 
+  <section class="content">
     <a href="/" id="atkHome"><BreadCrumb breadtitle="Hjem"/></a>
     <a href="/aktiviteter"><BreadCrumb breadtitle="Aktiviteter" /></a>
     <h2>AKTIVITETER</h2>
 
     <div class="autolayout">
-      {newsData.map((news) => <Activitycard slug={news.slug} news_image={news.image}  date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+      {newsData.map((news) =><Activitycard 
+        key={news.id}
+        slug={news.slug} 
+        news_image={news.image} 
+        date={news.date} 
+        headline={news.headline} 
+        subheadline={news.subheadline} 
+        id={news.id}
+      />)}
     </div>
 
     <div class="spacer">
@@ -39,12 +46,7 @@ console.log("newsData", newsData);
       <a href="https://www.atk-tennis.dk/content/indspilningsturnering-2024"><CategoryCard imgPath="../img/veterantræning.webp" title="INDSPILSTURNERING" alt="To tennisglade medlemmer" />
       <a href="https://www.atk-tennis.dk/content/atk-liga-2024"><CategoryCard imgPath="../img/seniorCategory.webp" title="ATK-LIGA" alt="Seniorspillere klar til kamp"/>
     </div>
-  </div>
-    
   </section>
 </div>
 
 <Footer />
-
-<!-- -------------------------------------------------------- -->
-<style></style>

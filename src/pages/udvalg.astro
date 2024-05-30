@@ -6,19 +6,64 @@ import NavigationP from "../components/NavigationP.astro";
 import Footer from "../components/Footer.astro";
 import HeroImg from "../components/HeroImg.astro";
 
-const coachId = "24"; // Replace with the actual ID of the coach you want
-const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
+const breddeResponse = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?department=eq.Breddeudvalg", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
   },
-}).then((response) => response.json());
+});
+const breddeMembers = await breddeResponse.json();
+console.log("Breddeudvalg Members:", breddeMembers);
 
-console.log("contactInfo", contactInfo);
+const seniorResponse = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?department=eq.Seniorholdudvalg", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+});
+const seniorMembers = await seniorResponse.json();
+console.log("Seniorholdudvalg Members:", seniorMembers);
+
+const juniorResponse = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?department=eq.Juniorudvalg", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+});
+const juniorMembers = await juniorResponse.json();
+console.log("Juniorudvalg Members:", juniorMembers);
+
+const eliteResponse = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?department=eq.Eliteudvalg", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+});
+const eliteMembers = await eliteResponse.json();
+console.log("Eliteudvalg Members:", eliteMembers);
+
+const turneringResponse = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?department=eq.Turneringsudvalg", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+});
+const turneringMembers = await turneringResponse.json();
+console.log("Turneringsudvalg Members:", turneringMembers);
+
+const itkomResponse = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?department=eq.IT og Kommunikationsudvalg", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+});
+const itkomMembers = await itkomResponse.json();
+console.log("IT og Kommunikationsudvalg Members:", itkomMembers);
 ---
-<MainLayout title="Udvalg"/>
+
+<MainLayout title="Udvalg" />
 <NavigationP />
-<HeroImg heroImg="../img/udvalgHero.webp" alt="herobillede"/>
+<HeroImg heroImg="../img/udvalgHero.webp" alt="herobillede" />
 
 <div class="main">
   <section class="content">
@@ -28,69 +73,105 @@ console.log("contactInfo", contactInfo);
     <a href="/udvalg"><BreadCrumb breadtitle="Udvalg"/></a>  
     <h2>UDVALG</h2>
 
-      <h3>BREDDEUDVALG</h3>
-      <p class="subheadline">Udvalget står for at lave arrangementer for bredden i klubben, bl.a. Hyg-ind og Motionisttræning.</p>
+    <h3>BREDDEUDVALG</h3>
+    <p class="subheadline">Udvalget står for at lave arrangementer for bredden i klubben, bl.a. Hyg-ind og Motionisttræning.</p>
 
-      <div class=autolayout>
-        <article class="infocard">
-          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-        </article>
-      </div>
+    <div class="autolayout">
+      {
+        breddeMembers.length > 0 ? (
+          breddeMembers.map((member) => (
+            <article class="infocard">
+              <ContactCard img={member.image} role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
+            </article>
+          ))
+        ) : (
+          <p>No members found for Bestyrelse.</p>
+        )
+      }
+    </div>
 
-      <h3>SENIORUDVALG</h3>
-      <p class="subheadline">Seniorholdudvalget tager sig af 4.-7. hold, veteran B hold samt puljeturnering.</p4>
-      <!-- contactCard-->
-      <div class=autolayout>
-        
-        <article class="infocard">
-          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-        </article>
-      </div>
+    <h3>SENIORUDVALG</h3>
+    <p class="subheadline">Seniorholdudvalget tager sig af 4.-7. hold, veteran B hold samt puljeturnering.</p>
+    <!-- contactCard-->
+    <div class="autolayout">
+      {
+        seniorMembers.length > 0 ? (
+          seniorMembers.map((member) => (
+            <article class="infocard">
+              <ContactCard img={member.image} role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
+            </article>
+          ))
+        ) : (
+          <p>No members found for Bestyrelse.</p>
+        )
+      }
+    </div>
 
-      <h3>JUNIORUDVALG</h3>
-      <p class="subheadline">Juniorudvalgets (den daglige ledelse) opgave er at udstikke de overordnede rammer, struktur og retningslinjer for juniorafdelingen.</p>
-      <div class=autolayout>
-        <article class="infocard">
-          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-        </article>
-      </div>
+    <h3>JUNIORUDVALG</h3>
+    <p class="subheadline">Juniorudvalgets (den daglige ledelse) opgave er at udstikke de overordnede rammer, struktur og retningslinjer for juniorafdelingen.</p>
+    <div class="autolayout">
+      {
+        juniorMembers.length > 0 ? (
+          juniorMembers.map((member) => (
+            <article class="infocard">
+              <ContactCard img={member.image} role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
+            </article>
+          ))
+        ) : (
+          <p>No members found for Bestyrelse.</p>
+        )
+      }
+    </div>
 
+    <h3>ELITEUDVALG</h3>
+    <p class="subheadline">Eliteudvalget beskæftiger sig med klubrangliste, træning og arrangementer for klubbens elitespillere.</p>
+    <div class="autolayout">
+      {
+        eliteMembers.length > 0 ? (
+          eliteMembers.map((member) => (
+            <article class="infocard">
+              <ContactCard img={member.image} role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
+            </article>
+          ))
+        ) : (
+          <p>No members found for Bestyrelse.</p>
+        )
+      }
+    </div>
 
-      <h3>ELITEUDVALG</h3>
-      <p class="subheadline">Eliteudvalget beskæftiger sig med klubrangliste, træning og arrangementer for klubbens elitespillere.</p>
-      <div class=autolayout>
-        <article class="infocard">
-          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-        </article>
-        </div>
-        
+    <h3>TURNERINGSUDVALG</h3>
+    <p class="subheadline">Udvalget arrangerer tilbagevendende klubturneringer- og aktiviteter.</p>
+    <!-- contactCard-->
+    <div class="autolayout">
+      {
+        turneringMembers.length > 0 ? (
+          turneringMembers.map((member) => (
+            <article class="infocard">
+              <ContactCard img={member.image} role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
+            </article>
+          ))
+        ) : (
+          <p>No members found for Bestyrelse.</p>
+        )
+      }
+    </div>
 
-      <h3>TURNERINGSUDVALG</h3>
-      <p class="subheadline">Udvalget arrangerer tilbagevendende klubturneringer- og aktiviteter.</p>
-      <!-- contactCard-->
-      <div class=autolayout>
-        <article class="infocard">
-          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-        </article>
-      </div>
+    <h3>IT- OG KOMMUNIKATIONSUDVALG</h3>
+    <p class="subheadline">Udvalget står b.la. for udsendelse af ATK-NYT, nyhedsbreve og vedligeholdelse af hjemmesiden.</p>
+    <div class="autolayout">
+      {
+        itkomMembers.length > 0 ? (
+          itkomMembers.map((member) => (
+            <article class="infocard">
+              <ContactCard img={member.image} role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
+            </article>
+          ))
+        ) : (
+          <p>No members found for Bestyrelse.</p>
+        )
+      }
+    </div>
+  </section>
+</div>
 
-
-      <h3>IT- OG KOMMUNIKATIONSUDVALG</h3>
-      <p class="subheadline">Udvalget står b.la. for udsendelse af ATK-NYT, nyhedsbreve og vedligeholdelse af hjemmesiden.</p>
-      <div class=autolayout>
-        <article class="infocard">
-          {contactInfo.length > 0 && <ContactCard role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email} phone={contactInfo[0].phone} profile_picture={contactInfo[0].profile_picture} />}
-        </article>
-      </div>
-
-    </section>
-
- 
- </div>
-
- <Footer />
-
-<!-- -------------------------------------------------------- -->
-<style></style>
- 
- 
+<Footer />

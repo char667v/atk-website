@@ -1,4 +1,5 @@
 ---
+
 export interface NewsData {
   slug: string;
 }
@@ -16,25 +17,26 @@ export interface ActivityProps {
 const { news_image, date, headline, subheadline, slug } = Astro.props as ActivityProps;
 ---
 
-<article class="activitycard">
-  <div class="activity-picture">
-    <img src={news_image} alt="Activity Image" />
+<article class="newscard">
+  <div class="news-picture">
+    <img src={news_image} alt="News Image" />
   </div>
 
-  <div class="activity-info">
-    <p class="activity-date">{date}</p>
-    <h4 class="activity-headline">{headline}</h4>
-    <p class="activity-subheadline">{subheadline}</p>
-  </div>
+    <div class="news-info">
+        <p class="news-date">{date}</p>
+        <h4 class="news-headline">{headline}</h4>
+        <p class="news-subheadline">{subheadline}</p>
+    </div>
 
-  <div class="read-more">
-    <a href={`aktiviteter/${slug}`}>LÆS MERE</a>
-    <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" />
-  </div>
+    <div class="read-more">
+      <a href={`nyheder/${slug}`}>LÆS MERE</a>
+      <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" />
+    </div>
+ 
 </article>
 
 <style>
-  .activitycard {
+  .newscard {
     background-color: #f9f9f9;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -45,31 +47,31 @@ const { news_image, date, headline, subheadline, slug } = Astro.props as Activit
     grid-template-rows: 2fr repeat(2, 1fr);
     transition: transform 0.3s;
   }
- /*  .activitycard:hover {
+  .newscard:hover {
     transform: scale(1.1);
-  } */
-  .activity-picture img {
+  }
+  .news-picture img {
     width: 100%;
     height: 175px;
     min-height: 175px;
     object-fit: cover;
   }
-  .activity-info {
+  .news-info {
     padding: 5px 20px;
     display: flex;
     flex-direction: column;
   }
-  .activity-date {
+  .news-date {
     font-size: 0.8em;
     color: gray;
     margin: 0;
   }
-  .activity-headline {
-    font-size: 1.2em;
+  .news-headline {
+    font-size: 1.2em; 
     margin: 0;
   }
-  .activity-subheadline {
-    font-size: 1em;
+  .news-subheadline {
+    font-size: 1em; /* Standard font size for subheadline */
     margin: 0;
   }
 </style>

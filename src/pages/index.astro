@@ -9,8 +9,14 @@ import AccentButton from "../components/AccentButton.astro";
 import HeroVideo from "../components/HeroVideo.astro";
 import Activitycard from "../components/Activitycard.astro";
 
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?type=eq.Nyhed", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
+  },
+}).then((response) => response.json());
 
-const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=5", {
+const activityData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?type=eq.Aktivitet", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
@@ -36,8 +42,8 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
         }
       </div>
       <div class="carousel-navigation">
-        <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" alt="rød pil venstre"/>
-        <img src="/img/svg/redarrowRight_1.svg" id="nextButton" alt="rød pil højre"/>
+        <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" alt="rød pil venstre" />
+        <img src="/img/svg/redarrowRight_1.svg" id="nextButton" alt="rød pil højre" />
       </div>
 
       <div class="carousel-indicators">
@@ -52,10 +58,10 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
 
     <h3>KOMMENDE AKTIVITETER</h3>
     <article class="autolayout">
-      {newsData.slice(0, 3).map((news) => <Activitycard slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+      {activityData.slice(0, 3).map((news) => <Activitycard slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
     </article>
     <div class="flexboxCenter">
-      <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
+      <AccentButton btnText="SE ALLE AKTIVITETER" link="/aktiviteter" />
     </div>
 
     <br />
@@ -137,16 +143,15 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
     .carousel-container {
       width: 500px;
       height: 400px;
+    }
   }
-}
 
-@media only screen and (max-width: 768px) {
-
-  .carousel-container {
-    width: 240px;
-    height: 400px;
-}
-}
+  @media only screen and (max-width: 768px) {
+    .carousel-container {
+      width: 240px;
+      height: 400px;
+    }
+  }
 </style>
 
 <script>
