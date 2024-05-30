@@ -82,12 +82,30 @@ width: 21%;
   width: 20%;
   justify-self: center; 
   }
-
+  .grid-2_4{
+    margin-bottom:30px;
+  }
+  @media (max-width: 768px) {
+    .grid-2_3{
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  justify-self: center; 
+  }
+   .grid-2_3 img{
+    width: 100%;
+    border-radius: 4px;
+   }
+  }
+@media (min-width: 768px) {
   .grid-2_3{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: 10px;
    }
-
+   .grid-2_3 img{
+    width: 90%;
+    border-radius: 4px;
+   }}
 </style>
