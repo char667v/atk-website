@@ -38,7 +38,7 @@ console.log("Sekretariat Members:", sekretariatMembers);
     <!-- <h2>LEDELSE</h2> -->
 
     <h3>BESTYRELSE</h3>
-    <p class="bestyrelse">ATKs bestyrelse valgt på generalforsamlingen d. 8. februar 2024</p>
+    <p class="subheadline">ATKs bestyrelse valgt på generalforsamlingen d. 8. februar 2024</p>
 
     <div class="autolayout">
       {
@@ -55,8 +55,8 @@ console.log("Sekretariat Members:", sekretariatMembers);
     </div>
 
     <h3>SEKRETARIAT</h3>
-    <p class="sekretariat">Sekretariatet tager sig af alle praktiske ting omkring indmeldelse, udmeldelse, opkrævning af gebyrer og henvendelse til klubben.</p>
-    <p class="mail">Mail: atk@atk-tennis.dk<br />Tlf: 38 34 64 38</p>
+    <p class="subheadline">Sekretariatet tager sig af alle praktiske ting omkring indmeldelse, udmeldelse, opkrævning af gebyrer og henvendelse til klubben.</p>
+    <p class="subheadline">Mail: atk@atk-tennis.dk<br />Tlf: 38 34 64 38</p>
     <div class="autolayout">
       {
         sekretariatMembers.length > 0 ? (
@@ -84,21 +84,6 @@ console.log("Sekretariat Members:", sekretariatMembers);
   .infocard {
     flex: 1 1 calc(33.333% - 20px);
     box-sizing: border-box;
-  }
-
-  .bestyrelse {
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-
-  .sekretariat {
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
-
-  .mail {
-    margin-top: 40px;
-    margin-bottom: 20px;
   }
 
 </style>
