@@ -36,9 +36,10 @@ body {
 
 
 /* Styling for fonts between 1024px and 600px */
+#fph {
+  margin-top:0;
+}
 
-
-h1,
 h2,
 h3,
 h4,
@@ -49,17 +50,16 @@ h6 {
   font-family: "Avenir";
   color: var(--text-black);
 }
-h1,
+
 h2,
 h3 {
-  margin: 1% 0% 2% 0%;
-  line-height: 1.2;
+     margin-top: 60px;
+    margin-bottom: 30px;
 }
 
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: var(--spacing-medium);
-  text-align: center;
+  font-size: 2.4rem;
+  margin: 0% 2;
 }
 
 h2 {
