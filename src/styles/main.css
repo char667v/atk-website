@@ -118,6 +118,7 @@ a {
 
 .content {
   padding: 0% 10%;
+  margin-bottom: 140px;
 }
 
 .flexboxCenter {
@@ -223,6 +224,7 @@ a {
 
 #fpMain {
   padding-top: 3%;
+  margin-bottom: 300px;
 }
 
 @media (max-width: 1024px) {
