@@ -95,7 +95,7 @@ a {
 }
 
 .paragraphLink {
-  color: red;
+  color: rgb(221, 23, 23);
 }
 .paragraphLink:hover {
   color: var(--primaryColor);
@@ -258,6 +258,7 @@ a {
   
   h3 {
     font-size: 1.1rem;
+    
   }
   
   h4,
