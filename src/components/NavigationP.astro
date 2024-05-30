@@ -85,20 +85,6 @@ import PrimaryButton from "../components/PrimaryButton.astro";
     position: relative;
     z-index: 20;
   }
-  /*
-  header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 52px;
-  background-color: var(--text-white); 
-  transform: skewY(-2deg);
-  transform-origin: bottom right;
-  border-bottom: 
- 
- /* Ensure it appears above certain elements */
 
   nav a {
     font-size: 1rem;
@@ -177,12 +163,6 @@ import PrimaryButton from "../components/PrimaryButton.astro";
     cursor: pointer;
   }
 
-  #atkHome {
-    width: 20%;
-  }
-  #atkhomeImg {
-    width: 100%;
-  }
 
   #baneTilstand {
     width: 48px;
@@ -261,7 +241,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
     header {
       position: fixed;
       height: 75px;
-      padding: 15px 0px 0px 0px;
+      padding-left: 5px;
     }
     nav {
       display: none;
@@ -294,9 +274,6 @@ import PrimaryButton from "../components/PrimaryButton.astro";
       animation: fadeIn 2.5s ease forwards;
     }
 
-    header::after {
-      display: none;
-    }
 
     .dropdown {
       margin-top: 10%;
@@ -316,6 +293,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
 
     #baneTilstand {
       width: 36px;
+      margin-left: 0;
     }
 
     nav.active {
@@ -331,6 +309,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
       display: block;
       margin-right: var(--spacing-small);
       color: var(--text-black);
+      margin-top: 15%;
     }
 
     #menu-toggle {
@@ -341,7 +320,18 @@ import PrimaryButton from "../components/PrimaryButton.astro";
       display: none;
       font-size: 36px;
     }
+
+    @media (max-width: 600px) {
+      .header {
+
+      }
+    }
   }
+
+  
+
+
+
 </style>
 
 <script>

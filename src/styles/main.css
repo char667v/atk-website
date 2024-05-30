@@ -164,6 +164,11 @@ a {
 
 #atkHome {
   width: 20%;
+  min-width: 120px;
+}
+
+#atkhomeImg {
+  width: 100%;
 }
 
 #atkLogo {
@@ -237,9 +242,10 @@ a {
   }
 
   #atkHome {
-    width: 30%;
-    padding-left: 30px;
+    padding-left: 10px;
+    margin-top: 7px;
   }
+
   
   .spacer {
     margin-bottom: 45%;
@@ -285,4 +291,5 @@ a {
   .subheadline {
     font-size: 0.8rem;
   }
+ 
 }
