@@ -131,6 +131,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
 }
 .grid-2_3,
 .grid-2_2,
@@ -147,6 +148,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
+  
 }
 
 .autolayout {
