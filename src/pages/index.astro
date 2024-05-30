@@ -10,6 +10,7 @@ import HeroVideo from "../components/HeroVideo.astro";
 import Newscard from "../components/Newscard.astro";
 import Activitycard from "../components/Activitycard.astro";
 
+
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=5", {
   method: "GET",
   headers: {
