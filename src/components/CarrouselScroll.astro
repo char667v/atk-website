@@ -9,19 +9,17 @@ export interface NewsProps {
   headline: string;
   subheadline: string;
   article: string;
-  id: string; 
+  id: string;
   slug: string;
   data: NewsData; // Update the type of data
 }
-
 
 const { article, data, news_image, date, headline, subheadline, slug, id } = Astro.props as NewsProps;
 ---
 
 <div class="news_card">
-
   <div class="card-image">
-    <img src={news_image} alt="" class="news-img">
+    <img src={news_image} alt="" class="news-img" />
   </div>
 
   <div class="card-content">
@@ -30,476 +28,102 @@ const { article, data, news_image, date, headline, subheadline, slug, id } = Ast
     <p class="news-subheadline">{subheadline}</p>
   </div>
 
-    <div class="read-more">
-      <div>
+  <div class="read-more">
+    <div>
       <a href={`nyheder/${slug}`}>LÆS MERE</a>
-      <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" alt="pil">
+      <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" alt="pil" />
     </div>
- 
-</div>
+  </div>
 
-<style>
-
-
-.news_card {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr repeat(2, 1fr);
-  transition: transform 0.3s;
-  width: 700px;
-  height: 400px;
-  background-color: #f9f9f9;
-  border-radius: 4px
-}
-
-.news-img {
-  width: 100%;
-  height: 225px;
-  object-fit: cover;
-  border-radius: 4px 4px 0 0;
-
-}
-
-.card-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.read-more img {
-  height: 14px;
-  
-}
-
-.news-date {
-  font-size: 0.8rem;
-  font-size: 1.2rem;
-}
-
-.news-subheadline {
-  font-size: 1rem; 
-}
-
-a {
-  font-weight: bold;
-  font-size: 1rem;
-}
-.news-date, .news-headline, .news-subheadline {
-  margin-left: 2%;
-}
-
-
-
-@media only screen and (max-width: 1024px) {
-  .news_card {
-  width: 500px;
-  height: 400px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .news-img {
-  width: 100%;
-  height: 230px;
-}
-
-.news_card {
-width: 240px;
-height: 400px;
-}
-
-
-.read-more img {
-  height: 12px;
-}
-
-.news-date {
-  font-size: 0.6em; 
-  color: gray; 
-}
-
-.news-headline {
-  font-size: 1rem;
-}
-
-.news-subheadline {
-  font-size: 0.8rem; 
-}
-
-a {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-}
- </style>
-
-
-<!-- 
-
-<section class="carousel-component">
-<div class="carousel-container">
-  <img id="scrollLeft"  src="/img/svg/redarrowLeft_1.svg">
-    <div class="carousel">
-        <div class="news_card">
-          <div class="card-image">
-             <img src="/img/boldnet.webp" alt="" class="news-img">
-          </div>
-          <div class="card-content">
-              <p class="news-date">{date}</p>
-              <h4 class="news-headline">{headline}</h4>
-              <p class="news-subheadline">{subheadline}</p>
-              <div class="read-more">
-                <a>LÆS MERE</a>
-                <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon">
-              </div>
-          </div>
-        </div>
-
-        <div class="news_card">
-          <div class="card-image">
-             <img src="/img/boldnet.webp" alt="" class="news-img">
-          </div>
-          <div class="card-content">
-              <p class="news-date">{date}</p>
-              <h4 class="news-headline">{headline}</h4>
-              <p class="news-subheadline">{subheadline}</p>
-              <div class="read-more">
-                <a>LÆS MERE</a>
-                <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon">
-              </div>
-          </div>
-        </div>
-
-        <div class="news_card">
-          <div class="card-image">
-             <img src="/img/boldnet.webp" alt="" class="news-img">
-          </div>
-          <div class="card-content">
-              <p class="news-date">{date}</p>
-              <h4 class="news-headline">{headline}</h4>
-              <p class="news-subheadline">{subheadline}</p>
-              <div class="read-more">
-                <a>LÆS MERE</a>
-                <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon">
-              </div>
-          </div>
-        </div>
-
-        <div class="news_card">
-          <div class="card-image">
-             <img src="/img/boldnet.webp" alt="" class="news-img">
-          </div>
-          <div class="card-content">
-              <p class="news-date">{date}</p>
-              <h4 class="news-headline">{headline}</h4>
-              <p class="news-subheadline">{subheadline}</p>
-              <div class="read-more">
-                <a>LÆS MERE</a>
-                <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon">
-              </div>
-          </div>
-        </div>
-       
-    </div>
-    <img  id="scrollRight" src="/img/svg/redarrowRight_1.svg">
-</div>
-</section>
- 
-  
-<style>
-
- 
-.carousel-component {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-.carousel-container {
-  max-width: 1120px;
-  width: 100%;
-  background-color: white;
-  padding: 20px;
-  position: relative;
-}
-.carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 3) - 12px);
-  gap: 2%;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-#scrollLeft, #scrollRight {
-    width: 50px;
-    height: auto;
-    padding: 0 5px;
-    border-radius: 200%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%)
-  }
-
-  #scrollRight {
-    right: 2%;
-  }
-  #scrollLeft {
-    left: 2%;
-  }
-
-.news_card {
-  width: 340px;
-  border-radius: 25px;
-  border: 1px solid black;
-}
-
-.news-img {
-  border-radius: 25px 25px 0 0;
-}
-
- .card-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.read-more {
-  display: flex;
-  align-items: center; 
-  align-self: flex-end;
-  color: var(--primaryColor);
-  cursor: pointer;
-  white-space: nowrap;
-  margin-right: 3%;
-  
-}
-  .read-more img {
-    height: 12px;
-    margin-left: 5px;
-    margin-bottom: 16px;
-  }
-
-  .news-date {
-    font-size: 0.8em; 
-    color: gray; 
-   
-  }
-
-  .news-headline {
-    font-size: 1.2em;
-
-  }
-  .news-subheadline {
-    font-size: 1em; 
-   
-  }
-
-  .news-date, .news-headline, .news-subheadline {
-  margin-left: 2%;
-}
-
-@media only screen and (max-width: 930px) {
-  .carousel {
-    grid-auto-columns: calc((100% / 2) - 9px);
-}
-}
-@media only screen and (max-width: 600px) {
-  .carousel {
-    grid-auto-columns: 100%;
-}
-}
-</style>
-<script>
-  // Wait for the DOM to be fully loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    const carrousel = document.querySelector(".carousel");
-
-    let isDragging = false; // Flag to track if dragging is in progress
-
-    const dragStart = (e) => {
-      isDragging = true;
+  <style>
+    .news_card {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr repeat(2, 1fr);
+      transition: transform 0.3s;
+      width: 700px;
+      height: 400px;
+      background-color: #f9f9f9;
+      border-radius: 4px;
     }
 
-    const dragging = (e) => {
-      if (isDragging) {
-        console.log(e.pageX);
+    .news-img {
+      width: 100%;
+      height: 225px;
+      object-fit: cover;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .read-more img {
+      height: 14px;
+    }
+
+    .news-date {
+      font-size: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    .news-subheadline {
+      font-size: 1rem;
+    }
+
+    a {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .news-date,
+    .news-headline,
+    .news-subheadline {
+      margin-left: 2%;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      .news_card {
+        width: 500px;
+        height: 400px;
       }
     }
 
-    const stopDragging = (e) => {
-      isDragging = false;
+    @media only screen and (max-width: 768px) {
+      .news-img {
+        width: 100%;
+        height: 230px;
+      }
+
+      .news_card {
+        width: 240px;
+        height: 400px;
+      }
+
+      .read-more img {
+        height: 12px;
+      }
+
+      .news-date {
+        font-size: 0.6em;
+        color: gray;
+      }
+
+      .news-headline {
+        font-size: 1rem;
+      }
+
+      .news-subheadline {
+        font-size: 0.8rem;
+      }
+
+      a {
+        font-weight: bold;
+        font-size: 1rem;
+      }
     }
+  </style>
 
-    carrousel.addEventListener("mousedown", dragStart);
-    carrousel.addEventListener("mousemove", dragging);
-    document.addEventListener("mouseup", stopDragging);
-  });
-</script>
-
-
-
-
-
-<div class="carousel-container">
-  <div class="carousel">
-
-    <article class="carrouselCard">
-      <div class="carrouselCard_imgContainer">
-        <img src={news_image} alt="News Image" />
-      </div>
-      <div class="news-info">
-        <p class="news-date">{date}</p>
-        <h4 class="news-headline">{headline}</h4>
-        <p class="news-subheadline">{subheadline}</p>
-        <div class="read-more">
-          <a class="read-more">LÆS MERE</a>
-          <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon">
-        </div>
-      </div>
-    </article>
-   Repeat this article component for each news item 
-  </div>
-  <button class="carousel-control prev">&larr;</button>
-  <button class="carousel-control next">&rarr;</button>
+  <
 </div>
-<style>
-
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .carousel {
-    display: flex;
-    transition: transform 0.3s ease;
-  }
-
-  .carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1;
-  }
-
-  .carousel-control.prev {
-    left: 10px;
-  }
-
-  .carousel-control.next {
-    right: 10px;
-  }
-  .carrouselCard {
-    background-color: aliceblue;
-    border-radius: 4px;
-    overflow: hidden;
-    width: 40%;
-    height: auto;
-    box-sizing: border-box; 
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s;
-  }
-  .carrouselCard:hover {
-    transform: scale(1.1);
-  }
-
-  .carrouselCard_imgContainer img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover; 
-  }
-
-  .news-info {
-    padding: 20px; 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  } 
-
-  .news-date {
-    font-size: 0.8em; 
-    color: gray; 
-    margin: 0;
-  }
-
-  .news-headline {
-    font-size: 1.2em;
-    margin: 0;
-  }
-
-  .news-subheadline {
-    font-size: 1em; 
-    margin: 0;
-  }
-
-  .read-more {
-  display: flex;
-  align-items: center; /* Align items vertically */
-  align-self: flex-end;
-  color: var(--primaryColor);
-  cursor: pointer;
-  white-space: nowrap;
-  
-}
-
-  .read-more img {
-    height: 12px;
-    margin-left: 5px;
-    margin-bottom: 16px;
-  }
-
-  .read-more:hover {
-    background-color: var(--primaryColor-dark)
-  }
-
-
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const carousel = document.querySelector<HTMLElement>(".carousel");
-  const prevButton = document.querySelector<HTMLButtonElement>(
-    ".carousel-control.prev"
-  );
-  const nextButton = document.querySelector<HTMLButtonElement>(
-    ".carousel-control.next"
-  );
-
-  if (!carousel || !prevButton || !nextButton) {
-    throw new Error("Carousel elements not found");
-  }
-
-  const card = document.querySelector<HTMLElement>(".carrouselCard");
-  const cardWidth = card ? card.offsetWidth : 0;
-
-  let currentPosition = 0;
-
-  function updateCarouselPosition() {
-    if (carousel) {
-      carousel.style.transform = `translateX(${currentPosition}px)`;
-    }
-  }
-
-  function slideNext() {
-    if (carousel && currentPosition > -((carousel.children.length - 1) * cardWidth)) {
-      currentPosition -= cardWidth;
-      updateCarouselPosition();
-    }
-  }
-
-  function slidePrev() {
-    if (currentPosition < 0) {
-      currentPosition += cardWidth;
-      updateCarouselPosition();
-    }
-  }
-
-  nextButton.addEventListener("click", slideNext);
-  prevButton.addEventListener("click", slidePrev);
-});
-</script>  -->
