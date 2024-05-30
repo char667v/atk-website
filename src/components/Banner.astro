@@ -1,26 +1,26 @@
 ---
 const src = Astro.props.src;
-const btnTitle = Astro.props.btnTitle
+const btnTitle = Astro.props.btnTitle;
 import PrimaryButoon from "../components/PrimaryButton.astro";
 ---
 
 <div class="bannerWrapper">
-    <p class="bannerText">SAVNER DU EN NY MAKKER?</p> 
-    <a class="bannerBtn" href="https://docs.google.com/spreadsheets/d/1PpPTyMPk_rir8N24NAaa5zFC68WXadz8602JQNErwhc/edit?pref=2&pli=1#gid=1406046983">{btnTitle}</a>
-    <div class="bannerContainer">
-      <img src=`/img/traening/${src}`>
-    </div>
+  <p class="bannerText">SAVNER DU EN NY MAKKER?</p>
+  <a class="bannerBtn" href="https://docs.google.com/spreadsheets/d/1PpPTyMPk_rir8N24NAaa5zFC68WXadz8602JQNErwhc/edit?pref=2&pli=1#gid=1406046983">{btnTitle}</a>
+  <div class="bannerContainer">
+    <img src=`/img/traening/${src}` />
   </div>
+</div>
 
 <style>
+  .bannerWrapper {
+    position: absolute;
+    width: 100%;
+  }
+  .bannerWrapper a {
+  }
 
-.bannerWrapper {
-  position: relative; 
-}
-.bannerWrapper a {
-}
-
-.bannerBtn {
+  .bannerBtn {
     position: absolute;
     background-color: var(--primaryColor);
     padding: 10px 30px;
@@ -29,46 +29,45 @@ import PrimaryButoon from "../components/PrimaryButton.astro";
     left: 10%;
     transform: translate(0, -50%);
     text-decoration: none;
-    transition: background-color 0.7s ease, color 0.7s ease, transform 0.5s ease;
+    transition:
+      background-color 0.7s ease,
+      color 0.7s ease,
+      transform 0.5s ease;
     margin-top: -120px;
-}
+  }
 
-.bannerText {
+  .bannerText {
     top: 30%;
     left: 10%;
     transform: translate(0, -50%);
     position: absolute;
     color: white;
     margin-top: -120px;
-}
-.bannerContainer {
+  }
+  .bannerContainer {
     width: 100%;
-    height: 200px;
-}
-.bannerContainer img {
-      width: 100%;
-      height: 100%; 
-      object-fit: cover;
-      object-position: center 35%;
-      margin-top: -130px;
-}
+    height: 250px;
+  }
+  .bannerContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    margin-top: -130px;
+  }
 
-.bannerBtn:hover {
+  .bannerBtn:hover {
     background-color: var(--secondaryColor);
   }
 
-
-@media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     .bannerContainer {
-    width: 100%;
-    height: 150px;
-}
+      width: 100%;
+      height: 150px;
+    }
 
-.bannerBtn {
-  font-size: 0.8rem;
-}
-
-
-}
-
+    .bannerBtn {
+      font-size: 0.8rem;
+    }
+  }
 </style>
