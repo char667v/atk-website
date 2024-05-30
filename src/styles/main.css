@@ -3,9 +3,9 @@
   src: local("Avenir Regular"), url("/fonts/Avenir Regular.woff2") format("woff2");
 }
 
-body  {
+/* body  {
     cursor: url('/img/racketCursorV3.cur'), auto; 
-}
+} */
 
 /* Variables */
 :root {
@@ -64,6 +64,7 @@ h1 {
 
 h2 {
   font-size: 2.4rem;
+  margin-bottom: 50px;
 }
 
 h3 {
