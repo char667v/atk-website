@@ -3,9 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import Footer from "../components/Footer.astro";
 import NavigationP from "../components/NavigationP.astro";
-import Newscard from "../components/newsCard.astro";
 import HeroImg from "../components/HeroImg.astro";
-
+import Newscardv2 from "../components/Newscardv2.astro"
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?type=eq.Nyhed", {
   method: "GET",
   headers: {
@@ -27,7 +26,7 @@ console.log("newsData", newsData);
     <h2>NYHEDER</h2>
 
     <div class="autolayout">
-      {newsData.map((news) => <Newscard slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+      {newsData.map((news) => <Newscardv2 slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
     </div>
   </section>
 </div>

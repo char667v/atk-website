@@ -1,6 +1,4 @@
 ---
-// Activitycard.astro
-
 export interface NewsData {
   slug: string;
 }
@@ -30,7 +28,7 @@ const { news_image, date, headline, subheadline, slug } = Astro.props as Activit
   </div>
 
   <div class="read-more">
-    <a>LÆS MERE</a>
+    <a href={`aktiviteter/${slug}`}>LÆS MERE</a>
     <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" />
   </div>
 </article>
