@@ -3,10 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import BreadCrumb from "../components/BreadCrumb.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Footer from "../components/Footer.astro";
-import Newscard from "../components/newsCard.astro";
 import NavigationP from "../components/NavigationP.astro";
 import HeroImg from "../components/HeroImg.astro";
-import Newscard from "../components/Newscard.astro";
 import Activitycard from "../components/Activitycard.astro";
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=6", {
@@ -36,10 +34,10 @@ console.log("newsData", newsData);
 
     <div class="spacer">
     <div class="grid-2_2">
-      <a href="https://www.atk-tennis.dk/content/klubmesterskaber-2023"><CategoryCard imgPath="../img/gruppebillede.webp" title="KLUBMESTERSKABER" />
-      <a href="https://www.atk-tennis.dk/content/doubleturnering-2023"><CategoryCard imgPath="../img/doubleturnering.webp" title="DOUBLETURNERING" />
-      <a href="https://www.atk-tennis.dk/content/indspilningsturnering-2024"><CategoryCard imgPath="../img/veterantræning.webp" title="INDSPILSTURNERING" />
-      <a href="https://www.atk-tennis.dk/content/atk-liga-2024"><CategoryCard imgPath="../img/seniorCategory.webp" title="ATK-LIGA" />
+      <a href="https://www.atk-tennis.dk/content/klubmesterskaber-2023"><CategoryCard imgPath="../img/gruppebillede.webp" title="KLUBMESTERSKABER" alt="Gruppebillede af glade medlemmer"/>
+      <a href="https://www.atk-tennis.dk/content/doubleturnering-2023"><CategoryCard imgPath="../img/doubleturnering.webp" title="DOUBLETURNERING" alt="Gruppebillede klar til turnering"/>
+      <a href="https://www.atk-tennis.dk/content/indspilningsturnering-2024"><CategoryCard imgPath="../img/veterantræning.webp" title="INDSPILSTURNERING" alt="To tennisglade medlemmer" />
+      <a href="https://www.atk-tennis.dk/content/atk-liga-2024"><CategoryCard imgPath="../img/seniorCategory.webp" title="ATK-LIGA" alt="Seniorspillere klar til kamp"/>
     </div>
   </div>
     
