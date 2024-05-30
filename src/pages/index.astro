@@ -11,7 +11,7 @@ import Newscard from "../components/Newscard.astro";
 import Activitycard from "../components/Activitycard.astro";
 
 
-const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=5", {
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?type=eq.Nyhed", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
@@ -37,8 +37,8 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
         }
       </div>
       <div class="carousel-navigation">
-        <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" alt="rød pil venstre"/>
-        <img src="/img/svg/redarrowRight_1.svg" id="nextButton" alt="rød pil højre"/>
+        <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" alt="rød pil venstre" />
+        <img src="/img/svg/redarrowRight_1.svg" id="nextButton" alt="rød pil højre" />
       </div>
 
       <div class="carousel-indicators">
@@ -64,10 +64,10 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
 
     <div class="spacer">
       <article class="grid-2_2">
-        <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" alt="unge spillere giver highfive"/></a>
-        <a href="/motionisttraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR" alt="seniorspillere klar til kamp"/></a>
-        <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp" title="MOTIONIST" alt="smilende motionister"/></a>
-        <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" alt="holdbillede"/></a>
+        <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" alt="unge spillere giver highfive" /></a>
+        <a href="/motionisttraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR" alt="seniorspillere klar til kamp" /></a>
+        <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp" title="MOTIONIST" alt="smilende motionister" /></a>
+        <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" alt="holdbillede" /></a>
       </article>
     </div>
   </section>

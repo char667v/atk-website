@@ -8,7 +8,7 @@ import HeroImg from "../components/HeroImg.astro";
 import Newscard from "../components/Newscard.astro";
 import Activitycard from "../components/Activitycard.astro";
 
-const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=6", {
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?type=eq.Aktivitet", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
@@ -20,11 +20,10 @@ console.log("newsData", newsData);
 
 <MainLayout title="Aktiviteter" />
 <NavigationP />
-<HeroImg heroImg="../img/gruppebillede.webp"/>
+<HeroImg heroImg="../img/gruppebillede.webp" />
 
 <div class="main">
-    <section class="content">
- 
+  <section class="content">
     <a href="/index"><BreadCrumb breadtitle="Hjem" /></a>
     <a href="/aktiviteter"><BreadCrumb breadtitle="Aktiviteter" /></a>
     <h2>AKTIVITETER</h2>
@@ -34,14 +33,19 @@ console.log("newsData", newsData);
     </div>
 
     <div class="spacer">
-    <div class="grid-2_2">
-      <a href=""><CategoryCard imgPath="../img/gruppebillede.webp" title="KLUBMESTERSKABER" alt="gruppebillede af glade medlemmer" />
-      <a href=""><CategoryCard imgPath="../img/4-8hold.webp" title="DOUBLETURNERING" alt="gruppebillede klar til turnering" />
-      <a href=""><CategoryCard imgPath="../img/veteran.webp" title="INDSPILNINGSTURNERING" alt="to tennisglade medlemmer" />
-      <a href=""><CategoryCard imgPath="../img/seniorcategory.webp" title="ATK-LIGA" alt="seniorspillere klar til kamp" />
+      <div class="grid-2_2">
+        <a href=""
+          ><CategoryCard imgPath="../img/gruppebillede.webp" title="KLUBMESTERSKABER" alt="gruppebillede af glade medlemmer" />
+          <a href=""
+            ><CategoryCard imgPath="../img/4-8hold.webp" title="DOUBLETURNERING" alt="gruppebillede klar til turnering" />
+            <a href=""
+              ><CategoryCard imgPath="../img/veteran.webp" title="INDSPILNINGSTURNERING" alt="to tennisglade medlemmer" />
+              <a href=""><CategoryCard imgPath="../img/seniorcategory.webp" title="ATK-LIGA" alt="seniorspillere klar til kamp" /> </a>
+            </a>
+          </a>
+        </a>
+        <Footer />
+      </div>
     </div>
-  </div>
-    
   </section>
 </div>
-<Footer />

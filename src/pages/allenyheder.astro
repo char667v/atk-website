@@ -6,7 +6,7 @@ import NavigationP from "../components/NavigationP.astro";
 import Newscard from "../components/Newscard.astro";
 import HeroImg from "../components/HeroImg.astro";
 
-const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=12", {
+const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?type=eq.Nyhed", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneW1kcWpyamRrc2h4dWVyZGlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNjg4NjYsImV4cCI6MjAzMDc0NDg2Nn0.Wuj2B0mSu9HRIludgvymMYSNlhDMzV8213Fitr6A4bw",
@@ -18,12 +18,10 @@ console.log("newsData", newsData);
 
 <MainLayout title="Alle nyheder" />
 <NavigationP />
-<HeroImg heroImg="../img/gruppebillede.webp" alt="headerbilleder"/>
-
+<HeroImg heroImg="../img/gruppebillede.webp" alt="headerbilleder" />
 
 <div class="main">
-    <section class="content">
- 
+  <section class="content">
     <a href="/juniortraening"><BreadCrumb breadtitle="Hjem" /></a>
     <a href="/allenyheder"><BreadCrumb breadtitle="Nyheder" /></a>
     <h2>NYHEDER</h2>
@@ -31,11 +29,7 @@ console.log("newsData", newsData);
     <div class="autolayout">
       {newsData.map((news) => <Newscard slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
     </div>
-
-    </section>
+  </section>
 </div>
 
 <Footer />
-
- 
- <

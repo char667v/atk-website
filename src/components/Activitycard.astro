@@ -10,7 +10,7 @@ export interface ActivityProps {
   headline: string;
   subheadline: string;
   article: string;
-  id: string; 
+  id: string;
   slug: string;
   data: NewsData;
 }
@@ -19,7 +19,6 @@ const { news_image, date, headline, subheadline, slug } = Astro.props as Activit
 ---
 
 <article class="activitycard">
-
   <div class="activity-picture">
     <img src={news_image} alt="Activity Image" />
   </div>
@@ -30,10 +29,9 @@ const { news_image, date, headline, subheadline, slug } = Astro.props as Activit
     <p class="activity-subheadline">{subheadline}</p>
   </div>
 
-    <div class="read-more">
-      <a href={`aktiviteter/${slug}`}>LÆS MERE</a>
-      <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" alt="pil" />
-    
+  <div class="read-more">
+    <a>LÆS MERE</a>
+    <img src="/img/svg/redarrowRight_1.svg" class="arrowIcon" />
   </div>
 </article>
 
