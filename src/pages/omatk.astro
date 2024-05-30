@@ -19,36 +19,39 @@ import Footer from "../components/Footer.astro";
       <h2>OM ATK</h2>
 
       <div class="flexboxcenterColumn">
-        <img class="membersIcon" src="../img/svg/Icon.svg" alt="Gruppemedlemsikon">
-        <h4>1418 MEDLEMMER<h3>
+        <img class="membersIcon dynamicShape" src="../img/omatkpic.jpg" alt="Gruppemedlemsikon">
+        <h3 id="members">1418 MEDLEMMER<h3>
       </div>
-
+      
       <div class=grid-2_4>
-          <div class="tennisbaner">
-            <img src="../img/svg/tennisCourt_red.svg" alt="Rød tennisbane">
-            <p>2 RedPlus baner</p>
-          </div>
+        <a href="https://atk.halbooking.dk/newlook/default.asp?pid=01">
+          <div class="tennisbaner"><img src="../img/svg/tennisCourt_red.svg" alt="Rød tennisbane">
+            <p>2 RedPlus baner</p></div>
+            </a>
 
-          <div class="tennisbaner">
-            <img src="../img/svg/tennisCourt_orange.svg" alt="Orange tennisbane">
-            <p>8 Grusbaner</p>
-          </div>
+        <a href="https://atk.halbooking.dk/newlook/default.asp?pid=01">
+          <div class="tennisbaner"><img src="../img/svg/tennisCourt_orange.svg" alt="Orange tennisbane">
+            <p>8 Grusbaner</p></div>
+          </a>
 
+          <a href="https://atk.halbooking.dk/newlook/proc_baner.asp?pid=01">
           <div class="tennisbaner">
             <img src="../img/svg/padelCourt.svg" alt="Grøn tennisbane">
-            <p>2 Padelbaner</p>
-          </div>
+            <p>2 Padelbaner</p></div>
+            </a>
 
+         
+            <a href="https://atk.halbooking.dk/newlook/default.asp?pid=02">
           <div class="tennisbaner">
             <img src="../img/svg/tennisCourt_blue_1.svg" alt="Blå tennisbane">
-            <p>2 Hardcourtbaner (Indendørs)</p>
-          </div>
+            <p>2 Hardcourtbaner (Indendørs)</p></div>
+          </a>
+            
+          
       </div>
 
-
-
+    
       <div class=grid-2_3>
-
           <p>Arbejdernes Tennisklub er grundlagt i 1928 og ligger som en lille byoase på Genforeningspladsen i København NV. ATK råder over 10 udendørs tennisbaner, herunder to helårs RedPlus baner, to padelbaner samt to  indendørs hardcourtbaner.</p>
           <div><img src="../img/atkbane.webp" alt="" /></div>
 
@@ -71,8 +74,20 @@ import Footer from "../components/Footer.astro";
 
 <style>
 
+#members {
+  color: var()
+}
+
 .membersIcon {
-width: 21%;
+    width: 50%; 
+    height: 250px;
+    object-fit: cover; 
+    object-position: center 20%;
+}
+
+.dynamicShape {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 30%, 50% 100%, 0% 30%, 0% 0%);
+  border-radius: 4px;
 }
 
 .tennisbaner{
@@ -80,8 +95,12 @@ width: 21%;
   align-items:center;
   flex-direction: column;
   white-space: nowrap;
-  width: 20%;
   justify-self: center; 
+  }
+
+  .tennisbaner img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
   }
 
   @media (max-width: 768px){
