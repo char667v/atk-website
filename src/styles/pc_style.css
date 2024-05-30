@@ -63,18 +63,6 @@ grid-template-rows: repeat(1, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
   }
-
-#fpMain {
-  padding-top: 3%;
-}
-.autolayout {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5%;
-}
   
 }
 

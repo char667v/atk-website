@@ -7,6 +7,7 @@ import Banner from "../components/Banner.astro";
 import NavigationP from "../components/NavigationP.astro";
 import Footer from "../components/Footer.astro";
 import HeroImg from "../components/HeroImg.astro";
+import TrainerCard from "../components/TrainerCard.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -21,7 +22,7 @@ console.log("contactInfo", contactInfo);
 
 <MainLayout title="Træning" />
 <NavigationP />
-<HeroImg heroImg="../img/træningHero.webp"/>
+<HeroImg heroImg="../img/træningHero.webp" alt="herobillede"/>
 
 <div class="main">
   <section class="content">
@@ -37,7 +38,7 @@ console.log("contactInfo", contactInfo);
       </p>
       <article class="infocard">
         {contactInfo.length > 0 && 
-          <ContactCard pb="../img/profilepictures/JensSeibaek.jpg" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}  // Add this line to pass description
+          <TrainerCard pb="../img/profilepictures/JensSeibaek.jpg" alt="træner" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}  // Add this line to pass description
           />
         }
       </article>
@@ -45,16 +46,16 @@ console.log("contactInfo", contactInfo);
 
 <div class="spacer">
     <div class="grid-2_2">
-      <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIORTRÆNING"/></a>
-      <a href="/seniortraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIORTRÆNING"/></a>
-      <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp"title="MOTIONISTTRÆNING"/></a>
-      <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITETRÆNING"/></a>
+      <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIORTRÆNING" alt="highfive"/></a>
+      <a href="/seniortraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIORTRÆNING" alt="medlemmer giver håndtryk"/></a>
+      <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp"title="MOTIONISTTRÆNING" alt="motionister"/></a>
+      <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITETRÆNING" alt="gruppebillede"/></a>
     </div>
 </div>
 
 </section>
 
-<Banner src="eliteHold.webp" btnTitle="TJEK MAKKERBØRS"/>
+<Banner src="eliteHold.webp" alt="gruppebillede" btnTitle="TJEK MAKKERBØRS"/>
 
 </div>
 

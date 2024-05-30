@@ -6,6 +6,8 @@ import Footer from "../components/Footer.astro";
 import Newscard from "../components/newsCard.astro";
 import NavigationP from "../components/NavigationP.astro";
 import HeroImg from "../components/HeroImg.astro";
+import Newscard from "../components/Newscard.astro";
+import Activitycard from "../components/Activitycard.astro";
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=6", {
   method: "GET",
@@ -29,7 +31,7 @@ console.log("newsData", newsData);
     <h2>AKTIVITETER</h2>
 
     <div class="autolayout">
-      {newsData.map((news) => <Newscard news_image={news.news_image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+      {newsData.map((news) => <Activitycard slug={news.slug} news_image={news.image}  date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
     </div>
 
     <div class="spacer">

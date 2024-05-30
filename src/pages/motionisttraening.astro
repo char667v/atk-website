@@ -8,6 +8,7 @@ import NavigationP from "../components/NavigationP.astro";
 import TrainingInfo from "../components/TrainingInfo.astro";
 import HeroImg from "../components/HeroImg.astro";
 import Footer from "../components/Footer.astro";
+import TrainerCard from "../components/TrainerCard.astro";
 
 const coachId = "24"; // Replace with the actual ID of the coach you want
 const contactInfo = await fetch(`https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Contact_info?id=eq.${coachId}`, {
@@ -21,7 +22,7 @@ console.log("contactInfo", contactInfo);
 ---
 <MainLayout title="Motionisttræning"/>
 <NavigationP />
-<HeroImg heroImg="../img/motionist_træning_hero.webp"/>
+<HeroImg heroImg="../img/motionist_træning_hero.webp" alt="herobillede"/>
 
 
 <div class="main">
@@ -36,7 +37,7 @@ console.log("contactInfo", contactInfo);
       <TrainingInfo datoS="1/5 - 13/9 2024" datoW="1/10 - 24/4 2024" lokationS="Genforeningspladsen 52, 2400 København NV" lokationW="Borups Allé 273, 2400 København NV" pause="Skoleferier samt helligdage"/>
       <article class="infocard">
         {contactInfo.length > 0 && 
-          <ContactCard pb="../img/profilepictures/JensSeibaek.jpg" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}  
+          <TrainerCard pb="../img/profilepictures/JensSeibaek.jpg" alt="træner" role={contactInfo[0].role} name={contactInfo[0].name} email={contactInfo[0].email}  phone={contactInfo[0].phone}  profile_picture={contactInfo[0].profile_picture} description={contactInfo[0].description}  
           />
         }
       </article>
@@ -44,14 +45,14 @@ console.log("contactInfo", contactInfo);
 
 
     <article>
-    <a href="#" class="card-link" data-target="container5">TENNIS4VOKSNE<img src="/img/svg/redarrowDown_1.svg"></a>
+    <a href="#" class="card-link" data-target="container5">TENNIS4VOKSNE<img src="/img/svg/redarrowDown_1.svg" alt="rød pil ned"></a>
                 <div class="container" id="container5">
                   <div class="card">
                   <TrainingCard
                   teamDescription="Tennis4Voksne"
                   mondayW="N/A" mondayS="N/A" tuesdayW="N/A" tuesdayS="18:00-21:00" wednesdayW="N/A" wednesdayS="18:00-21:00" thursdayS="N/A" thursdayW="20:00-22:00" fridayS="N/A" fridayW="N/A" saturdayS="N/A" saturdayW="N/A" sundayS="N/A" sundayW="12:00-15:00"
                   team1="https://atk.halbooking.dk?pid=01&hold=27437" trainingTeam1="Tennis4Voksne begynder/letøvet"  team2="https://atk.halbooking.dk?pid=01&hold=27417" trainingTeam2="Tennis4Voksne øvet"
-                  teamImg="../img/motionist_træning_hero.webp"
+                  teamImg="../img/motionist_træning_hero.webp" alt="motionisttræning"
                   />
                 </div>
               </div>

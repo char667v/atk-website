@@ -4,7 +4,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
 ---
 
 <header>
-  <a href="/" id="atkHome"><img src="/img/atkHome.webp" alt="logo" /></a>
+  <a href="/" id="atkHome"><img src="/img/atkHome.webp" id="atkhomeImg" alt="logo"/></a>
   <nav class="navContainer">
     <div class="dropdown">
       <a href="/traening">TRÆNING</a>
@@ -46,9 +46,9 @@ import PrimaryButton from "../components/PrimaryButton.astro";
       </div>
     </div>
   </nav>
-  <div class="flexboxCenter">
+  <div class="flexboxCenter flex-ed">
     <PrimaryButton btnText="BOOK BANE" link="https://atk.halbooking.dk/newlook/default.asp?pid=00" />
-    <a id="baneTilstand"><img src="/img/courtCondition_icon.png" alt="Vejr ikon" /></a>
+    <div><img src="/img/courtCondition_icon.png" alt="Vejr ikon" id="baneTilstand"/></div>
   </div>
   <div>
     <div id="menu-toggle">&#9776;</div>
@@ -63,25 +63,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
 
 
 <style>
-  .fpHeadline {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-40%);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-  }
-
-  .fpHeadline h3 {
-    color: white;
-  }
-
-  .fpBtns {
-    margin: 0px 5%;
-  }
+ 
 
   .weatherWidget {
     display: none;
@@ -100,11 +82,27 @@ import PrimaryButton from "../components/PrimaryButton.astro";
     justify-content: space-between;
     background-color: var(--text-white);
     padding-left: var(--spacing-large);
-    height: 125px;
+    height: 145px;
     width: 100%;
     position: relative;
     z-index: 20;
   }
+
+  header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  background-color: var(--text-white); /* Change to your desired color */
+  transform: skewY(-2deg);
+  transform-origin: bottom right;
+  border-bottom: 
+ 
+ /* Ensure it appears above certain elements */
+}
+
 
   nav a {
     font-size: 1rem;
@@ -139,7 +137,7 @@ import PrimaryButton from "../components/PrimaryButton.astro";
   }
 
   .dropdown:hover > a::after {
-    background-image: url("/img/svg/redarrowDown_1.svg"); /* Replace with the new arrow image */
+    background-image: url("/img/svg/redarrowDown_1.svg"); 
   }
 
   .dropdown-content {
@@ -179,48 +177,45 @@ import PrimaryButton from "../components/PrimaryButton.astro";
     align-items: center;
   }
 
-  #baneTilstand {
-    width: 42px;
-    height: auto;
-    margin-top: 5%;
-    margin-left: var(--spacing-small);
-  }
 
-  #baneTilstand {
-    width: 42px;
-    height: auto;
-    margin-top: 5%;
-    margin-left: var(--spacing-small);
-    transition: transform ease 0.5s;
-  }
 
   #baneTilstand:hover {
     transform: scale(1.1);
     cursor: pointer;
   }
 
-
-.heroWrapper {
-  position: relative;
+  #atkHome {
+  width: 20%;
+}
+#atkhomeImg {
   width: 100%;
-  height: 75vh;
-  overflow: hidden;
 }
 
-.heroImg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
+#baneTilstand {
+    width: 48px;
+    height: auto;
+    margin-top: 15%;
+    margin-left: var(--spacing-small);
+    transition: transform ease 0.5s;
+    cursor: pointer;
+  }
 
-.heroImg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 10%; /* Adjust the vertical position of the image */
-}
+  .fpHeadline {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-40%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .fpHeadline h3 {
+    color: white;
+  }
+
 
   #menu-toggle #close-menu {
     display: none;
@@ -305,6 +300,10 @@ import PrimaryButton from "../components/PrimaryButton.astro";
       padding: 10px;
       width: 100%;
       animation: fadeIn 2.5s ease forwards;
+    }
+
+    header::after {
+      display: none;
     }
 
     .dropdown {

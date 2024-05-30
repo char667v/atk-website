@@ -5,9 +5,11 @@ import CarrouselScroll from "../components/CarrouselScroll.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import Banner from "../components/Banner.astro";
 import Footer from "../components/Footer.astro";
-import Newscard from "../components/newsCard.astro";
 import AccentButton from "../components/AccentButton.astro";
 import HeroVideo from "../components/HeroVideo.astro";
+import Newscard from "../components/Newscard.astro";
+import Activitycard from "../components/Activitycard.astro";
+
 
 const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/Nyheder_Aktiviteter?limit=5", {
   method: "GET",
@@ -35,8 +37,8 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
         }
       </div>
       <div class="carousel-navigation">
-        <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" />
-        <img src="/img/svg/redarrowRight_1.svg" id="nextButton" />
+        <img src="/img/svg/redarrowLeft_1.svg" id="prevButton" alt="rød pil venstre"/>
+        <img src="/img/svg/redarrowRight_1.svg" id="nextButton" alt="rød pil højre"/>
       </div>
 
       <div class="carousel-indicators">
@@ -51,7 +53,7 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
 
     <h3>KOMMENDE AKTIVITETER</h3>
     <article class="autolayout">
-      {newsData.slice(0, 3).map((news) => <Newscard news_image={news.manualImage} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
+      {newsData.slice(0, 3).map((news) => <Activitycard slug={news.slug} news_image={news.image} date={news.date} headline={news.headline} subheadline={news.subheadline} />)}
     </article>
     <div class="flexboxCenter">
       <AccentButton btnText="SE ALLE AKTIVITETER" link="/allenyheder" />
@@ -62,10 +64,10 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
 
     <div class="spacer">
       <article class="grid-2_2">
-        <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" /></a>
-        <a href="/seniortraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR" /></a>
-        <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp" title="MOTIONIST" /></a>
-        <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" /></a>
+        <a href="/juniortraening"><CategoryCard imgPath="../img/juniorCategory.webp" title="JUNIOR" alt="unge spillere giver highfive"/></a>
+        <a href="/seniortraening"><CategoryCard imgPath="../img/seniorCategory.webp" title="SENIOR" alt="seniorspillere klar til kamp"/></a>
+        <a href="/motionisttraening"><CategoryCard imgPath="../img/motionist_træning_hero.webp" title="MOTIONIST" alt="smilende motionister"/></a>
+        <a href="/elitetraening"><CategoryCard imgPath="../img/elite_træning_hero.webp" title="ELITE" alt="holdbillede"/></a>
       </article>
     </div>
   </section>
@@ -86,6 +88,7 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
     overflow: hidden;
     position: relative;
     margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   .carousel-track {
     display: flex;
@@ -130,6 +133,21 @@ const newsData = await fetch("https://cgymdqjrjdkshxuerdil.supabase.co/rest/v1/N
   .carousel-indicator.active {
     background-color: #555;
   }
+
+  @media only screen and (max-width: 1024px) {
+    .carousel-container {
+      width: 500px;
+      height: 400px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .carousel-container {
+    width: 240px;
+    height: 400px;
+}
+}
 </style>
 
 <script>

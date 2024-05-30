@@ -6,20 +6,19 @@ export interface ContactProps {
   phone: string;
   pb: string;
   description: string;
-  img: string;
 }
 
-
-const { role, name, description, img, email, phone, pb, } = Astro.props as ContactProps;
+const { role, name, description, email, phone, pb, } = Astro.props as ContactProps;
 ---
 
 <article class="contactCard">
     <div class="contactContent">
       <div class="headline"><h4>{role}</h4></div>
-      <div> <p>{name}</p> <p>{email}</p><p>{phone}</p></div>
+      <div><p>{description}</div>
+      <div class="info"> <p>{name}</p> <p>{email}</p><p>{phone}</p></div>
   </div>
 
-    <div class="profile-picture"> <img src={img} alt={`${name}'s Profile Picture`} /></div>
+    <div class="profile-picture"> <img src={pb} alt={`${name}'s Profile Picture`} /></div>
 
    
    
@@ -35,46 +34,51 @@ const { role, name, description, img, email, phone, pb, } = Astro.props as Conta
     background-color: rgb(255, 255, 255);
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    width: 400px;
+    width: 100%;
     height: 100%;
     transition: transform 0.3s; 
   }
 
   .contactContent {
     display: grid;
+    display: grid;
 grid-template-columns: 2fr;
-grid-template-rows: repeat(2, 1fr);
+grid-template-rows: 1fr repeat(2, 2fr);
     padding: 5%;
   }
 
   
   .contactContent p {
-   font-size: 0.8rem;
+   font-size: 0.7rem;
+   padding-right: 5%;
   }
 
-
-  .contactCard h4 {
-    font-size: 1.2rem;
-  }
   .contactCard:hover {
-    transform: scale(1.1);
-  } */
+    transform: scale(1.2);
+  }
   
   .profile-picture img {
+    height: 100%;
     object-fit: cover; 
-    border-radius: 4px;
-    max-height: 140px;
+    border-radius: 0px 4px 4px 0px;
 
   }
   .contactContent h4 {
     font-size: 1rem;
   }
-  .contactcard p {
-    margin: 0; 
-  
-  }
+
   .profile-picture img {
     width: 100%;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .info p {
+   font-weight: bold;
+   font-size: 0.8rem;
   }
 
 
@@ -84,8 +88,8 @@ grid-template-rows: repeat(2, 1fr);
     font-size: 0.8rem;
   }
 
-    .contactCard {
-    width: 250px;
+  .contactCard p {
+    font-size: 0.6rem;
   }
 
 

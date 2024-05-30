@@ -29,7 +29,7 @@ console.log("Sekretariat Members:", sekretariatMembers);
 
 <MainLayout title="Ledelse" />
 <NavigationP />
-<HeroImg heroImg="../img/ledelseHero.webp"/>
+<HeroImg heroImg="../img/ledelseHero.webp" alt="herobillede"/>
 
 <div class="main">
   <section class="content">
@@ -46,7 +46,7 @@ console.log("Sekretariat Members:", sekretariatMembers);
         bestyrelseMembers.length > 0 ? (
           bestyrelseMembers.map((member) => (
             <article class="infocard">
-              <ContactCard role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
+              <ContactCard img={member.image} role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
             </article>
           ))
         ) : (
@@ -63,7 +63,7 @@ console.log("Sekretariat Members:", sekretariatMembers);
         sekretariatMembers.length > 0 ? (
           sekretariatMembers.map((member) => (
             <article class="infocard">
-              <ContactCard role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
+              <ContactCard img={member.image} role={member.role} name={member.name} email={member.email} phone={member.phone} profile_picture={member.profile_picture} />
             </article>
           ))
         ) : (
