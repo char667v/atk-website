@@ -11,7 +11,7 @@ export interface NewsProps {
   article: string;
   id: string;
   slug: string;
-  data: NewsData; // Update the type of data
+  data: NewsData; 
 }
 
 const { article, data, news_image, date, headline, subheadline, slug, id } = Astro.props as NewsProps;

@@ -1,11 +1,10 @@
 ---
-
 export interface NewsData {
   slug: string;
 }
-export interface ActivityProps {
+export interface NewsProps {
   news_image: string;
-  date: string;
+  created_at: string;
   headline: string;
   subheadline: string;
   article: string;
@@ -14,7 +13,7 @@ export interface ActivityProps {
   data: NewsData;
 }
 
-const { news_image, date, headline, subheadline, slug } = Astro.props as ActivityProps;
+const { news_image, created_at, headline, subheadline, slug } = Astro.props as NewsProps;
 ---
 
 <article class="newscard">
@@ -23,7 +22,7 @@ const { news_image, date, headline, subheadline, slug } = Astro.props as Activit
   </div>
 
     <div class="news-info">
-        <p class="news-date">{date}</p>
+        <p class="news-date">{created_at}</p>
         <h4 class="news-headline">{headline}</h4>
         <p class="news-subheadline">{subheadline}</p>
     </div>

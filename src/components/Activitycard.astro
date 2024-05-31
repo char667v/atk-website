@@ -1,5 +1,5 @@
 ---
-export interface NewsData {
+export interface ActivityData {
   slug: string;
 }
 export interface ActivityProps {
@@ -10,7 +10,7 @@ export interface ActivityProps {
   article: string;
   id: string;
   slug: string;
-  data: NewsData;
+  data: ActivityData;
 }
 
 const { news_image, date, headline, subheadline, slug } = Astro.props as ActivityProps;
