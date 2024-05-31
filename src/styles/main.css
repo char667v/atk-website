@@ -68,6 +68,7 @@ h1 {
 
 h2 {
   font-size: 2.4rem;
+  line-height: 1.1;
 }
 
 h3 {
@@ -117,7 +118,6 @@ a {
 }
 .mainv2 {
   margin: 2% 10% 1% 10%;
-  padding-top: 10%;
  
 }
 
